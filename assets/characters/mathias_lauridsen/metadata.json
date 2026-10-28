@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "mathias_lauridsen",
+  "displayName": "Mathias Lauridsen",
+  "status": "NeedsApproval",
+  "portraitFile": null,
+  "sourceURL": "https://en.wikipedia.org/wiki/Mathias_Lauridsen",
+  "sourceURLStatus": "ProposedUnfetched",
+  "photographer": null,
+  "license": null,
+  "commercialRights": null,
+  "likenessStatus": "NeedsApproval",
+  "researchCatalog": "assets/references/research-catalog.json",
+  "notes": [
+    "Public model research candidate; no looksmaxxing affiliation asserted.",
+    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+  ],
+  "enabled": false
+}

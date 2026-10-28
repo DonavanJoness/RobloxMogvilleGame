@@ -89,7 +89,7 @@ local handlers = {
 	Purchase = function(p, d) return Shop:purchase(p, d.name) end,
 	Settings = function(p, d)
 		local profile = Data:get(p)
-		for _, key in { "reducedMotion", "sound", "autoSkip" } do
+		for _, key in { "reducedMotion", "sound", "autoSkip", "lowEffects" } do
 			if type(d[key]) == "boolean" then profile.settings[key] = d[key] end
 		end
 		return true

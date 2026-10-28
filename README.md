@@ -1,6 +1,10 @@
 # MOGVILLE: Roll to Ascend
 
-An original Roblox collection simulator built with Luau and Rojo. The game creates its map, character models, pets and interface procedurally. It requires no Toolbox models, uploaded artwork, paid assets, package dependencies or credentials to play in Studio memory mode.
+An original Roblox collection simulator built with Luau and Rojo. The game creates its luxury city, character models, pets and interface procedurally. It requires no Toolbox models, uploaded artwork, paid assets, runtime packages or credentials to play in Studio memory mode.
+
+**City and portrait update:** 24 original collectible forms, public character inspection, portrait-ready reveals/inventory/battles/plot cards, a fountain plaza, gacha hall, circular arena, gym, shops, ascension deck and decorated collector plots. [City details](docs/CITY_UPGRADE.md) · [Portrait/import guide](docs/PORTRAIT_PIPELINE.md) · [Provisional research catalog](assets/references/research-catalog.md).
+
+**Research status:** live source requests were denied by the network policy. The catalog has 25 provisional candidates plus two unresolved labels; **zero verified identities, licensed real-person portraits or cleared likenesses**. All remain disabled research entries. The 24 local approved PNGs are original geometric placeholders; Roblox upload IDs remain zero, and the game uses procedural portrait fallbacks.
 
 **Status:** the core gameplay is implemented and the Rojo place builds. Automated logic and mocked service tests run on Linux. **Roblox Studio acceptance is pending**: this environment cannot run Studio, verify the appearance on devices, or demonstrate a real leave/rejoin DataStore session. Do not treat this as a production-tested release.
 
@@ -36,12 +40,14 @@ cd /workspace/RobloxMogvilleGame
 bash tools/install.sh
 ```
 
-This installs **Rojo 7.5.1** and **Luau 0.690** to ignored `.tools/bin`, checks pinned SHA-256 values for the official release archives, compiles every source/test script, runs the test suite, and builds `build/Mogville.rbxlx`. TLS verification remains enabled. The script can be rerun without changing source or lockfiles.
+This installs **Rojo 7.5.1** and **Luau 0.690** to ignored `.tools/bin`, checks pinned SHA-256 values for the official release archives, installs the pinned Pillow asset-processing tool, prepares approved local portraits, compiles every source/test script, runs Luau and Python tests, and builds both `.rbxlx` and `.rbxl` places plus the ZIP/source downloads. TLS verification remains enabled. Existing source images and owner manifest assignments are preserved; generated mappings/outputs are refreshed.
 
 After installation:
 
 ```bash
 python3 tools/test.py
+python3 -m unittest discover -s tests -p 'test_*.py'
+python3 tools/world_smoke.py
 python3 tools/build.py
 ```
 
@@ -76,6 +82,8 @@ The saved profile contains Coins, unique Mogger instances, displays, independent
 ```text
 default.project.json          Rojo DataModel mapping
 src/shared/Config.luau        Title, roster, rarities, mutations, pets, prices, ranks, product IDs
+src/shared/CharacterCatalog.luau Original identities and separately collectible forms
+src/shared/CharacterVisuals.luau  Validated portrait mapping and metadata lookup
 src/shared/Rules.luau         Profiles, income, exact odds, luck, pity, atomic roll operations
 src/shared/Combat.luau        Deterministic turn-based combat kernel
 src/server/Main.server.luau   Service composition, validated remotes, centralized ticks
@@ -86,6 +94,8 @@ tests/                       Pure rules and mocked production-service tests
 tools/                       Pinned tool install and test runner
 docs/TESTING.md               Studio acceptance and release checklist
 docs/ARCHITECTURE.md          Design and remaining phase scope
+assets/characters/           Approved original placeholders, manifest, normalized PNGs
+assets/references/           Provisional research and documented access failures
 ```
 
 UI is generated under PlayerGui by a LocalScript, and the map under Workspace by WorldService. Shared configuration lives in ReplicatedStorage. Server-only authoritative operations live in ServerScriptService. The Network folder is created on startup; clients wait for it before making requests.
@@ -95,14 +105,14 @@ UI is generated under PlayerGui by a LocalScript, and the map under Workspace by
 Edit **`src/shared/Config.luau`**:
 
 - `Game.Title` changes the title in the map and HUD.
-- `Characters` is keyed by stable IDs. Add a fictional name, a known rarity, positive selection weight, income, combat stats, supported ability and hex color. Do not rename existing IDs in live saves without a migration. WorldService generates a model automatically; custom approved models can be integrated there later.
+- `Characters` is keyed by stable form IDs. `CharacterCatalog` supplies original identity/form descriptions and twelve new forms; legacy definitions keep their IDs and stats. Add new definitions there with known rarity, positive selection weight, stats, supported ability, color, identity and form. Do not rename saved IDs without a migration. `enabled=false` excludes new rolls while retaining owned units; `mutationEligible=false` forces Normal. `PortraitAssets` is generated from the approved asset manifest. WorldService generates form-themed mannequins automatically.
 - `Rarities` defines centralized base weights: 55 / 25 / 12 / 5 / 2.5 / 0.5. They are normalized over eligible rarities. Every character within a rarity has its own selection weight.
 - `Mutations` defines an independent weighted roll and income/power multipliers. The current five probabilities total 100%.
 - `Upgrades`, `Pets`, `Progression`, inventory limits and offline caps are editable. Preserve existing IDs and schema compatibility when publishing updates.
 
 **Luck is a factor, not added percentage points.** A 1.5× factor (+50% luck) changes rarity-tier weight to `baseWeight × 1.5^(tierIndex - 1)`, then normalizes. Earned upgrades, pets, verified in-server friends and earned server events add to the factor with configured caps. Mutations remain independent. On the 20th draw without Rare+, lower tiers are excluded; on the 100th without Mythic+, only Mythic+ is eligible. Pity changes after each draw, including inside ten-pulls. The UI discloses current next-draw rarity and individual character+mutation percentages (rounded to six decimal places).
 
-Pet income/luck/power bonuses add and cap; they do not multiply without bounds. Buying a pet guarantees the selected pet. A successful first-win quest claim can start a bounded ten-minute +25% server luck event; events do not stack. Ascension grants a title and one additional display slot without resetting ownership. Later areas are clearly marked future expansion, not functional unlocks in this version.
+Pet income/luck/power bonuses add and cap; they do not multiply without bounds. Buying a pet guarantees the selected pet. A successful first-win quest claim can start a bounded ten-minute +25% server luck event; events do not stack. Ascension grants a title and one additional display slot without resetting ownership. The gym and luxury deck are now explorable scenery with existing menu interactions; new training rewards and progression gates are not implemented.
 
 ## Robux configuration
 
@@ -118,9 +128,9 @@ Before public release, add a data migration/backup policy, observe live save bud
 
 ## Delivered scope and limits
 
-- Implemented: starter/plots/passive earnings, single/ten gacha, individual odds, luck/pity/mutations, inventory and separate teams, session-protected persistence/offline earnings, plot/luck/pet upgrades, five pets, seven beginner quests, ascension, three PvE tiers, verified friend bonuses, earned server luck, local player-list leaderboards, procedural art, reveal sounds and accessibility settings.
+- Implemented: the existing starter/plots/economy/gacha/saving/PvE/progression loop, expanded to 24 original forms, portrait-ready UI and inspection, a detailed luxury city, decorated plots, bounded client-local effects, low-effects mode, and an approval-gated local image pipeline.
 - Automated: rules, affordability/ownership/ID consistency, combat and real service code under mocks; Luau compilation and Rojo build.
 - **Still requires Studio:** the full Phase 1 acceptance loop including rejoining, actual multiplayer, real DataStores, device layout/input, sounds, physics and visual performance.
-- Later phases: consent-based PvP, global limited-stock reservation/recovery, global OrderedDataStore boards, premium fulfillment, daily quests, character evolution/XP, additional banners/areas, custom art and broader polish.
+- Later/manual work: unblock and complete live candidate/image research; obtain copyright and applicable likeness approvals; upload approved portraits and supply actual IDs; Studio/device verification; consent-based PvP, global stock/boards, premium fulfillment, daily quests and XP/evolution (forms are already separate collectibles).
 
 No limited-stock or receipt-idempotency test is claimed: those gameplay systems are intentionally not enabled. The Phase 1 acceptance gate remains open until the Studio loop is demonstrated.

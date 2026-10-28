@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "francisco_lachowski",
+  "displayName": "Francisco Lachowski",
+  "status": "NeedsApproval",
+  "portraitFile": null,
+  "sourceURL": "https://en.wikipedia.org/wiki/Francisco_Lachowski",
+  "sourceURLStatus": "ProposedUnfetched",
+  "photographer": null,
+  "license": null,
+  "commercialRights": null,
+  "likenessStatus": "NeedsApproval",
+  "researchCatalog": "assets/references/research-catalog.json",
+  "notes": [
+    "The user supplied Chico; Francisco Lachowski is the proposed association and still needs source confirmation.",
+    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+  ],
+  "enabled": false
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "observedAtUTC": "2026-10-28",
+  "result": "Blocked",
+  "successfulSourceReads": 0,
+  "method": "HTTPS urllib requests using inherited environment proxy and TLS verification; approved shell execution.",
+  "observations": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Francisco_Lachowski",
+      "result": "URLError: Tunnel connection failed: 403 Forbidden",
+      "sourceContentRetrieved": false
+    },
+    {
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&titles=Category:Francisco_Lachowski",
+      "result": "URLError: Tunnel connection failed: 403 Forbidden",
+      "sourceContentRetrieved": false
+    },
+    {
+      "url": "https://models.com/models/francisco-lachowski",
+      "result": "URLError: Tunnel connection failed: 403 Forbidden",
+      "sourceContentRetrieved": false
+    },
+    {
+      "url": "https://knowyourmeme.com/memes/gigachad",
+      "result": "URLError: Tunnel connection failed: 403 Forbidden",
+      "sourceContentRetrieved": false
+    }
+  ],
+  "requiredResearchHosts": [
+    "en.wikipedia.org",
+    "commons.wikimedia.org",
+    "models.com",
+    "knowyourmeme.com"
+  ],
+  "optionalMediaHost": "upload.wikimedia.org",
+  "notes": [
+    "The proxy rejected connection establishment. No HTTP page body, photograph, license, photographer attribution or age evidence was available.",
+    "An earlier non-escalated call failed with socket Operation not permitted; escalated calls established the proxy403 diagnosis.",
+    "A saved network configuration draft is not evidence that those hosts are currently accessible."
+  ]
+}

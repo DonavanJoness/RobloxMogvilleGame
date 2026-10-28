@@ -49,7 +49,9 @@ local function referenceList(raw: any, owned: { [string]: boolean }, maximum: nu
 end
 
 function Rules.newProfile(newUid: () -> string, now: number): any
-	local starter = { uid = newUid(), characterId = Config.Game.StarterCharacter, mutation = "Normal", level = 1, acquiredAt = now }
+	local definition = Config.Characters[Config.Game.StarterCharacter]
+	local starter = { uid = newUid(), characterId = Config.Game.StarterCharacter,
+		identityId = definition.identityId, form = definition.form, mutation = "Normal", level = 1, acquiredAt = now }
 	return {
 		schemaVersion = 1, coins = Config.Game.StartingCoins,
 		characters = { starter }, placed = {}, team = { starter.uid },
@@ -57,7 +59,7 @@ function Rules.newProfile(newUid: () -> string, now: number): any
 		pity = { rare = 0, mythic = 0 },
 		stats = { rolls = 0, totalEarned = 0, pveWins = 0, battles = 0, peakIncome = 0 },
 		quests = { claimed = {} }, ascension = 0,
-		settings = { reducedMotion = false, sound = true, autoSkip = false },
+		settings = { reducedMotion = false, sound = true, autoSkip = false, lowEffects = false },
 		lastSeen = now,
 	}
 end
@@ -80,6 +82,8 @@ function Rules.sanitize(raw: any, newUid: () -> string, now: number): any
 			if not validUid(uid) or seen[uid] then uid = uniqueUid(newUid, seen) else seen[uid] = true end
 			local item = {
 				uid = uid, characterId = instance.characterId,
+				identityId = Config.Characters[instance.characterId].identityId,
+				form = Config.Characters[instance.characterId].form,
 				mutation = if mutationById[instance.mutation] then instance.mutation else "Normal",
 				level = integer(instance.level, 1, 1, 100),
 				acquiredAt = integer(instance.acquiredAt, now, 0, now),
@@ -133,6 +137,9 @@ function Rules.characterStats(instance: any): any
 	local growth = 1 + (math.clamp(instance.level or 1, 1, 100) - 1) * 0.1
 	return {
 		uid = instance.uid, characterId = instance.characterId,
+		identityId = definition.identityId, form = definition.form,
+		description = definition.description, portraitAssetId = definition.portraitAssetId,
+		enabled = definition.enabled ~= false,
 		name = definition.name, rarity = definition.rarity, mutation = mutation.id,
 		income = definition.income * mutation.income * growth,
 		attack = math.floor(definition.attack * mutation.power * growth),
@@ -191,7 +198,7 @@ function Rules.odds(profile: any, friendCount: number?, serverLuck: number?): { 
 	local tierWeights, tierTotal, individualTotals = {}, 0, {}
 	for _, id in characterIds do
 		local character = Config.Characters[id]
-		if not character.limited then
+		if character.enabled ~= false and not character.limited then
 			individualTotals[character.rarity] = (individualTotals[character.rarity] or 0) + character.weight
 		end
 	end
@@ -207,14 +214,15 @@ function Rules.odds(profile: any, friendCount: number?, serverLuck: number?): { 
 	local outcomes = {}
 	for _, id in characterIds do
 		local character = Config.Characters[id]
-		if not character.limited and tierWeights[character.rarity] > 0 then
+		if character.enabled ~= false and not character.limited and tierWeights[character.rarity] > 0 then
 			for _, mutation in Config.Mutations do
-				if mutation.weight > 0 then
+				if (character.mutationEligible == false and mutation.id == "Normal")
+					or (character.mutationEligible ~= false and mutation.weight > 0) then
 					table.insert(outcomes, {
 						characterId = id, rarity = character.rarity, mutation = mutation.id,
 						probability = tierWeights[character.rarity] / tierTotal
 							* character.weight / individualTotals[character.rarity]
-							* mutation.weight / mutationTotal,
+							* (if character.mutationEligible == false then 1 else mutation.weight / mutationTotal),
 					})
 				end
 			end
@@ -243,7 +251,10 @@ function Rules.roll(profile: any, count: number, rng: () -> number, newUid: () -
 			cumulative += outcome.probability
 			if draw < cumulative then selected = outcome; break end
 		end
-		local reward = { uid = uniqueUid(newUid, seen), characterId = selected.characterId, mutation = selected.mutation, level = 1, acquiredAt = now }
+		local definition = Config.Characters[selected.characterId]
+		local reward = { uid = uniqueUid(newUid, seen), characterId = selected.characterId,
+			identityId = definition.identityId, form = definition.form,
+			mutation = selected.mutation, level = 1, acquiredAt = now }
 		table.insert(rewards, reward)
 		local tier = rarityIndex[selected.rarity]
 		working.pity.rare = if tier >= 3 then 0 else working.pity.rare + 1

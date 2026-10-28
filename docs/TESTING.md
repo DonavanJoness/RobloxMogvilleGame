@@ -6,6 +6,8 @@ Run from the repository root:
 
 ```bash
 python3 tools/test.py
+python3 -m unittest discover -s tests -p 'test_*.py'
+python3 tools/world_smoke.py
 .tools/bin/rojo build default.project.json --output build/Mogville.rbxlx
 ```
 
@@ -17,6 +19,8 @@ The runner compiles all source/test Luau and executes nonzero test suites agains
 - Network: token-bucket bursts/refill and malformed/nonfinite/nested payloads.
 
 Passing mocks does not establish Roblox API correctness, live distributed behavior or rendered usability. Compilation is a syntax check, not a complete Roblox type analysis.
+
+The separate world smoke runs actual generation/plot modules with lightweight construction stubs and verifies hierarchy, ownership, stand layout, character/pet counts, effect budgets, caching and release/reuse. Its CFrame stub retains translation only: layout checks are schematic arithmetic, not rotated collision or physics checks. Python tests cover asset approval gates, separate likeness evidence, ID validation, safe paths, source-preserving PNG normalization, manifest dimensions and disabled research records.
 
 ## Phase 1 gate — not yet executed in Studio
 
@@ -67,4 +71,4 @@ Follow README persistence setup. Use a disposable test universe and avoid editin
 
 ## Release limits
 
-PvP, daily quests, expanded areas, global limited-stock grants, global leaderboards and developer-product receipt fulfillment are not enabled in this release. Keep product IDs at zero and premium items off sale. Before enabling them, add the actual systems and test cross-server atomicity, durable receipt idempotency, failure recovery and current policy requirements. An untested feature must remain unavailable rather than imply a guarantee.
+PvP, daily quests, new training/area-gating rewards, global limited-stock grants, global leaderboards and developer-product receipt fulfillment are not enabled in this release. The city now includes explorable gym and luxury scenery. Real-person candidates remain unverified/disabled; actual portrait uploads are pending. See CITY_UPGRADE.md and PORTRAIT_PIPELINE.md for their acceptance steps. Keep product IDs at zero and premium items off sale. Before enabling future transactional systems, test atomicity, durable idempotency, failure recovery and current policy requirements.

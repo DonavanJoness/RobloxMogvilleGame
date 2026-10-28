@@ -22,7 +22,7 @@ Clients choose actions and display server results. They never supply a reward, p
 - **CharacterService**: owned-instance validation, display capacity, independent three-unit battle teams.
 - **EconomyService**: centralized bounded elapsed income and nonyielding validated upgrade transactions.
 - **GachaService / Rules**: secure server Random, GUID instances, validated costs/capacity, staged atomic ten-pulls, exact next-draw odds.
-- **WorldService**: 12 reusable plots, original simple models, limited-distance overhead UI and player-welded pet companions; rerender only when equipment changes.
+- **WorldService / EnvironmentBuilder / WorldEffectsController**: static luxury city plus 12 decorated reusable plots, original form-specific models/portrait cards, limited-distance UI and welded pets; client-local effects use centralized distance and quality budgets.
 - **ProgressionService**: finite guaranteed pet shop, seven one-time quests, rank milestones with no inventory resets. Ascension grants one display slot.
 - **Combat / BattleService**: deterministic PvE rounds, speed priority, specials/guard/switch, automatic reserves, server-only one-time reward and 120-second inactivity timeout.
 - **SocialBonusService**: verified in-server friends, capped contribution and a nonstacking ten-minute earned event. Only a successful first-win quest claim triggers the helper.
@@ -37,6 +37,6 @@ All state critical to progression is plain serializable data. Save payloads excl
 
 ## Scope decisions
 
-The playable foundation takes precedence over the full future specification. There is one free Coin banner and one playable district. All characters are original. There are no paid random rewards, global limited units, real-person likenesses or paid assets. The ascension path can be completed using earned resources, with the same character usable for income and combat.
+There is one free Coin banner and an expanded explorable procedural city. All 24 playable forms are original. Stable form IDs, base identities and independent mutations remain separate; version-one save metadata is enriched without resetting ownership. No real-person likeness is enabled, and local portrait placeholders still require owner Roblox uploads before image display. There are no paid random rewards, global limited units or paid assets. The ascension path remains earnable using the same characters for income and combat.
 
 The initial delivery includes substantial progression and PvE beyond Phase 1, but it does not claim Phase 1 acceptance until Studio validates the full join/save/rejoin loop. Later phases still include consent-based PvP; durable global limited-stock reservation and grant recovery; developer-product fulfillment; daily tasks; XP/evolution; extra banners/areas; global boards; custom art; and live balancing/performance polish.

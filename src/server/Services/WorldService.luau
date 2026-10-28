@@ -1,10 +1,13 @@
 -- Procedural scenery and presentation. Currency, ownership, and equipment live in services.
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Lighting = game:GetService("Lighting")
+local CollectionService = game:GetService("CollectionService")
 local Workspace = game:GetService("Workspace")
 
 local Config = require(ReplicatedStorage:WaitForChild("Shared"):WaitForChild("Config"))
 local Rules = require(ReplicatedStorage.Shared:WaitForChild("Rules"))
+
+local EnvironmentBuilder = require(script.Parent.EnvironmentBuilder)
+local CharacterVisuals = require(ReplicatedStorage.Shared:WaitForChild("CharacterVisuals"))
 
 local WorldService = {}
 WorldService.__index = WorldService
@@ -22,7 +25,8 @@ local PALETTE = {
 
 local function color(hex, fallback)
 	if type(hex) == "string" then
-		local ok, result = pcall(Color3.fromHex, hex:gsub("#", ""))
+		local clean = hex:gsub("#", "")
+		local ok, result = pcall(Color3.fromHex, clean)
 		if ok then
 			return result
 		end
@@ -38,6 +42,7 @@ local function part(parent, name, size, position, tint, material, collidable)
 	item.Anchored = true
 	item.CanCollide = collidable ~= false
 	item.CanTouch = false
+	item.CastShadow = collidable ~= false
 	item.Color = tint
 	item.Material = material or Enum.Material.SmoothPlastic
 	item.TopSurface = Enum.SurfaceType.Smooth
@@ -100,40 +105,168 @@ local function number(value)
 	return string.format("%.0f", value)
 end
 
-local function mogger(parent, instance, standPosition)
+local function animated(item, tag, attributes)
+	for key, value in attributes or {} do item:SetAttribute(key, value) end
+	CollectionService:AddTag(item, tag)
+	return item
+end
+
+local function rarityColor(rarity)
+	for index, definition in ipairs(Config.Rarities) do
+		if definition.id == rarity then return color(definition.color), index end
+	end
+	return PALETTE.white, 1
+end
+
+local function portraitBoard(model, characterId, position, tint)
+	local board = part(model, "PortraitCard", Vector3.new(3.2, 4.1, 0.15), position, PALETTE.ground, nil, false)
+	local gui = Instance.new("SurfaceGui")
+	gui.Name = "CharacterPortrait"
+	gui.Face = Enum.NormalId.Front
+	gui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
+	gui.PixelsPerStud = 70
+	gui.LightInfluence = 0
+	gui.MaxDistance = 65
+	gui.Parent = board
+	local background = Instance.new("Frame")
+	background.BackgroundColor3 = tint
+	background.Size = UDim2.fromScale(1, 1)
+	background.BorderSizePixel = 0
+	background.Parent = gui
+	local outline = Instance.new("UIStroke")
+	outline.Color = PALETTE.gold
+	outline.Thickness = 4
+	outline.Parent = background
+	local visual = CharacterVisuals.get(characterId)
+	local image = Instance.new("ImageLabel")
+	image.Name = "ApprovedPortrait"
+	image.BackgroundTransparency = 1
+	image.Size = UDim2.fromScale(1, 1)
+	image.ScaleType = Enum.ScaleType.Crop
+	image.Image = if visual.enabled and visual.portraitAssetId and visual.portraitAssetId > 0 then "rbxassetid://" .. tostring(visual.portraitAssetId) else ""
+	image.Parent = background
+	-- The drawn fallback is always underneath. Failed/empty uploads never remove the portrait identity.
+	local face = Instance.new("Frame")
+	face.Name = "OriginalFallback"
+	face.BackgroundColor3 = Color3.fromRGB(236, 199, 163)
+	face.Size = UDim2.fromScale(0.55, 0.52)
+	face.Position = UDim2.fromScale(0.225, 0.14)
+	face.BorderSizePixel = 0
+	face.ZIndex = 1
+	face.Parent = background
+	local corner = Instance.new("UICorner")
+	corner.CornerRadius = UDim.new(0.28, 0)
+	corner.Parent = face
+	for _, x in ipairs({ 0.21, 0.65 }) do
+		local eye = Instance.new("Frame")
+		eye.Size = UDim2.fromScale(0.14, 0.06)
+		eye.Position = UDim2.fromScale(x, 0.43)
+		eye.BackgroundColor3 = PALETTE.ground
+		eye.BorderSizePixel = 0
+		eye.Parent = face
+	end
+	local body = Instance.new("Frame")
+	body.Size = UDim2.fromScale(0.8, 0.27)
+	body.Position = UDim2.fromScale(0.1, 0.69)
+	body.BackgroundColor3 = PALETTE.panel
+	body.BorderSizePixel = 0
+	body.Parent = background
+	image.ZIndex = 3
+	return board
+end
+
+local function displayEffects(model, host, tint, tier)
+	local world = Config.World or {}
+	if tier >= 3 and #CollectionService:GetTagged("MogvilleLight") < (world.MaxLights or 24) then
+		local light = Instance.new("PointLight")
+		light.Color = tint
+		light.Brightness = 0.6
+		light.Range = 12
+		light.Shadows = false
+		light.Enabled = false
+		light.Parent = host
+		CollectionService:AddTag(light, "MogvilleLight")
+	end
+	if tier >= 4 and #CollectionService:GetTagged("MogvilleParticles") < (world.MaxParticleEmitters or 24) then
+		local emitter = Instance.new("ParticleEmitter")
+		emitter.Name = "PrestigeSparkles"
+		emitter.Texture = "rbxasset://textures/particles/sparkles_main.dds"
+		emitter.Color = ColorSequence.new(tint)
+		emitter.LightEmission = 0.55
+		emitter.Rate = math.min(world.MaxParticlesPerEmitter or 5, 3)
+		emitter.Lifetime = NumberRange.new(0.8, 1.5)
+		emitter.Speed = NumberRange.new(0.5, 1.2)
+		emitter.Size = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.15), NumberSequenceKeypoint.new(1, 0) })
+		emitter.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.25), NumberSequenceKeypoint.new(1, 1) })
+		emitter.Enabled = false
+		emitter.Parent = host
+		CollectionService:AddTag(emitter, "MogvilleParticles")
+	end
+end
+
+local function mogger(parent, instance, standPosition, ownerUserId)
 	local stats = Rules.characterStats(instance)
 	local tint = color(stats.color)
+	local rarityTint, tier = rarityColor(stats.rarity)
+	local visual = CharacterVisuals.get(instance.characterId)
 	local model = Instance.new("Model")
 	model.Name = instance.uid
 	model:SetAttribute("CharacterUID", instance.uid)
+	model:SetAttribute("CharacterId", instance.characterId)
+	model:SetAttribute("IdentityId", visual.identityId)
+	model:SetAttribute("Form", visual.form)
+	model:SetAttribute("Mutation", instance.mutation)
+	model:SetAttribute("Level", instance.level)
+	model:SetAttribute("OwnerUserId", ownerUserId)
 	model.Parent = parent
-	local base = standPosition + Vector3.new(0, 0.85, 0)
+	local elevation = math.max(0, tier - 2) * 0.16
+	local base = standPosition + Vector3.new(0, 0.7 + elevation, 0)
+	if tier >= 3 then
+		local pedestal = part(model, "PrestigePedestal", Vector3.new(0.3 + elevation, 8.8, 8.8), standPosition + Vector3.new(0, 0.6 + elevation / 2, 0), rarityTint, Enum.Material.Neon, false)
+		pedestal.Shape = Enum.PartType.Cylinder
+		pedestal.Orientation = Vector3.new(0, 0, 90)
+	end
 	local torso = part(model, "Jacket", Vector3.new(2.6, 2.4, 1.4), base + Vector3.new(0, 2.6, 0), tint, nil, false)
 	model.PrimaryPart = torso
 	part(model, "Head", Vector3.new(2, 1.7, 1.6), base + Vector3.new(0, 4.65, 0), Color3.fromRGB(235, 196, 151), nil, false)
 	part(model, "Hair", Vector3.new(2.12, 0.4, 1.7), base + Vector3.new(0, 5.55, 0), PALETTE.ground, nil, false)
+	local prime = string.find(string.lower(visual.form or "Classic"), "prime") ~= nil
 	for _, side in ipairs({ -1, 1 }) do
-		part(model, "Arm", Vector3.new(0.7, 2.4, 1.2), base + Vector3.new(side * 1.75, 2.6, 0), tint, nil, false)
+		local arm = part(model, "Arm", Vector3.new(0.7, 2.4, 1.2), base + Vector3.new(side * 1.75, 2.6, 0), tint, nil, false)
+		arm.Orientation = Vector3.new(0, 0, side * (prime and 24 or 8))
 		part(model, "Leg", Vector3.new(0.95, 1.55, 1.2), base + Vector3.new(side * 0.65, 0.7, 0), PALETTE.ground, nil, false)
 		part(model, "Eye", Vector3.new(0.27, 0.16, 0.08), base + Vector3.new(side * 0.43, 4.8, -0.83), PALETTE.ground, nil, false)
 	end
 	part(model, "Smile", Vector3.new(0.6, 0.1, 0.08), base + Vector3.new(0, 4.25, -0.83), PALETTE.ground, nil, false)
-	local mutationTint = tint
-	for _, mutation in ipairs(Config.Mutations) do
-		if mutation.id == instance.mutation then
-			mutationTint = color(mutation.color, tint)
-			break
-		end
-	end
-	part(model, "Crest", Vector3.new(0.75, 0.75, 0.14), base + Vector3.new(0, 2.85, -0.78), mutationTint, Enum.Material.Neon, false)
-	if stats.rarity == "Mythic" or stats.rarity == "Divine" or stats.rarity == "Ascended" then
+	part(model, "Crest", Vector3.new(0.75, 0.75, 0.14), base + Vector3.new(0, 2.85, -0.78), rarityTint, Enum.Material.Neon, false)
+	if tier >= 4 then
 		for i = -1, 1 do
-			part(model, "Crown", Vector3.new(0.4, 0.55 + (i == 0 and 0.3 or 0), 0.45), base + Vector3.new(i * 0.65, 5.95, 0), PALETTE.gold, Enum.Material.Neon, false)
+			part(model, "Crown", Vector3.new(0.4, 0.55 + (i == 0 and 0.3 or 0), 0.45), base + Vector3.new(i * 0.65, 5.95, 0), PALETTE.gold, Enum.Material.Metal, false)
 		end
 	end
+	if tier >= 6 then
+		local energy = part(model, "AscendedEnergy", Vector3.new(0.35, 0.35, 0.35), base + Vector3.new(0, 6.8, 0), rarityTint, Enum.Material.Neon, false)
+		energy.Shape = Enum.PartType.Ball
+		animated(energy, "MogvilleBob", { BobAmplitude = 0.35, BobSpeed = 1.6 })
+		animated(energy, "MogvilleSpin", { SpinSpeed = 1 })
+	end
+	portraitBoard(model, instance.characterId, base + Vector3.new(3.25, 2.8, 0.2), rarityTint)
+	local inspect = prompt(torso, "Inspect", stats.name, ownerUserId)
+	inspect.ActionText = "Inspect Mogger"
+	inspect.MaxActivationDistance = 10
+	inspect:SetAttribute("CharacterUID", instance.uid)
+	inspect:SetAttribute("CharacterId", instance.characterId)
+	inspect:SetAttribute("Mutation", instance.mutation)
+	inspect:SetAttribute("Level", instance.level)
+	local click = Instance.new("ClickDetector")
+	click.MaxActivationDistance = 18
+	click.Parent = torso
+	-- Click detection is handled on the client; no click can award gameplay state.
+	CollectionService:AddTag(click, "MogvilleInspect")
 	label(model, torso,
-		string.upper(stats.name) .. "\n" .. string.upper(stats.rarity) .. "  ·  " .. number(stats.income) .. " Coins/sec\n" .. tostring(instance.mutation) .. " mutation",
-		Vector3.new(0, 5.3, 0), 220, 82, tint, 72)
+		string.upper(stats.name) .. " · " .. (visual.form or "Classic") .. "\n" .. string.upper(stats.rarity) .. " · " .. number(stats.income) .. " Coins/sec\n" .. tostring(instance.mutation) .. " mutation",
+		Vector3.new(0, 5.4, 0), 240, 82, rarityTint, 65)
+	displayEffects(model, torso, rarityTint, tier)
 	return model
 end
 
@@ -169,97 +302,66 @@ function WorldService.new()
 end
 
 function WorldService:build()
-	if self.root and self.root.Parent then
-		return self.root
-	end
+	if self.root and self.root.Parent then return self.root end
 	local folder = Instance.new("Folder")
 	folder.Name = "MogvilleWorld"
 	folder:SetAttribute("GeneratedBy", "Mogville")
 	folder.Parent = Workspace
 	self.root = folder
-	Lighting.ClockTime = 16
-	Lighting.Brightness = 2
-	Lighting.Ambient = Color3.fromRGB(115, 101, 145)
-	Lighting.OutdoorAmbient = Color3.fromRGB(125, 125, 155)
-	part(folder, "Foundation", Vector3.new(390, 3, 390), Vector3.new(0, -2, 0), PALETTE.ground)
-	part(folder, "StarterSquare", Vector3.new(94, 0.5, 350), Vector3.new(0, -0.2, 0), PALETTE.floor)
-	for _, x in ipairs({ -46, 46 }) do
-		part(folder, "PromenadeLight", Vector3.new(0.5, 0.2, 345), Vector3.new(x, 0.15, 0), PALETTE.cyan, Enum.Material.Neon, false)
-	end
-	local spawn = Instance.new("SpawnLocation")
-	spawn.Name = "MogvilleSpawn"
-	spawn.Size = Vector3.new(14, 0.6, 14)
-	spawn.Position = Vector3.new(0, 0.4, 0)
-	spawn.Anchored = true
-	spawn.Neutral = true
-	spawn.Duration = 0
-	spawn.Color = PALETTE.purple
-	spawn.Material = Enum.Material.Neon
-	spawn.Parent = folder
-	label(spawn, spawn, Config.Game.Title .. "\nSTARTER SQUARE", Vector3.new(0, 12, 0), 390, 80, PALETTE.gold, 160)
-	local tutorial = part(folder, "Welcome", Vector3.new(10, 7, 1), Vector3.new(0, 4, 19), PALETTE.panel)
-	label(tutorial, tutorial, "YOUR FIRST MINUTE\n1. Open Inventory and place your starter\n2. Earn Coins each second\n3. Roll, collect, and build your team!", Vector3.new(0, 0, -0.8), 360, 105, PALETTE.white, 75)
-	local stations = {
-		{ "Roll", "THE ASCENSION ENGINE\nEarned Coins only · Odds in menu", Vector3.new(0, 0, -48), PALETTE.gold },
-		{ "Pets", "PET PARLOR\nLittle friends. Big potential.", Vector3.new(-30, 0, -38), PALETTE.cyan },
-		{ "Upgrades", "GLOW-UP LAB\nUpgrade luck and display slots", Vector3.new(30, 0, -38), PALETTE.purple },
-		{ "Shop", "STYLE STUDIO\nOptional future premium items", Vector3.new(-30, 0, 39), PALETTE.gold },
-		{ "Quests", "THE DAILY SPOTLIGHT\nClaim rewards for playing", Vector3.new(30, 0, 39), PALETTE.cyan },
-		{ "Battle", "MOG-OFF ARENA\nBuild a team and challenge an NPC", Vector3.new(0, 0, 80), PALETTE.purple },
-	}
-	for _, station in ipairs(stations) do
-		local position, tint = station[3], station[4]
-		part(folder, station[1] .. "Stage", Vector3.new(19, 0.8, 17), position + Vector3.new(0, 0.3, 0), PALETTE.panel)
-		local pillar = part(folder, station[1] .. "Terminal", Vector3.new(5, 5, 4), position + Vector3.new(0, 3, 0), tint, Enum.Material.Neon)
-		local orb = part(folder, station[1] .. "Orb", Vector3.new(3.5, 3.5, 3.5), position + Vector3.new(0, 7.8, 0), tint, Enum.Material.Neon, false)
-		orb.Shape = Enum.PartType.Ball
-		label(pillar, pillar, station[2], Vector3.new(0, 8, 0), 255, 65, tint, 95)
-		prompt(pillar, station[1], station[1] .. " Station")
-	end
-	local arena = part(folder, "Arena", Vector3.new(55, 0.7, 31), Vector3.new(0, 0.3, 112), PALETTE.panel)
-	for _, x in ipairs({ -16, 16 }) do
-		local disc = part(folder, "ArenaPad", Vector3.new(13, 0.25, 13), Vector3.new(x, 0.85, 112), x < 0 and PALETTE.cyan or PALETTE.purple, Enum.Material.Neon, false)
-		disc.Shape = Enum.PartType.Cylinder
-		disc.Size = Vector3.new(0.25, 13, 13)
-		disc.Orientation = Vector3.new(0, 0, 90)
-	end
-	arena:SetAttribute("Purpose", "Mog-Off presentation")
-	local portal = part(folder, "FutureDistricts", Vector3.new(26, 12, 3), Vector3.new(0, 6, -137), PALETTE.panel)
-	label(portal, portal, "BEYOND STARTER SQUARE\nGlow-Up District · Elite Boulevard\nFuture world expansion", Vector3.new(0, 3, 0), 330, 95, PALETTE.purple, 120)
+	self.cityInfo = EnvironmentBuilder.build(folder, Config)
+	local world = Config.World or {}
+	local columnX = world.PlotColumnsX or 190
+	local rowSpacing = world.PlotRowSpacing or 60
+	local plotsFolder = Instance.new("Folder")
+	plotsFolder.Name = "CollectorResidences"
+	plotsFolder.Parent = folder
 	for index = 1, Config.Game.MaxPlayers do
 		local side = index % 2 == 1 and -1 or 1
 		local row = math.floor((index - 1) / 2)
-		local origin = Vector3.new(side * 104, 0, -140 + row * 56)
+		local origin = Vector3.new(side * columnX, 0, -150 + row * rowSpacing)
+		local accent = Color3.fromHSV((index - 1) / Config.Game.MaxPlayers, 0.36, 0.95)
 		local plot = Instance.new("Model")
-		plot.Name = "Plot" .. index
-		plot.Parent = folder
-		part(plot, "Floor", Vector3.new(76, 0.6, 47), origin, PALETTE.floor)
-		part(plot, "Boundary", Vector3.new(77, 0.25, 48), origin - Vector3.new(0, 0.4, 0), PALETTE.purple, Enum.Material.Neon, false)
-		local sign = part(plot, "OwnerSign", Vector3.new(6, 3, 1), origin + Vector3.new(0, 3, -24), PALETTE.panel)
-		local signText = label(sign, sign, "AVAILABLE PLOT", Vector3.new(0, 3, 0), 285, 70, PALETTE.white, 100)
-		local display = Instance.new("Folder")
-		display.Name = "Moggers"
-		display.Parent = plot
-		local pets = Instance.new("Folder")
-		pets.Name = "Pets"
-		pets.Parent = plot
+		plot.Name = string.format("Residence_%02d", index)
+		plot:SetAttribute("PlotIndex", index)
+		plot.Parent = plotsFolder
+		part(plot, "MarbleFloor", Vector3.new(88, 0.6, 54), origin, Color3.fromRGB(221, 225, 240), Enum.Material.Marble)
+		local borders = {}
+		for _, z in ipairs({ -26, 26 }) do
+			table.insert(borders, part(plot, "GoldInlay", Vector3.new(88, 0.15, 0.35), origin + Vector3.new(0, 0.4, z), PALETTE.gold, Enum.Material.Metal, false))
+		end
+		for _, x in ipairs({ -43.5, 43.5 }) do
+			table.insert(borders, part(plot, "ResidenceEdge", Vector3.new(0.4, 0.15, 52), origin + Vector3.new(x, 0.4, 0), accent, Enum.Material.Neon, false))
+		end
+		part(plot, "EntryCarpet", Vector3.new(88, 0.08, 7), origin + Vector3.new(0, 0.36, 0), PALETTE.floor, Enum.Material.Fabric, false)
+		part(plot, "ConnectionPath", Vector3.new(37, 0.4, 9), Vector3.new(side * 126, -0.1, origin.Z), Color3.fromRGB(220, 221, 234), Enum.Material.Concrete)
+		local sign = part(plot, "OwnerSign", Vector3.new(13, 4, 0.8), origin + Vector3.new(0, 3, -28), PALETTE.panel, nil, false)
+		local signText = label(sign, sign, string.format("RESIDENCE %02d · AVAILABLE", index), Vector3.new(0, 1, 0), 300, 78, PALETTE.white, 100)
+		part(plot, "SignCap", Vector3.new(13.8, 0.3, 1.1), origin + Vector3.new(0, 5.2, -28), PALETTE.gold, Enum.Material.Metal, false)
+		local upgrades = Instance.new("Folder")
+		upgrades.Name = "PrestigeDetails"
+		upgrades.Parent = plot
+		local display, pets = Instance.new("Folder"), Instance.new("Folder")
+		display.Name, pets.Name = "Moggers", "Pets"
+		display.Parent, pets.Parent = plot, plot
 		local stands = {}
 		for slot = 1, Config.Game.MaxSlots do
-			local slotPosition = origin + Vector3.new(-28 + ((slot - 1) % 5) * 14, 0.7, math.floor((slot - 1) / 5) * 18 - 7)
-			local stand = part(plot, "Stand" .. slot, Vector3.new(8, 0.8, 8), slotPosition, PALETTE.panel)
+			local slotPosition = origin + Vector3.new(-34 + ((slot - 1) % 5) * 17, 0.8, math.floor((slot - 1) / 5) * 26 - 13)
+			local stand = part(plot, "Stand" .. slot, Vector3.new(10, 0.8, 10), slotPosition, PALETTE.panel, Enum.Material.Marble)
+			local rim = part(plot, "StandRim" .. slot, Vector3.new(10.5, 0.15, 10.5), slotPosition + Vector3.new(0, 0.5, 0), accent, Enum.Material.Neon, false)
 			local open = prompt(stand, "Inventory", "Display stand " .. slot, 0)
 			open.Enabled = false
-			table.insert(stands, { part = stand, prompt = open, position = slotPosition })
+			local caption = label(stand, stand, "LOCKED", Vector3.new(0, 1.2, 0), 125, 28, PALETTE.muted, 38)
+			table.insert(stands, { part = stand, rim = rim, prompt = open, position = slotPosition, caption = caption })
 		end
+		local entrance = origin + Vector3.new(-side * 38, 4, 0)
 		self.plots[index] = {
-			model = plot, origin = origin, stands = stands, signText = signText,
-			display = display, pets = pets, owner = nil,
-			spawnCFrame = CFrame.new(origin + Vector3.new(0, 4, 21), origin + Vector3.new(0, 4, 0)),
+			model = plot, index = index, origin = origin, accent = accent, stands = stands, signText = signText,
+			display = display, pets = pets, upgrades = upgrades, borders = borders, owner = nil,
+			spawnCFrame = CFrame.new(entrance, origin + Vector3.new(0, 4, 0)),
 		}
 	end
-	-- Local server board is intentionally labelled; no fake global totals are displayed.
-	local board = part(folder, "LeaderboardBoard", Vector3.new(10, 8, 1), Vector3.new(0, 4.5, 145), PALETTE.panel)
-	label(board, board, "MOGVILLE LEADERS\nSee the player list for server Coins,\nIncome, Wins, Collection, and Rank", Vector3.new(0, 1.5, 0), 340, 95, PALETTE.gold, 100)
+	folder:SetAttribute("PlotCount", #self.plots)
+	folder:SetAttribute("StandCount", #self.plots * Config.Game.MaxSlots)
 	return folder
 end
 
@@ -321,7 +423,10 @@ function WorldService:assign(player)
 			end
 		end)
 	end
-	self.connections[player] = player.CharacterAdded:Connect(onCharacter)
+	self.connections[player] = {
+		player.CharacterAdded:Connect(onCharacter),
+		player.CharacterRemoving:Connect(function() available.pets:ClearAllChildren() end),
+	}
 	if player.Character then
 		onCharacter(player.Character)
 	end
@@ -355,25 +460,41 @@ function WorldService:render(player, profile)
 	end
 	plot.signature = key
 	plot.display:ClearAllChildren()
+	plot.upgrades:ClearAllChildren()
+	local prestige = math.min(5, math.floor(profile.upgrades.slots / 2) + profile.ascension)
+	if prestige > 0 then
+		for _, x in ipairs({ -42, 42 }) do
+			for _, z in ipairs({ -24, 24 }) do
+				local height = 2 + prestige * 0.5
+				part(plot.upgrades, "PrestigeColumn", Vector3.new(1.2, height, 1.2), plot.origin + Vector3.new(x, 0.3 + height / 2, z), PALETTE.gold, Enum.Material.Metal, false)
+				part(plot.upgrades, "ColumnGem", Vector3.new(1.5, 1.5, 1.5), plot.origin + Vector3.new(x, height + 1, z), plot.accent, Enum.Material.Neon, false)
+			end
+		end
+	end
+	for _, border in ipairs(plot.borders) do border.Color = prestige >= 3 and PALETTE.gold or plot.accent end
 	local limit = math.min(Config.Game.MaxSlots, Config.Game.BaseSlots + profile.upgrades.slots)
 	for slot, stand in ipairs(plot.stands) do
 		local unlocked = slot <= limit
-		stand.part.Color = unlocked and PALETTE.cyan or PALETTE.panel
-		stand.part.Material = unlocked and Enum.Material.Neon or Enum.Material.SmoothPlastic
+		stand.part.Color = unlocked and Color3.fromRGB(234, 233, 245) or PALETTE.panel
+		stand.part.Material = unlocked and Enum.Material.Marble or Enum.Material.SmoothPlastic
+		stand.rim.Color = unlocked and plot.accent or PALETTE.muted
+		stand.rim.Transparency = unlocked and 0 or 0.65
+		stand.caption.Text = unlocked and ("STAND " .. slot) or "LOCKED"
+		stand.caption.Visible = profile.placed[slot] == nil
 		stand.prompt.Enabled = unlocked
 		stand.prompt.ObjectText = unlocked and ("Your display stand " .. slot) or "Locked stand"
 		local character = byUid[profile.placed[slot]]
 		if character and unlocked then
-			mogger(plot.display, character, stand.position)
+			mogger(plot.display, character, stand.position, player.UserId)
 		end
 	end
 	self:_renderPets(player, plot)
 end
 
 function WorldService:release(player)
-	local connection = self.connections[player]
-	if connection then
-		connection:Disconnect()
+	local connections = self.connections[player]
+	if connections then
+		for _, connection in ipairs(connections) do connection:Disconnect() end
 		self.connections[player] = nil
 	end
 	local plot = self.assignments[player]
@@ -385,12 +506,17 @@ function WorldService:release(player)
 	plot.model:SetAttribute("OwnerUserId", nil)
 	plot.display:ClearAllChildren()
 	plot.pets:ClearAllChildren()
-	plot.signText.Text = "AVAILABLE PLOT"
+	plot.upgrades:ClearAllChildren()
+	plot.signText.Text = string.format("RESIDENCE %02d · AVAILABLE", plot.index)
 	for _, stand in ipairs(plot.stands) do
 		stand.prompt.Enabled = false
 		stand.prompt:SetAttribute("OwnerUserId", 0)
 		stand.part.Color = PALETTE.panel
 		stand.part.Material = Enum.Material.SmoothPlastic
+		stand.rim.Color = PALETTE.muted
+		stand.rim.Transparency = 0.65
+		stand.caption.Text = "LOCKED"
+		stand.caption.Visible = true
 	end
 end
 

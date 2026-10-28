@@ -6,6 +6,8 @@ function Combat.unit(stats: any, bonus: number?): any
 	local multiplier = 1 + math.clamp(bonus or 0, 0, 1)
 	return {
 		uid = stats.uid, name = stats.name, ability = stats.ability,
+		characterId = stats.characterId, identityId = stats.identityId, form = stats.form,
+		portraitAssetId = stats.portraitAssetId, mutation = stats.mutation,
 		hp = math.ceil(stats.health * multiplier), maxHp = math.ceil(stats.health * multiplier),
 		attack = math.ceil(stats.attack * multiplier), defense = math.ceil(stats.defense * multiplier),
 		speed = stats.speed, specialCooldown = 0, guarding = false,

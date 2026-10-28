@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "clavicular",
+  "displayName": "Clavicular",
+  "status": "NeedsApproval",
+  "portraitFile": null,
+  "sourceURL": "https://knowyourmeme.com/memes/people/clavicular",
+  "sourceURLStatus": "ProposedUnfetched",
+  "photographer": null,
+  "license": null,
+  "commercialRights": null,
+  "likenessStatus": "NeedsApproval",
+  "researchCatalog": "assets/references/research-catalog.json",
+  "notes": [
+    "Requested creator alias; verify identity, age and official representative before any portrait selection.",
+    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+  ],
+  "enabled": false
+}

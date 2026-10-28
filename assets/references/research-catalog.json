@@ -1,0 +1,1062 @@
+{
+  "schemaVersion": 1,
+  "preparedAtUTC": "2026-10-28",
+  "status": "ResearchBlocked",
+  "namedCandidates": 25,
+  "unresolvedRequestedAliases": 2,
+  "verifiedCandidates": 0,
+  "licensedPortraits": 0,
+  "clearedGameLikenesses": 0,
+  "productionUseAllowed": false,
+  "sourceAccessEvidence": "assets/references/source-access.json",
+  "policy": {
+    "identity": "Source and adult-era portrait verification required before candidate approval.",
+    "copyright": "Photographer, source image, exact license, attribution requirements and commercial/derivative-game use must be documented per image.",
+    "likeness": "An image copyright license alone does not establish permission for a recognizable-person game character. Record separate applicable likeness permission.",
+    "gameplay": "Suggested numbers are fictional balance proposals, not assessments of a person’s appearance, value or real abilities.",
+    "mutations": "Normal/Golden/Diamond/Legendary/Apex are fictional visual variants, not claims about real people or medical history."
+  },
+  "candidates": [
+    {
+      "candidateId": "clavicular",
+      "displayName": "Clavicular",
+      "aliases": [
+        "Clavicular"
+      ],
+      "candidateType": "RequestedPublicFigure",
+      "sourceURL": "https://knowyourmeme.com/memes/people/clavicular",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": null,
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Mythic",
+        "income": 65,
+        "attack": 48,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Requested creator alias; verify identity, age and official representative before any portrait selection.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "francisco_lachowski",
+      "displayName": "Francisco Lachowski",
+      "aliases": [
+        "Chico"
+      ],
+      "candidateType": "RequestedPublicFigure",
+      "sourceURL": "https://en.wikipedia.org/wiki/Francisco_Lachowski",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Francisco Lachowski",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Divine",
+        "income": 165,
+        "attack": 66,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "The user supplied Chico; Francisco Lachowski is the proposed association and still needs source confirmation.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "henry_cavill",
+      "displayName": "Henry Cavill",
+      "aliases": [],
+      "candidateType": "RequestedPublicFigure",
+      "sourceURL": "https://en.wikipedia.org/wiki/Henry_Cavill",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Henry Cavill",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Divine",
+        "income": 165,
+        "attack": 66,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Actor reference requested by the user; do not label him a looksmaxxing creator.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "ernest_khalimov",
+      "displayName": "Ernest Khalimov",
+      "aliases": [
+        "GigaChad"
+      ],
+      "candidateType": "RequestedPublicFigure",
+      "sourceURL": "https://en.wikipedia.org/wiki/Ernest_Khalimov",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Ernest Khalimov",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Ascended",
+        "income": 500,
+        "attack": 110,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Proposed GigaChad association requires cross-checking the original art project, identity and photographer. No photograph or photographer attribution is assumed.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "jordan_barrett",
+      "displayName": "Jordan Barrett",
+      "aliases": [],
+      "candidateType": "RequestedPublicFigure",
+      "sourceURL": "https://en.wikipedia.org/wiki/Jordan_Barrett",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Jordan Barrett",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Divine",
+        "income": 165,
+        "attack": 66,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model candidate requested by the user; meme or community associations require independent evidence.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "david_gandy",
+      "displayName": "David Gandy",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/David_Gandy",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "David Gandy",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Uncommon",
+        "income": 7,
+        "attack": 20,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "sean_opry",
+      "displayName": "Sean O’Pry",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Sean_O'Pry",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Sean O'Pry",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Rare",
+        "income": 20,
+        "attack": 32,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "lucky_blue_smith",
+      "displayName": "Lucky Blue Smith",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Lucky_Blue_Smith",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Lucky Blue Smith",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Mythic",
+        "income": 65,
+        "attack": 48,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; select an adult-era portrait only after date and rights review.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "jon_kortajarena",
+      "displayName": "Jon Kortajarena",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Jon_Kortajarena",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Jon Kortajarena",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Common",
+        "income": 2,
+        "attack": 12,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "marlon_teixeira",
+      "displayName": "Marlon Teixeira",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Marlon_Teixeira",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Marlon Teixeira",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Uncommon",
+        "income": 7,
+        "attack": 20,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "tyson_beckford",
+      "displayName": "Tyson Beckford",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Tyson_Beckford",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Tyson Beckford",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Rare",
+        "income": 20,
+        "attack": 32,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "marcus_schenkenberg",
+      "displayName": "Marcus Schenkenberg",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Marcus_Schenkenberg",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Marcus Schenkenberg",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Mythic",
+        "income": 65,
+        "attack": 48,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "david_agbodji",
+      "displayName": "David Agbodji",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/David_Agbodji",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "David Agbodji",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Common",
+        "income": 2,
+        "attack": 12,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "alton_mason",
+      "displayName": "Alton Mason",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Alton_Mason",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Alton Mason",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Uncommon",
+        "income": 7,
+        "attack": 20,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "pietro_boselli",
+      "displayName": "Pietro Boselli",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Pietro_Boselli",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Pietro Boselli",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Rare",
+        "income": 20,
+        "attack": 32,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "alex_lundqvist",
+      "displayName": "Alex Lundqvist",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Alex_Lundqvist",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Alex Lundqvist",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Mythic",
+        "income": 65,
+        "attack": 48,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "noah_mills",
+      "displayName": "Noah Mills",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Noah_Mills",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Noah Mills",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Common",
+        "income": 2,
+        "attack": 12,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "mathias_lauridsen",
+      "displayName": "Mathias Lauridsen",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Mathias_Lauridsen",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Mathias Lauridsen",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Uncommon",
+        "income": 7,
+        "attack": 20,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "garrett_neff",
+      "displayName": "Garrett Neff",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Garrett_Neff",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Garrett Neff",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Rare",
+        "income": 20,
+        "attack": 32,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "kit_butler",
+      "displayName": "Kit Butler",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Kit_Butler",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Kit Butler",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Mythic",
+        "income": 65,
+        "attack": 48,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; select an adult-era portrait only after date and rights review.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "simon_nessman",
+      "displayName": "Simon Nessman",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Simon_Nessman",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Simon Nessman",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Common",
+        "income": 2,
+        "attack": 12,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "andres_velencoso",
+      "displayName": "Andrés Velencoso",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Andr%C3%A9s_Velencoso",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Andrés Velencoso",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Uncommon",
+        "income": 7,
+        "attack": 20,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "baptiste_giabiconi",
+      "displayName": "Baptiste Giabiconi",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Baptiste_Giabiconi",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Baptiste Giabiconi",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Rare",
+        "income": 20,
+        "attack": 32,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "clement_chabernaud",
+      "displayName": "Clément Chabernaud",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/Cl%C3%A9ment_Chabernaud",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "Clément Chabernaud",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Mythic",
+        "income": 65,
+        "attack": 48,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; no looksmaxxing affiliation asserted.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "river_viiperi",
+      "displayName": "River Viiperi",
+      "aliases": [],
+      "candidateType": "RelatedPublicModelCandidate",
+      "sourceURL": "https://en.wikipedia.org/wiki/River_Viiperi",
+      "sourceURLStatus": "ProposedUnfetched",
+      "encyclopediaTitle": "River Viiperi",
+      "verifiedSourceURLs": [],
+      "identityStatus": "NeedsSourceVerification",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Common",
+        "income": 2,
+        "attack": 12,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Public model research candidate; select an adult-era portrait only after date and rights review.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "kaysh_unresolved",
+      "displayName": "Kaysh",
+      "aliases": [
+        "Kaysh"
+      ],
+      "candidateType": "UnresolvedRequestedAlias",
+      "sourceURL": null,
+      "sourceURLStatus": "Missing",
+      "encyclopediaTitle": null,
+      "verifiedSourceURLs": [],
+      "identityStatus": "Unresolved",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": null,
+      "notes": [
+        "Ambiguous requested alias. No identity, age, image, or public profile has been established. Ask the user for a reference link; do not guess.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    },
+    {
+      "candidateId": "post_surgery_hexum_unresolved",
+      "displayName": "Post-Surgery Hexum",
+      "aliases": [
+        "Post-Surgery Hexum"
+      ],
+      "candidateType": "UnresolvedRequestedAlias",
+      "sourceURL": null,
+      "sourceURLStatus": "Missing",
+      "encyclopediaTitle": null,
+      "verifiedSourceURLs": [],
+      "identityStatus": "Unresolved",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "evidenceRef": "assets/references/source-access.json",
+      "photographer": null,
+      "license": null,
+      "licenseURL": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "suggestedGameplay": null,
+      "notes": [
+        "Ambiguous requested label. Do not map it to Jon-Erik Hexum or imply a medical/surgery history without an explicit reliable source. Jon-Erik Hexum is deceased; no claimed surgery association is verified.",
+        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+      ],
+      "enabled": false
+    }
+  ]
+}

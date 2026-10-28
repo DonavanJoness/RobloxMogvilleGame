@@ -1,6 +1,8 @@
 --!strict
 -- All economy, roster and probability tuning lives here. Colors are RGB hex strings.
 local Config = {}
+local Catalog = require(script.Parent.CharacterCatalog)
+local Visuals = require(script.Parent.CharacterVisuals)
 
 Config.Game = {
 	Title = "MOGVILLE: Roll to Ascend",
@@ -49,6 +51,32 @@ Config.Characters = {
 	divine_icon = { name = "Divine Icon", rarity = "Divine", income = 180, attack = 76, defense = 34, health = 290, speed = 34, ability = "Final Form", color = "FFE5A6", weight = 1 },
 	celestial_stylist = { name = "Celestial Stylist", rarity = "Divine", income = 165, attack = 66, defense = 39, health = 305, speed = 36, ability = "Perfect Pose", color = "B1ECFF", weight = 1 },
 	apex_mogger = { name = "Apex Mogger", rarity = "Ascended", income = 500, attack = 110, defense = 48, health = 410, speed = 45, ability = "Final Form", color = "FF8BD9", weight = 1 },
+}
+
+-- Stable characterId is a collectible FORM; identity, form and mutation are separate.
+-- Existing IDs/stats are retained so version-1 saves remain valid.
+local characters: any = Config.Characters
+for id, metadata in Catalog.Existing do
+	if characters[id] then
+		for key, value in metadata do characters[id][key] = value end
+	end
+end
+for id, definition in Catalog.Added do
+	assert(Config.Characters[id] == nil, "Catalog cannot replace a saved character ID")
+	characters[id] = table.clone(definition)
+end
+for id, definition in Config.Characters do
+	local visual = Visuals.get(id)
+	local entry: any = definition
+	entry.portraitAssetId = visual.portraitAssetId
+	entry.enabled = visual.enabled
+	entry.mutationEligible = visual.mutationEligible
+end
+
+Config.World = {
+	MaxStaticParts = 1800, MaxLights = 24, MaxParticleEmitters = 24,
+	MaxVisibleAnimations = 48, EffectDistance = 140, ReducedEffectDistance = 70,
+	MaxParticlesPerEmitter = 5, PlotColumnsX = 190, PlotRowSpacing = 60,
 }
 
 -- Mutation weights total 100. Mutation rolls are independent of rarity and luck.

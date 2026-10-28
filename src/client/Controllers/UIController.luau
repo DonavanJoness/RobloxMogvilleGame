@@ -4,6 +4,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local HttpService = game:GetService("HttpService")
 local Config = require(ReplicatedStorage:WaitForChild("Shared"):WaitForChild("Config"))
 local Rules = require(ReplicatedStorage.Shared.Rules)
+local CharacterVisuals = require(ReplicatedStorage.Shared.CharacterVisuals)
 local Theme = require(script.Parent.Theme)
 local GachaController = require(script.Parent.GachaController)
 
@@ -46,8 +47,8 @@ local function rowButtons(parent, definitions)
 	return row
 end
 
-function UIController.new(request)
-	local self = setmetatable({ request = request, state = nil, menu = "Home", pending = false, search = "", sort = "Rarity", signature = "", toastVersion = 0 }, UIController)
+function UIController.new(request, worldEffects)
+	local self = setmetatable({ request = request, effects = worldEffects, state = nil, menu = "Home", pending = false, search = "", sort = "Rarity", signature = "", toastVersion = 0 }, UIController)
 	self.gui = Theme.make("ScreenGui", {
 		Name = "MogvilleUI", ResetOnSpawn = false, IgnoreGuiInset = false,
 		ZIndexBehavior = Enum.ZIndexBehavior.Sibling, DisplayOrder = 10,
@@ -81,9 +82,16 @@ function UIController:build()
 			Size = UDim2.new(0.3, 0, 0, 46), BackgroundColor3 = Theme.colors.panel, BorderSizePixel = 0,
 		}, hud)
 		Theme.corner(stat, 10)
+		Theme.stroke(stat, if index == 1 then Theme.colors.gold else Theme.colors.cyan, 0.7)
+		local icon = Theme.label(stat, if index == 1 then "$" elseif index == 2 then "+" else "✦", 17, if index == 1 then Theme.colors.gold else Theme.colors.cyan)
+		icon.Size = UDim2.fromOffset(18, 26)
+		icon.Position = UDim2.fromOffset(7, 0)
+		icon.Font = Enum.Font.GothamBlack
 		local value = Theme.label(stat, "—", 18, if index == 1 then Theme.colors.gold else Theme.colors.cyan)
-		value.Size = UDim2.new(1, -12, 0, 26)
-		value.Position = UDim2.fromOffset(8, 1)
+		value.Size = UDim2.new(1, -32, 0, 26)
+		value.Position = UDim2.fromOffset(26, 1)
+		value.TextScaled = true
+		Theme.make("UITextSizeConstraint", { MinTextSize = 12, MaxTextSize = 18 }, value)
 		value.Font = Enum.Font.GothamBold
 		local caption = Theme.label(stat, heading, 10, Theme.colors.muted)
 		caption.Size = UDim2.new(1, -12, 0, 16)
@@ -92,6 +100,10 @@ function UIController:build()
 		self.statCaptions[index] = caption
 		self.statFrames[index] = stat
 	end
+	local luckTrack = Theme.make("Frame", { Name = "RarePityMeter", Position = UDim2.new(0.04, 0, 1, -5), Size = UDim2.new(0.92, 0, 0, 3), BorderSizePixel = 0, BackgroundColor3 = Theme.colors.card }, hud)
+	Theme.corner(luckTrack, 3)
+	self.luckFill = Theme.make("Frame", { Size = UDim2.fromScale(0, 1), BackgroundColor3 = Theme.colors.cyan, BorderSizePixel = 0 }, luckTrack)
+	Theme.corner(self.luckFill, 3)
 	local nav = Theme.make("ScrollingFrame", {
 		Name = "Navigation", AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.5, 1),
 		Size = UDim2.new(1, 0, 0, 66), BackgroundColor3 = Theme.colors.background, BorderSizePixel = 0,
@@ -101,8 +113,9 @@ function UIController:build()
 	}, self.gui)
 	Theme.padding(nav, 8)
 	Theme.list(nav, 8, true)
+	local icons = { Roll = "✦", Inventory = "▣", Team = "◆", Battle = "⚔", Pets = "♥", Upgrades = "+", Quests = "★", Shop = "$", Settings = "⚙", Home = "⌂" }
 	for index, menu in { "Roll", "Inventory", "Team", "Battle", "Pets", "Upgrades", "Quests", "Shop", "Settings", "Home" } do
-		local button = Theme.button(nav, menu, function() self:show(menu) end, if menu == "Roll" then Theme.colors.gold else Theme.colors.cyan)
+		local button = Theme.button(nav, icons[menu] .. " " .. menu, function() self:show(menu) end, if menu == "Roll" then Theme.colors.gold else Theme.colors.cyan)
 		button.Size = UDim2.fromOffset(if menu == "Inventory" or menu == "Upgrades" then 100 else 82, 46)
 		button.LayoutOrder = index
 	end
@@ -114,6 +127,8 @@ function UIController:build()
 	Theme.make("UISizeConstraint", { MaxSize = Vector2.new(900, 900) }, self.panel)
 	Theme.corner(self.panel, 16)
 	Theme.stroke(self.panel)
+	local panelAccent = Theme.make("Frame", { Size = UDim2.new(1, 0, 0, 3), BackgroundColor3 = Theme.colors.purple, BorderSizePixel = 0 }, self.panel)
+	Theme.make("UIGradient", { Color = ColorSequence.new(Theme.colors.cyan, Theme.colors.purple), Rotation = 0 }, panelAccent)
 	self.heading = Theme.label(self.panel, "WELCOME TO MOGVILLE", 22, Theme.colors.text)
 	self.heading.Position = UDim2.fromOffset(16, 10)
 	self.heading.Size = UDim2.new(1, -80, 0, 42)
@@ -191,6 +206,13 @@ function UIController:act(action, payload)
 		end
 		if result.message then self:toast(result.message) end
 		if result.rewards and #result.rewards > 0 then
+			local bestRarity, bestTier = "Common", 0
+			for _, reward in result.rewards do
+				local definition = Config.Characters[reward.characterId]
+				local tier = if definition then rarityIndex(definition.rarity) else 0
+				if tier > bestTier then bestRarity, bestTier = definition.rarity, tier end
+			end
+			if self.effects then self.effects:celebrate(bestRarity) end
 			self.gacha:show(result.rewards, if self.state then self.state.profile.settings else {})
 		end
 	end)
@@ -241,6 +263,7 @@ function UIController:updateHUD()
 	self.statLabels[1].Text = Theme.number(state.profile.coins)
 	self.statLabels[2].Text = "+" .. Theme.number(state.income)
 	self.statLabels[3].Text = string.format("%.2fx", state.luck or 1)
+	self.luckFill.Size = UDim2.fromScale(math.clamp(state.profile.pity.rare / Config.Game.RarePity, 0, 1), 1)
 	local profile = state.profile
 	local rank = state.rank
 	local rankName = if type(rank) == "table" then rank.name else tostring(rank or "Beginner")
@@ -264,6 +287,7 @@ end
 function UIController:update(state)
 	if type(state) ~= "table" or type(state.profile) ~= "table" then return end
 	self.state = state
+	if self.effects then self.effects:setSettings(state.profile.settings or {}) end
 	self:updateHUD()
 	if self.panel.Visible then
 		local signature = HttpService:JSONEncode({ self.menu, state.profile.characters, state.profile.placed, state.profile.team, state.profile.pets, state.profile.equippedPets, state.profile.upgrades, state.profile.settings, state.profile.ascension, state.profile.pity, state.odds, state.battle, state.quests })
@@ -304,7 +328,18 @@ end
 
 function UIController:renderHome()
 	local card = Theme.card(self.body, Theme.colors.gold)
+	Theme.badge(card, "WELCOME TO STARTER SQUARE", Theme.colors.cyan)
 	Theme.label(card, "YOUR GLOW-UP STARTS HERE", 20, Theme.colors.gold)
+	local heroes = Theme.make("Frame", { Size = UDim2.new(1, 0, 0, 94), BackgroundTransparency = 1 }, card)
+	for index, id in { "young_rookie", "golden_chad", "apex_mogger" } do
+		local definition = Config.Characters[id]
+		if definition then
+			local portrait = Theme.portrait(heroes, Theme.hex(definition.color), 82, id)
+			portrait.Size = UDim2.new(0.28, 0, 0, 82)
+			portrait.Position = UDim2.fromScale((index - 1) * 0.36, 0)
+			Theme.make("UIAspectRatioConstraint", { AspectRatio = 1, DominantAxis = Enum.DominantAxis.Width }, portrait)
+		end
+	end
 	Theme.paragraph(card, "Your first Common Mogger is waiting in Inventory. Display it on your plot to start earning coins, then roll for your next star.")
 	Theme.button(card, "1 · Place your starter", function() self:show("Inventory") end, Theme.colors.cyan)
 	Theme.button(card, "2 · Roll a new Mogger", function() self:show("Roll") end, Theme.colors.gold)
@@ -322,6 +357,7 @@ end
 function UIController:renderRoll()
 	local state = self.state
 	local banner = Theme.card(self.body, Theme.colors.gold)
+	Theme.badge(banner, "✦  THE DAILY GLOW-UP  ✦", Theme.colors.purple)
 	Theme.label(banner, "STARTER SQUARE · ALL-STARS", 20, Theme.colors.gold)
 	Theme.paragraph(banner, "Original Moggers. Six rarities. One next step toward Ascension.")
 	rowButtons(banner, {
@@ -337,6 +373,8 @@ function UIController:renderRoll()
 		Theme.label(odds, string.format("%s   %.6f%%", rarity.name or rarity.id, (totals[rarity.id] or 0) * 100), 16, Theme.hex(rarity.color))
 	end
 	Theme.paragraph(odds, string.format("Luck %.2fx · Rare+ guarantee: %d/20 · Mythic+ guarantee: %d/100", state.luck or 1, state.profile.pity.rare, state.profile.pity.mythic))
+	Theme.meter(odds, "RARE+ PITY  " .. tostring(state.profile.pity.rare) .. "/" .. tostring(Config.Game.RarePity), state.profile.pity.rare / Config.Game.RarePity, Theme.colors.cyan)
+	Theme.meter(odds, "MYTHIC+ PITY  " .. tostring(state.profile.pity.mythic) .. "/" .. tostring(Config.Game.MythicPity), state.profile.pity.mythic / Config.Game.MythicPity, Theme.colors.purple)
 	Theme.paragraph(odds, "+50% Luck means a 1.5× luck factor: each successive rarity gets a stronger weight before all probabilities are normalized. Pity filters your next eligible outcomes. Percentages shown are rounded.")
 	Theme.button(odds, "View every character + mutation outcome", function() self:show("Odds") end)
 	self.serverLuckLabel = Theme.paragraph(odds, "", Theme.colors.green)
@@ -380,28 +418,35 @@ function UIController:inventoryCards(teamMode)
 		found += 1
 		local accent = rarityColor(stats.rarity)
 		local card = Theme.card(self.body, accent)
-		local row = Theme.make("Frame", { Size = UDim2.new(1, 0, 0, 68), BackgroundTransparency = 1 }, card)
-		Theme.portrait(row, Theme.hex(stats.color), 60)
-		local name = Theme.label(row, stats.name, 18, accent)
-		name.Position = UDim2.fromOffset(72, 0)
-		name.Size = UDim2.new(1, -72, 0, 36)
+		local row = Theme.make("Frame", { Size = UDim2.new(1, 0, 0, 108), BackgroundTransparency = 1 }, card)
+		Theme.portrait(row, Theme.hex(stats.color), 98, instance.characterId)
+		local name = Theme.label(row, stats.name, 19, accent)
+		name.Position = UDim2.fromOffset(112, 0)
+		name.Size = UDim2.new(1, -112, 0, 56)
+		name.Font = Enum.Font.GothamBold
 		local detail = Theme.label(row, tostring(stats.rarity) .. " · " .. tostring(stats.mutation), 13)
-		detail.Position = UDim2.fromOffset(72, 36)
-		detail.Size = UDim2.new(1, -72, 0, 28)
+		detail.Position = UDim2.fromOffset(112, 62)
+		detail.Size = UDim2.new(1, -112, 0, 40)
 		Theme.paragraph(card, string.format("%s coins/sec  •  %s power\nHP %s · Defense %s · Speed %s\nAbility: %s", Theme.number(stats.income), Theme.number(stats.attack), Theme.number(stats.health), Theme.number(stats.defense), Theme.number(stats.speed), tostring(stats.ability)))
 		local displayed = contains(profile.placed, instance.uid)
 		local teamed = contains(profile.team, instance.uid)
 		if teamMode then
-			Theme.button(card, if teamed then "Remove from team" else "Add to team", function()
+			rowButtons(card, {
+				{ "Inspect", function() self:inspect(instance.uid) end, Theme.colors.purple },
+				{ if teamed then "Remove from team" else "Add to team", function()
 				local uids = table.clone(self.state.profile.team)
 				local index = table.find(uids, instance.uid)
 				if index then table.remove(uids, index) else table.insert(uids, instance.uid) end
 				self:act("SetTeam", { uids = uids })
-			end, if teamed then Theme.colors.card else Theme.colors.cyan)
+			end, if teamed then Theme.colors.card else Theme.colors.cyan },
+			})
 		else
-			Theme.button(card, if displayed then "Remove from display" else "Display on my plot", function()
+			rowButtons(card, {
+				{ "Inspect", function() self:inspect(instance.uid) end, Theme.colors.purple },
+				{ if displayed then "Remove display" else "Display Mogger", function()
 				self:act(if displayed then "Unequip" else "Equip", { uid = instance.uid })
-			end, if displayed then Theme.colors.gold else Theme.colors.cyan)
+			end, if displayed then Theme.colors.gold else Theme.colors.cyan },
+			})
 		end
 		Theme.paragraph(card, (if displayed then "● Earning on your plot   " else "") .. (if teamed then "● Battle team" else ""), Theme.colors.green)
 	end
@@ -410,6 +455,66 @@ end
 
 function UIController:renderInventory() self:inventoryCards(false) end
 function UIController:renderTeam() self:inventoryCards(true) end
+
+function UIController:inspect(uid, publicInstance)
+	if not self.state then self:toast("Your collection is still loading."); return end
+	self.inspectOwned = false
+	self.inspectInstance = nil
+	for _, instance in self.state.profile.characters do
+		if instance.uid == uid then
+			self.inspectInstance = instance
+			self.inspectOwned = true
+			break
+		end
+	end
+	if not self.inspectInstance and type(publicInstance) == "table" and Config.Characters[publicInstance.characterId] then
+		-- Replicated public display data is only used to view a card, never to grant ownership.
+		self.inspectInstance = { uid = tostring(uid or "public"), characterId = publicInstance.characterId,
+			mutation = publicInstance.mutation or "Normal", level = if type(publicInstance.level) == "number" then publicInstance.level else 1 }
+	end
+	if not self.inspectInstance then self:toast("This Mogger's public card is unavailable."); return end
+	self:show("Inspect")
+end
+
+function UIController:renderInspect()
+	local instance = self.inspectInstance
+	if not instance or not Config.Characters[instance.characterId] then empty(self.body, "Select a Mogger to inspect."); return end
+	local stats = Rules.characterStats(instance)
+	local visual = CharacterVisuals.get(instance.characterId)
+	local accent = rarityColor(stats.rarity)
+	local card = Theme.card(self.body, accent)
+	Theme.badge(card, string.upper(stats.rarity) .. "  •  " .. (if self.inspectOwned then "YOUR MOGGER" else "PUBLIC DISPLAY"), accent)
+	local stage = Theme.make("Frame", { Size = UDim2.new(1, 0, 0, 222), BackgroundTransparency = 1 }, card)
+	local portrait = Theme.portrait(stage, Theme.hex(stats.color), 212, instance.characterId)
+	portrait.AnchorPoint = Vector2.new(0.5, 0)
+	portrait.Position = UDim2.fromScale(0.5, 0)
+	local name = Theme.paragraph(card, string.upper(stats.name), accent)
+	name.Font = Enum.Font.GothamBlack
+	name.TextSize = 24
+	name.TextXAlignment = Enum.TextXAlignment.Center
+	Theme.paragraph(card, visual.description or "An original Mogville collectible with a style all its own.")
+	Theme.badge(card, "IDENTITY  " .. tostring(visual.identityId or instance.characterId), Theme.colors.cyan)
+	Theme.paragraph(card, "Form: " .. tostring(visual.form or "Standard") .. "\nMutation: " .. tostring(stats.mutation) .. "\nLevel: " .. tostring(instance.level or 1))
+	Theme.paragraph(card, "Collection status: " .. (if self.inspectOwned then "Owned" else "Displayed by another collector") .. "\nObtainable: " .. (if visual.enabled == false then "Unavailable in current rolls" else "Available in the active roster"))
+	Theme.badge(card, Theme.number(stats.income) .. " COINS / SEC    •    " .. Theme.number(stats.attack) .. " POWER", Theme.colors.gold)
+	Theme.paragraph(card, string.format("Health %s\nDefense %s\nSpeed %s\nSpecial ability: %s", Theme.number(stats.health), Theme.number(stats.defense), Theme.number(stats.speed), tostring(stats.ability)), Theme.colors.text)
+	local base = Config.Characters[instance.characterId]
+	Theme.paragraph(card, string.format("Base form stats before mutation/levels:\n%s Coins/sec · %s Attack\nHP %s · Defense %s · Speed %s", Theme.number(base.income), Theme.number(base.attack), Theme.number(base.health), Theme.number(base.defense), Theme.number(base.speed)))
+	local abilityDescriptions = {
+		["Strong Jaw"] = "A heavy special strike that turns raw strength into a focused hit.",
+		["Perfect Pose"] = "Strike while guarding and recovering some health.",
+		["Spotlight"] = "Deliver a powerful strike and recover a little health.",
+		["Intimidate"] = "Attack while suppressing your opponent's power for the round.",
+		["Final Form"] = "Release a tremendous special strike. Save it for the right moment.",
+	}
+	Theme.paragraph(card, abilityDescriptions[stats.ability] or "This original Mogger brings a distinctive special to the arena.")
+	if self.inspectOwned then
+		local displayed = contains(self.state.profile.placed, instance.uid)
+		Theme.button(card, if displayed then "Remove from my display" else "Display on my plot", function() self:act(if displayed then "Unequip" else "Equip", { uid = instance.uid }) end, Theme.colors.cyan)
+		Theme.paragraph(card, "Ownership instance: " .. tostring(instance.uid), Theme.colors.muted)
+	end
+	Theme.button(card, "Back to my collection", function() self:show("Inventory") end, Theme.colors.purple)
+end
 
 function UIController:renderUpgrades()
 	local profile = self.state.profile
@@ -489,7 +594,15 @@ local function combatSide(parent, side, heading, color)
 	Theme.label(card, heading, 16, color)
 	local unit = side and side.units and side.units[side.active]
 	if not unit then Theme.paragraph(card, "No active Mogger"); return end
-	Theme.label(card, unit.name, 21)
+	local row = Theme.make("Frame", { Size = UDim2.new(1, 0, 0, 122), BackgroundTransparency = 1 }, card)
+	Theme.portrait(row, color, 112, unit.characterId)
+	local name = Theme.label(row, unit.name, 20, color)
+	name.Position = UDim2.fromOffset(124, 2)
+	name.Size = UDim2.new(1, -124, 0, 72)
+	name.Font = Enum.Font.GothamBold
+	local ability = Theme.label(row, unit.ability or "Arena challenger", 13, Theme.colors.muted)
+	ability.Position = UDim2.fromOffset(124, 77)
+	ability.Size = UDim2.new(1, -124, 0, 38)
 	Theme.paragraph(card, string.format("HP %.0f / %.0f  ·  Power %.0f\nDefense %.0f · Speed %.0f", unit.hp, unit.maxHp, unit.attack, unit.defense, unit.speed))
 	local bar = Theme.make("Frame", { Size = UDim2.new(1, 0, 0, 10), BackgroundColor3 = Theme.colors.background, BorderSizePixel = 0 }, card)
 	Theme.corner(bar, 5)
@@ -570,6 +683,7 @@ function UIController:renderSettings()
 	Theme.label(card, "MAKE YOURSELF COMFORTABLE", 19, Theme.colors.cyan)
 	for _, setting in {
 		{ "reducedMotion", "Reduced motion", "Reveals show immediately without scaling animations." },
+		{ "lowEffects", "Low effects", "Reduce world particles, lights and reveal sparkles for a calmer display or smaller device." },
 		{ "sound", "Reveal sounds", "Toggle the short built-in reveal sound." },
 		{ "autoSkip", "Quick reveals", "Show all results immediately. This free preference never changes your rewards or server cooldown." },
 	} do
