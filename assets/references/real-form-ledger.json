@@ -1,0 +1,496 @@
+{
+  "schemaVersion": 1,
+  "note": "Stable form IDs are retained after photo withdrawal to protect owned instances.",
+  "forms": [
+    {
+      "id": "real_clavicular_classic",
+      "identityId": "clavicular",
+      "displayName": "Clavicular",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Mythic",
+        "income": 65,
+        "attack": 48,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_francisco_lachowski_classic",
+      "identityId": "francisco_lachowski",
+      "displayName": "Francisco Lachowski",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Divine",
+        "income": 165,
+        "attack": 66,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_henry_cavill_classic",
+      "identityId": "henry_cavill",
+      "displayName": "Henry Cavill",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Divine",
+        "income": 165,
+        "attack": 66,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_ernest_khalimov_classic",
+      "identityId": "ernest_khalimov",
+      "displayName": "Ernest Khalimov",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Ascended",
+        "income": 500,
+        "attack": 110,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_jordan_barrett_classic",
+      "identityId": "jordan_barrett",
+      "displayName": "Jordan Barrett",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Divine",
+        "income": 165,
+        "attack": 66,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_david_gandy_classic",
+      "identityId": "david_gandy",
+      "displayName": "David Gandy",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Uncommon",
+        "income": 7,
+        "attack": 20,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_sean_opry_classic",
+      "identityId": "sean_opry",
+      "displayName": "Sean O\u2019Pry",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Rare",
+        "income": 20,
+        "attack": 32,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_lucky_blue_smith_classic",
+      "identityId": "lucky_blue_smith",
+      "displayName": "Lucky Blue Smith",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Mythic",
+        "income": 65,
+        "attack": 48,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_jon_kortajarena_classic",
+      "identityId": "jon_kortajarena",
+      "displayName": "Jon Kortajarena",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Common",
+        "income": 2,
+        "attack": 12,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_marlon_teixeira_classic",
+      "identityId": "marlon_teixeira",
+      "displayName": "Marlon Teixeira",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Uncommon",
+        "income": 7,
+        "attack": 20,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_tyson_beckford_classic",
+      "identityId": "tyson_beckford",
+      "displayName": "Tyson Beckford",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Rare",
+        "income": 20,
+        "attack": 32,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_marcus_schenkenberg_classic",
+      "identityId": "marcus_schenkenberg",
+      "displayName": "Marcus Schenkenberg",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Mythic",
+        "income": 65,
+        "attack": 48,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_david_agbodji_classic",
+      "identityId": "david_agbodji",
+      "displayName": "David Agbodji",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Common",
+        "income": 2,
+        "attack": 12,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_alton_mason_classic",
+      "identityId": "alton_mason",
+      "displayName": "Alton Mason",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Uncommon",
+        "income": 7,
+        "attack": 20,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_pietro_boselli_classic",
+      "identityId": "pietro_boselli",
+      "displayName": "Pietro Boselli",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Rare",
+        "income": 20,
+        "attack": 32,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_alex_lundqvist_classic",
+      "identityId": "alex_lundqvist",
+      "displayName": "Alex Lundqvist",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Mythic",
+        "income": 65,
+        "attack": 48,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_noah_mills_classic",
+      "identityId": "noah_mills",
+      "displayName": "Noah Mills",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Common",
+        "income": 2,
+        "attack": 12,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_mathias_lauridsen_classic",
+      "identityId": "mathias_lauridsen",
+      "displayName": "Mathias Lauridsen",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Uncommon",
+        "income": 7,
+        "attack": 20,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_garrett_neff_classic",
+      "identityId": "garrett_neff",
+      "displayName": "Garrett Neff",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Rare",
+        "income": 20,
+        "attack": 32,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_kit_butler_classic",
+      "identityId": "kit_butler",
+      "displayName": "Kit Butler",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Mythic",
+        "income": 65,
+        "attack": 48,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_simon_nessman_classic",
+      "identityId": "simon_nessman",
+      "displayName": "Simon Nessman",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Common",
+        "income": 2,
+        "attack": 12,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_andres_velencoso_classic",
+      "identityId": "andres_velencoso",
+      "displayName": "Andr\u00e9s Velencoso",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Uncommon",
+        "income": 7,
+        "attack": 20,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_baptiste_giabiconi_classic",
+      "identityId": "baptiste_giabiconi",
+      "displayName": "Baptiste Giabiconi",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Rare",
+        "income": 20,
+        "attack": 32,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_clement_chabernaud_classic",
+      "identityId": "clement_chabernaud",
+      "displayName": "Cl\u00e9ment Chabernaud",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Mythic",
+        "income": 65,
+        "attack": 48,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_river_viiperi_classic",
+      "identityId": "river_viiperi",
+      "displayName": "River Viiperi",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Common",
+        "income": 2,
+        "attack": 12,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_kaysh_unresolved_classic",
+      "identityId": "kaysh_unresolved",
+      "displayName": "Kaysh",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Rare",
+        "income": 20,
+        "attack": 32
+      }
+    },
+    {
+      "id": "real_post_surgery_hexum_unresolved_classic",
+      "identityId": "post_surgery_hexum_unresolved",
+      "displayName": "Post-Surgery Hexum",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Rare",
+        "income": 20,
+        "attack": 32
+      }
+    },
+    {
+      "id": "real_chad_jaw_unresolved_classic",
+      "identityId": "chad_jaw_unresolved",
+      "displayName": "Chad Jaw (unverified label)",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Rare",
+        "income": 20,
+        "attack": 32,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Luxury-city visual upgrade
 
+**Historical V2 implementation notes.** V3 removes the generic mannequins and generated portrait faces and labels remaining architecture as a preview. Use [V3_STATUS.md](V3_STATUS.md) for current acceptance and import status; no original placeholder artwork or procedural model is presented as a final real-person asset.
+
 The working economy, persistence, inventory, quests and PvE services are retained. `EnvironmentBuilder` handles static city scenery; `WorldService` retains plot assignment, display rendering, pet cleanup and respawn behavior. `WorldEffectsController` performs local-only decorative animation in one loop, with distance culling and configurable budgets.
 
 ## Areas

@@ -1,7 +1,42 @@
 --!strict
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local CharacterVisuals = require(ReplicatedStorage:WaitForChild("Shared"):WaitForChild("CharacterVisuals"))
+local RunService = game:GetService("RunService")
 local Theme = {}
+local motionSettings = {}
+local animatedBorders = setmetatable({}, { __mode = "k" })
+local borderClock = 0
+
+function Theme.setMotionSettings(settings) motionSettings = settings or {} end
+
+-- One bounded local loop for visible rarity frames, never a loop per inventory card.
+RunService.RenderStepped:Connect(function(dt)
+	borderClock += dt
+	if borderClock < 1 / 20 then return end
+	borderClock = 0
+	local count, now = 0, os.clock()
+	for stroke, entry in animatedBorders do
+		local host = stroke.Parent
+		if not host then animatedBorders[stroke] = nil; continue end
+		local camera = workspace.CurrentCamera
+		local visible, ancestor = true, host
+		if camera and host:IsA("GuiObject") then
+			local position, size, viewport = host.AbsolutePosition, host.AbsoluteSize, camera.ViewportSize
+			visible = position.X + size.X >= 0 and position.Y + size.Y >= 0 and position.X <= viewport.X and position.Y <= viewport.Y
+		end
+		while visible and ancestor do
+			if ancestor:IsA("GuiObject") and not ancestor.Visible then visible = false; break end
+			ancestor = ancestor.Parent
+		end
+		if not visible or count >= 24 or motionSettings.lowEffects or motionSettings.reducedMotion then
+			stroke.Color = entry.color; stroke.Transparency = 0.08
+		else
+			count += 1
+			stroke.Color = if entry.prismatic then Color3.fromHSV((now * 0.12) % 1, 0.5, 1) else entry.color
+			stroke.Transparency = 0.08 + 0.22 * (0.5 + 0.5 * math.sin(now * 2.1 + entry.phase))
+		end
+	end
+end)
 
 Theme.colors = {
 	background = Color3.fromRGB(12, 9, 28),
@@ -156,75 +191,38 @@ function Theme.meter(parent: Instance, caption: string, fraction: number, color:
 	return holder
 end
 
--- Only approved Roblox asset IDs are accepted. Unset or inaccessible images keep
--- a distinctive procedural illustration visible; browser URLs are never used.
+-- Missing rights or photos stay unresolved. Never draw a substitute human face.
 function Theme.portrait(parent: Instance, color: Color3, size: number?, characterId: string?): Frame
 	local edge = size or 66
 	local visual = CharacterVisuals.get(characterId)
 	local portrait = Theme.make("Frame", {
-		Name = "CharacterPortrait",
-		Size = UDim2.fromOffset(edge, edge),
-		BackgroundColor3 = color:Lerp(Theme.colors.background, 0.45),
-		BorderSizePixel = 0,
+		Name = "CharacterPortrait", Size = UDim2.fromOffset(edge, edge),
+		BackgroundColor3 = color:Lerp(Theme.colors.background, 0.86), BorderSizePixel = 0,
 		ClipsDescendants = true,
 	}, parent)
-	Theme.corner(portrait, math.min(20, edge * 0.18))
-	Theme.stroke(portrait, color, 0.1).Thickness = 2
-	Theme.make("UIGradient", {
-		Color = ColorSequence.new(color:Lerp(Color3.new(1, 1, 1), 0.5), color:Lerp(Theme.colors.background, 0.6)),
-		Rotation = 45,
-	}, portrait)
-	local fallback = Theme.make("Frame", { Name = "OriginalIllustration", Size = UDim2.fromScale(1, 1), BackgroundTransparency = 1 }, portrait)
-	local seed = 17
-	for index = 1, #(visual.identityId or characterId or "rookie") do
-		seed = (seed * 31 + string.byte(visual.identityId or characterId or "rookie", index)) % 9973
-	end
-	for index = 1, 3 do
-		local stripe = Theme.make("Frame", {
-			Size = UDim2.fromScale(0.08, 1.5), Position = UDim2.fromScale(0.1 + index * 0.3, -0.2),
-			Rotation = 24, BackgroundColor3 = color:Lerp(Color3.new(1, 1, 1), 0.5), BackgroundTransparency = 0.8, BorderSizePixel = 0,
-		}, fallback)
-		stripe.ZIndex = 1
-	end
-	local shoulders = Theme.make("Frame", { Position = UDim2.fromScale(0.12, 0.7), Size = UDim2.fromScale(0.76, 0.5), BackgroundColor3 = color:Lerp(Theme.colors.background, 0.4), BorderSizePixel = 0 }, fallback)
-	Theme.corner(shoulders, edge * 0.2)
-	local skin = Color3.fromRGB(246 - seed % 45, 210 - seed % 60, 170 - seed % 55)
-	local face = Theme.make("Frame", {
-		AnchorPoint = Vector2.new(0.5, 0.5),
-		Position = UDim2.fromScale(0.5, 0.44),
-		Size = UDim2.fromScale(0.5 + (seed % 5) * 0.01, 0.59),
-		BackgroundColor3 = skin,
-		BorderSizePixel = 0,
-	}, fallback)
-	Theme.corner(face, edge * 0.11)
-	Theme.make("UIGradient", { Color = ColorSequence.new(Color3.new(1, 1, 1), Color3.fromRGB(214, 195, 182)), Rotation = 45 }, face)
-	local hairColor = Color3.fromHSV((seed % 100) / 100, 0.35, 0.12 + (seed % 3) * 0.16)
-	local hair = Theme.make("Frame", { Position = UDim2.fromScale(-0.03, -0.08), Size = UDim2.fromScale(1.06, 0.27 + (seed % 3) * 0.03), BackgroundColor3 = hairColor, BorderSizePixel = 0, Rotation = if seed % 2 == 0 then -5 else 3 }, face)
-	Theme.corner(hair, edge * 0.055)
-	for _, x in { 0.26, 0.67 } do
-		local eye = Theme.make("Frame", {
-			Position = UDim2.fromScale(x, 0.37),
-			Size = UDim2.fromScale(if seed % 3 == 0 then 0.23 else 0.12, if seed % 3 == 0 then 0.15 else 0.065),
-			BackgroundColor3 = Theme.colors.background,
-			BorderSizePixel = 0,
-		}, face)
-		Theme.corner(eye, edge * 0.025)
-		Theme.make("Frame", { Position = UDim2.fromScale(x - 0.02, 0.28), Size = UDim2.fromScale(0.18, 0.045), BackgroundColor3 = hairColor, BorderSizePixel = 0, Rotation = if x < 0.5 then -8 else 8 }, face)
-	end
-	Theme.make("Frame", {
-		Position = UDim2.fromScale(0.3, 0.74),
-		Size = UDim2.fromScale(0.4, 0.035),
-		BackgroundColor3 = Color3.fromRGB(136, 76, 97),
-		BorderSizePixel = 0,
-	}, face)
-	if visual.form == "Apex" or visual.form == "Ascended" or seed % 5 == 0 then
-		for index = 1, 3 do
-			Theme.make("Frame", { Position = UDim2.fromScale(0.22 + index * 0.12, 0.055), Size = UDim2.fromScale(0.12, if index == 2 then 0.17 else 0.12), Rotation = 45, BackgroundColor3 = Theme.colors.gold, BorderSizePixel = 0 }, fallback)
-		end
-	end
+	Theme.corner(portrait, 10)
+	Theme.stroke(portrait, color, 0.25).Thickness = 2
+	Theme.make("UIGradient", { Color = ColorSequence.new(Color3.new(1, 1, 1), Color3.fromRGB(112, 118, 152)), Rotation = 35 }, portrait)
+	local fallback = Theme.make("Frame", { Name = "UnresolvedPhoto", Size = UDim2.fromScale(1, 1), BackgroundTransparency = 1 }, portrait)
+	local icon = Theme.label(fallback, "▧", math.clamp(edge * 0.25, 20, 55), color)
+	icon.Size = UDim2.fromScale(1, 0.35)
+	icon.Position = UDim2.fromScale(0, 0.16)
+	icon.TextXAlignment = Enum.TextXAlignment.Center
+	local missing = Theme.label(fallback, "PHOTO NOT SUPPLIED", math.clamp(edge * 0.065, 9, 15), Theme.colors.text)
+	missing.Position = UDim2.fromScale(0.07, 0.52)
+	missing.Size = UDim2.fromScale(0.86, 0.2)
+	missing.TextXAlignment = Enum.TextXAlignment.Center
+	missing.TextScaled = true
+	Theme.make("UITextSizeConstraint", { MinTextSize = 8, MaxTextSize = 15 }, missing)
+	local status = Theme.label(fallback, if visual.referenceType == "RealPerson" then "PERMISSION / UPLOAD PENDING" else "LEGACY TEST CARD", math.clamp(edge * 0.045, 8, 11), Theme.colors.muted)
+	status.Position = UDim2.fromScale(0.07, 0.73)
+	status.Size = UDim2.fromScale(0.86, 0.17)
+	status.TextXAlignment = Enum.TextXAlignment.Center
+	status.TextScaled = true
+	Theme.make("UITextSizeConstraint", { MinTextSize = 7, MaxTextSize = 11 }, status)
 	local assetId = visual.portraitAssetId
-	if CharacterVisuals.validAssetId(assetId) then
-		local image = Theme.make("ImageLabel", { Name = "ApprovedPortrait", Size = UDim2.fromScale(1, 1), BackgroundTransparency = 1, Image = "rbxassetid://" .. string.format("%.0f", assetId), ScaleType = Enum.ScaleType.Crop, Visible = false, ZIndex = 3 }, portrait)
+	if visual.referenceType == "RealPerson" and visual.authenticPortraitReady == true and CharacterVisuals.validAssetId(assetId) then
+		local image = Theme.make("ImageLabel", { Name = "VerifiedAuthenticPhoto", Size = UDim2.fromScale(1, 1), BackgroundTransparency = 1, Image = "rbxassetid://" .. string.format("%.0f", assetId), ScaleType = Enum.ScaleType.Crop, Visible = false, ZIndex = 3 }, portrait)
 		local connection: RBXScriptConnection?
 		local function loaded()
 			if image.Parent and image.IsLoaded then
@@ -237,11 +235,52 @@ function Theme.portrait(parent: Instance, color: Color3, size: number?, characte
 		loaded()
 		task.delay(12, function()
 			if connection then connection:Disconnect() end
-			-- A failed moderation/network load deliberately leaves the original art.
 			if image.Parent and not image.IsLoaded then image:Destroy() end
 		end)
 	end
 	return portrait
+end
+
+function Theme.rarityBorder(parent: Instance, accent: Color3, rarity: string)
+	local stroke = Theme.stroke(parent, accent, 0.08)
+	stroke.Thickness = if rarity == "Ascended" then 3 else 2
+	if rarity == "Rare" or rarity == "Mythic" or rarity == "Divine" or rarity == "Ascended" then
+		animatedBorders[stroke] = { color = accent, prismatic = rarity == "Ascended", phase = #parent.Name * 0.6 }
+	end
+	return stroke
+end
+
+-- A consistent portrait-first card. Parent controls its final size for grids/reveals.
+function Theme.collectibleCard(parent: Instance, stats: any, visual: any, accent: Color3): Frame
+	local frame = Theme.make("Frame", { Name = "CollectibleCard", Size = UDim2.new(1, 0, 0, 346), BackgroundColor3 = Theme.colors.panel, BorderSizePixel = 0, ClipsDescendants = true }, parent)
+	Theme.corner(frame, 13)
+	Theme.rarityBorder(frame, accent, stats.rarity)
+	Theme.make("UIGradient", { Color = ColorSequence.new(Color3.fromRGB(246, 246, 255), Color3.fromRGB(129, 137, 171)), Rotation = 100 }, frame)
+	local rarity = Theme.label(frame, string.upper(stats.rarity), 12, accent)
+	rarity.Font = Enum.Font.GothamBlack
+	rarity.Position = UDim2.fromOffset(12, 7)
+	rarity.Size = UDim2.new(0.62, 0, 0, 21)
+	local power = Theme.label(frame, tostring(math.floor(stats.attack or 0)) .. " ATK", 12, Theme.colors.gold)
+	power.Position = UDim2.new(0.62, 0, 0, 7)
+	power.Size = UDim2.new(0.38, -12, 0, 21)
+	power.TextXAlignment = Enum.TextXAlignment.Right
+	local image = Theme.portrait(frame, accent, 190, stats.characterId)
+	image.Position = UDim2.fromOffset(10, 34)
+	image.Size = UDim2.new(1, -20, 0, 204)
+	local name = Theme.label(frame, stats.name or "UNRESOLVED", 19, Theme.colors.text)
+	name.Position = UDim2.fromOffset(12, 244)
+	name.Size = UDim2.new(1, -24, 0, 46)
+	name.Font = Enum.Font.GothamBlack
+	name.TextScaled = true
+	Theme.make("UITextSizeConstraint", { MinTextSize = 12, MaxTextSize = 20 }, name)
+	local variant = Theme.label(frame, tostring(visual.form or visual.variant or "Classic") .. "  /  " .. tostring(stats.mutation or "Normal"), 11, accent)
+	variant.Position = UDim2.fromOffset(12, 290)
+	variant.Size = UDim2.new(1, -24, 0, 20)
+	local income = Theme.label(frame, "+" .. Theme.number(stats.income) .. " COINS / SEC", 13, Theme.colors.gold)
+	income.Position = UDim2.fromOffset(12, 314)
+	income.Size = UDim2.new(1, -24, 0, 24)
+	income.Font = Enum.Font.GothamBold
+	return frame
 end
 
 return Theme

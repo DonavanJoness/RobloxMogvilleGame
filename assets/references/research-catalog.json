@@ -3,7 +3,7 @@
   "preparedAtUTC": "2026-10-28",
   "status": "ResearchBlocked",
   "namedCandidates": 25,
-  "unresolvedRequestedAliases": 2,
+  "unresolvedRequestedAliases": 3,
   "verifiedCandidates": 0,
   "licensedPortraits": 0,
   "clearedGameLikenesses": 0,
@@ -1057,6 +1057,43 @@
         "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
       ],
       "enabled": false
+    },
+    {
+      "candidateId": "chad_jaw_unresolved",
+      "displayName": "Chad Jaw (unverified label)",
+      "aliases": [
+        "Chad Jaw"
+      ],
+      "candidateType": "UnresolvedRequestedAlias",
+      "sourceURL": null,
+      "sourceURLStatus": "NoVerifiedSource",
+      "verifiedSourceURLs": [],
+      "identityStatus": "UnresolvedDoNotGuess",
+      "adultStatus": "UnverifiedNoPortraitSelected",
+      "researchStatus": "ResearchBlocked",
+      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "photographer": null,
+      "license": null,
+      "commercialRights": null,
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "NeedsApproval",
+      "portraitFile": null,
+      "enabled": false,
+      "suggestedGameplay": {
+        "rarity": "Rare",
+        "income": 20,
+        "attack": 32,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "User-provided alias has no verified identity; never assign a guessed person or an unrelated photo."
+      ]
     }
   ]
 }

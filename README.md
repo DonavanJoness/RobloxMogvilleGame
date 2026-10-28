@@ -1,10 +1,10 @@
 # MOGVILLE: Roll to Ascend
 
-An original Roblox collection simulator built with Luau and Rojo. The game creates its luxury city, character models, pets and interface procedurally. It requires no Toolbox models, uploaded artwork, paid assets, runtime packages or credentials to play in Studio memory mode.
+An original Roblox collection simulator built with Luau and Rojo. The game provides an original layout preview, card UI and approved-template integration. Final 3D models and real photographs remain required. It requires no Toolbox models, uploaded artwork, paid assets, runtime packages or credentials to play in Studio memory mode.
 
-**City and portrait update:** 24 original collectible forms, public character inspection, portrait-ready reveals/inventory/battles/plot cards, a fountain plaza, gacha hall, circular arena, gym, shops, ascension deck and decorated collector plots. [City details](docs/CITY_UPGRADE.md) · [Portrait/import guide](docs/PORTRAIT_PIPELINE.md) · [Provisional research catalog](assets/references/research-catalog.md).
+**V3 card-layout preview:** prominent Spin controls, collection grids, sealed-card roulette, a clearance catalog, template-first R15 display/NPC loading, and eight district import slots. [V3 status and exact remaining work](docs/V3_STATUS.md).
 
-**Research status:** live source requests were denied by the network policy. The catalog has 25 provisional candidates plus two unresolved labels; **zero verified identities, licensed real-person portraits or cleared likenesses**. All remain disabled research entries. The 24 local approved PNGs are original geometric placeholders; Roblox upload IDs remain zero, and the game uses procedural portrait fallbacks.
+**Not acceptance-complete:** the supplied [Build a Soccer Team reference](https://www.roblox.com/games/94164742020505/Build-a-Soccer-Team), Creator Store and photo sources are blocked by the current proxy. No real photo, premade model or Roblox upload was verified. All 28 real-person reference records remain unobtainable; missing art is explicitly labelled. The generated V2 face PNGs and face fallbacks have been removed. Existing original IDs remain a clearly labelled legacy test collection so gameplay and old saves still work. The remaining procedural architecture is a preview, not final high-quality imported art.
 
 **Status:** the core gameplay is implemented and the Rojo place builds. Automated logic and mocked service tests run on Linux. **Roblox Studio acceptance is pending**: this environment cannot run Studio, verify the appearance on devices, or demonstrate a real leave/rejoin DataStore session. Do not treat this as a production-tested release.
 
@@ -12,8 +12,8 @@ An original Roblox collection simulator built with Luau and Rojo. The game creat
 
 Download the ready-to-open game from GitHub:
 
-- **[Mogville-place.zip](https://github.com/DonavanJoness/RobloxMogvilleGame/raw/refs/heads/main/downloads/Mogville-place.zip)** — extract it, then open `Mogville.rbxl` in Studio.
-- **[Mogville.rbxl](https://github.com/DonavanJoness/RobloxMogvilleGame/raw/refs/heads/main/downloads/Mogville.rbxl)** — the same place without ZIP packaging.
+- **[Mogville-place.zip](https://github.com/DonavanJoness/RobloxMogvilleGame/raw/refs/heads/v3-card-layout-preview/downloads/Mogville-place.zip)** — extract it, then open `Mogville.rbxl` in Studio.
+- **[Mogville.rbxl](https://github.com/DonavanJoness/RobloxMogvilleGame/raw/refs/heads/v3-card-layout-preview/downloads/Mogville.rbxl)** — the same place without ZIP packaging.
 
 If your browser shows the GitHub file page, select **Download raw file**. Sign into the GitHub account with repository access if prompted. The editable project is also available through GitHub's **Code → Download ZIP** button.
 
@@ -40,7 +40,7 @@ cd /workspace/RobloxMogvilleGame
 bash tools/install.sh
 ```
 
-This installs **Rojo 7.5.1** and **Luau 0.690** to ignored `.tools/bin`, checks pinned SHA-256 values for the official release archives, installs the pinned Pillow asset-processing tool, prepares approved local portraits, compiles every source/test script, runs Luau and Python tests, and builds both `.rbxlx` and `.rbxl` places plus the ZIP/source downloads. TLS verification remains enabled. Existing source images and owner manifest assignments are preserved; generated mappings/outputs are refreshed.
+This installs **Rojo 7.5.1** and **Luau 0.690** to ignored `.tools/bin`, checks pinned SHA-256 values for the official release archives, installs the pinned Pillow asset-processing tool, prepares approved authentic local photographs, compiles every source/test script, runs Luau and Python tests, and builds both `.rbxlx` and `.rbxl` places plus the ZIP/source downloads. TLS verification remains enabled. Existing source images and owner manifest assignments are preserved; generated mappings/outputs are refreshed.
 
 After installation:
 
@@ -94,7 +94,8 @@ tests/                       Pure rules and mocked production-service tests
 tools/                       Pinned tool install and test runner
 docs/TESTING.md               Studio acceptance and release checklist
 docs/ARCHITECTURE.md          Design and remaining phase scope
-assets/characters/           Approved original placeholders, manifest, normalized PNGs
+assets/characters/           Authentic-photo manifest and pending per-person references
+assets/models/approved/      Owner-reviewed local R15 and architecture templates
 assets/references/           Provisional research and documented access failures
 ```
 
@@ -105,7 +106,7 @@ UI is generated under PlayerGui by a LocalScript, and the map under Workspace by
 Edit **`src/shared/Config.luau`**:
 
 - `Game.Title` changes the title in the map and HUD.
-- `Characters` is keyed by stable form IDs. `CharacterCatalog` supplies original identity/form descriptions and twelve new forms; legacy definitions keep their IDs and stats. Add new definitions there with known rarity, positive selection weight, stats, supported ability, color, identity and form. Do not rename saved IDs without a migration. `enabled=false` excludes new rolls while retaining owned units; `mutationEligible=false` forces Normal. `PortraitAssets` is generated from the approved asset manifest. WorldService generates form-themed mannequins automatically.
+- `Characters` is keyed by stable form IDs. `CharacterCatalog` supplies original identity/form descriptions and twelve new forms; legacy definitions keep their IDs and stats. Add new definitions there with known rarity, positive selection weight, stats, supported ability, color, identity and form. Do not rename saved IDs without a migration. `enabled=false` excludes new rolls while retaining owned units; `mutationEligible=false` forces Normal. `PortraitAssets` is generated from the approved asset manifest. WorldService requests approved form-specific R15 templates and reports missing models explicitly.
 - `Rarities` defines centralized base weights: 55 / 25 / 12 / 5 / 2.5 / 0.5. They are normalized over eligible rarities. Every character within a rarity has its own selection weight.
 - `Mutations` defines an independent weighted roll and income/power multipliers. The current five probabilities total 100%.
 - `Upgrades`, `Pets`, `Progression`, inventory limits and offline caps are editable. Preserve existing IDs and schema compatibility when publishing updates.
@@ -122,13 +123,13 @@ ShopService contains server-side ownership verification and a prompt path for co
 
 ## Publishing
 
-Build/open the place, complete the Studio acceptance checklist, then use **File → Publish to Roblox** into your own test experience. In Creator Dashboard configure the intended devices and **maximum server size of 12** (plots are configurable, but this initial world has 12). Verify published-server DataStore access and two-player behavior before making it public. Upload approved art/audio or products only when ready; none are required by the current procedural build.
+Build/open the place, complete the Studio acceptance checklist, then use **File → Publish to Roblox** into your own test experience. In Creator Dashboard configure the intended devices and **maximum server size of 12** (plots are configurable, but this initial world has 12). Verify published-server DataStore access and two-player behavior before making it public. The legacy test workflow runs without uploaded art. V3 production acceptance requires approved real photos, customized rigs and final architecture.
 
 Before public release, add a data migration/backup policy, observe live save budgets and latency, and recheck current Roblox purchase policies if enabling any paid random-reward modifier. Do not enable global limited stock or developer products without their transactional systems and acceptance tests.
 
 ## Delivered scope and limits
 
-- Implemented: the existing starter/plots/economy/gacha/saving/PvE/progression loop, expanded to 24 original forms, portrait-ready UI and inspection, a detailed luxury city, decorated plots, bounded client-local effects, low-effects mode, and an approval-gated local image pipeline.
+- Implemented: the existing starter/plots/economy/gacha/saving/PvE/progression loop, preserved as a labelled legacy test collection, with V3 card UI/inspection, authenticated-photo gates, reviewed R15 template loading, NPC dialogue and eight district import pivots. Final visual assets remain blocked.
 - Automated: rules, affordability/ownership/ID consistency, combat and real service code under mocks; Luau compilation and Rojo build.
 - **Still requires Studio:** the full Phase 1 acceptance loop including rejoining, actual multiplayer, real DataStores, device layout/input, sounds, physics and visual performance.
 - Later/manual work: unblock and complete live candidate/image research; obtain copyright and applicable likeness approvals; upload approved portraits and supply actual IDs; Studio/device verification; consent-based PvP, global stock/boards, premium fulfillment, daily quests and XP/evolution (forms are already separate collectibles).

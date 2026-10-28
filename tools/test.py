@@ -57,8 +57,12 @@ def bundle():
 
         source = re.sub(r"require\(([^()]+)\)", replace, source)
         if key.startswith("src/server/Services/"):
-            source = ('local Runtime = __require("tests/runtime.luau")\n'
-                      'local game, workspace, task, warn = Runtime.game, Runtime.workspace, Runtime.task, Runtime.warn\n'
+            asset_service = path.stem in {"AssetLoadingService", "CharacterAppearanceService"}
+            runtime = "tests/asset-runtime.luau" if asset_service else "tests/runtime.luau"
+            if asset_service:
+                add(ROOT / runtime)
+            source = (f'local Runtime = __require({json.dumps(runtime)})\n'
+                      'local game, workspace, task, warn, Enum = Runtime.game, Runtime.workspace, Runtime.task, Runtime.warn, Runtime.Enum\n'
                       + source)
         modules[key] = source
         return key

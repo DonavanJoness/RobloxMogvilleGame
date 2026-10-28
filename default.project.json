@@ -8,6 +8,9 @@
     "ServerScriptService": {
       "MogvilleServer": { "$path": "src/server" }
     },
+    "ServerStorage": {
+      "ApprovedAssets": { "$path": "assets/models/approved" }
+    },
     "StarterPlayer": {
       "$properties": { "CameraMaxZoomDistance": 100, "CameraMinZoomDistance": 8 },
       "StarterPlayerScripts": {

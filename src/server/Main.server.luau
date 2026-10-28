@@ -17,8 +17,16 @@ local Shop = require(Services.ShopService).new()
 local Boards = require(Services.LeaderboardService)
 local GuardModule = require(Services.NetworkGuard)
 local Guard = GuardModule.new()
+local Assets = require(Services.AssetLoadingService).new()
+local NPCs = require(Services.NPCInteractionService).new(Assets)
 
 World:build()
+NPCs:build(World.root)
+for key, slot in World.cityInfo.assetSlots or {} do
+	local loaded, reason = Assets:clone(key, slot, slot:GetPivot())
+	slot:SetAttribute("AssetStatus", if loaded then "ApprovedTemplate" else "Missing")
+	if reason then slot:SetAttribute("AssetBlocker", reason) end
+end
 local network = Instance.new("Folder")
 network.Name = "Network"
 network.Parent = ReplicatedStorage
@@ -166,6 +174,7 @@ end)
 -- Central income and lightweight HUD updates; inventory is sent only when changed.
 local incomeClock, hudClock, boardClock = 0, 0, 0
 RunService.Heartbeat:Connect(function(dt)
+	NPCs:tick(dt)
 	incomeClock += dt; hudClock += dt; boardClock += dt
 	if incomeClock >= 1 then
 		Economy:tick(incomeClock); incomeClock = 0

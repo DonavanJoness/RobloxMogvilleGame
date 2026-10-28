@@ -58,6 +58,6 @@ function collection:GetTagged(name)local result={}for _,obj in tags[name]or{}do 
 local replicated=Instance.new('ReplicatedStorage')
 local shared=Instance.new('Folder');shared.Name='Shared';shared.Parent=replicated
 local workspace=Instance.new('Workspace')
-local services={CollectionService=collection,Lighting=Instance.new('Lighting'),Workspace=workspace,ReplicatedStorage=replicated}
+local services={CollectionService=collection,Lighting=Instance.new('Lighting'),Workspace=workspace,ReplicatedStorage=replicated,ServerStorage=Instance.new('ServerStorage')}
 game={GetService=function(_,name)return assert(services[name],'Missing service '..name)end}
 task={spawn=function(fn,...)return fn(...)end}

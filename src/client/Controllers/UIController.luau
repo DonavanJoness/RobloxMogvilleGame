@@ -112,13 +112,23 @@ function UIController:build()
 		ScrollBarImageColor3 = Theme.colors.purple,
 	}, self.gui)
 	Theme.padding(nav, 8)
-	Theme.list(nav, 8, true)
-	local icons = { Roll = "✦", Inventory = "▣", Team = "◆", Battle = "⚔", Pets = "♥", Upgrades = "+", Quests = "★", Shop = "$", Settings = "⚙", Home = "⌂" }
-	for index, menu in { "Roll", "Inventory", "Team", "Battle", "Pets", "Upgrades", "Quests", "Shop", "Settings", "Home" } do
-		local button = Theme.button(nav, icons[menu] .. " " .. menu, function() self:show(menu) end, if menu == "Roll" then Theme.colors.gold else Theme.colors.cyan)
+	self.nav = nav
+	self.navLayout = Theme.list(nav, 8, true)
+	self.navButtons = {}
+	local icons = { Roll = "✦", Inventory = "▣", Team = "◆", Battle = "⚔", Pets = "♥", Upgrades = "+", Quests = "★", Shop = "$", Settings = "⚙", Home = "⌂", RealRoster = "▧" }
+	for index, menu in { "Inventory", "RealRoster", "Roll", "Team", "Battle", "Pets", "Upgrades", "Quests", "Shop", "Settings", "Home" } do
+		local button = Theme.button(nav, icons[menu] .. " " .. (if menu == "RealRoster" then "Real Moggers" else menu), function() self:show(menu) end, if menu == "Roll" then Theme.colors.gold else Theme.colors.cyan)
 		button.Size = UDim2.fromOffset(if menu == "Inventory" or menu == "Upgrades" then 100 else 82, 46)
 		button.LayoutOrder = index
+		table.insert(self.navButtons, button)
 	end
+	self.spinButton = Theme.button(self.gui, "SPIN  •  " .. Theme.number(Config.Game.RollCost) .. " COINS", function()
+		if not self.state then self:toast("Your collection is still loading."); return end
+		self:act("Roll", { count = 1 })
+	end, Theme.colors.gold)
+	self.spinButton.Name = "PrimarySpin"
+	self.spinButton.AnchorPoint = Vector2.new(0.5, 1)
+	self.spinButton.Font = Enum.Font.GothamBlack
 	self.panel = Theme.make("Frame", {
 		Name = "Menu", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.new(0.5, 0, 0, 126),
 		Size = UDim2.new(0.94, 0, 1, -204), BackgroundColor3 = Theme.colors.panel,
@@ -158,21 +168,39 @@ function UIController:build()
 	self.gui:GetPropertyChangedSignal("AbsoluteSize"):Connect(function() self:layout() end)
 	self:layout()
 	self:render()
+	self.panel.Visible = false -- Start with the collection plaza visible, not a modal covering the world.
 end
 
 function UIController:layout()
-	-- A shorter HUD leaves more scrolling room on phones rotated into landscape.
-	local compact = self.gui.AbsoluteSize.Y < 480
-	local panelTop = if compact then 88 else 126
-	self.hud.Size = UDim2.new(1, 0, 0, if compact then 80 else 114)
-	self.subtitle.Visible = not compact
-	self.title.TextSize = if compact then 16 else 18
-	self.title.Position = UDim2.new(0.04, 0, 0, if compact then 2 else 6)
+	local size = self.gui.AbsoluteSize
+	local mobile = size.X < 780
+	local compact = size.Y < 480
+	local hudHeight = if compact then 76 else 92
+	self.hud.Position = UDim2.fromOffset(if mobile then 0 else 156, 0)
+	self.hud.Size = UDim2.new(1, if mobile then 0 else -156, 0, hudHeight)
+	self.subtitle.Visible = false
+	self.title.TextSize = if compact then 14 else 18
+	self.title.Position = UDim2.new(0.025, 0, 0, 3)
+	self.title.Size = UDim2.new(0.95, 0, 0, 24)
 	for index, frame in self.statFrames do
-		frame.Position = UDim2.new(0.04 + (index - 1) * 0.31, 0, 0, if compact then 28 else 60)
+		frame.Position = UDim2.new(0.025 + (index - 1) * 0.32, 0, 0, if compact then 27 else 35)
+		frame.Size = UDim2.new(0.31, 0, 0, 44)
 	end
-	self.panel.Position = UDim2.new(0.5, 0, 0, panelTop)
-	self.panel.Size = UDim2.new(0.94, 0, 1, -(panelTop + 78))
+	self.nav.AnchorPoint = Vector2.new(0, if mobile then 1 else 0)
+	self.nav.Position = if mobile then UDim2.new(0, 0, 1, 0) else UDim2.fromOffset(10, 12)
+	self.nav.Size = if mobile then UDim2.new(1, 0, 0, 62) else UDim2.new(0, 136, 1, -24)
+	self.navLayout.FillDirection = if mobile then Enum.FillDirection.Horizontal else Enum.FillDirection.Vertical
+	self.nav.AutomaticCanvasSize = if mobile then Enum.AutomaticSize.X else Enum.AutomaticSize.Y
+	self.nav.ScrollingDirection = if mobile then Enum.ScrollingDirection.X else Enum.ScrollingDirection.Y
+	for _, button in self.navButtons do button.Size = if mobile then UDim2.fromOffset(104, 46) else UDim2.new(1, -2, 0, 46) end
+	local top = hudHeight + 10
+	self.panel.AnchorPoint = if mobile then Vector2.new(0.5, 0) else Vector2.new(0, 0)
+	self.panel.Position = if mobile then UDim2.new(0.5, 0, 0, top) else UDim2.fromOffset(164, top)
+	self.panel.Size = if mobile then UDim2.new(0.94, 0, 1, -(top + 144)) else UDim2.new(1, -184, 1, -(top + 92))
+	self.spinButton.Position = UDim2.new(0.5, if mobile then 0 else 68, 1, if mobile then -72 else -20)
+	self.spinButton.Size = UDim2.fromOffset(if mobile then math.min(292, size.X - 28) else 320, if compact then 48 else 56)
+	self.toastLabel.Position = UDim2.new(0.5, if mobile then 0 else 68, 1, if mobile then -134 else -86)
+	if self.state and self.panel.Visible and (self.menu == "Inventory" or self.menu == "Team") then self:render() end
 end
 
 function UIController:toast(message, isError)
@@ -222,7 +250,7 @@ function UIController:show(menu)
 	self.menu = menu
 	self.panel.Visible = true
 	self.signature = ""
-	self.heading.Text = string.upper(if menu == "Roll" then "THE SPOTLIGHT" else menu)
+	self.heading.Text = string.upper(if menu == "Roll" then "CARD SPIN" elseif menu == "RealRoster" then "REAL MOGGERS • CLEARANCE" else menu)
 	self.toolbar:ClearAllChildren()
 	local inventory = menu == "Inventory" or menu == "Team"
 	self.toolbar.Visible = inventory
@@ -267,6 +295,7 @@ function UIController:updateHUD()
 	local profile = state.profile
 	local rank = state.rank
 	local rankName = if type(rank) == "table" then rank.name else tostring(rank or "Beginner")
+	self.spinButton.Text = "SPIN  •  " .. Theme.number(Config.Game.RollCost) .. " COINS"
 	self.subtitle.Text = string.format("%s  •  Displays %d/%d  •  Pity %d/20 · %d/100", rankName, #(profile.placed or {}), math.min(Config.Game.MaxSlots, Config.Game.BaseSlots + (profile.upgrades.slots or 0)), profile.pity.rare, profile.pity.mythic)
 	self:updateBoostDisplay()
 end
@@ -286,7 +315,10 @@ end
 
 function UIController:update(state)
 	if type(state) ~= "table" or type(state.profile) ~= "table" then return end
+	local firstState = self.state == nil
 	self.state = state
+	Theme.setMotionSettings(state.profile.settings or {})
+	if firstState then self:toast("Open Inventory and place your starter. Real-photo cards remain locked until cleared.") end
 	if self.effects then self.effects:setSettings(state.profile.settings or {}) end
 	self:updateHUD()
 	if self.panel.Visible then
@@ -328,8 +360,8 @@ end
 
 function UIController:renderHome()
 	local card = Theme.card(self.body, Theme.colors.gold)
-	Theme.badge(card, "WELCOME TO STARTER SQUARE", Theme.colors.cyan)
-	Theme.label(card, "YOUR GLOW-UP STARTS HERE", 20, Theme.colors.gold)
+	Theme.badge(card, "MOGVILLE • COLLECTOR PLAZA", Theme.colors.cyan)
+	Theme.label(card, "BUILD YOUR COLLECTION", 20, Theme.colors.gold)
 	local heroes = Theme.make("Frame", { Size = UDim2.new(1, 0, 0, 94), BackgroundTransparency = 1 }, card)
 	for index, id in { "young_rookie", "golden_chad", "apex_mogger" } do
 		local definition = Config.Characters[id]
@@ -340,7 +372,7 @@ function UIController:renderHome()
 			Theme.make("UIAspectRatioConstraint", { AspectRatio = 1, DominantAxis = Enum.DominantAxis.Width }, portrait)
 		end
 	end
-	Theme.paragraph(card, "Your first Common Mogger is waiting in Inventory. Display it on your plot to start earning coins, then roll for your next star.")
+	Theme.paragraph(card, "Your existing starter is waiting in the Legacy Test Collection. Display it to earn Coins and test the gameplay loop. Real-person cards are separate and stay locked until their authentic photos and permissions are verified.")
 	Theme.button(card, "1 · Place your starter", function() self:show("Inventory") end, Theme.colors.cyan)
 	Theme.button(card, "2 · Roll a new Mogger", function() self:show("Roll") end, Theme.colors.gold)
 	Theme.button(card, "3 · Build a battle team", function() self:show("Team") end)
@@ -348,7 +380,7 @@ function UIController:renderHome()
 	Theme.label(guide, "A LITTLE LUCK. A LOT OF STYLE.", 17)
 	Theme.paragraph(guide, "Displayed characters earn coins while you play. Battle teams are separate: your favorite Mogger can earn income and fight. Pets, upgrades, quests and ascension grow your collection without Robux.")
 	Theme.paragraph(guide, "Close this panel to explore Starter Square. Walk up to the glowing stations or use the navigation bar. Swipe the bar sideways on a phone.")
-	Theme.paragraph(guide, "Higher rarity and mutation improve fictional character stats. These are never ratings of real players.")
+	Theme.paragraph(guide, "Legacy cards keep your saved progress playable. They are not photographs or real-person replacements. Open Real Moggers to see the unresolved authentic-photo catalog.")
 	if self.state.persistenceMode and string.find(string.lower(self.state.persistenceMode), "memory", 1, true) then
 		Theme.paragraph(guide, "Save mode: " .. tostring(self.state.persistenceMode) .. ". Studio memory sessions are temporary; use the documented isolated DataStore test mode to verify rejoining.", Theme.colors.gold)
 	end
@@ -357,9 +389,14 @@ end
 function UIController:renderRoll()
 	local state = self.state
 	local banner = Theme.card(self.body, Theme.colors.gold)
-	Theme.badge(banner, "✦  THE DAILY GLOW-UP  ✦", Theme.colors.purple)
-	Theme.label(banner, "STARTER SQUARE · ALL-STARS", 20, Theme.colors.gold)
-	Theme.paragraph(banner, "Original Moggers. Six rarities. One next step toward Ascension.")
+	Theme.badge(banner, "✦  SERVER-DECIDED CARD SPIN  ✦", Theme.colors.purple)
+	local containsReal = false
+	for _, outcome in state.odds or {} do
+		local definition = Config.Characters[outcome.characterId]
+		if definition and definition.referenceType == "RealPerson" then containsReal = true; break end
+	end
+	Theme.label(banner, if containsReal then "ACTIVE CARD PACK" else "LEGACY TEST PACK", 20, Theme.colors.gold)
+	Theme.paragraph(banner, "Existing saved collectibles keep the gameplay loop testable. Authentic real-person cards are not obtainable until approved photos are uploaded.")
 	rowButtons(banner, {
 		{ "Roll · " .. Theme.number(Config.Game.RollCost), function() self:act("Roll", { count = 1 }) end, Theme.colors.gold },
 		{ "10× · " .. Theme.number(Config.Game.RollCost * 10), function() self:act("Roll", { count = 10 }) end, Theme.colors.cyan },
@@ -402,8 +439,8 @@ end
 function UIController:inventoryCards(teamMode)
 	local profile = self.state.profile
 	local header = Theme.card(self.body, Theme.colors.cyan)
-	Theme.label(header, if teamMode then "MOG-OFF LINEUP · " .. tostring(#profile.team) .. "/3" else "YOUR COLLECTION · " .. tostring(#profile.characters), 18, Theme.colors.cyan)
-	Theme.paragraph(header, if teamMode then "Tap Add to team on up to three characters. Reserves can switch in during a Mog-Off. Display assignments stay independent." else "Display Moggers to earn coins. Sort, search or inspect the stats below. Duplicate characters have their own unique ownership IDs.")
+	Theme.label(header, if teamMode then "MOG-OFF LINEUP · " .. tostring(#profile.team) .. "/3" else "OWNED COLLECTION · " .. tostring(#profile.characters), 18, Theme.colors.cyan)
+	Theme.paragraph(header, if teamMode then "Select up to three owned cards. Display assignments stay separate." else "Legacy test cards are labelled explicitly. Real-person cards require approved authentic photos and successful image uploads; missing photos are never replaced by invented faces.")
 	local characters = table.clone(profile.characters)
 	table.sort(characters, function(a, b)
 		local sa, sb = Rules.characterStats(a), Rules.characterStats(b)
@@ -411,50 +448,60 @@ function UIController:inventoryCards(teamMode)
 		local vb = if self.sort == "Income" then sb.income elseif self.sort == "Power" then sb.attack else rarityIndex(sb.rarity)
 		return if va == vb then a.uid < b.uid else va > vb
 	end)
-	local found = 0
+	local width = math.max(220, self.body.AbsoluteSize.X - 14)
+	local columns = math.clamp(math.floor((width + 12) / 232), 1, 3)
+	local found, row = 0, nil
 	for _, instance in characters do
 		local stats = Rules.characterStats(instance)
 		if not string.find(string.lower(stats.name), string.lower(self.search), 1, true) then continue end
+		local column = found % columns
+		if column == 0 then row = Theme.make("Frame", { Name = "CollectionRow", Size = UDim2.new(1, -4, 0, 454), BackgroundTransparency = 1 }, self.body) end
 		found += 1
-		local accent = rarityColor(stats.rarity)
-		local card = Theme.card(self.body, accent)
-		local row = Theme.make("Frame", { Size = UDim2.new(1, 0, 0, 108), BackgroundTransparency = 1 }, card)
-		Theme.portrait(row, Theme.hex(stats.color), 98, instance.characterId)
-		local name = Theme.label(row, stats.name, 19, accent)
-		name.Position = UDim2.fromOffset(112, 0)
-		name.Size = UDim2.new(1, -112, 0, 56)
-		name.Font = Enum.Font.GothamBold
-		local detail = Theme.label(row, tostring(stats.rarity) .. " · " .. tostring(stats.mutation), 13)
-		detail.Position = UDim2.fromOffset(112, 62)
-		detail.Size = UDim2.new(1, -112, 0, 40)
-		Theme.paragraph(card, string.format("%s coins/sec  •  %s power\nHP %s · Defense %s · Speed %s\nAbility: %s", Theme.number(stats.income), Theme.number(stats.attack), Theme.number(stats.health), Theme.number(stats.defense), Theme.number(stats.speed), tostring(stats.ability)))
-		local displayed = contains(profile.placed, instance.uid)
-		local teamed = contains(profile.team, instance.uid)
-		if teamMode then
-			rowButtons(card, {
-				{ "Inspect", function() self:inspect(instance.uid) end, Theme.colors.purple },
-				{ if teamed then "Remove from team" else "Add to team", function()
+		local holder = Theme.make("Frame", { Size = UDim2.new(1 / columns, -12 * (columns - 1) / columns, 1, 0), Position = UDim2.new(column / columns, column * 12 / columns, 0, 0), BackgroundTransparency = 1 }, row)
+		local visual = CharacterVisuals.get(instance.characterId)
+		Theme.collectibleCard(holder, stats, visual, rarityColor(stats.rarity))
+		local inspect = Theme.button(holder, "INSPECT CARD", function() self:inspect(instance.uid) end, Theme.colors.card)
+		inspect.Position = UDim2.fromOffset(0, 354)
+		local displayed, teamed = contains(profile.placed, instance.uid), contains(profile.team, instance.uid)
+		local action = Theme.button(holder, if teamMode then (if teamed then "REMOVE FROM TEAM" else "ADD TO TEAM") else (if displayed then "REMOVE DISPLAY" else "DISPLAY ON PLOT"), function()
+			if teamMode then
 				local uids = table.clone(self.state.profile.team)
 				local index = table.find(uids, instance.uid)
 				if index then table.remove(uids, index) else table.insert(uids, instance.uid) end
 				self:act("SetTeam", { uids = uids })
-			end, if teamed then Theme.colors.card else Theme.colors.cyan },
-			})
-		else
-			rowButtons(card, {
-				{ "Inspect", function() self:inspect(instance.uid) end, Theme.colors.purple },
-				{ if displayed then "Remove display" else "Display Mogger", function()
-				self:act(if displayed then "Unequip" else "Equip", { uid = instance.uid })
-			end, if displayed then Theme.colors.gold else Theme.colors.cyan },
-			})
-		end
-		Theme.paragraph(card, (if displayed then "● Earning on your plot   " else "") .. (if teamed then "● Battle team" else ""), Theme.colors.green)
+			else self:act(if displayed then "Unequip" else "Equip", { uid = instance.uid }) end
+		end, if (teamMode and teamed) or (not teamMode and displayed) then Theme.colors.gold else Theme.colors.cyan)
+		action.Position = UDim2.fromOffset(0, 406)
 	end
-	if found == 0 then empty(self.body, "No Moggers match that search.") end
+	if found == 0 then empty(self.body, "No owned cards match that search.") end
 end
 
 function UIController:renderInventory() self:inventoryCards(false) end
 function UIController:renderTeam() self:inventoryCards(true) end
+
+function UIController:renderRealRoster()
+	local info = Theme.card(self.body, Theme.colors.gold)
+	Theme.label(info, "AUTHENTIC PEOPLE. VERIFIED PHOTOS ONLY.", 18, Theme.colors.gold)
+	Theme.paragraph(info, "No generated or unrelated face substitutes are used. A named candidate stays unobtainable until identity, photo copyright, applicable likeness rights and a successful Roblox upload are recorded. Source verification is still blocked; these are research leads.")
+	local entries = {}
+	for id, entry in Config.RealMoggers or {} do table.insert(entries, { id = id, entry = entry }) end
+	table.sort(entries, function(a, b) return tostring(a.entry.displayName or a.id) < tostring(b.entry.displayName or b.id) end)
+	if #entries == 0 then empty(self.body, "The real-person clearance catalog is not available yet. No authentic-photo cards have been enabled.") end
+	for _, item in entries do
+		local entry = item.entry
+		local card = Theme.card(self.body, Theme.colors.muted)
+		local row = Theme.make("Frame", { Size = UDim2.new(1, 0, 0, 112), BackgroundTransparency = 1 }, card)
+		Theme.portrait(row, Theme.colors.muted, 104, item.id)
+		local name = Theme.label(row, entry.displayName or entry.name or item.id, 19)
+		name.Position = UDim2.fromOffset(116, 2); name.Size = UDim2.new(1, -116, 0, 52)
+		name.TextScaled = true
+		Theme.make("UITextSizeConstraint", { MinTextSize = 11, MaxTextSize = 19 }, name)
+		local status = Theme.label(row, tostring(entry.imageStatus or "PermissionRequired") .. "\n" .. (if entry.obtainable == true then "Cleared and obtainable" else "LOCKED • NOT OBTAINABLE"), 12, Theme.colors.gold)
+		status.Position = UDim2.fromOffset(116, 56); status.Size = UDim2.new(1, -116, 0, 54)
+		Theme.paragraph(card, "Reference: Real person · Variant: " .. tostring(entry.variant or "Classic") .. ". No photograph has been substituted.")
+		if entry.blocker then Theme.paragraph(card, tostring(entry.blocker)) end
+	end
+end
 
 function UIController:inspect(uid, publicInstance)
 	if not self.state then self:toast("Your collection is still loading."); return end
@@ -488,11 +535,15 @@ function UIController:renderInspect()
 	local portrait = Theme.portrait(stage, Theme.hex(stats.color), 212, instance.characterId)
 	portrait.AnchorPoint = Vector2.new(0.5, 0)
 	portrait.Position = UDim2.fromScale(0.5, 0)
+	portrait.Size = UDim2.new(1, -8, 0, 212)
+	Theme.make("UISizeConstraint", { MaxSize = Vector2.new(212, 212) }, portrait)
+	Theme.make("UIAspectRatioConstraint", { AspectRatio = 1, DominantAxis = Enum.DominantAxis.Width }, portrait)
 	local name = Theme.paragraph(card, string.upper(stats.name), accent)
 	name.Font = Enum.Font.GothamBlack
 	name.TextSize = 24
 	name.TextXAlignment = Enum.TextXAlignment.Center
-	Theme.paragraph(card, visual.description or "An original Mogville collectible with a style all its own.")
+	Theme.paragraph(card, visual.description or "No authentic portrait has been supplied for this collectible.")
+	Theme.paragraph(card, "Reference: " .. tostring(visual.referenceType or "LegacyFictional") .. " · Photo status: " .. tostring(visual.imageStatus or "Unavailable"), Theme.colors.gold)
 	Theme.badge(card, "IDENTITY  " .. tostring(visual.identityId or instance.characterId), Theme.colors.cyan)
 	Theme.paragraph(card, "Form: " .. tostring(visual.form or "Standard") .. "\nMutation: " .. tostring(stats.mutation) .. "\nLevel: " .. tostring(instance.level or 1))
 	Theme.paragraph(card, "Collection status: " .. (if self.inspectOwned then "Owned" else "Displayed by another collector") .. "\nObtainable: " .. (if visual.enabled == false then "Unavailable in current rolls" else "Available in the active roster"))

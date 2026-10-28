@@ -1,5 +1,7 @@
 # Validation evidence — 2026-10-28
 
+**Historical V2 evidence.** Current V3 results and unfulfilled visual-asset criteria are in [V3_STATUS.md](V3_STATUS.md). The V2 original face PNGs below have been retired; no authentic photo or high-quality 3D asset has been imported in V3.
+
 The following checks ran in the Linux cloud environment against this delivery:
 
 | Check | Observed result |

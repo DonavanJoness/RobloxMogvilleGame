@@ -3,6 +3,7 @@
 local Config = {}
 local Catalog = require(script.Parent.CharacterCatalog)
 local Visuals = require(script.Parent.CharacterVisuals)
+local PortraitRegistry = require(script.Parent.MoggerPortraitRegistry)
 
 Config.Game = {
 	Title = "MOGVILLE: Roll to Ascend",
@@ -71,6 +72,8 @@ for id, definition in Config.Characters do
 	entry.portraitAssetId = visual.portraitAssetId
 	entry.enabled = visual.enabled
 	entry.mutationEligible = visual.mutationEligible
+	entry.modelKey = visual.modelKey
+	entry.referenceType = visual.referenceType
 end
 
 Config.World = {
@@ -78,6 +81,21 @@ Config.World = {
 	MaxVisibleAnimations = 48, EffectDistance = 140, ReducedEffectDistance = 70,
 	MaxParticlesPerEmitter = 5, PlotColumnsX = 190, PlotRowSpacing = 60,
 }
+
+Config.RealMoggers = {}
+local realMoggers: any = Config.RealMoggers
+for _, entry in PortraitRegistry.all() do
+	realMoggers[entry.id] = entry
+	-- Keep known form IDs even while disabled: withdrawing a photo must not delete ownership.
+	characters[entry.id] = {
+			name = entry.displayName, rarity = entry.rarity, income = entry.income,
+			attack = entry.attack, defense = entry.defense, health = entry.health,
+			speed = entry.speed, ability = entry.ability, color = "FFD66B", weight = entry.weight,
+			identityId = entry.identityId, form = entry.variant, description = entry.notes,
+			portraitAssetId = entry.portraitAssetId, enabled = entry.obtainable, mutationEligible = true,
+			referenceType = "RealPerson", modelKey = entry.modelKey,
+	}
+end
 
 -- Mutation weights total 100. Mutation rolls are independent of rarity and luck.
 Config.Mutations = {

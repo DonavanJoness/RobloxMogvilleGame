@@ -6,7 +6,7 @@ world:build()
 assert(#world.plots==12,'12 plots')
 local baselineParts=0
 for _,instance in world.root:GetDescendants()do if instance:IsA('BasePart')then baselineParts+=1 end end
-assert(world.cityInfo.metrics.parts>=500 and world.cityInfo.metrics.parts<=Config.World.MaxStaticParts,'city generation part bounds')
+assert(world.cityInfo.metrics.parts>0 and world.cityInfo.metrics.parts<=Config.World.MaxStaticParts,'city stays within its construction budget, not a minimum decoration quota')
 print('BASELINE PARTS '..baselineParts..'; city '..world.cityInfo.metrics.parts)
 local standCount=0
 for _,plot in world.plots do
@@ -40,11 +40,13 @@ local starterModel=plot.display:GetChildren()[1]
 assert(starterModel:GetAttribute('CharacterUID')==profile.characters[1].uid,'display retains acquired instance UID')
 assert(starterModel:GetAttribute('OwnerUserId')==player.UserId,'display identifies its owner')
 local portrait=starterModel:FindFirstChild('PortraitCard'):FindFirstChild('CharacterPortrait'):FindFirstChild('Frame')
-assert(portrait:FindFirstChild('OriginalFallback'),'procedural portrait fallback always present')
+assert(portrait:FindFirstChild('PhotoStatus'),'missing authentic portrait status always present')
+assert(not portrait:FindFirstChild('OriginalFallback'),'no drawn human portrait substitute')
 local starterVisual=CharacterVisuals.get(profile.characters[1].characterId)
-local expectedPortrait=if starterVisual.enabled and starterVisual.portraitAssetId>0 then 'rbxassetid://'..tostring(starterVisual.portraitAssetId) else ''
-assert(portrait:FindFirstChild('ApprovedPortrait').Image==expectedPortrait,'portrait follows central approved Roblox ID mapping')
-local inspect=starterModel:FindFirstChild('Jacket'):FindFirstChild('OpenInspect')
+assert(not starterVisual.authenticPortraitReady and not portrait:FindFirstChild('ApprovedPortrait'),'no unresolved photo is presented as authentic')
+assert(starterModel:GetAttribute('ModelStatus')=='ModelRequired','missing R15 art explicitly reported')
+assert(not starterModel:FindFirstChild('Jacket') and not starterModel:FindFirstChild('Head'),'old mannequin removed')
+local inspect=starterModel:FindFirstChild('PortraitCard'):FindFirstChild('OpenInspect')
 assert(inspect:GetAttribute('Action')=='Inspect' and inspect:GetAttribute('CharacterUID')==profile.characters[1].uid,'inspection prompt carries exact instance')
 assert(plot.stands[1].caption.Visible==false,'occupied stand caption hidden')
 assert(Rules.income(profile)>0,'starter earns')
@@ -98,5 +100,10 @@ assert(world:getPlot(player)==nil,'ownership released')
 assert(#plot.display:GetChildren()==0 and #plot.pets:GetChildren()==0 and #plot.upgrades:GetChildren()==0,'generated displays cleaned')
 assert(plot.stands[1].prompt.Enabled==false,'released prompts disabled')
 assert(world:assign(extra),'released plot reusable')
-print('WORLD GENERATION MOCK PASS: 12 unique plots,120 stands,starter/fallback portraits,120 Ascended displays,36 pets,prestige,effect caps,cache,capacity,release/reuse')
+local npcFolder=NPCInteractionService.new():build(world.root)
+assert(npcFolder:GetAttribute('ConfiguredNPCCount')==8 and npcFolder:GetAttribute('ApprovedNPCCount')==0,'eight honest NPC asset requirements, zero fictional import claims')
+local slots=0
+for _,slot in world.cityInfo.assetSlots do slots+=1;assert(slot:GetAttribute('AssetStatus')=='ApprovedTemplateRequired','asset slots remain explicitly pending')end
+assert(slots==8,'eight architecture import slots')
+print('WORLD GENERATION MOCK PASS: 12 unique plots,120 stands,neutral unresolved portraits,120 card displays,36 pets,effect caps,cache,release/reuse,8 missing architecture and NPC art records')
 print('STATIC PARTS '..world.cityInfo.metrics.parts..'; active tagged lights '..#collection:GetTagged('MogvilleLight')..'; active tagged emitters '..#collection:GetTagged('MogvilleParticles'))

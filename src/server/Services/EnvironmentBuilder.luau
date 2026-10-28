@@ -1,6 +1,9 @@
--- Original, asset-free luxury city. All animated decorations are client-local tags.
+-- Original collector-city layout preview. Approved architecture templates are
+-- mounted at the declared slots by AssetLoadingService, never downloaded here.
 local CollectionService = game:GetService("CollectionService")
 local Lighting = game:GetService("Lighting")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local DistrictConfiguration = require(ReplicatedStorage.Shared.DistrictConfiguration)
 
 local EnvironmentBuilder = {}
 
@@ -160,27 +163,10 @@ function EnvironmentBuilder.build(root, config)
 		local globe = ball(parent, "LampGlobe", 1.8, position + Vector3.new(0, 8.4, 0), tint or C.gold, Enum.Material.Neon)
 		light(globe, tint or C.gold, 16)
 	end
-	local function npc(parent, name, origin, tint, action, text)
-		local model = Instance.new("Model")
-		model.Name = name
-		model.Parent = parent
-		local torso = part(model, "Jacket", Vector3.new(2.7, 2.6, 1.4), origin + Vector3.new(0, 3.2, 0), tint)
-		part(model, "Head", Vector3.new(2, 1.8, 1.7), origin + Vector3.new(0, 5.4, 0), Color3.fromRGB(233, 195, 157))
-		part(model, "Hair", Vector3.new(2.1, 0.4, 1.8), origin + Vector3.new(0, 6.4, 0), C.dark)
-		for _, x in ipairs({ -1, 1 }) do
-			part(model, "Arm", Vector3.new(0.7, 2.4, 1.2), origin + Vector3.new(x * 1.8, 3.2, 0), tint)
-			part(model, "Leg", Vector3.new(1, 1.9, 1.2), origin + Vector3.new(x * 0.65, 0.95, 0), C.dark)
-			part(model, "Eye", Vector3.new(0.2, 0.2, 0.1), origin + Vector3.new(x * 0.4, 5.6, -0.89), C.dark)
-		end
-		local nameHost = part(model, "NameSign", Vector3.new(0.2, 0.2, 0.2), origin + Vector3.new(0, 8, 0), tint)
-		nameHost.Transparency = 1
-		label(nameHost, name .. "\n" .. text, 230, 60, C.white, 65)
-		prompt(torso, action, name)
-		return model
-	end
 	local function building(parent, name, origin, size, accent)
 		local model = Instance.new("Model")
 		model.Name = name
+		model:SetAttribute("PresentationStatus", "ArchitectureLayoutPreview")
 		model.Parent = parent
 		part(model, "MarbleFloor", Vector3.new(size.X, 0.6, size.Z), origin + Vector3.new(0, 0.3, 0), C.white, Enum.Material.Marble, true)
 		-- The open front spans the entire facade: there are no invisible door collisions.
@@ -236,8 +222,22 @@ function EnvironmentBuilder.build(root, config)
 	rays.Spread = 0.8
 	rays.Parent = Lighting
 
+	local assetSlots = {}
+	local slots = district("DistrictAssetSlots")
+	for _, definition in ipairs(DistrictConfiguration.Districts) do
+		local slot = Instance.new("Model")
+		slot.Name = definition.id
+		slot.WorldPivot = CFrame.new(definition.x, definition.y, definition.z)
+		slot:SetAttribute("AssetKey", definition.assetKey)
+		slot:SetAttribute("TargetFolder", definition.folder)
+		slot:SetAttribute("FootprintWidth", definition.width)
+		slot:SetAttribute("FootprintDepth", definition.depth)
+		slot:SetAttribute("AssetStatus", "ApprovedTemplateRequired")
+		slot.Parent = slots
+		assetSlots[definition.assetKey] = slot
+	end
 	local roads = district("CityPaths")
-	part(roads, "LandscapedFoundation", Vector3.new(720, 4, 720), Vector3.new(0, -2, 0), C.grass, Enum.Material.Grass, true)
+	part(roads, "LandscapedFoundation", Vector3.new(540, 4, 600), Vector3.new(0, -2, -45), C.grass, Enum.Material.Grass, true)
 	part(roads, "RoyalPromenade", Vector3.new(30, 0.3, 420), Vector3.new(0, 0.05, -25), C.white, Enum.Material.Marble, true)
 	part(roads, "PlazaSquare", Vector3.new(106, 0.4, 83), Vector3.new(0, 0.2, 0), C.marble, Enum.Material.Marble, true)
 	for _, x in ipairs({ -128, 128 }) do
@@ -314,7 +314,8 @@ function EnvironmentBuilder.build(root, config)
 	local spawn = Instance.new("SpawnLocation")
 	spawn.Name = "MogvilleSpawn"
 	spawn.Size = Vector3.new(9, 0.25, 9)
-	spawn.CFrame = CFrame.new(0, 0.55, 23)
+	local spawnLayout = DistrictConfiguration.Spawn
+	spawn.CFrame = CFrame.lookAt(Vector3.new(spawnLayout.x, 0.55, spawnLayout.z), Vector3.new(spawnLayout.targetX, 0.55, spawnLayout.targetZ))
 	spawn.Anchored = true
 	spawn.Neutral = true
 	spawn.Duration = 0
@@ -389,7 +390,6 @@ function EnvironmentBuilder.build(root, config)
 	end
 	sign(arena, "ArenaEntrance", "MOG-OFF ARENA\nPVE CHALLENGES · KEEP YOUR MOGGERS", Vector3.new(0, 14, 68), 34, 5, C.gold)
 	sign(arena, "ArenaScoreboard", "ARENA SCOREBOARD\nYour battle result and turn log appear in Battle\nServer wins: see the player list", Vector3.new(0, 13, 153), 38, 6, C.cyan)
-	npc(arena, "Coach Spotlight", Vector3.new(26, 0.4, 72), C.purple, "Battle", "Choose a PvE opponent")
 	for _, x in ipairs({ -49, 49 }) do
 		lamp(arena, Vector3.new(x, 0, 102), C.cyan)
 		local trophy = ball(arena, "VictoryBeacon", 2.5, Vector3.new(x, 12, 102), C.gold, Enum.Material.Neon)
@@ -418,7 +418,8 @@ function EnvironmentBuilder.build(root, config)
 		part(gym, "TreadmillBelt", Vector3.new(3.7, 0.2, 6), Vector3.new(x, 1.5, -57), C.purple)
 		part(gym, "TreadmillConsole", Vector3.new(4, 0.5, 1.2), Vector3.new(x, 4.5, -60), C.cyan, Enum.Material.Neon)
 	end
-	npc(gym, "Trainer Tempo", Vector3.new(-67, 0.7, -56), C.cyan, "Upgrades", "Upgrade luck & plot capacity")
+	local upgradeHost = sign(gym, "GameplayUpgradeTerminal", "TRAINING DESK\nExisting luck, pet and display upgrades", Vector3.new(-67, 4.5, -56), 13, 4, C.cyan)
+	prompt(upgradeHost, "Upgrades", "Gameplay upgrades")
 
 	local shops = district("LuxuryShopStreet")
 	local petShop = building(shops, "PetParlor", Vector3.new(83, 0, -70), Vector3.new(47, 15, 45), C.pink)
@@ -432,7 +433,8 @@ function EnvironmentBuilder.build(root, config)
 			ball(petShop, "PetEar", 1, Vector3.new(x + side, 6, -77), tint)
 		end
 	end
-	npc(petShop, "Keeper Clover", Vector3.new(82, 0.7, -55), C.pink, "Pets", "Adopt with gameplay Coins")
+	local petHost = sign(petShop, "PetAdoptionTerminal", "ADOPTION DESK\nGuaranteed pets · earned Coins", Vector3.new(82, 4.5, -55), 15, 4, C.pink)
+	prompt(petHost, "Pets", "Guaranteed pet collection")
 	local style = building(shops, "StyleExchange", Vector3.new(83, 0, 12), Vector3.new(47, 15, 44), C.purple)
 	sign(style, "StyleShopFacade", "THE STYLE EXCHANGE\nPREMIUM SHOWROOM · NOT FOR SALE", Vector3.new(83, 15, 35), 44, 5, C.gold)
 	for index, tint in ipairs({ C.gold, C.purple, C.cyan }) do
@@ -478,23 +480,34 @@ function EnvironmentBuilder.build(root, config)
 		tag(trophy, 0.3, 0.4)
 	end
 
-	local skyline = district("LuxurySkyline")
-	for _, x in ipairs({ -295, 295 }) do
-		for index, z in ipairs({ -250, -175, -100, -25, 50, 125, 200, 275 }) do
-			local height = 32 + (index % 3) * 15
-			local tint = if index % 2 == 0 then C.purple else C.white
-			part(skyline, "LuxuryTower", Vector3.new(30, height, 38), Vector3.new(x, height / 2, z), tint, nil, true)
-			part(skyline, "TowerCrown", Vector3.new(32, 2, 40), Vector3.new(x, height + 1, z), C.gold, Enum.Material.Metal)
-			for floor = 1, 4 do
-				part(skyline, "TowerWindowBand", Vector3.new(30.3, 2, 38.3), Vector3.new(x, floor * height / 5, z), C.glass, Enum.Material.Glass)
-			end
-		end
+	-- A short branch from the collector promenade, away from the spin sightline.
+	local park = district("ParkSocial")
+	part(park, "GardenWalk", Vector3.new(58, 0.25, 62), Vector3.new(-83, 0.08, 60), C.marble, Enum.Material.Concrete, true)
+	cylinder(park, "GardenPondRim", 23, 0.7, Vector3.new(-83, 0.55, 42), C.white, Enum.Material.Marble, true)
+	local pond = cylinder(park, "GardenPond", 20, 0.15, Vector3.new(-83, 0.97, 42), C.cyan, Enum.Material.Glass)
+	pond.Transparency = 0.3
+	for _, x in ipairs({ -104, -62 }) do
+		tree(park, Vector3.new(x, 0, 35), 0.9)
+		tree(park, Vector3.new(x, 0, 85), 0.9)
+		bench(park, Vector3.new(x, 0.3, 76), if x < -83 then math.pi / 2 else -math.pi / 2)
 	end
+	sign(park, "SocialGardenSign", "SOCIAL GARDENS\nMeet friends between rolls", Vector3.new(-83, 5, 86), 29, 4.5, C.green)
+	local gardenGoals = sign(park, "GardenGoals", "YOUR NEXT COLLECTION GOAL\nClaim verified gameplay rewards in Quests", Vector3.new(-62, 4.5, 53), 15, 4, C.gold)
+	prompt(gardenGoals, "Quests", "Collection goals")
+	local arenaHost = sign(arena, "BattleTerminal", "ENTER A MOG-OFF\nChoose a PvE opponent", Vector3.new(26, 4.5, 72), 15, 4, C.cyan)
+	prompt(arenaHost, "Battle", "PvE Mog-Offs")
+	local previewNotice = sign(plaza, "VisualAssetStatus", "V3 LAYOUT PREVIEW\nApproved architecture and NPC templates are pending", Vector3.new(33, 4.5, -49), 24, 4, C.white)
+	previewNotice:SetAttribute("Purpose", "Honest asset-dependent release status")
 	root:SetAttribute("StaticPartCount", metrics.parts)
 	root:SetAttribute("StaticLightCount", metrics.lights)
 	root:SetAttribute("StaticEmitterCount", metrics.emitters)
-	root:SetAttribute("Design", "Original luxury city · purple, gold, cyan and daylight marble")
-	return { spawnCFrame = CFrame.new(0, 5, 23), metrics = metrics }
+	root:SetAttribute("Design", "Original card collector promenade · direct spin sightline")
+	root:SetAttribute("PresentationStatus", "LayoutPreviewApprovedArchitecturePending")
+	root:SetAttribute("LayoutReferenceStatus", DistrictConfiguration.Reference.status)
+	return {
+		spawnCFrame = CFrame.lookAt(Vector3.new(spawnLayout.x, spawnLayout.y, spawnLayout.z), Vector3.new(spawnLayout.targetX, spawnLayout.targetY, spawnLayout.targetZ)),
+		metrics = metrics, assetSlots = assetSlots, npcPositions = DistrictConfiguration.NPCPositions,
+	}
 end
 
 return EnvironmentBuilder

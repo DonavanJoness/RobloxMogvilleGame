@@ -43,10 +43,11 @@ def module_source(path):
 
 def main():
     paths = [ROOT / "src/shared" / f"{name}.luau" for name in (
-        "CharacterCatalog", "PortraitAssets", "CharacterVisuals", "Config", "Rules",
+        "CharacterCatalog", "PortraitAssets", "RealMoggers", "MoggerPortraitRegistry", "CharacterVisuals",
+        "DistrictConfiguration", "NPCConfiguration", "Config", "Rules", "AssetManifest",
     )]
     paths += [ROOT / "src/server/Services" / f"{name}.luau" for name in (
-        "EnvironmentBuilder", "WorldService",
+        "AssetLoadingService", "CharacterAppearanceService", "EnvironmentBuilder", "WorldService", "NPCInteractionService",
     )]
     parts = [(ROOT / "tests/world-runtime.luau").read_text()]
     for path in paths:

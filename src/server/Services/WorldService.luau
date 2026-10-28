@@ -8,6 +8,8 @@ local Rules = require(ReplicatedStorage.Shared:WaitForChild("Rules"))
 
 local EnvironmentBuilder = require(script.Parent.EnvironmentBuilder)
 local CharacterVisuals = require(ReplicatedStorage.Shared:WaitForChild("CharacterVisuals"))
+local Appearance = require(script.Parent.CharacterAppearanceService).new()
+local DistrictConfiguration = require(ReplicatedStorage.Shared:WaitForChild("DistrictConfiguration"))
 
 local WorldService = {}
 WorldService.__index = WorldService
@@ -119,7 +121,7 @@ local function rarityColor(rarity)
 end
 
 local function portraitBoard(model, characterId, position, tint)
-	local board = part(model, "PortraitCard", Vector3.new(3.2, 4.1, 0.15), position, PALETTE.ground, nil, false)
+	local board = part(model, "PortraitCard", Vector3.new(4, 5.3, 0.15), position, PALETTE.ground, nil, false)
 	local gui = Instance.new("SurfaceGui")
 	gui.Name = "CharacterPortrait"
 	gui.Face = Enum.NormalId.Front
@@ -133,45 +135,28 @@ local function portraitBoard(model, characterId, position, tint)
 	background.Size = UDim2.fromScale(1, 1)
 	background.BorderSizePixel = 0
 	background.Parent = gui
-	local outline = Instance.new("UIStroke")
-	outline.Color = PALETTE.gold
-	outline.Thickness = 4
-	outline.Parent = background
+	local status = Instance.new("TextLabel")
+	status.Name = "PhotoStatus"
+	status.Size = UDim2.fromScale(0.9, 0.9)
+	status.Position = UDim2.fromScale(0.05, 0.05)
+	status.BackgroundTransparency = 1
+	status.TextColor3 = PALETTE.white
+	status.TextScaled = true
+	status.TextWrapped = true
+	status.Font = Enum.Font.GothamBold
 	local visual = CharacterVisuals.get(characterId)
-	local image = Instance.new("ImageLabel")
-	image.Name = "ApprovedPortrait"
-	image.BackgroundTransparency = 1
-	image.Size = UDim2.fromScale(1, 1)
-	image.ScaleType = Enum.ScaleType.Crop
-	image.Image = if visual.enabled and visual.portraitAssetId and visual.portraitAssetId > 0 then "rbxassetid://" .. tostring(visual.portraitAssetId) else ""
-	image.Parent = background
-	-- The drawn fallback is always underneath. Failed/empty uploads never remove the portrait identity.
-	local face = Instance.new("Frame")
-	face.Name = "OriginalFallback"
-	face.BackgroundColor3 = Color3.fromRGB(236, 199, 163)
-	face.Size = UDim2.fromScale(0.55, 0.52)
-	face.Position = UDim2.fromScale(0.225, 0.14)
-	face.BorderSizePixel = 0
-	face.ZIndex = 1
-	face.Parent = background
-	local corner = Instance.new("UICorner")
-	corner.CornerRadius = UDim.new(0.28, 0)
-	corner.Parent = face
-	for _, x in ipairs({ 0.21, 0.65 }) do
-		local eye = Instance.new("Frame")
-		eye.Size = UDim2.fromScale(0.14, 0.06)
-		eye.Position = UDim2.fromScale(x, 0.43)
-		eye.BackgroundColor3 = PALETTE.ground
-		eye.BorderSizePixel = 0
-		eye.Parent = face
+	status.Text = if visual.referenceType == "RealPerson" then "AUTHENTIC PHOTO REQUIRED" else "LEGACY TEST CARD\nPHOTO NOT SUPPLIED"
+	status.Parent = background
+	if visual.authenticPortraitReady and visual.portraitAssetId > 0 then
+		local image = Instance.new("ImageLabel")
+		image.Name = "ApprovedPortrait"
+		image.BackgroundTransparency = 1
+		image.Size = UDim2.fromScale(1, 1)
+		image.ScaleType = Enum.ScaleType.Crop
+		image.Image = "rbxassetid://" .. string.format("%.0f", visual.portraitAssetId)
+		image.ZIndex = 3
+		image.Parent = background
 	end
-	local body = Instance.new("Frame")
-	body.Size = UDim2.fromScale(0.8, 0.27)
-	body.Position = UDim2.fromScale(0.1, 0.69)
-	body.BackgroundColor3 = PALETTE.panel
-	body.BorderSizePixel = 0
-	body.Parent = background
-	image.ZIndex = 3
 	return board
 end
 
@@ -206,67 +191,33 @@ end
 
 local function mogger(parent, instance, standPosition, ownerUserId)
 	local stats = Rules.characterStats(instance)
-	local tint = color(stats.color)
-	local rarityTint, tier = rarityColor(stats.rarity)
+	local tint, tier = rarityColor(stats.rarity)
 	local visual = CharacterVisuals.get(instance.characterId)
 	local model = Instance.new("Model")
 	model.Name = instance.uid
-	model:SetAttribute("CharacterUID", instance.uid)
-	model:SetAttribute("CharacterId", instance.characterId)
-	model:SetAttribute("IdentityId", visual.identityId)
-	model:SetAttribute("Form", visual.form)
-	model:SetAttribute("Mutation", instance.mutation)
-	model:SetAttribute("Level", instance.level)
-	model:SetAttribute("OwnerUserId", ownerUserId)
 	model.Parent = parent
-	local elevation = math.max(0, tier - 2) * 0.16
-	local base = standPosition + Vector3.new(0, 0.7 + elevation, 0)
-	if tier >= 3 then
-		local pedestal = part(model, "PrestigePedestal", Vector3.new(0.3 + elevation, 8.8, 8.8), standPosition + Vector3.new(0, 0.6 + elevation / 2, 0), rarityTint, Enum.Material.Neon, false)
-		pedestal.Shape = Enum.PartType.Cylinder
-		pedestal.Orientation = Vector3.new(0, 0, 90)
-	end
-	local torso = part(model, "Jacket", Vector3.new(2.6, 2.4, 1.4), base + Vector3.new(0, 2.6, 0), tint, nil, false)
-	model.PrimaryPart = torso
-	part(model, "Head", Vector3.new(2, 1.7, 1.6), base + Vector3.new(0, 4.65, 0), Color3.fromRGB(235, 196, 151), nil, false)
-	part(model, "Hair", Vector3.new(2.12, 0.4, 1.7), base + Vector3.new(0, 5.55, 0), PALETTE.ground, nil, false)
-	local prime = string.find(string.lower(visual.form or "Classic"), "prime") ~= nil
-	for _, side in ipairs({ -1, 1 }) do
-		local arm = part(model, "Arm", Vector3.new(0.7, 2.4, 1.2), base + Vector3.new(side * 1.75, 2.6, 0), tint, nil, false)
-		arm.Orientation = Vector3.new(0, 0, side * (prime and 24 or 8))
-		part(model, "Leg", Vector3.new(0.95, 1.55, 1.2), base + Vector3.new(side * 0.65, 0.7, 0), PALETTE.ground, nil, false)
-		part(model, "Eye", Vector3.new(0.27, 0.16, 0.08), base + Vector3.new(side * 0.43, 4.8, -0.83), PALETTE.ground, nil, false)
-	end
-	part(model, "Smile", Vector3.new(0.6, 0.1, 0.08), base + Vector3.new(0, 4.25, -0.83), PALETTE.ground, nil, false)
-	part(model, "Crest", Vector3.new(0.75, 0.75, 0.14), base + Vector3.new(0, 2.85, -0.78), rarityTint, Enum.Material.Neon, false)
-	if tier >= 4 then
-		for i = -1, 1 do
-			part(model, "Crown", Vector3.new(0.4, 0.55 + (i == 0 and 0.3 or 0), 0.45), base + Vector3.new(i * 0.65, 5.95, 0), PALETTE.gold, Enum.Material.Metal, false)
-		end
-	end
-	if tier >= 6 then
-		local energy = part(model, "AscendedEnergy", Vector3.new(0.35, 0.35, 0.35), base + Vector3.new(0, 6.8, 0), rarityTint, Enum.Material.Neon, false)
-		energy.Shape = Enum.PartType.Ball
-		animated(energy, "MogvilleBob", { BobAmplitude = 0.35, BobSpeed = 1.6 })
-		animated(energy, "MogvilleSpin", { SpinSpeed = 1 })
-	end
-	portraitBoard(model, instance.characterId, base + Vector3.new(3.25, 2.8, 0.2), rarityTint)
-	local inspect = prompt(torso, "Inspect", stats.name, ownerUserId)
-	inspect.ActionText = "Inspect Mogger"
+	for key, value in { CharacterUID = instance.uid, CharacterId = instance.characterId,
+		IdentityId = visual.identityId, Form = visual.form, Mutation = instance.mutation,
+		Level = instance.level, OwnerUserId = ownerUserId } do model:SetAttribute(key, value) end
+	local anchor = part(model, "DisplayAnchor", Vector3.new(0.2, 0.2, 0.2), standPosition + Vector3.new(0, 2.7, 0), tint, nil, false)
+	anchor.Transparency = 1
+	model.PrimaryPart = anchor
+	local imported, reason = Appearance:createDisplay(instance.characterId, model, CFrame.new(standPosition + Vector3.new(0, 4.4, 0)))
+	model:SetAttribute("ModelStatus", if imported then "ApprovedTemplate" else "ModelRequired")
+	if reason then model:SetAttribute("AssetBlocker", reason) end
+	-- Missing art is explicit. No block mannequin or invented human face is substituted.
+	local cardX = if imported then 3.5 else 0
+	local card = portraitBoard(model, instance.characterId, standPosition + Vector3.new(cardX, 3.6, 0.2), tint)
+	local inspect = prompt(card, "Inspect", stats.name, ownerUserId)
+	inspect.ActionText = "Inspect card"
 	inspect.MaxActivationDistance = 10
-	inspect:SetAttribute("CharacterUID", instance.uid)
-	inspect:SetAttribute("CharacterId", instance.characterId)
-	inspect:SetAttribute("Mutation", instance.mutation)
-	inspect:SetAttribute("Level", instance.level)
+	for key, value in { CharacterUID = instance.uid, CharacterId = instance.characterId, Mutation = instance.mutation, Level = instance.level } do inspect:SetAttribute(key, value) end
 	local click = Instance.new("ClickDetector")
 	click.MaxActivationDistance = 18
-	click.Parent = torso
-	-- Click detection is handled on the client; no click can award gameplay state.
+	click.Parent = card
 	CollectionService:AddTag(click, "MogvilleInspect")
-	label(model, torso,
-		string.upper(stats.name) .. " · " .. (visual.form or "Classic") .. "\n" .. string.upper(stats.rarity) .. " · " .. number(stats.income) .. " Coins/sec\n" .. tostring(instance.mutation) .. " mutation",
-		Vector3.new(0, 5.4, 0), 240, 82, rarityTint, 65)
-	displayEffects(model, torso, rarityTint, tier)
+	label(model, anchor, string.upper(stats.name) .. " · " .. visual.form .. "\n" .. stats.rarity .. " · " .. number(stats.income) .. " Coins/sec\n" .. instance.mutation .. (if imported then "" else " · MODEL REQUIRED"), Vector3.new(0, 3.8, 0), 240, 82, tint, 65)
+	displayEffects(model, anchor, tint, tier)
 	return model
 end
 
@@ -310,19 +261,19 @@ function WorldService:build()
 	self.root = folder
 	self.cityInfo = EnvironmentBuilder.build(folder, Config)
 	local world = Config.World or {}
-	local columnX = world.PlotColumnsX or 190
-	local rowSpacing = world.PlotRowSpacing or 60
 	local plotsFolder = Instance.new("Folder")
 	plotsFolder.Name = "CollectorResidences"
 	plotsFolder.Parent = folder
 	for index = 1, Config.Game.MaxPlayers do
-		local side = index % 2 == 1 and -1 or 1
-		local row = math.floor((index - 1) / 2)
-		local origin = Vector3.new(side * columnX, 0, -150 + row * rowSpacing)
+		local topology = DistrictConfiguration.plot(index, world)
+		local side = topology.side
+		local origin = Vector3.new(topology.x, topology.y, topology.z)
 		local accent = Color3.fromHSV((index - 1) / Config.Game.MaxPlayers, 0.36, 0.95)
 		local plot = Instance.new("Model")
 		plot.Name = string.format("Residence_%02d", index)
 		plot:SetAttribute("PlotIndex", index)
+		plot:SetAttribute("AssetSlotKey", "plot_residence")
+		plot:SetAttribute("PresentationStatus", "PlotLayoutPreview")
 		plot.Parent = plotsFolder
 		part(plot, "MarbleFloor", Vector3.new(88, 0.6, 54), origin, Color3.fromRGB(221, 225, 240), Enum.Material.Marble)
 		local borders = {}
@@ -418,7 +369,9 @@ function WorldService:assign(player)
 		task.spawn(function()
 			local rootPart = character:WaitForChild("HumanoidRootPart", 10)
 			if rootPart and self.assignments[player] == available and player.Character == character then
-				character:PivotTo(available.spawnCFrame)
+				-- Start facing the spin hall; ownership is already allocated and the
+				-- personal display stays reachable along the shared promenade.
+				character:PivotTo(self.cityInfo.spawnCFrame or available.spawnCFrame)
 				self:_renderPets(player, available)
 			end
 		end)

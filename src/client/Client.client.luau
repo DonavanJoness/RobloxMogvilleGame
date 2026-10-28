@@ -5,6 +5,7 @@ local Players = game:GetService("Players")
 local CollectionService = game:GetService("CollectionService")
 local UIController = require(script.Parent.Controllers.UIController)
 local WorldEffectsController = require(script.Parent.Controllers.WorldEffectsController)
+local NPCController = require(script.Parent.Controllers.NPCController)
 
 local network = ReplicatedStorage:WaitForChild("Network")
 local request = network:WaitForChild("Request") :: RemoteFunction
@@ -16,6 +17,7 @@ local worldEffects = WorldEffectsController.new()
 local ui = UIController.new(function(action: string, payload: any)
 	return request:InvokeServer(action, payload)
 end, worldEffects)
+local npcDialogue = NPCController.new(function(menu) ui:show(menu) end)
 
 stateEvent.OnClientEvent:Connect(function(state)
 	ui:update(state)
@@ -40,6 +42,7 @@ end
 
 ProximityPromptService.PromptTriggered:Connect(function(prompt: ProximityPrompt)
 	local action = prompt:GetAttribute("Action")
+	if action == "NPCDialogue" then return end
 	if action == "Inspect" then inspectAttributes(prompt); return end
 	local owner = prompt:GetAttribute("OwnerUserId")
 	if owner and owner ~= Players.LocalPlayer.UserId then

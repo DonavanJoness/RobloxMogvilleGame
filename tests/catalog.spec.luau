@@ -36,6 +36,7 @@ return function(test)
 			assert(definition.weight > 0 and definition.portraitAssetId == 0)
 		end
 		for id, definition in Config.Characters do
+			if definition.referenceType == "RealPerson" then continue end
 			total += 1
 			assert(Catalog.Identities[definition.identityId], id .. " has no original identity")
 			assert(Catalog.Forms[definition.form], id .. " has an unknown form")
@@ -56,6 +57,7 @@ return function(test)
 		assert(rookie.identityId == prime.identityId and rookie.form ~= prime.form)
 		assert(rookie.rarity == "Common" and prime.rarity == "Rare")
 		for id, definition in Config.Characters do
+			if definition.referenceType == "RealPerson" then continue end
 			assert(definition.mutation == nil, id .. " hardcodes an instance mutation")
 			assert(definition.mutationEligible == true)
 		end
@@ -65,7 +67,8 @@ return function(test)
 	test("portrait lookup covers every form and returns safe unknown fallbacks", function()
 		for id, definition in Config.Characters do
 			local visual = Visuals.get(id)
-			assert(visual.identityId == definition.identityId and visual.form == definition.form and visual.enabled)
+			assert(visual.identityId == definition.identityId and visual.form == definition.form)
+			assert(visual.enabled == definition.enabled)
 			assert(type(visual.description) == "string" and #visual.description > 0)
 			assert(visual.portraitAssetId == 0 or Visuals.validAssetId(visual.portraitAssetId))
 		end
@@ -83,14 +86,15 @@ return function(test)
 		end
 	end)
 
-	test("invalid portrait overrides fall back without changing character identity", function()
+	test("legacy portrait overrides cannot masquerade as approved real-person photos", function()
 		local original = PortraitAssets.young_rookie
 		PortraitAssets.young_rookie = -123
 		local bad = Visuals.get("young_rookie")
 		PortraitAssets.young_rookie = 123456789
 		local valid = Visuals.get("young_rookie")
 		PortraitAssets.young_rookie = original
-		assert(bad.portraitAssetId == 0 and valid.portraitAssetId == 123456789)
+		assert(bad.portraitAssetId == 0 and valid.portraitAssetId == 0)
+		assert(valid.authenticPortraitReady == false and valid.referenceType == "LegacyFictional")
 		assert(bad.identityId == valid.identityId and bad.form == valid.form)
 	end)
 end
