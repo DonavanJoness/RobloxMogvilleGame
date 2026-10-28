@@ -1,0 +1,12 @@
+# Open MOGVILLE in Roblox Studio
+
+1. Download `Mogville-place.zip` from this directory. On the GitHub file page, select **Download raw file**.
+2. Extract the ZIP to a folder on your computer.
+3. Open Roblox Studio on Windows or macOS, then choose **File → Open from File**.
+4. Select the extracted `Mogville.rbxl` and press **Play**. The map generates when the game starts.
+
+`Mogville.rbxl` in this directory is the same place offered separately, so downloading both is unnecessary.
+
+In the game, open Inventory and display your starter to earn Coins. Studio starts with temporary memory profiles. See the [project README](../README.md#persistence-testing) for the separate save/rejoin testing instructions and remaining Studio acceptance checks.
+
+These are generated delivery copies. After source edits, rebuild and refresh them before uploading a new version.

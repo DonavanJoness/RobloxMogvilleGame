@@ -1,0 +1,31 @@
+{
+  "name": "MOGVILLE",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Shared": { "$path": "src/shared" }
+    },
+    "ServerScriptService": {
+      "MogvilleServer": { "$path": "src/server" }
+    },
+    "StarterPlayer": {
+      "$properties": { "CameraMaxZoomDistance": 100, "CameraMinZoomDistance": 8 },
+      "StarterPlayerScripts": {
+        "MogvilleClient": { "$path": "src/client" }
+      }
+    },
+    "Workspace": {
+      "$properties": { "FilteringEnabled": true, "Gravity": 196.2 },
+      "$attributes": { "MogvilleStudioPersistence": false }
+    },
+    "Lighting": {
+      "$properties": {
+        "Ambient": [0.35, 0.3, 0.48],
+        "OutdoorAmbient": [0.45, 0.4, 0.55],
+        "Brightness": 2,
+        "ClockTime": 15
+      }
+    },
+    "SoundService": { "$properties": { "RespectFilteringEnabled": true } }
+  }
+}
