@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "preparedAtUTC": "2026-10-28",
-  "status": "ResearchBlocked",
+  "status": "SourceResearchCompletedWithUnresolvedReferences",
   "namedCandidates": 25,
   "unresolvedRequestedAliases": 3,
   "verifiedCandidates": 0,
-  "licensedPortraits": 0,
+  "licensedPortraits": 15,
   "clearedGameLikenesses": 0,
   "productionUseAllowed": false,
-  "sourceAccessEvidence": "assets/references/source-access.json",
+  "sourceAccessEvidence": "assets/references/live-research/README.md",
   "policy": {
     "identity": "Source and adult-era portrait verification required before candidate approval.",
     "copyright": "Photographer, source image, exact license, attribution requirements and commercial/derivative-game use must be documented per image.",
@@ -25,20 +25,23 @@
       ],
       "candidateType": "RequestedPublicFigure",
       "sourceURL": "https://knowyourmeme.com/memes/people/clavicular",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": null,
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
+      "verifiedSourceURLs": [
+        "https://knowyourmeme.com/memes/people/clavicular",
+        "https://www.famousbirthdays.com/people/clavicular.html"
+      ],
+      "identityStatus": "SourceCorroboratedPublicAlias",
+      "adultStatus": "NoApprovedAdultPortrait",
+      "researchStatus": "PermissionRequired",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/requested-identities.json",
       "photographer": null,
       "license": null,
       "licenseURL": null,
       "commercialRights": null,
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "PermissionRequired",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Mythic",
@@ -53,10 +56,10 @@
         ]
       },
       "notes": [
-        "Requested creator alias; verify identity, age and official representative before any portrait selection.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Requested creator alias; verify identity, age and official representative before any portrait selection."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": null
     },
     {
       "candidateId": "francisco_lachowski",
@@ -66,20 +69,23 @@
       ],
       "candidateType": "RequestedPublicFigure",
       "sourceURL": "https://en.wikipedia.org/wiki/Francisco_Lachowski",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Francisco Lachowski",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Francisco_Lachowski",
+        "https://commons.wikimedia.org/wiki/File:Francisco_Lachowski_2011.jpg"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/francisco_lachowski.json",
+      "photographer": "Sara Cimino from Milan, Italy ( Flickr account )",
+      "license": "CC BY 2.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/2.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Divine",
@@ -94,10 +100,10 @@
         ]
       },
       "notes": [
-        "The user supplied Chico; Francisco Lachowski is the proposed association and still needs source confirmation.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "The user supplied Chico; Francisco Lachowski is the proposed association and still needs source confirmation."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/francisco_lachowski.jpg"
     },
     {
       "candidateId": "henry_cavill",
@@ -105,20 +111,23 @@
       "aliases": [],
       "candidateType": "RequestedPublicFigure",
       "sourceURL": "https://en.wikipedia.org/wiki/Henry_Cavill",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Henry Cavill",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Henry_Cavill",
+        "https://commons.wikimedia.org/wiki/File:Henry_Cavill_(48417913146)_(cropped).jpg"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/henry_cavill.json",
+      "photographer": "Gage Skidmore from Peoria, AZ, United States of America",
+      "license": "CC BY-SA 2.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/2.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Divine",
@@ -133,10 +142,10 @@
         ]
       },
       "notes": [
-        "Actor reference requested by the user; do not label him a looksmaxxing creator.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Actor reference requested by the user; do not label him a looksmaxxing creator."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/henry_cavill.jpg"
     },
     {
       "candidateId": "ernest_khalimov",
@@ -145,21 +154,23 @@
         "GigaChad"
       ],
       "candidateType": "RequestedPublicFigure",
-      "sourceURL": "https://en.wikipedia.org/wiki/Ernest_Khalimov",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURL": "https://knowyourmeme.com/memes/gigachad",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Ernest Khalimov",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
+      "verifiedSourceURLs": [
+        "https://knowyourmeme.com/memes/gigachad"
+      ],
+      "identityStatus": "MemeProjectAttributionCorroboratedBySource",
+      "adultStatus": "NoApprovedAdultPortrait",
+      "researchStatus": "PermissionRequired",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/requested-identities.json",
       "photographer": null,
       "license": null,
       "licenseURL": null,
       "commercialRights": null,
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "PermissionRequired",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Ascended",
@@ -174,10 +185,10 @@
         ]
       },
       "notes": [
-        "Proposed GigaChad association requires cross-checking the original art project, identity and photographer. No photograph or photographer attribution is assumed.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Proposed GigaChad association requires cross-checking the original art project, identity and photographer. No photograph or photographer attribution is assumed."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": null
     },
     {
       "candidateId": "jordan_barrett",
@@ -185,20 +196,23 @@
       "aliases": [],
       "candidateType": "RequestedPublicFigure",
       "sourceURL": "https://en.wikipedia.org/wiki/Jordan_Barrett",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Jordan Barrett",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Jordan_Barrett",
+        "https://commons.wikimedia.org/wiki/File:Jordan-barrett-mbfw-march-2022-fashion-week-berlin.jpg"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/jordan_barrett.json",
+      "photographer": "Stefan Heesch, Nordfriisk Photography, Zürich, Switzerland (Commons user Nordfriisk)",
+      "license": "CC BY-SA 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Divine",
@@ -213,10 +227,10 @@
         ]
       },
       "notes": [
-        "Public model candidate requested by the user; meme or community associations require independent evidence.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model candidate requested by the user; meme or community associations require independent evidence."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/jordan_barrett.jpg"
     },
     {
       "candidateId": "david_gandy",
@@ -224,20 +238,24 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/David_Gandy",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "David Gandy",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/David_Gandy",
+        "https://commons.wikimedia.org/wiki/File:David_Gandy_1.jpg",
+        "https://commons.wikimedia.org/wiki/File:David_Gandy_in_Singapore,_2015.jpg"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/david_gandy.json",
+      "photographer": "David Seow",
+      "license": "CC BY-SA 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Uncommon",
@@ -252,10 +270,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/david_gandy.jpg"
     },
     {
       "candidateId": "sean_opry",
@@ -263,20 +281,24 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Sean_O'Pry",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Sean O'Pry",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Sean_O'Pry",
+        "https://commons.wikimedia.org/wiki/File:Sean_O'Pry_2015.jpg",
+        "https://commons.wikimedia.org/wiki/File:Taylor_Swift_Special_Guest_STAPLES_Center_Los_Angeles.jpg"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/sean_opry.json",
+      "photographer": "Denielle",
+      "license": "CC BY-SA 2.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/2.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Rare",
@@ -291,10 +313,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/sean_opry.jpg"
     },
     {
       "candidateId": "lucky_blue_smith",
@@ -302,20 +324,23 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Lucky_Blue_Smith",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Lucky Blue Smith",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Lucky_Blue_Smith",
+        "https://commons.wikimedia.org/wiki/File:Lucky_blue_smith_2019_2.jpg"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/lucky_blue_smith.json",
+      "photographer": "Yoann Lothaire / other viewnewsmedia",
+      "license": "CC BY 3.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/3.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Mythic",
@@ -330,10 +355,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; select an adult-era portrait only after date and rights review.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; select an adult-era portrait only after date and rights review."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/lucky_blue_smith.jpg"
     },
     {
       "candidateId": "jon_kortajarena",
@@ -341,20 +366,24 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Jon_Kortajarena",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Jon Kortajarena",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Jon_Kortajarena",
+        "https://commons.wikimedia.org/wiki/File:Premios_Goya_2020_-_Jon_Kortajarena_(Cropped)_(cropped).jpg",
+        "https://commons.wikimedia.org/wiki/File:Premios_Goya_2020_-_Jon_Kortajarena_(Cropped).jpg"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/jon_kortajarena.json",
+      "photographer": "Pedro J Pacheco",
+      "license": "CC BY-SA 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Common",
@@ -369,10 +398,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/jon_kortajarena.jpg"
     },
     {
       "candidateId": "marlon_teixeira",
@@ -380,20 +409,23 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Marlon_Teixeira",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Marlon Teixeira",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Marlon_Teixeira",
+        "https://commons.wikimedia.org/wiki/File:Marlon_Teixeira.jpg"
+      ],
+      "identityStatus": "PublicBiographyAndFileCaptionReviewed",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/marlon_teixeira.json",
+      "photographer": "Sara Cimino from Milan, Italy ( Flickr account )",
+      "license": "CC BY 2.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/2.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Uncommon",
@@ -408,10 +440,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/marlon_teixeira.jpg"
     },
     {
       "candidateId": "tyson_beckford",
@@ -419,20 +451,24 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Tyson_Beckford",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Tyson Beckford",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Tyson_Beckford",
+        "https://commons.wikimedia.org/wiki/File:Tyson_Beckford_(cropped).jpg",
+        "https://commons.wikimedia.org/wiki/File:Tyson_Beckford.jpg"
+      ],
+      "identityStatus": "PublicBiographyAndFileCaptionReviewed",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/tyson_beckford.json",
+      "photographer": "Jesse Gross (Jgro888, per caption and original upload/EXIF)",
+      "license": "CC BY-SA 2.5",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/2.5",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Rare",
@@ -447,10 +483,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/tyson_beckford.jpg"
     },
     {
       "candidateId": "marcus_schenkenberg",
@@ -458,20 +494,23 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Marcus_Schenkenberg",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Marcus Schenkenberg",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Marcus_Schenkenberg",
+        "https://commons.wikimedia.org/wiki/File:AV0A1717_Marcus_Schenkenberg.jpg"
+      ],
+      "identityStatus": "PublicBiographyAndFileCaptionReviewed",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/marcus_schenkenberg.json",
+      "photographer": "9EkieraM1",
+      "license": "CC BY-SA 3.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Mythic",
@@ -486,10 +525,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/marcus_schenkenberg.jpg"
     },
     {
       "candidateId": "david_agbodji",
@@ -497,20 +536,20 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/David_Agbodji",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "CheckedNoMatchingSourceLocated",
       "encyclopediaTitle": "David Agbodji",
       "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
+      "identityStatus": "Unverified",
+      "adultStatus": "NoApprovedAdultPortrait",
+      "researchStatus": "Unavailable",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/david_agbodji.json",
       "photographer": null,
       "license": null,
       "licenseURL": null,
       "commercialRights": null,
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "Unavailable",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Common",
@@ -525,10 +564,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": null
     },
     {
       "candidateId": "alton_mason",
@@ -536,20 +575,23 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Alton_Mason",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Alton Mason",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Alton_Mason",
+        "https://commons.wikimedia.org/wiki/File:Alton_Mason_for_Paco_Rabanne_Million_Manifesto.jpg"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "NoApprovedAdultPortrait",
+      "researchStatus": "HeldExternalLicenseReview",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/alton_mason.json",
+      "photographer": "Paco Rabanne",
+      "license": "CC BY 3.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/3.0",
       "commercialRights": null,
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "HeldExternalLicenseReview",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Uncommon",
@@ -564,10 +606,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": null
     },
     {
       "candidateId": "pietro_boselli",
@@ -575,20 +617,22 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Pietro_Boselli",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Pietro Boselli",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Pietro_Boselli"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "NoApprovedAdultPortrait",
+      "researchStatus": "Unavailable",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/pietro_boselli.json",
       "photographer": null,
       "license": null,
       "licenseURL": null,
       "commercialRights": null,
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "Unavailable",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Rare",
@@ -603,10 +647,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": null
     },
     {
       "candidateId": "alex_lundqvist",
@@ -614,20 +658,22 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Alex_Lundqvist",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Alex Lundqvist",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Alex_Lundqvist"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "NoApprovedAdultPortrait",
+      "researchStatus": "Unavailable",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/alex_lundqvist.json",
       "photographer": null,
       "license": null,
       "licenseURL": null,
       "commercialRights": null,
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "Unavailable",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Mythic",
@@ -642,10 +688,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": null
     },
     {
       "candidateId": "noah_mills",
@@ -653,20 +699,24 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Noah_Mills",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Noah Mills",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Noah_Mills",
+        "https://commons.wikimedia.org/wiki/File:Noah_Mills_(cropped).jpg",
+        "https://commons.wikimedia.org/wiki/File:Noah_Mills.jpg"
+      ],
+      "identityStatus": "PublicBiographyAndFileCaptionReviewed",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/noah_mills.json",
+      "photographer": "Gabriella Sinisi",
+      "license": "CC BY-SA 3.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Common",
@@ -681,10 +731,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/noah_mills.jpg"
     },
     {
       "candidateId": "mathias_lauridsen",
@@ -692,20 +742,22 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Mathias_Lauridsen",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Mathias Lauridsen",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Mathias_Lauridsen"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "NoApprovedAdultPortrait",
+      "researchStatus": "Unavailable",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/mathias_lauridsen.json",
       "photographer": null,
       "license": null,
       "licenseURL": null,
       "commercialRights": null,
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "Unavailable",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Uncommon",
@@ -720,10 +772,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": null
     },
     {
       "candidateId": "garrett_neff",
@@ -731,20 +783,22 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Garrett_Neff",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Garrett Neff",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Garrett_Neff"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "NoApprovedAdultPortrait",
+      "researchStatus": "Unavailable",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/garrett_neff.json",
       "photographer": null,
       "license": null,
       "licenseURL": null,
       "commercialRights": null,
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "Unavailable",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Rare",
@@ -759,10 +813,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": null
     },
     {
       "candidateId": "kit_butler",
@@ -770,20 +824,20 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Kit_Butler",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "CheckedNoMatchingSourceLocated",
       "encyclopediaTitle": "Kit Butler",
       "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
+      "identityStatus": "Unverified",
+      "adultStatus": "NoApprovedAdultPortrait",
+      "researchStatus": "Unavailable",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/kit_butler.json",
       "photographer": null,
       "license": null,
       "licenseURL": null,
       "commercialRights": null,
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "Unavailable",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Mythic",
@@ -798,10 +852,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; select an adult-era portrait only after date and rights review.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; select an adult-era portrait only after date and rights review."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": null
     },
     {
       "candidateId": "simon_nessman",
@@ -809,20 +863,23 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Simon_Nessman",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Simon Nessman",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Simon_Nessman",
+        "https://commons.wikimedia.org/wiki/File:Simon_Nessman.jpg"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/simon_nessman.json",
+      "photographer": "Sara Cimino from Milan, Italy ( Flickr account )",
+      "license": "CC BY 2.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/2.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Common",
@@ -837,10 +894,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/simon_nessman.jpg"
     },
     {
       "candidateId": "andres_velencoso",
@@ -848,20 +905,23 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Andr%C3%A9s_Velencoso",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Andrés Velencoso",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Andr%C3%A9s_Velencoso",
+        "https://commons.wikimedia.org/wiki/File:Andr%C3%A9s_Velencoso_at_Premios_Goya_2017_(cropped).jpg"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/andres_velencoso.json",
+      "photographer": "Ruben Ortega",
+      "license": "CC BY-SA 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Uncommon",
@@ -876,10 +936,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/andres_velencoso.jpg"
     },
     {
       "candidateId": "baptiste_giabiconi",
@@ -887,20 +947,23 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Baptiste_Giabiconi",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Baptiste Giabiconi",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Baptiste_Giabiconi",
+        "https://commons.wikimedia.org/wiki/File:Baptiste_Giabiconi.jpg"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/baptiste_giabiconi.json",
+      "photographer": "Georges Biard",
+      "license": "CC BY-SA 3.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Rare",
@@ -915,10 +978,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/baptiste_giabiconi.jpg"
     },
     {
       "candidateId": "clement_chabernaud",
@@ -926,20 +989,22 @@
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
       "sourceURL": "https://en.wikipedia.org/wiki/Cl%C3%A9ment_Chabernaud",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "Clément Chabernaud",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Cl%C3%A9ment_Chabernaud"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "NoApprovedAdultPortrait",
+      "researchStatus": "Unavailable",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/clement_chabernaud.json",
       "photographer": null,
       "license": null,
       "licenseURL": null,
       "commercialRights": null,
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "Unavailable",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Mythic",
@@ -954,31 +1019,34 @@
         ]
       },
       "notes": [
-        "Public model research candidate; no looksmaxxing affiliation asserted.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; no looksmaxxing affiliation asserted."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": null
     },
     {
       "candidateId": "river_viiperi",
       "displayName": "River Viiperi",
       "aliases": [],
       "candidateType": "RelatedPublicModelCandidate",
-      "sourceURL": "https://en.wikipedia.org/wiki/River_Viiperi",
-      "sourceURLStatus": "ProposedUnfetched",
+      "sourceURL": "https://commons.wikimedia.org/wiki/Category:River_Viiperi",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": "River Viiperi",
-      "verifiedSourceURLs": [],
-      "identityStatus": "NeedsSourceVerification",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "verifiedSourceURLs": [
+        "https://commons.wikimedia.org/wiki/Category:River_Viiperi",
+        "https://commons.wikimedia.org/wiki/File:River_Viiperi_2011.jpg"
+      ],
+      "identityStatus": "PublicCommonsBiographyLocatedNeedsIndependentCorroboration",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/river_viiperi.json",
+      "photographer": "Sara Cimino from Milan, Italy ( Flickr account )",
+      "license": "CC BY 2.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/2.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Common",
@@ -993,10 +1061,10 @@
         ]
       },
       "notes": [
-        "Public model research candidate; select an adult-era portrait only after date and rights review.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Public model research candidate; select an adult-era portrait only after date and rights review."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/river_viiperi.jpg"
     },
     {
       "candidateId": "kaysh_unresolved",
@@ -1006,27 +1074,27 @@
       ],
       "candidateType": "UnresolvedRequestedAlias",
       "sourceURL": null,
-      "sourceURLStatus": "Missing",
+      "sourceURLStatus": "CheckedNoMatchingSourceLocated",
       "encyclopediaTitle": null,
       "verifiedSourceURLs": [],
-      "identityStatus": "Unresolved",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
+      "identityStatus": "UnresolvedDoNotGuess",
+      "adultStatus": "NoApprovedAdultPortrait",
+      "researchStatus": "Unavailable",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/requested-identities.json",
       "photographer": null,
       "license": null,
       "licenseURL": null,
       "commercialRights": null,
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "Unavailable",
       "portraitFile": null,
       "suggestedGameplay": null,
       "notes": [
-        "Ambiguous requested alias. No identity, age, image, or public profile has been established. Ask the user for a reference link; do not guess.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Ambiguous requested alias. No identity, age, image, or public profile has been established. Ask the user for a reference link; do not guess."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": null
     },
     {
       "candidateId": "post_surgery_hexum_unresolved",
@@ -1035,28 +1103,30 @@
         "Post-Surgery Hexum"
       ],
       "candidateType": "UnresolvedRequestedAlias",
-      "sourceURL": null,
-      "sourceURLStatus": "Missing",
+      "sourceURL": "https://en.wikipedia.org/wiki/Jon-Erik_Hexum",
+      "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": null,
-      "verifiedSourceURLs": [],
-      "identityStatus": "Unresolved",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
-      "evidenceRef": "assets/references/source-access.json",
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Jon-Erik_Hexum"
+      ],
+      "identityStatus": "ExactRequestedReferenceUnresolved",
+      "adultStatus": "NoApprovedAdultPortrait",
+      "researchStatus": "Unavailable",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/requested-identities.json",
       "photographer": null,
       "license": null,
       "licenseURL": null,
       "commercialRights": null,
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "Unavailable",
       "portraitFile": null,
       "suggestedGameplay": null,
       "notes": [
-        "Ambiguous requested label. Do not map it to Jon-Erik Hexum or imply a medical/surgery history without an explicit reliable source. Jon-Erik Hexum is deceased; no claimed surgery association is verified.",
-        "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+        "Ambiguous requested label. Do not map it to Jon-Erik Hexum or imply a medical/surgery history without an explicit reliable source. Jon-Erik Hexum is deceased; no claimed surgery association is verified."
       ],
-      "enabled": false
+      "enabled": false,
+      "reviewPhotoFile": null
     },
     {
       "candidateId": "chad_jaw_unresolved",
@@ -1066,17 +1136,17 @@
       ],
       "candidateType": "UnresolvedRequestedAlias",
       "sourceURL": null,
-      "sourceURLStatus": "NoVerifiedSource",
+      "sourceURLStatus": "CheckedNoMatchingSourceLocated",
       "verifiedSourceURLs": [],
       "identityStatus": "UnresolvedDoNotGuess",
-      "adultStatus": "UnverifiedNoPortraitSelected",
-      "researchStatus": "ResearchBlocked",
-      "sourceAccess": "NetworkPolicyDeniedForResearchHosts",
+      "adultStatus": "NoApprovedAdultPortrait",
+      "researchStatus": "Unavailable",
+      "sourceAccess": "PublicHTMLResearchPerformed",
       "photographer": null,
       "license": null,
       "commercialRights": null,
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "NeedsApproval",
+      "portraitStatus": "Unavailable",
       "portraitFile": null,
       "enabled": false,
       "suggestedGameplay": {
@@ -1093,7 +1163,16 @@
       },
       "notes": [
         "User-provided alias has no verified identity; never assign a guessed person or an unrelated photo."
-      ]
+      ],
+      "evidenceRef": "assets/references/live-research/requested-identities.json",
+      "licenseURL": null,
+      "reviewPhotoFile": null
     }
-  ]
+  ],
+  "reviewedPhotoFiles": 15,
+  "productionPortraits": 0,
+  "countDefinitions": {
+    "licensedPortraits": "Original review photos with an image-specific open copyright license and reviewed source; not game approval.",
+    "verifiedCandidates": "Production-verified identities; remains zero until full production clearance."
+  }
 }

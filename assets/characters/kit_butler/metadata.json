@@ -2,18 +2,19 @@
   "schemaVersion": 1,
   "candidateId": "kit_butler",
   "displayName": "Kit Butler",
-  "status": "NeedsApproval",
+  "status": "Unavailable",
   "portraitFile": null,
   "sourceURL": "https://en.wikipedia.org/wiki/Kit_Butler",
-  "sourceURLStatus": "ProposedUnfetched",
+  "sourceURLStatus": "CheckedNoMatchingSourceLocated",
   "photographer": null,
   "license": null,
   "commercialRights": null,
   "likenessStatus": "NeedsApproval",
   "researchCatalog": "assets/references/research-catalog.json",
   "notes": [
-    "Public model research candidate; select an adult-era portrait only after date and rights review.",
-    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+    "Public model research candidate; select an adult-era portrait only after date and rights review."
   ],
-  "enabled": false
+  "enabled": false,
+  "reviewPhotoFile": null,
+  "reviewEvidence": "assets/references/live-research/kit_butler.json"
 }

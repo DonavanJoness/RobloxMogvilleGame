@@ -12,3 +12,7 @@ In the game, open Inventory and display your starter to earn Coins. Studio start
 These are generated delivery copies. After source edits, rebuild and refresh them before uploading a new version.
 
 V3 is an asset-dependent layout/UI preview, not visual acceptance-complete. No real-person photos or high-quality premade models have been imported. Missing art is labelled explicitly. See [V3_STATUS.md](../docs/V3_STATUS.md) before testing or publishing.
+
+## Authentic photo review pack
+
+`Mogville-photo-review.zip` contains 15 unchanged source photo files with individual credits, license notices and evidence. Extract the entire ZIP, then open `index.html` in a browser to view the gallery. Read `README.md` for the 13 unresolved references and `CREDITS.md` before reusing any image. This separate pack does not change `Mogville.rbxl`; no Roblox photo uploads or new character enablements were performed.

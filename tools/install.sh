@@ -21,7 +21,7 @@ unzip -oq "$temp_dir/rojo.zip" -d .tools/bin
 unzip -oq "$temp_dir/luau.zip" -d .tools/bin
 chmod +x .tools/bin/rojo .tools/bin/luau .tools/bin/luau-compile .tools/bin/luau-analyze
 .tools/bin/rojo --version
-python3 -m pip install --disable-pip-version-check --requirement tools/requirements-assets.txt
+python3 -m pip install --disable-pip-version-check --requirement tools/requirements-assets.txt --requirement tools/requirements-research.txt
 python3 tools/portraits.py
 python3 tools/test.py
 python3 -m unittest discover -s tests -p 'test_*.py'

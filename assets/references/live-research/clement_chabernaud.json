@@ -1,0 +1,44 @@
+{
+  "candidateId": "clement_chabernaud",
+  "displayName": "Clément Chabernaud",
+  "observedAtUTC": "2026-10-29T02:51:53.823266+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "Unavailable",
+  "copyrightStatus": "Unresolved",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Cl%C3%A9ment_Chabernaud"
+  ],
+  "downloadedFile": null,
+  "identityPageTitle": "Clément Chabernaud - Wikipedia",
+  "birthDate": "1989-11-06",
+  "identityExcerpt": "Clément Chabernaud Born ( 1989-11-06 ) 6 November 1989 (age 36) Paris , France Modeling information Height 1.86 m (6 ft 1 in) [ 1 ] Hair color Dark blond Eye color Blue Agencies IMG Models (New York) Success Models (Paris) d'management group (Milan) Supa Model Management (London) [ 2 ]",
+  "blocker": "No portrait image in the public biography infobox.",
+  "manualSearches": [
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category:Cl%C3%A9ment_Chabernaud",
+      "result": "HTTP 404 for exact category URL; no licensed photograph selected. This limited negative lookup does not establish that no source exists."
+    }
+  ],
+  "redistributionReview": {
+    "status": "Unavailable",
+    "limitations": "No reviewed openly licensed photo located. Provide an exact public identity/photo source or rights-holder-supplied photo with permission."
+  },
+  "broaderSearchLimitations": {
+    "findings": "Public Commons MediaSearch and Special:Search routes are prohibited by robots.txt for this research agent. No search page was fetched, no API or alternative route was used to bypass the restriction. Exact category and biography checks were limited and do not establish that no openly licensed photograph exists.",
+    "checks": [
+      {
+        "url": "https://commons.wikimedia.org/w/index.php?search=Cl%C3%A9ment+Chabernaud&title=Special%3AMediaSearch&type=image",
+        "result": "robots.txt does not permit this path",
+        "pageRequested": false
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Search/Cl%C3%A9ment_Chabernaud",
+        "result": "robots.txt does not permit this path",
+        "pageRequested": false
+      }
+    ]
+  }
+}

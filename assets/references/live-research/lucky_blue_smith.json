@@ -1,0 +1,70 @@
+{
+  "candidateId": "lucky_blue_smith",
+  "displayName": "Lucky Blue Smith",
+  "observedAtUTC": "2026-10-28T22:41:58.212619+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Lucky_Blue_Smith",
+    "https://commons.wikimedia.org/wiki/File:Lucky_blue_smith_2019_2.jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/lucky_blue_smith.jpg",
+  "identityPageTitle": "Lucky Blue Smith - Wikipedia",
+  "birthDate": "1998-06-04",
+  "identityExcerpt": "Lucky Blue Smith Smith in 2019 Born ( 1998-06-04 ) June 4, 1998 (age 28) Spanish Fork, Utah , U.S Occupations Model influencer musician Years active 2009–present Spouse Nara Pellmann ​ ( m. 2020 ) ​ Partner Stormi Henley (2015–2018) Children 5 Relatives Pyper America (sister) Modeling information Height 6 ft 2.5 in (189 cm) [ 1 ] Hair color Blond Eye color Blue Agency IMG Models (New York, Milan, London, Los Angeles, Australia) [ 2 ]",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Lucky_blue_smith_2019_2.jpg",
+  "filename": "Lucky_blue_smith_2019_2.jpg",
+  "description": "English: Lucky Blue Smith during Paris Fashion Week in September 2019",
+  "photographer": "Yoann Lothaire / other viewnewsmedia",
+  "photoDate": "23 September 2019",
+  "originalSource": "Luke Blue smith & Fahaid Sanober attends dinner paris fashionweeks Fouquet's",
+  "licenses": [
+    {
+      "name": "CC BY 3.0",
+      "url": "https://creativecommons.org/licenses/by/3.0",
+      "terms": "This file is licensed under the Creative Commons Attribution 3.0 Unported license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/3.0 CC BY 3.0 Creative Commons Attribution 3.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY 3.0",
+    "url": "https://creativecommons.org/licenses/by/3.0",
+    "terms": "This file is licensed under the Creative Commons Attribution 3.0 Unported license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/3.0 CC BY 3.0 Creative Commons Attribution 3.0 true true"
+  },
+  "attribution": "Lucky_blue_smith_2019_2.jpg — Yoann Lothaire / other viewnewsmedia; CC BY 3.0; https://commons.wikimedia.org/wiki/File:Lucky_blue_smith_2019_2.jpg; https://creativecommons.org/licenses/by/3.0. Original file retained; no changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/7/77/Lucky_blue_smith_2019_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    584,
+    731
+  ],
+  "sha256": "b6fa9b47a9ef6384b1918f0b32c28c150c90eec9db07b43f0903998e4f8364c2",
+  "visualReview": {
+    "reviewed": true,
+    "reviewedAtUTC": "2026-10-29T02:53:11.304339+00:00",
+    "findings": "One-person head-and-shoulders video still. Face is visible, but soft detail and strong blue/purple lighting; a partial shoulder and event lettering appear along the right edge. Lower-quality reference than a dedicated photographic portrait.",
+    "identityEvidence": "Commons description explicitly names Lucky Blue Smith during Paris Fashion Week in September 2019. The biography infobox uses the exact 2019 still. This is source attribution, not face recognition.",
+    "adultDateEvidence": "Biography DOB 1998-06-04; Commons photograph date 2019-09-23; age 21 on that date. Age based on source dates, not appearance.",
+    "limitations": "This review confirms visible framing/quality and written source context; it does not verify a model release, platform upload compatibility, or game-likeness permission.",
+    "upstreamChanges": "This is an upstream screenshot/video still, not a new MOGVILLE photograph or crop; retained unchanged."
+  },
+  "sourceLicenseReview": {
+    "reviewed": true,
+    "evidence": "File-specific Commons template gives CC BY 3.0, credits Yoann Lothaire / other viewnewsmedia, links the original YouTube video, and says reviewer MGA73 checked the stated license on 17 November 2020.",
+    "licenseSource": "https://commons.wikimedia.org/wiki/File:Lucky_blue_smith_2019_2.jpg",
+    "originalSourceURLs": [
+      "https://youtube.com/watch?feature=youtu.be&v=-lPFE_IJxNY"
+    ],
+    "copyrightApprovalForGame": false,
+    "requiredConditions": "Credit author and source, link the specified license, mark changes; ShareAlike applies to adaptations where the selected license is BY-SA. No endorsement implied."
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "basis": "File-specific Commons template gives CC BY 3.0, credits Yoann Lothaire / other viewnewsmedia, links the original YouTube video, and says reviewer MGA73 checked the stated license on 17 November 2020.",
+    "scope": "Redistribution of this exact source file with required attribution/license notice. Does not clear game likeness, endorsement, or Roblox platform terms.",
+    "warningReview": "Checked visible file-specific Commons licensing, source/author/date information, external-source review where applicable, and upstream extraction source. No unresolved source-license warning found for retained file."
+  }
+}

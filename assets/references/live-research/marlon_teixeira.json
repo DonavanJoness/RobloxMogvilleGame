@@ -1,0 +1,57 @@
+{
+  "candidateId": "marlon_teixeira",
+  "displayName": "Marlon Teixeira",
+  "observedAtUTC": "2026-10-28T22:41:59.190774+00:00",
+  "identityStatus": "PublicBiographyAndFileCaptionReviewed",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Marlon_Teixeira",
+    "https://commons.wikimedia.org/wiki/File:Marlon_Teixeira.jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/marlon_teixeira.jpg",
+  "identityPageTitle": "Marlon Teixeira - Wikipedia",
+  "birthDate": "1991-09-16",
+  "identityExcerpt": "Marlon Teixeira Teixeira in 2012 Born Marlon Luiz Teixeira ( 1991-09-16 ) September 16, 1991 (age 35) Pomerode , Santa Catarina , Brazil Occupation Model Children 1 Parent Claudia Teixeira Modelling information Height 6 ft 1 + 1 ⁄ 2 in (1.87 m) [ 1 ] Hair colour Brown [ 1 ] Eye colour Hazel [ 1 ] Agency Wilhelmina Models (New York) Marilyn Agency (Paris) Elite Milan (Milan) Next London (London) Sight Management Studio (Barcelona) Scoop Models (Copenhagen) Modelwerk (Hamburg) Way Model Management (São Paulo) Kult Australia  (Sydney) Wilhelmina Agency (Los Angeles) Wilhelmina Agency (Miami) Wilhelmina Agency (Chicago) The Society Management (New York)",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Marlon_Teixeira.jpg",
+  "filename": "Marlon_Teixeira.jpg",
+  "description": "Marlon Teixeira @ Ermanno Scervino",
+  "photographer": "Sara Cimino from Milan, Italy ( Flickr account )",
+  "photoDate": "19 June 2011",
+  "originalSource": "Flickr",
+  "licenses": [
+    {
+      "name": "CC BY 2.0",
+      "url": "https://creativecommons.org/licenses/by/2.0",
+      "terms": "This file is licensed under the Creative Commons Attribution 2.0 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/2.0 CC BY 2.0 Creative Commons Attribution 2.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY 2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0",
+    "terms": "This file is licensed under the Creative Commons Attribution 2.0 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/2.0 CC BY 2.0 Creative Commons Attribution 2.0 true true"
+  },
+  "attribution": "Marlon_Teixeira.jpg — Sara Cimino from Milan, Italy ( Flickr account ); CC BY 2.0; https://commons.wikimedia.org/wiki/File:Marlon_Teixeira.jpg; https://creativecommons.org/licenses/by/2.0. Original file retained; no changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Marlon_Teixeira.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    1826,
+    2750
+  ],
+  "sha256": "53c06b19aa31fba3eada66f057bcd07f7d78699950acefb7b00a149b314a914b",
+  "visualReview": {
+    "reviewed": true,
+    "reviewedAtUTC": "2026-10-29T02:53:44.281231+00:00",
+    "findings": "Single main subject in a patterned blazer, photographed from head to upper legs on a runway; face visible and sharp enough for portrait review. Small background bystanders remain at image edges.",
+    "identityEvidence": "The biography infobox and Commons description both identify Marlon Teixeira; Commons describes the Ermanno Scervino event. This checks source labelling, not face recognition.",
+    "adultDateEvidence": "Biography DOB 1991-09-16 and Commons photograph date 2011-06-19 place the named subject at age 19.",
+    "limitations": "Current Commons file history records upstream watermark removal and earlier tone adjustments; exact downloaded Commons bytes retained unchanged by MOGVILLE. Event photo/background bystanders may need crop review before game use."
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "basis": "Photo-specific Commons license, author, date/caption and downloaded image were reviewed; this records the source claims, not an independent legal warranty or game likeness clearance."
+  }
+}

@@ -1,8 +1,8 @@
 # MOGVILLE V3 — card-layout preview and asset acceptance
 
-**V3 is not visually acceptance-complete.** This delivery implements the card UI, layout changes and reviewed-asset integration. Authentic photographs, detailed custom rigs and imported architectural models have not been supplied or verified. The world explicitly labels its remaining architecture as a layout preview.
+**V3 is not visually acceptance-complete.** This delivery implements the card UI, layout changes and reviewed-asset integration. Fifteen real photo files now have reviewed source/license/date evidence in a separate [photo review pack](../assets/references/photo-review/README.md); thirteen requested references remain unresolved. No production photo approvals, Roblox uploads, detailed custom rigs or imported architectural models have been completed. The world explicitly labels its remaining architecture as a layout preview.
 
-The owner supplied [Build a Soccer Team](https://www.roblox.com/games/94164742020505/Build-a-Soccer-Team) as the layout reference. Its public page returned proxy HTTP 403. No game screenshots or live game were inspected. The current arrangement is MOGVILLE's original interpretation of a card-collector promenade; it is not a verified match of that game's layout, and none of its proprietary art or models was copied.
+The owner supplied [Build a Soccer Team](https://www.roblox.com/games/94164742020505/Build-a-Soccer-Team) as the layout reference. Its public page was initially blocked and became accessible after the owner applied updated environment settings. No game screenshots or live game were inspected. The current arrangement is MOGVILLE's original interpretation of a card-collector promenade; it is not a verified match of that game's layout, and none of its proprietary art or models was copied.
 
 ## What changed
 
@@ -20,20 +20,20 @@ The owner supplied [Build a Soccer Team](https://www.roblox.com/games/9416474202
 
 | Requirement | Actual delivery status |
 | --- | --- |
-| Verified authentic real-person photographs | **0**; source research blocked |
+| Source-reviewed photo files | **15** in a separate review pack; **13** references unresolved; **0** approved production photos |
 | Enabled real-person cards | **0**; all pending and unobtainable |
 | Roblox image uploads | **0**; no upload credentials or tooling configured |
-| Imported premade 3D models/material packs | **0**; Creator Store access blocked; no local approved assets supplied |
+| Imported premade 3D models/material packs | **0**; public access now works, but no approved assets imported |
 | Approved customized NPC rigs / animations | **0**; eight specific templates remain required |
 | New layout/UI implementation | Implemented; not visually inspected in Studio |
 | Detailed final architecture | **Incomplete**; eight import slots and original layout preview only |
 | Existing gameplay logic | Preserved and covered by automated checks; real Studio loop still pending |
 
-Source audit and exact blocked URLs: [V3_ASSET_AUDIT.md](V3_ASSET_AUDIT.md). More geometry or a lower part count is not evidence that the art is production quality.
+Historical source audit and initially blocked URLs: [V3_ASSET_AUDIT.md](V3_ASSET_AUDIT.md). Current photo sources and precise blockers: [research catalog](../assets/references/research-catalog.md). More geometry or a lower part count is not evidence that the art is production quality.
 
 ## Get authentic cards working
 
-1. Enable the saved network draft in environment settings, or supply owner-authorized source images and their permission records. Existing additions cover Wikimedia/Wikipedia, Models.com and Know Your Meme; V3 adds `www.roblox.com` and `create.roblox.com` for the supplied reference and Creator Store. Saving a draft did not apply or publish it.
+1. Public research access is now working after the owner applied the environment settings. Review the collected photo pack and the remaining per-person source blockers. This research did not publish another environment or Roblox experience.
 2. Resolve the identity and adult-era photograph for each candidate. Ambiguous aliases stay unresolved. Confirm the exact photo's photographer, license, commercial/derivative use, attribution and applicable likeness authorization.
 3. Add approved local photographs to `assets/characters/manifest.json`. Use `referenceType="RealPerson"`, `authenticPhotograph=true`, `identityVerified=true`, `adultEraVerified=true`, `containsRealPerson=true`, the rights/evidence fields, and canonical IDs such as `real_<verified_identity_id>_classic`. Variants Young/Classic/Prime/Ascended each need an authentic authorized photo record; an Ascended border does not fabricate a new photograph.
 4. Run `python3 tools/portraits.py` to prepare 512×512 outputs. This command never downloads photos or uploads assets and refuses fictional substitute faces. It refreshes `PortraitAssets` and `RealMoggers` from the reviewed records.
@@ -53,6 +53,10 @@ The permission flags are owner review records, not independent proof that a sour
 The loader's stripping and structural checks are defense in depth, not a full malware scanner or visual-quality evaluator. No imported model is executed as trusted code.
 
 ## Validation performed
+
+Photo-research follow-up: **20 Python tests passed**, including source-specific license selection, adult-date gating, source-byte preservation, review-pack integrity and continued production separation. The pack contains 15 source-reviewed photos; gallery paths, credits, hashes, held-file exclusion and deterministic ZIP reproduction were checked. Gameplay code and the downloadable place were unchanged by this follow-up.
+
+The earlier V3 implementation was validated as follows:
 
 - 98 Luau tests passed; all 48 current Luau game/test files compiled.
 - 10 Python tests passed for authentic-photo/permission/ID/path/normalization gates and retired placeholder rejection.

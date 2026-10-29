@@ -2,18 +2,19 @@
   "schemaVersion": 1,
   "candidateId": "sean_opry",
   "displayName": "Sean O’Pry",
-  "status": "NeedsApproval",
+  "status": "ReviewOnlyNotGameApproved",
   "portraitFile": null,
   "sourceURL": "https://en.wikipedia.org/wiki/Sean_O'Pry",
-  "sourceURLStatus": "ProposedUnfetched",
-  "photographer": null,
-  "license": null,
-  "commercialRights": null,
+  "sourceURLStatus": "FetchedForSourceReview",
+  "photographer": "Denielle",
+  "license": "CC BY-SA 2.0",
+  "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
   "likenessStatus": "NeedsApproval",
   "researchCatalog": "assets/references/research-catalog.json",
   "notes": [
-    "Public model research candidate; no looksmaxxing affiliation asserted.",
-    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+    "Public model research candidate; no looksmaxxing affiliation asserted."
   ],
-  "enabled": false
+  "enabled": false,
+  "reviewPhotoFile": "assets/references/photo-review/sean_opry.jpg",
+  "reviewEvidence": "assets/references/live-research/sean_opry.json"
 }

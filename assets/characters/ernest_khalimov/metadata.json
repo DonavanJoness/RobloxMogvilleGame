@@ -2,18 +2,19 @@
   "schemaVersion": 1,
   "candidateId": "ernest_khalimov",
   "displayName": "Ernest Khalimov",
-  "status": "NeedsApproval",
+  "status": "PermissionRequired",
   "portraitFile": null,
-  "sourceURL": "https://en.wikipedia.org/wiki/Ernest_Khalimov",
-  "sourceURLStatus": "ProposedUnfetched",
+  "sourceURL": "https://knowyourmeme.com/memes/gigachad",
+  "sourceURLStatus": "FetchedForSourceReview",
   "photographer": null,
   "license": null,
   "commercialRights": null,
   "likenessStatus": "NeedsApproval",
   "researchCatalog": "assets/references/research-catalog.json",
   "notes": [
-    "Proposed GigaChad association requires cross-checking the original art project, identity and photographer. No photograph or photographer attribution is assumed.",
-    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+    "Proposed GigaChad association requires cross-checking the original art project, identity and photographer. No photograph or photographer attribution is assumed."
   ],
-  "enabled": false
+  "enabled": false,
+  "reviewPhotoFile": null,
+  "reviewEvidence": "assets/references/live-research/requested-identities.json"
 }

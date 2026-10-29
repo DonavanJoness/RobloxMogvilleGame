@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 1,
+  "scope": "Source-reviewed photographs for owner review; no game upload or enablement.",
+  "requestedReferences": 28,
+  "includedPhotoFiles": 15,
+  "unresolvedReferences": 13,
+  "productionApproved": 0,
+  "records": [
+    {
+      "candidateId": "clavicular",
+      "displayName": "Clavicular",
+      "reviewPhotoFile": null,
+      "status": "PermissionRequired",
+      "blocker": "Public alias corroborated; no adult-era photo with documented reuse rights selected.",
+      "evidence": "assets/references/live-research/requested-identities.json",
+      "sources": [
+        "https://knowyourmeme.com/memes/people/clavicular",
+        "https://www.famousbirthdays.com/people/clavicular.html"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "francisco_lachowski",
+      "displayName": "Francisco Lachowski",
+      "reviewPhotoFile": "assets/references/photo-review/francisco_lachowski.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/francisco_lachowski.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Francisco_Lachowski",
+        "https://commons.wikimedia.org/wiki/File:Francisco_Lachowski_2011.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "henry_cavill",
+      "displayName": "Henry Cavill",
+      "reviewPhotoFile": "assets/references/photo-review/henry_cavill.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/henry_cavill.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Henry_Cavill",
+        "https://commons.wikimedia.org/wiki/File:Henry_Cavill_(48417913146)_(cropped).jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "ernest_khalimov",
+      "displayName": "Ernest Khalimov",
+      "reviewPhotoFile": null,
+      "status": "PermissionRequired",
+      "blocker": "GigaChad project copyright permission missing; iconic edited artwork is not an unaltered portrait.",
+      "evidence": "assets/references/live-research/requested-identities.json",
+      "sources": [
+        "https://knowyourmeme.com/memes/gigachad"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "jordan_barrett",
+      "displayName": "Jordan Barrett",
+      "reviewPhotoFile": "assets/references/photo-review/jordan_barrett.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/jordan_barrett.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jordan_Barrett",
+        "https://commons.wikimedia.org/wiki/File:Jordan-barrett-mbfw-march-2022-fashion-week-berlin.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "david_gandy",
+      "displayName": "David Gandy",
+      "reviewPhotoFile": "assets/references/photo-review/david_gandy.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/david_gandy.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/David_Gandy",
+        "https://commons.wikimedia.org/wiki/File:David_Gandy_1.jpg",
+        "https://commons.wikimedia.org/wiki/File:David_Gandy_in_Singapore,_2015.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "sean_opry",
+      "displayName": "Sean O’Pry",
+      "reviewPhotoFile": "assets/references/photo-review/sean_opry.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/sean_opry.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sean_O'Pry",
+        "https://commons.wikimedia.org/wiki/File:Sean_O'Pry_2015.jpg",
+        "https://commons.wikimedia.org/wiki/File:Taylor_Swift_Special_Guest_STAPLES_Center_Los_Angeles.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "lucky_blue_smith",
+      "displayName": "Lucky Blue Smith",
+      "reviewPhotoFile": "assets/references/photo-review/lucky_blue_smith.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/lucky_blue_smith.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Lucky_Blue_Smith",
+        "https://commons.wikimedia.org/wiki/File:Lucky_blue_smith_2019_2.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "jon_kortajarena",
+      "displayName": "Jon Kortajarena",
+      "reviewPhotoFile": "assets/references/photo-review/jon_kortajarena.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/jon_kortajarena.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jon_Kortajarena",
+        "https://commons.wikimedia.org/wiki/File:Premios_Goya_2020_-_Jon_Kortajarena_(Cropped)_(cropped).jpg",
+        "https://commons.wikimedia.org/wiki/File:Premios_Goya_2020_-_Jon_Kortajarena_(Cropped).jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "marlon_teixeira",
+      "displayName": "Marlon Teixeira",
+      "reviewPhotoFile": "assets/references/photo-review/marlon_teixeira.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/marlon_teixeira.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Marlon_Teixeira",
+        "https://commons.wikimedia.org/wiki/File:Marlon_Teixeira.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "tyson_beckford",
+      "displayName": "Tyson Beckford",
+      "reviewPhotoFile": "assets/references/photo-review/tyson_beckford.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/tyson_beckford.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tyson_Beckford",
+        "https://commons.wikimedia.org/wiki/File:Tyson_Beckford_(cropped).jpg",
+        "https://commons.wikimedia.org/wiki/File:Tyson_Beckford.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "marcus_schenkenberg",
+      "displayName": "Marcus Schenkenberg",
+      "reviewPhotoFile": "assets/references/photo-review/marcus_schenkenberg.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/marcus_schenkenberg.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Marcus_Schenkenberg",
+        "https://commons.wikimedia.org/wiki/File:AV0A1717_Marcus_Schenkenberg.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "david_agbodji",
+      "displayName": "David Agbodji",
+      "reviewPhotoFile": null,
+      "status": "Unavailable",
+      "blocker": "No licensed photograph found on the checked Wikipedia/Commons pages; a sourced image with photographer permission is still needed.",
+      "evidence": "assets/references/live-research/david_agbodji.json",
+      "sources": [],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "alton_mason",
+      "displayName": "Alton Mason",
+      "reviewPhotoFile": null,
+      "status": "HeldExternalLicenseReview",
+      "blocker": "External video-license claim is pending Commons review; unsuitable for redistribution bundle until source verification.",
+      "evidence": "assets/references/live-research/alton_mason.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Alton_Mason",
+        "https://commons.wikimedia.org/wiki/File:Alton_Mason_for_Paco_Rabanne_Million_Manifesto.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "pietro_boselli",
+      "displayName": "Pietro Boselli",
+      "reviewPhotoFile": null,
+      "status": "Unavailable",
+      "blocker": "No licensed photograph found on the checked Wikipedia/Commons pages; a sourced image with photographer permission is still needed.",
+      "evidence": "assets/references/live-research/pietro_boselli.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pietro_Boselli"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "alex_lundqvist",
+      "displayName": "Alex Lundqvist",
+      "reviewPhotoFile": null,
+      "status": "Unavailable",
+      "blocker": "No licensed photograph found on the checked Wikipedia/Commons pages; a sourced image with photographer permission is still needed.",
+      "evidence": "assets/references/live-research/alex_lundqvist.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Alex_Lundqvist"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "noah_mills",
+      "displayName": "Noah Mills",
+      "reviewPhotoFile": "assets/references/photo-review/noah_mills.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/noah_mills.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Noah_Mills",
+        "https://commons.wikimedia.org/wiki/File:Noah_Mills_(cropped).jpg",
+        "https://commons.wikimedia.org/wiki/File:Noah_Mills.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "mathias_lauridsen",
+      "displayName": "Mathias Lauridsen",
+      "reviewPhotoFile": null,
+      "status": "Unavailable",
+      "blocker": "Biography found; no licensed photo located in the checked public sources.",
+      "evidence": "assets/references/live-research/mathias_lauridsen.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mathias_Lauridsen"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "garrett_neff",
+      "displayName": "Garrett Neff",
+      "reviewPhotoFile": null,
+      "status": "Unavailable",
+      "blocker": "Biography found; no licensed photo located in the checked public sources.",
+      "evidence": "assets/references/live-research/garrett_neff.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Garrett_Neff"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "kit_butler",
+      "displayName": "Kit Butler",
+      "reviewPhotoFile": null,
+      "status": "Unavailable",
+      "blocker": "Checked biography/category URLs returned 404; exact source or authorized photo needed.",
+      "evidence": "assets/references/live-research/kit_butler.json",
+      "sources": [],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "simon_nessman",
+      "displayName": "Simon Nessman",
+      "reviewPhotoFile": "assets/references/photo-review/simon_nessman.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/simon_nessman.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Simon_Nessman",
+        "https://commons.wikimedia.org/wiki/File:Simon_Nessman.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "andres_velencoso",
+      "displayName": "Andrés Velencoso",
+      "reviewPhotoFile": "assets/references/photo-review/andres_velencoso.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/andres_velencoso.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Andr%C3%A9s_Velencoso",
+        "https://commons.wikimedia.org/wiki/File:Andr%C3%A9s_Velencoso_at_Premios_Goya_2017_(cropped).jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "baptiste_giabiconi",
+      "displayName": "Baptiste Giabiconi",
+      "reviewPhotoFile": "assets/references/photo-review/baptiste_giabiconi.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/baptiste_giabiconi.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Baptiste_Giabiconi",
+        "https://commons.wikimedia.org/wiki/File:Baptiste_Giabiconi.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "clement_chabernaud",
+      "displayName": "Clément Chabernaud",
+      "reviewPhotoFile": null,
+      "status": "Unavailable",
+      "blocker": "Biography found; no licensed photo located in the checked public sources.",
+      "evidence": "assets/references/live-research/clement_chabernaud.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Cl%C3%A9ment_Chabernaud"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "river_viiperi",
+      "displayName": "River Viiperi",
+      "reviewPhotoFile": "assets/references/photo-review/river_viiperi.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/river_viiperi.json",
+      "sources": [
+        "https://commons.wikimedia.org/wiki/Category:River_Viiperi",
+        "https://commons.wikimedia.org/wiki/File:River_Viiperi_2011.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "kaysh_unresolved",
+      "displayName": "Kaysh",
+      "reviewPhotoFile": null,
+      "status": "Unavailable",
+      "blocker": "Exact public identity/profile and authorized photograph needed.",
+      "evidence": "assets/references/live-research/requested-identities.json",
+      "sources": [],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "post_surgery_hexum_unresolved",
+      "displayName": "Post-Surgery Hexum",
+      "reviewPhotoFile": null,
+      "status": "Unavailable",
+      "blocker": "Exact requested person/variant and authorized reference photo remain unresolved.",
+      "evidence": "assets/references/live-research/requested-identities.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jon-Erik_Hexum"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    },
+    {
+      "candidateId": "chad_jaw_unresolved",
+      "displayName": "Chad Jaw (unverified label)",
+      "reviewPhotoFile": null,
+      "status": "Unavailable",
+      "blocker": "Exact public identity/profile and authorized photograph needed.",
+      "evidence": "assets/references/live-research/requested-identities.json",
+      "sources": [],
+      "gameEnabled": false,
+      "robloxAssetId": 0
+    }
+  ]
+}

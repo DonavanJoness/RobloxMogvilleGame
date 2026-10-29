@@ -2,18 +2,19 @@
   "schemaVersion": 1,
   "candidateId": "alton_mason",
   "displayName": "Alton Mason",
-  "status": "NeedsApproval",
+  "status": "HeldExternalLicenseReview",
   "portraitFile": null,
   "sourceURL": "https://en.wikipedia.org/wiki/Alton_Mason",
-  "sourceURLStatus": "ProposedUnfetched",
-  "photographer": null,
-  "license": null,
+  "sourceURLStatus": "FetchedForSourceReview",
+  "photographer": "Paco Rabanne",
+  "license": "CC BY 3.0",
   "commercialRights": null,
   "likenessStatus": "NeedsApproval",
   "researchCatalog": "assets/references/research-catalog.json",
   "notes": [
-    "Public model research candidate; no looksmaxxing affiliation asserted.",
-    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+    "Public model research candidate; no looksmaxxing affiliation asserted."
   ],
-  "enabled": false
+  "enabled": false,
+  "reviewPhotoFile": null,
+  "reviewEvidence": "assets/references/live-research/alton_mason.json"
 }

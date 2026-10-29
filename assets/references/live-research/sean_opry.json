@@ -1,0 +1,72 @@
+{
+  "candidateId": "sean_opry",
+  "displayName": "Sean O’Pry",
+  "observedAtUTC": "2026-10-28T22:41:56.126938+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Sean_O'Pry",
+    "https://commons.wikimedia.org/wiki/File:Sean_O'Pry_2015.jpg",
+    "https://commons.wikimedia.org/wiki/File:Taylor_Swift_Special_Guest_STAPLES_Center_Los_Angeles.jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/sean_opry.jpg",
+  "identityPageTitle": "Sean O'Pry - Wikipedia",
+  "birthDate": "1989-07-05",
+  "identityExcerpt": "Sean O'Pry O'Pry in 2015 Born Sean Richard O'Pry ( 1989-07-05 ) July 5, 1989 (age 37) Kennesaw, Georgia , U.S. [ 1 ] Other names Sean Opry, Sean-O Modeling information Height 6 ft 1 in (1.85 m) [ 1 ] Hair color Brown [ 1 ] Eye color Blue [ 1 ]",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Sean_O'Pry_2015.jpg",
+  "filename": "Sean_O'Pry_2015.jpg",
+  "description": "English: Taylor Swift and special guest during Style",
+  "photographer": "Denielle",
+  "photoDate": "22 August 2015, 22:32:02",
+  "originalSource": "Taylor Swift Concert 8-22-15 (228)",
+  "licenses": [
+    {
+      "name": "CC BY-SA 2.0",
+      "url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 2.0 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/2.0 CC BY-SA 2.0 Creative Commons Attribution-Share Alike 2.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY-SA 2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 2.0 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/2.0 CC BY-SA 2.0 Creative Commons Attribution-Share Alike 2.0 true true"
+  },
+  "attribution": "Sean_O'Pry_2015.jpg — Denielle; CC BY-SA 2.0; https://commons.wikimedia.org/wiki/File:Sean_O'Pry_2015.jpg; https://creativecommons.org/licenses/by-sa/2.0. Original file retained; no changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/5/50/Sean_O%27Pry_2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    361,
+    447
+  ],
+  "sha256": "71921a6067572d852885f8daad3ae32ded79dab0617e2e54f94f4a52a2928e99",
+  "visualReview": {
+    "reviewed": true,
+    "reviewedAtUTC": "2026-10-29T02:53:11.275853+00:00",
+    "findings": "One-person concert crop, head and upper torso visible. Low resolution (361×447), soft focus, strong lighting/color cast; another person’s arm/background fragments are visible at edges. Acceptable for reference review, limited for large card art.",
+    "identityEvidence": "Commons filename and structured depiction data identify Sean O’Pry, and the biography infobox uses the exact file with 2015 caption. The description itself says only “Taylor Swift and special guest during Style,” so identity relies on that filename/depiction/article context. No facial identification performed.",
+    "adultDateEvidence": "Biography DOB 1989-07-05; Commons photograph date 2015-08-22; age 26 on that date. Age based on source dates, not appearance.",
+    "limitations": "This review confirms visible framing/quality and written source context; it does not verify a model release, platform upload compatibility, or game-likeness permission.",
+    "upstreamChanges": "The downloaded Commons file is already a one-person concert crop; retained without MOGVILLE changes."
+  },
+  "sourceLicenseReview": {
+    "reviewed": true,
+    "evidence": "File-specific Commons licensing template states CC BY-SA 2.0 and credits Denielle, linking the original Flickr concert photograph. The upstream original Commons file also carries CC BY-SA2.0 and FlickreviewR confirmation dated 9 February 2017.",
+    "licenseSource": "https://commons.wikimedia.org/wiki/File:Sean_O'Pry_2015.jpg",
+    "originalSourceURLs": [
+      "https://www.flickr.com/photos/celestigirl25/21164018591/in/album-72157655881671123/"
+    ],
+    "copyrightApprovalForGame": false,
+    "requiredConditions": "Credit author and source, link the specified license, mark changes; ShareAlike applies to adaptations where the selected license is BY-SA. No endorsement implied.",
+    "upstreamSourceURL": "https://commons.wikimedia.org/wiki/File:Taylor_Swift_Special_Guest_STAPLES_Center_Los_Angeles.jpg"
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "basis": "File-specific Commons licensing template states CC BY-SA 2.0 and credits Denielle, linking the original Flickr concert photograph. The upstream original Commons file also carries CC BY-SA2.0 and FlickreviewR confirmation dated 9 February 2017.",
+    "scope": "Redistribution of this exact source file with required attribution/license notice. Does not clear game likeness, endorsement, or Roblox platform terms.",
+    "warningReview": "Checked visible file-specific Commons licensing, source/author/date information, external-source review where applicable, and upstream extraction source. No unresolved source-license warning found for retained file."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "candidateId": "henry_cavill",
+  "displayName": "Henry Cavill",
+  "observedAtUTC": "2026-10-28T22:41:09.145269+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Henry_Cavill",
+    "https://commons.wikimedia.org/wiki/File:Henry_Cavill_(48417913146)_(cropped).jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/henry_cavill.jpg",
+  "identityPageTitle": "Henry Cavill - Wikipedia",
+  "birthDate": "1983-05-05",
+  "identityExcerpt": "Henry Cavill Cavill in 2019 Born Henry William Dalgliesh Cavill ( 1983-05-05 ) 5 May 1983 (age 43) St Helier , Jersey Occupation Actor Years active 2001–present Partner Natalie Viscuso (2021–present) Children 1 Signature",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Henry_Cavill_(48417913146)_(cropped).jpg",
+  "filename": "Henry_Cavill_(48417913146)_(cropped).jpg",
+  "description": "Freya Allan and Henry Cavill speaking at the 2019 San Diego Comic Con International, for \"The Witcher\", at the San Diego Convention Center in San Diego, California. Please attribute to Gage Skidmore if used elsewhere.",
+  "photographer": "Gage Skidmore from Peoria, AZ, United States of America",
+  "photoDate": "19 July 2019, 14:41",
+  "originalSource": "Freya Allan & Henry Cavill",
+  "licenses": [
+    {
+      "name": "CC BY-SA 2.0",
+      "url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 2.0 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/2.0 CC BY-SA 2.0 Creative Commons Attribution-Share Alike 2.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY-SA 2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 2.0 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/2.0 CC BY-SA 2.0 Creative Commons Attribution-Share Alike 2.0 true true"
+  },
+  "attribution": "Henry_Cavill_(48417913146)_(cropped).jpg — Gage Skidmore from Peoria, AZ, United States of America; CC BY-SA 2.0; https://commons.wikimedia.org/wiki/File:Henry_Cavill_(48417913146)_(cropped).jpg; https://creativecommons.org/licenses/by-sa/2.0. Existing Commons cropped version retained unchanged by MOGVILLE; upstream crop credited through source file history.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/3/30/Henry_Cavill_%2848417913146%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    1043,
+    1362
+  ],
+  "sha256": "07f8d5f9583ef1cf6647cf1e076cf55af0968d8571734482efb8c724f6d33cfd",
+  "visualReview": {
+    "reviewed": true,
+    "findings": "One-person head-and-shoulders portrait with visible face, unobstructed eyes, softly defocused event background. Source already cropped upstream; no additional changes by MOGVILLE.",
+    "identityEvidence": "The exact file appears in the Henry Cavill biographical infobox; its Commons description names Henry Cavill at The Witcher panel, San Diego Comic Con 2019. This is written source attribution, not biometric recognition.",
+    "adultDateEvidence": "Biographical DOB 1983-05-05 and Commons photograph date 2019-07-19 establish age 36.",
+    "limitations": "No claim of an independent model release, endorsement, or game-likeness permission. Existing upstream crop retained."
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "evidence": "Commons file-specific CC BY-SA 2.0 license, Gage Skidmore credit, original Flickr source description and adult-era date reviewed.",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/2.0",
+    "productionApproval": false
+  }
+}

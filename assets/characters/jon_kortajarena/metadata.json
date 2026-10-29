@@ -2,18 +2,19 @@
   "schemaVersion": 1,
   "candidateId": "jon_kortajarena",
   "displayName": "Jon Kortajarena",
-  "status": "NeedsApproval",
+  "status": "ReviewOnlyNotGameApproved",
   "portraitFile": null,
   "sourceURL": "https://en.wikipedia.org/wiki/Jon_Kortajarena",
-  "sourceURLStatus": "ProposedUnfetched",
-  "photographer": null,
-  "license": null,
-  "commercialRights": null,
+  "sourceURLStatus": "FetchedForSourceReview",
+  "photographer": "Pedro J Pacheco",
+  "license": "CC BY-SA 4.0",
+  "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
   "likenessStatus": "NeedsApproval",
   "researchCatalog": "assets/references/research-catalog.json",
   "notes": [
-    "Public model research candidate; no looksmaxxing affiliation asserted.",
-    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+    "Public model research candidate; no looksmaxxing affiliation asserted."
   ],
-  "enabled": false
+  "enabled": false,
+  "reviewPhotoFile": "assets/references/photo-review/jon_kortajarena.jpg",
+  "reviewEvidence": "assets/references/live-research/jon_kortajarena.json"
 }

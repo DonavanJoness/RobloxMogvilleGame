@@ -2,18 +2,19 @@
   "schemaVersion": 1,
   "candidateId": "kaysh_unresolved",
   "displayName": "Kaysh",
-  "status": "NeedsApproval",
+  "status": "Unavailable",
   "portraitFile": null,
   "sourceURL": null,
-  "sourceURLStatus": "Missing",
+  "sourceURLStatus": "CheckedNoMatchingSourceLocated",
   "photographer": null,
   "license": null,
   "commercialRights": null,
   "likenessStatus": "NeedsApproval",
   "researchCatalog": "assets/references/research-catalog.json",
   "notes": [
-    "Ambiguous requested alias. No identity, age, image, or public profile has been established. Ask the user for a reference link; do not guess.",
-    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+    "Ambiguous requested alias. No identity, age, image, or public profile has been established. Ask the user for a reference link; do not guess."
   ],
-  "enabled": false
+  "enabled": false,
+  "reviewPhotoFile": null,
+  "reviewEvidence": "assets/references/live-research/requested-identities.json"
 }

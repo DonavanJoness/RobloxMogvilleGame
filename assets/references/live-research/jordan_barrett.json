@@ -1,0 +1,68 @@
+{
+  "candidateId": "jordan_barrett",
+  "displayName": "Jordan Barrett",
+  "observedAtUTC": "2026-10-28T22:41:51.313017+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Jordan_Barrett",
+    "https://commons.wikimedia.org/wiki/File:Jordan-barrett-mbfw-march-2022-fashion-week-berlin.jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/jordan_barrett.jpg",
+  "identityPageTitle": "Jordan Barrett - Wikipedia",
+  "birthDate": "1996-12-02",
+  "identityExcerpt": "Jordan Barrett Barrett at the Berlin Fashion Week , 2022 Born Jordan Kale Barrett ( 1996-12-02 ) 2 December 1996 (age 29) Other name Robert Turner Occupations Fashion Supermodel and PSL King ( TikTok ). Years active 2010-present Partner Fernando Augusto Casablancas ​ ​ ( m. 2021 ) ​ Modelling information Height 188 cm (6 ft 2 in) [ 1 ] Hair colour Blond Eye colour Green (yellow central heterochromia) Agency IMG New York (New York), TESS Management (London) [ 2 ]",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Jordan-barrett-mbfw-march-2022-fashion-week-berlin.jpg",
+  "filename": "Jordan-barrett-mbfw-march-2022-fashion-week-berlin.jpg",
+  "description": "English: The super model Jordan Barrett did the opening and closing of Justin Cassins fashion show during the Mercedes Benz Fashion Week Berlin in March 2022. The photo was taken when he was posing in the last look at the end of the almost 50m long runway. Deutsch: Das Super Model Jordan eröffnete und schloss Justin Cassins Modenshau während der Mercedes Benz Fashion Week (MBFW) Berlin im März 2022. Das Foto wurde aufgenommen, als er im letzten Look am Ende das fast 50m langen Laufstegs posierte.",
+  "photographer": "Stefan Heesch, Nordfriisk Photography, Zürich, Switzerland (Commons user Nordfriisk)",
+  "photoDate": "15 March 2022",
+  "originalSource": "Own work",
+  "licenses": [
+    {
+      "name": "CC BY-SA 4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 4.0 International license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/4.0 CC BY-SA 4.0 Creative Commons Attribution-Share Alike 4.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 4.0 International license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/4.0 CC BY-SA 4.0 Creative Commons Attribution-Share Alike 4.0 true true"
+  },
+  "attribution": "Jordan-barrett-mbfw-march-2022-fashion-week-berlin.jpg — Stefan Heesch, Nordfriisk Photography, Zürich, Switzerland (Commons user Nordfriisk); CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Jordan-barrett-mbfw-march-2022-fashion-week-berlin.jpg; https://creativecommons.org/licenses/by-sa/4.0. Existing Commons version retained; no further changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/6/63/Jordan-barrett-mbfw-march-2022-fashion-week-berlin.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    1280,
+    1600
+  ],
+  "sha256": "1954bbf981196f2c43d61d9ef8c2f72e6f17da4e3bb09cfb683cb88725688f8c",
+  "visualReview": {
+    "reviewed": true,
+    "reviewedAtUTC": "2026-10-29T02:53:11.210739+00:00",
+    "findings": "One-person three-quarter upper-body runway photograph. Face is clear and fills the upper half; dark background and jacket. No other face visible.",
+    "identityEvidence": "Commons description explicitly identifies Jordan Barrett opening/closing Justin Cassin’s March 2022 Berlin fashion show; biography infobox uses the exact file and 2022 caption. This is source attribution, not face recognition.",
+    "adultDateEvidence": "Biography DOB 1996-12-02; Commons photograph date 2022-03-15; age 25 on that date. Age based on source dates, not appearance.",
+    "limitations": "This review confirms visible framing/quality and written source context; it does not verify a model release, platform upload compatibility, or game-likeness permission.",
+    "upstreamChanges": "Commons file history says an earlier logo was removed in June 2022; MOGVILLE retains the currently downloaded Commons file without further changes."
+  },
+  "sourceLicenseReview": {
+    "reviewed": true,
+    "evidence": "File-specific Commons license is CC BY-SA 4.0, with own-work author Nordfriisk and explicit photographer credit Stefan Heesch, Nordfriisk Photography, Zürich, Switzerland.",
+    "licenseSource": "https://commons.wikimedia.org/wiki/File:Jordan-barrett-mbfw-march-2022-fashion-week-berlin.jpg",
+    "originalSourceURLs": [],
+    "copyrightApprovalForGame": false,
+    "requiredConditions": "Credit author and source, link the specified license, mark changes; ShareAlike applies to adaptations where the selected license is BY-SA. No endorsement implied."
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "basis": "File-specific Commons license is CC BY-SA 4.0, with own-work author Nordfriisk and explicit photographer credit Stefan Heesch, Nordfriisk Photography, Zürich, Switzerland.",
+    "scope": "Redistribution of this exact source file with required attribution/license notice. Does not clear game likeness, endorsement, or Roblox platform terms.",
+    "warningReview": "Checked visible file-specific Commons licensing, source/author/date information, external-source review where applicable, and upstream extraction source. No unresolved source-license warning found for retained file."
+  }
+}

@@ -2,18 +2,19 @@
   "schemaVersion": 1,
   "candidateId": "post_surgery_hexum_unresolved",
   "displayName": "Post-Surgery Hexum",
-  "status": "NeedsApproval",
+  "status": "Unavailable",
   "portraitFile": null,
-  "sourceURL": null,
-  "sourceURLStatus": "Missing",
+  "sourceURL": "https://en.wikipedia.org/wiki/Jon-Erik_Hexum",
+  "sourceURLStatus": "FetchedForSourceReview",
   "photographer": null,
   "license": null,
   "commercialRights": null,
   "likenessStatus": "NeedsApproval",
   "researchCatalog": "assets/references/research-catalog.json",
   "notes": [
-    "Ambiguous requested label. Do not map it to Jon-Erik Hexum or imply a medical/surgery history without an explicit reliable source. Jon-Erik Hexum is deceased; no claimed surgery association is verified.",
-    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+    "Ambiguous requested label. Do not map it to Jon-Erik Hexum or imply a medical/surgery history without an explicit reliable source. Jon-Erik Hexum is deceased; no claimed surgery association is verified."
   ],
-  "enabled": false
+  "enabled": false,
+  "reviewPhotoFile": null,
+  "reviewEvidence": "assets/references/live-research/requested-identities.json"
 }

@@ -1,0 +1,61 @@
+{
+  "candidateId": "simon_nessman",
+  "displayName": "Simon Nessman",
+  "observedAtUTC": "2026-10-29T02:51:40.812083+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Simon_Nessman",
+    "https://commons.wikimedia.org/wiki/File:Simon_Nessman.jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/simon_nessman.jpg",
+  "identityPageTitle": "Simon Nessman - Wikipedia",
+  "birthDate": "1989-11-06",
+  "identityExcerpt": "Simon Nessman Nessman in 2011 Born ( 1989-11-06 ) November 6, 1989 (age 36) Courtenay, British Columbia , Canada [ 1 ] Spouse Andreea Diaconu ​ ( m. 2020 ) ​ Modeling information Height 6 ft 2 in (188 cm) [ 1 ] Hair color Brown [ 1 ] Eye color Brown [ 1 ] Waist 31 ( US ) [ 1 ] Inseam 33 ( US ) [ 1 ] Agency Storm Model Management Ford Europe Soul Artist Management Major Model Management Ford Europe Kult Agency IMM Bruxelles I LOVE Sight Mode Models",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Simon_Nessman.jpg",
+  "filename": "Simon_Nessman.jpg",
+  "description": "Simon Nessman @Pignatelli",
+  "photographer": "Sara Cimino from Milan, Italy ( Flickr account )",
+  "photoDate": "16 January 2011",
+  "originalSource": "Flickr (set \"Backstage Scervino\")",
+  "licenses": [
+    {
+      "name": "CC BY 2.0",
+      "url": "https://creativecommons.org/licenses/by/2.0",
+      "terms": "This file is licensed under the Creative Commons Attribution 2.0 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/2.0 CC BY 2.0 Creative Commons Attribution 2.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY 2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0",
+    "terms": "This file is licensed under the Creative Commons Attribution 2.0 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/2.0 CC BY 2.0 Creative Commons Attribution 2.0 true true"
+  },
+  "attribution": "Simon_Nessman.jpg — Sara Cimino from Milan, Italy ( Flickr account ); CC BY 2.0; https://commons.wikimedia.org/wiki/File:Simon_Nessman.jpg; https://creativecommons.org/licenses/by/2.0. Original file retained; no changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Simon_Nessman.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    667,
+    1000
+  ],
+  "sha256": "0b61a5f0380bf72f737714f55ed1edaa3c8c7eedf2fd37e0b2dc936c3e8577a9",
+  "visualReview": {
+    "reviewed": true,
+    "findings": "Single-person black-and-white side-profile portrait in a collared shirt; face unobstructed and in focus. No edits by MOGVILLE.",
+    "identityEvidence": "Wikipedia caption identifies Nessman in 2011; Commons description names Simon Nessman @Pignatelli.",
+    "adultDateEvidence": "Commons photo date 16 January 2011; biography DOB 6 November 1989, age 21 at photograph.",
+    "limits": "Source labels support subject identification; visual review is not biometric identification or proof that no upstream photographic edits exist. No game-likeness grant or Roblox upload has been established."
+  },
+  "sourceReview": {
+    "reviewed": true,
+    "findings": "Commons FlickreviewR dated 2012-03-13 confirms CC BY 2.0; banner explains uploader initially claimed 2.5, which was not verified. Selected only the confirmed CC BY 2.0 license."
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "evidence": "Commons FlickreviewR dated 2012-03-13 confirms CC BY 2.0; banner explains uploader initially claimed 2.5, which was not verified. Selected only the confirmed CC BY 2.0 license.",
+    "limitations": "Exact source image redistributed under the selected photo license with attribution; this does not clear game-likeness use or Roblox platform upload terms."
+  }
+}

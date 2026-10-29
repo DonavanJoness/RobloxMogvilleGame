@@ -1,0 +1,73 @@
+{
+  "candidateId": "alton_mason",
+  "displayName": "Alton Mason",
+  "observedAtUTC": "2026-10-28T22:42:08.345019+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "HeldExternalLicenseReview",
+  "copyrightStatus": "ExternalLicenseClaimNeedsVerification",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Alton_Mason",
+    "https://commons.wikimedia.org/wiki/File:Alton_Mason_for_Paco_Rabanne_Million_Manifesto.jpg"
+  ],
+  "downloadedFile": null,
+  "identityPageTitle": "Alton Mason - Wikipedia",
+  "birthDate": "1997-11-21",
+  "identityExcerpt": "Alton Mason Mason in an advertisement for Rabanne in 2019 Born Alton Devon Mason ( 1997-11-21 ) November 21, 1997 (age 28) Nebraska , U.S. Education American Musical and Dramatic Academy Occupations Model dancer actor Years active 2015–present Modeling information Height 6 ft 2 in (1.88 m) Hair color Black Eye color Brown",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Alton_Mason_for_Paco_Rabanne_Million_Manifesto.jpg",
+  "filename": "Alton_Mason_for_Paco_Rabanne_Million_Manifesto.jpg",
+  "description": "English: Million Manifesto / #MillionNation - 1 Million & Lady Million | PACO RABANNE welcome to the million nation. I am young, old, bold, proud, successful, confident.\nI am million, you are million. They are actors, models, dancers, rappers.\nTalented, conscious, inspired.\nThey have dared to be. What they dreamed.\nAnd have become. What they wanted to be.\nTied to their Dream.\nCOLLECTIVE\nArtists of their own success.\nFREEDOM\nAnd their success is for sharing: join the million nation\nbelieve in yourself. Think Big. Dare.\nsuccess is in your hands\ndare to be YOURSELF\ndare to be MILLION Starring Joey Bada$$, Simona Kust, Alton Mason, Dree Hemingway, Levi Dylan, Londone Myers Still haven’t subscribed to PACO RABANNE on YouTube?\n🡺 https://www.youtube.com/PacoRabanneOf ... Follow us on:\nInstagram: https://www.instagram.com/pacorabanne ...\nFacebook: https://www.facebook.com/PacoRabanneP ...\nTwitter: https://twitter.com/PacoRabanne (Million Manifesto) https://www.pacorabanne.com",
+  "photographer": "Paco Rabanne",
+  "photoDate": "16 September 2019",
+  "originalSource": "Million Manifesto / #MillionNation - 1 Million & Lady Million | PACO RABANNE",
+  "licenses": [
+    {
+      "name": "CC BY 3.0",
+      "url": "https://creativecommons.org/licenses/by/3.0",
+      "terms": "This file is licensed under the Creative Commons Attribution 3.0 Unported license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/3.0 CC BY 3.0 Creative Commons Attribution 3.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY 3.0",
+    "url": "https://creativecommons.org/licenses/by/3.0",
+    "terms": "This file is licensed under the Creative Commons Attribution 3.0 Unported license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/3.0 CC BY 3.0 Creative Commons Attribution 3.0 true true"
+  },
+  "attribution": "Alton_Mason_for_Paco_Rabanne_Million_Manifesto.jpg — Paco Rabanne; CC BY 3.0; https://commons.wikimedia.org/wiki/File:Alton_Mason_for_Paco_Rabanne_Million_Manifesto.jpg; https://creativecommons.org/licenses/by/3.0. Original file retained; no changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/6/62/Alton_Mason_for_Paco_Rabanne_Million_Manifesto.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    1603,
+    1183
+  ],
+  "sha256": "281cce4156953425d51d43d397b87b303b50717b56f57f51d825121f5be2afd5",
+  "visualReview": {
+    "reviewed": true,
+    "reviewedAtUTC": "2026-10-29T02:53:44.282849+00:00",
+    "findings": "Single main subject in black-and-white advertising video screenshot; large cropped subtitle overlays the shirt. Face visible, but this is an extracted commercial video frame rather than a clean still portrait.",
+    "identityEvidence": "Biography selects this image; Commons video description lists Alton Mason among a cast of several. This source labelling does not independently establish the pictured frame subject.",
+    "adultDateEvidence": "Biography DOB 1997-11-21 and stated video date 2019-09-16 would be adult-era (21), but source license and frame provenance remain unresolved.",
+    "limitations": "Commons explicitly marks external license review as pending. No source-site license verification performed, and no game likeness clearance exists."
+  },
+  "redistributionReview": {
+    "status": "Hold",
+    "reason": "Commons states external source CC license has not yet been reviewed; independently verify the originating video license and screenshot subject before redistribution."
+  },
+  "blocker": "External video-license claim is pending Commons review; unsuitable for redistribution bundle until source verification.",
+  "localHoldPath": ".tools/photo-review-holds/alton_mason.jpg",
+  "searchLimitations": {
+    "robotsURL": "https://commons.wikimedia.org/robots.txt",
+    "searchRoutesChecked": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:MediaSearch?search=Alton%20Mason",
+        "result": "Not fetched: Commons robots.txt disallows /wiki/Special: for this research user agent."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Search?search=Alton%20Mason",
+        "result": "Not fetched: Commons robots.txt disallows /wiki/Special: for this research user agent."
+      }
+    ],
+    "note": "No Commons search HTML, API search, alternate encoded route, mirror, or proxy bypass was attempted."
+  }
+}

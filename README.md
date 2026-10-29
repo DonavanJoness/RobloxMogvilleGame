@@ -1,10 +1,12 @@
 # MOGVILLE: Roll to Ascend
 
-An original Roblox collection simulator built with Luau and Rojo. The game provides an original layout preview, card UI and approved-template integration. Final 3D models and real photographs remain required. It requires no Toolbox models, uploaded artwork, paid assets, runtime packages or credentials to play in Studio memory mode.
+An original Roblox collection simulator built with Luau and Rojo. The game provides an original layout preview, card UI and approved-template integration. Final 3D models and production-approved photographs remain required. It requires no Toolbox models, uploaded artwork, paid assets, runtime packages or credentials to play in Studio memory mode.
 
 **V3 card-layout preview:** prominent Spin controls, collection grids, sealed-card roulette, a clearance catalog, template-first R15 display/NPC loading, and eight district import slots. [V3 status and exact remaining work](docs/V3_STATUS.md).
 
-**Not acceptance-complete:** the supplied [Build a Soccer Team reference](https://www.roblox.com/games/94164742020505/Build-a-Soccer-Team), Creator Store and photo sources are blocked by the current proxy. No real photo, premade model or Roblox upload was verified. All 28 real-person reference records remain unobtainable; missing art is explicitly labelled. The generated V2 face PNGs and face fallbacks have been removed. Existing original IDs remain a clearly labelled legacy test collection so gameplay and old saves still work. The remaining procedural architecture is a preview, not final high-quality imported art.
+**Photo research:** public source access now works. [15 authentic source-labelled photographs](assets/references/photo-review/README.md) have been collected with image-specific copyright licenses, dates, credits and visual reviews. The [review ZIP](downloads/Mogville-photo-review.zip) contains the unchanged images, `index.html` gallery, credits and evidence. Thirteen requested references remain unresolved; all exact blockers are recorded. No photo was uploaded to Roblox or enabled in the game.
+
+**Not acceptance-complete:** the supplied [Build a Soccer Team reference](https://www.roblox.com/games/94164742020505/Build-a-Soccer-Team) has not been visually inspected in live gameplay. No premade model or Roblox upload was verified. All 28 real-person reference records remain unobtainable pending production rights and upload review; missing art is explicitly labelled. The generated V2 face PNGs and face fallbacks have been removed. Existing original IDs remain a clearly labelled legacy test collection so gameplay and old saves still work. The remaining procedural architecture is a preview, not final high-quality imported art.
 
 **Status:** the core gameplay is implemented and the Rojo place builds. Automated logic and mocked service tests run on Linux. **Roblox Studio acceptance is pending**: this environment cannot run Studio, verify the appearance on devices, or demonstrate a real leave/rejoin DataStore session. Do not treat this as a production-tested release.
 
@@ -40,7 +42,7 @@ cd /workspace/RobloxMogvilleGame
 bash tools/install.sh
 ```
 
-This installs **Rojo 7.5.1** and **Luau 0.690** to ignored `.tools/bin`, checks pinned SHA-256 values for the official release archives, installs the pinned Pillow asset-processing tool, prepares approved authentic local photographs, compiles every source/test script, runs Luau and Python tests, and builds both `.rbxlx` and `.rbxl` places plus the ZIP/source downloads. TLS verification remains enabled. Existing source images and owner manifest assignments are preserved; generated mappings/outputs are refreshed.
+This installs **Rojo 7.5.1** and **Luau 0.690** to ignored `.tools/bin`, checks pinned SHA-256 values for the official release archives, installs pinned Pillow and BeautifulSoup tools, prepares approved authentic local photographs, compiles every source/test script, runs Luau and Python tests, and builds both `.rbxlx` and `.rbxl` places plus the ZIP/source downloads. TLS verification remains enabled. Existing source images and owner manifest assignments are preserved; generated mappings/outputs are refreshed. Research downloads are separate and are never performed by setup.
 
 After installation:
 

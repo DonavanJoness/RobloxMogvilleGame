@@ -1,6 +1,6 @@
 # V3 authentic-photo pipeline
 
-V3 no longer generates or ships fictional human portrait substitutes. The original V2 face PNGs have been retired. `assets/characters/manifest.json` currently has **zero approved photographs**, and the game displays neutral unresolved panels. Legacy fictional IDs remain a labelled test collection only; no legacy image override can be presented as a real-person photo.
+V3 no longer generates or ships fictional human portrait substitutes. The original V2 face PNGs have been retired. `assets/characters/manifest.json` currently has **zero approved photographs**, and the game displays neutral unresolved panels. A separate [review pack](../assets/references/photo-review/README.md) contains **15 source-reviewed original photos**, with **13 references unresolved**; those files do not enter the production manifest automatically. Legacy fictional IDs remain a labelled test collection only; no legacy image override can be presented as a real-person photo.
 
 ## Runtime data
 
@@ -46,4 +46,6 @@ A missing or failed image remains a neutral PHOTO NOT SUPPLIED panel. Gameplay t
 
 ## Research access
 
-The saved draft preserves earlier research hosts and adds `www.roblox.com` and `create.roblox.com` for the supplied reference/Creator Store. Review/save those environment settings and publish the updated environment to apply them. This task did not publish the environment. After access works, `tools/research_candidates.py` can collect rate-limited official Wikimedia metadata for manual review; it never grants approval or downloads portraits automatically.
+Public HTML research access now works after the owner applied the updated environment. `tools/collect_photo_candidates.py` fetches permitted public biography/file pages and stages image-specific openly licensed adult-era photos for manual review. Its output can contain unresolved license warnings or inconsistent upstream credits, so manual source/history checks remain required. Wikimedia API routes are currently robots-disallowed for this bot; do not bypass that restriction. The older `tools/research_candidates.py` API helper also checks robots and cannot supply evidence from those disallowed routes.
+
+See [live research instructions](../assets/references/live-research/README.md) for dependencies, review requirements and `tools/package_photo_review.py`. The deterministic review ZIP contains exact source images, a local HTML gallery, credits, license notices and individual evidence. It never enables a game card or uploads an image.

@@ -1,5 +1,7 @@
 # V3 asset and reference audit — 2026-10-28
 
+This is the historical V3 implementation audit. Public source access now works, and 15 photo files have since been collected in a separate [review pack](../assets/references/photo-review/README.md), with 13 references unresolved. The network failures below describe the earlier attempts. No game photo uploads, production approvals or model imports have been added by the research follow-up.
+
 ## What was inspected
 
 The V2 repository has 24 original collectible forms. Its portrait manifest records 24 original geometric placeholders and **zero real-person photographs or Roblox image uploads**. The previous research catalog contains 25 provisional named leads; Kaysh, Post-Surgery Hexum and the newly requested Chad Jaw label remain unresolved. None is a verified identity/photo/permission record. Original placeholder PNGs are project artwork, not photographs of these people and not acceptable substitutes for their portraits.

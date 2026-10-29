@@ -1,0 +1,58 @@
+{
+  "candidateId": "pietro_boselli",
+  "displayName": "Pietro Boselli",
+  "observedAtUTC": "2026-10-28T22:42:09.597943+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "Unavailable",
+  "copyrightStatus": "Unresolved",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pietro_Boselli"
+  ],
+  "downloadedFile": null,
+  "identityPageTitle": "Pietro Boselli - Wikipedia",
+  "birthDate": "1988-12-03",
+  "identityExcerpt": "Pietro Boselli Born ( 1988-12-03 ) 3 December 1988 (age 37) Negrar , Veneto , Italy Education University College London ( BEng , PhD ) Occupations Model engineer teacher Years active 2004–present Modeling information Height 6 ft 1 in (185 cm) Hair color Brown Eye color Hazel Agency Models 1 Website pietroboselli .com",
+  "blocker": "No licensed photograph found on the checked Wikipedia/Commons pages; a sourced image with photographer permission is still needed.",
+  "sourceAttempts": [
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category:Pietro_Boselli",
+      "result": "HTTP 404; no such category at the exact checked URL"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Pietro_Boselli.jpg",
+      "result": "HTTP 404; no file at the exact checked URL"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Pietro_Boselli.png",
+      "result": "HTTP 404; no file at the exact checked URL"
+    }
+  ],
+  "redistributionReview": {
+    "status": "Hold",
+    "reason": "No source-specific commercial-redistribution photo license was found on the checked public pages."
+  },
+  "visualReview": {
+    "reviewed": false,
+    "findings": "No image downloaded or substituted.",
+    "identityEvidence": "Pietro Boselli Born ( 1988-12-03 ) 3 December 1988 (age 37) Negrar , Veneto , Italy Education University College London ( BEng , PhD ) Occupations Model engineer teacher Years active 2004–present Modeling information Height 6 ft 1 in (185 cm) Hair color Brown Eye color Hazel Agency Models 1 Website pietroboselli .com",
+    "adultDateEvidence": "No candidate photograph date established.",
+    "limitations": "Exact checked URL failures are not proof no licensed photo exists anywhere. The owner can provide a photographer-approved image or exact source for further review."
+  },
+  "searchLimitations": {
+    "robotsURL": "https://commons.wikimedia.org/robots.txt",
+    "searchRoutesChecked": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:MediaSearch?search=Pietro%20Boselli",
+        "result": "Not fetched: Commons robots.txt disallows /wiki/Special: for this research user agent."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Search?search=Pietro%20Boselli",
+        "result": "Not fetched: Commons robots.txt disallows /wiki/Special: for this research user agent."
+      }
+    ],
+    "note": "No Commons search HTML, API search, alternate encoded route, mirror, or proxy bypass was attempted."
+  }
+}

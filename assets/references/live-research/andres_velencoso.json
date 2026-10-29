@@ -1,0 +1,61 @@
+{
+  "candidateId": "andres_velencoso",
+  "displayName": "Andrés Velencoso",
+  "observedAtUTC": "2026-10-29T02:51:44.830862+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Andr%C3%A9s_Velencoso",
+    "https://commons.wikimedia.org/wiki/File:Andr%C3%A9s_Velencoso_at_Premios_Goya_2017_(cropped).jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/andres_velencoso.jpg",
+  "identityPageTitle": "Andrés Velencoso - Wikipedia",
+  "birthDate": "1978-03-11",
+  "identityExcerpt": "Andres Velencoso Velencoso at the 31st Goya Awards in 2017 Born Andrés Velencoso Segura ( 1978-03-11 ) 11 March 1978 (age 48) Ledaña , Cuenca , Spain Occupations Model, actor Modeling information Height 6 ft 2 in (1.88 m) Hair color Brown Eye color Brown Agency IMG Models (New York, London) [ 1 ] Next Model Management (Paris) I LOVE Models Management (Milan) Sight Management Studio (Barcelona) 2pm Model Management (Copenhagen) Kult Model Agency (Hamburg, Surry Hills) Wilhelmina Models (Los Angeles) Way Model Management (Sao Paulo) Le Management (Stockholm) Donna Models (Tokyo) Elite Model Management (Toronto) [ 2 ]",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Andr%C3%A9s_Velencoso_at_Premios_Goya_2017_(cropped).jpg",
+  "filename": "Andrés_Velencoso_at_Premios_Goya_2017_(cropped).jpg",
+  "description": "Español: Premios Goya 2017",
+  "photographer": "Ruben Ortega",
+  "photoDate": "4 February 2017, 21:26:21",
+  "originalSource": "Own work",
+  "licenses": [
+    {
+      "name": "CC BY-SA 4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 4.0 International license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/4.0 CC BY-SA 4.0 Creative Commons Attribution-Share Alike 4.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 4.0 International license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/4.0 CC BY-SA 4.0 Creative Commons Attribution-Share Alike 4.0 true true"
+  },
+  "attribution": "Andrés_Velencoso_at_Premios_Goya_2017_(cropped).jpg — Ruben Ortega; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Andr%C3%A9s_Velencoso_at_Premios_Goya_2017_(cropped).jpg; https://creativecommons.org/licenses/by-sa/4.0. Original file retained; no changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Andr%C3%A9s_Velencoso_at_Premios_Goya_2017_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    1259,
+    1786
+  ],
+  "sha256": "55e560f389e456d7d81c5646463d7d88dd335855d9ace1af01f93e204ca94515",
+  "visualReview": {
+    "reviewed": true,
+    "findings": "Close event portrait in tuxedo; face front-facing, clear and unobstructed. Filename identifies an upstream crop; no additional edits by MOGVILLE.",
+    "identityEvidence": "Wikipedia caption identifies Velencoso at the 31st Goya Awards in 2017; Commons filename explicitly names Andrés Velencoso.",
+    "adultDateEvidence": "Commons photo date 4 February 2017; biography DOB 11 March 1978, age 38 at photograph.",
+    "limits": "Source labels support subject identification; visual review is not biometric identification or proof that no upstream photographic edits exist. No game-likeness grant or Roblox upload has been established."
+  },
+  "sourceReview": {
+    "reviewed": true,
+    "findings": "Commons uploader Ruben Ortega declares own work under CC BY-SA 4.0. Personality-rights warning explicitly states model consent may be needed for certain reuse; no such consent established."
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "evidence": "Commons uploader Ruben Ortega declares own work under CC BY-SA 4.0. Personality-rights warning explicitly states model consent may be needed for certain reuse; no such consent established.",
+    "limitations": "Exact source image redistributed under the selected photo license with attribution; this does not clear game-likeness use or Roblox platform upload terms."
+  }
+}

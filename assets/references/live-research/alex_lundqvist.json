@@ -1,0 +1,54 @@
+{
+  "candidateId": "alex_lundqvist",
+  "displayName": "Alex Lundqvist",
+  "observedAtUTC": "2026-10-28T22:42:09.993616+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "Unavailable",
+  "copyrightStatus": "Unresolved",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Alex_Lundqvist"
+  ],
+  "downloadedFile": null,
+  "identityPageTitle": "Alex Lundqvist - Wikipedia",
+  "birthDate": "1972-04-14",
+  "identityExcerpt": "Alex Lundqvist Born ( 1972-04-14 ) 14 April 1972 (age 54) Stockholm , Sweden Years active 1998–present Modeling information Height 6 ft 1 in (1.85 m) Hair color Brown Eye color Blue Agency Wilhelmina Models",
+  "blocker": "No licensed photograph found on the checked Wikipedia/Commons pages; a sourced image with photographer permission is still needed.",
+  "sourceAttempts": [
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category:Alex_Lundqvist",
+      "result": "HTTP 404; no such category at the exact checked URL"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Alex_Lundqvist.jpg",
+      "result": "HTTP 404; no file at the exact checked URL"
+    }
+  ],
+  "redistributionReview": {
+    "status": "Hold",
+    "reason": "No source-specific commercial-redistribution photo license was found on the checked public pages."
+  },
+  "visualReview": {
+    "reviewed": false,
+    "findings": "No image downloaded or substituted.",
+    "identityEvidence": "Alex Lundqvist Born ( 1972-04-14 ) 14 April 1972 (age 54) Stockholm , Sweden Years active 1998–present Modeling information Height 6 ft 1 in (1.85 m) Hair color Brown Eye color Blue Agency Wilhelmina Models",
+    "adultDateEvidence": "No candidate photograph date established.",
+    "limitations": "Exact checked URL failures are not proof no licensed photo exists anywhere. The owner can provide a photographer-approved image or exact source for further review."
+  },
+  "searchLimitations": {
+    "robotsURL": "https://commons.wikimedia.org/robots.txt",
+    "searchRoutesChecked": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:MediaSearch?search=Alex%20Lundqvist",
+        "result": "Not fetched: Commons robots.txt disallows /wiki/Special: for this research user agent."
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Search?search=Alex%20Lundqvist",
+        "result": "Not fetched: Commons robots.txt disallows /wiki/Special: for this research user agent."
+      }
+    ],
+    "note": "No Commons search HTML, API search, alternate encoded route, mirror, or proxy bypass was attempted."
+  }
+}

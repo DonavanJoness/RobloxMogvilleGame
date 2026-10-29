@@ -1,0 +1,62 @@
+{
+  "candidateId": "river_viiperi",
+  "displayName": "River Viiperi",
+  "observedAtUTC": "2026-10-29T02:51:54.620413+00:00",
+  "identityStatus": "PublicCommonsBiographyLocatedNeedsIndependentCorroboration",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://commons.wikimedia.org/wiki/Category:River_Viiperi",
+    "https://commons.wikimedia.org/wiki/File:River_Viiperi_2011.jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/river_viiperi.jpg",
+  "blocker": null,
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:River_Viiperi_2011.jpg",
+  "filename": "River_Viiperi_2011.jpg",
+  "description": "River Viiperi",
+  "photographer": "Sara Cimino from Milan, Italy ( Flickr account )",
+  "photoDate": "15 January 2011, 16:04",
+  "originalSource": "Flickr",
+  "licenses": [
+    {
+      "name": "CC BY 2.0",
+      "url": "https://creativecommons.org/licenses/by/2.0",
+      "terms": "This file is licensed under the Creative Commons Attribution 2.0 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/2.0 CC BY 2.0 Creative Commons Attribution 2.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY 2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0",
+    "terms": "This file is licensed under the Creative Commons Attribution 2.0 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/2.0 CC BY 2.0 Creative Commons Attribution 2.0 true true"
+  },
+  "birthDate": "1991-08-04",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/7/71/River_Viiperi_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    667,
+    1000
+  ],
+  "sha256": "5cbe4826d1e2e9eaba6d9d7e1627b425ae802f6cc2c671a8b999d1ad8e3f0153",
+  "attribution": "River_Viiperi_2011.jpg — Sara Cimino from Milan, Italy ( Flickr account ); CC BY 2.0; https://commons.wikimedia.org/wiki/File:River_Viiperi_2011.jpg; https://creativecommons.org/licenses/by/2.0. Original file retained; no changes by MOGVILLE.",
+  "visualReview": {
+    "reviewed": true,
+    "findings": "Single-person close head-and-shoulders portrait; front face unobstructed and in focus. Some background attendees are blurred. No edits by MOGVILLE.",
+    "identityEvidence": "Commons category explicitly describes River Delfín Canomanuel Viiperi; file description names River Viiperi and is included in that category.",
+    "adultDateEvidence": "Commons category date of birth 4 August 1991; photograph date 15 January 2011, age 19. English Wikipedia page returned 404, so birthday evidence is the public Commons category.",
+    "limits": "Source labels support subject identification; visual review is not biometric identification or proof that no upstream photographic edits exist. No game-likeness grant or Roblox upload has been established."
+  },
+  "sourceReview": {
+    "reviewed": true,
+    "findings": "Commons FlickreviewR on 14 April 2012 confirms Sara Cimino original Flickr photo was CC BY 2.0. No unresolved external license-review warning found; no game-likeness approval established."
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "evidence": "Commons FlickreviewR on 14 April 2012 confirms Sara Cimino original Flickr photo was CC BY 2.0. No unresolved external license-review warning found; no game-likeness approval established.",
+    "limitations": "Exact source image redistributed under the selected photo license with attribution; this does not clear game-likeness use or Roblox platform upload terms."
+  },
+  "identityPageTitle": "Category:River Viiperi - Wikimedia Commons",
+  "identityExcerpt": "Commons category describes River Delfín Canomanuel Viiperi as a Spanish model, born 4 August 1991 in Ibiza."
+}

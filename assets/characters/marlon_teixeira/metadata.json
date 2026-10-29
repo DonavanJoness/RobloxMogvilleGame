@@ -2,18 +2,19 @@
   "schemaVersion": 1,
   "candidateId": "marlon_teixeira",
   "displayName": "Marlon Teixeira",
-  "status": "NeedsApproval",
+  "status": "ReviewOnlyNotGameApproved",
   "portraitFile": null,
   "sourceURL": "https://en.wikipedia.org/wiki/Marlon_Teixeira",
-  "sourceURLStatus": "ProposedUnfetched",
-  "photographer": null,
-  "license": null,
-  "commercialRights": null,
+  "sourceURLStatus": "FetchedForSourceReview",
+  "photographer": "Sara Cimino from Milan, Italy ( Flickr account )",
+  "license": "CC BY 2.0",
+  "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
   "likenessStatus": "NeedsApproval",
   "researchCatalog": "assets/references/research-catalog.json",
   "notes": [
-    "Public model research candidate; no looksmaxxing affiliation asserted.",
-    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+    "Public model research candidate; no looksmaxxing affiliation asserted."
   ],
-  "enabled": false
+  "enabled": false,
+  "reviewPhotoFile": "assets/references/photo-review/marlon_teixeira.jpg",
+  "reviewEvidence": "assets/references/live-research/marlon_teixeira.json"
 }

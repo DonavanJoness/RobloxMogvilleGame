@@ -1,0 +1,57 @@
+{
+  "candidateId": "marcus_schenkenberg",
+  "displayName": "Marcus Schenkenberg",
+  "observedAtUTC": "2026-10-28T22:42:03.966282+00:00",
+  "identityStatus": "PublicBiographyAndFileCaptionReviewed",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Marcus_Schenkenberg",
+    "https://commons.wikimedia.org/wiki/File:AV0A1717_Marcus_Schenkenberg.jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/marcus_schenkenberg.jpg",
+  "identityPageTitle": "Marcus Schenkenberg - Wikipedia",
+  "birthDate": "1968-08-04",
+  "identityExcerpt": "Marcus Schenkenberg Schenkenberg in 2018 Born Marcus Lodewijk Schenkenberg van Mierop ( 1968-08-04 ) 4 August 1968 (age 58) Stockholm , Sweden Modeling information Height 6 ft 4 in (1.93 m) Hair color Brown Eye color Light brown Website marcusschenkenberg .org",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:AV0A1717_Marcus_Schenkenberg.jpg",
+  "filename": "AV0A1717_Marcus_Schenkenberg.jpg",
+  "description": "Deutsch: Marcus Schenkenberg bei der Lambertz Monday Night 2018.",
+  "photographer": "9EkieraM1",
+  "photoDate": "29 January 2018, 21:26:52",
+  "originalSource": "Own work",
+  "licenses": [
+    {
+      "name": "CC BY-SA 3.0",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/3.0 CC BY-SA 3.0 Creative Commons Attribution-Share Alike 3.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY-SA 3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/3.0 CC BY-SA 3.0 Creative Commons Attribution-Share Alike 3.0 true true"
+  },
+  "attribution": "AV0A1717_Marcus_Schenkenberg.jpg — 9EkieraM1; CC BY-SA 3.0; https://commons.wikimedia.org/wiki/File:AV0A1717_Marcus_Schenkenberg.jpg; https://creativecommons.org/licenses/by-sa/3.0. Original file retained; no changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/0/0b/AV0A1717_Marcus_Schenkenberg.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    3840,
+    5760
+  ],
+  "sha256": "6f23f43c42544af653a7cf9796f8dd485fa6d5145ebc8c75fa77eeb49b2a61ba",
+  "visualReview": {
+    "reviewed": true,
+    "reviewedAtUTC": "2026-10-29T02:53:44.281876+00:00",
+    "findings": "Single main subject in a suit with a fully visible face; event step-and-repeat background. Bright event lighting reduces facial contrast but image resolution is high.",
+    "identityEvidence": "Biography and Commons German caption identify Marcus Schenkenberg at Lambertz Monday Night 2018. No identity determination from facial appearance.",
+    "adultDateEvidence": "Biography DOB 1968-08-04 and Commons photo date 2018-01-29 establish an adult subject aged 49.",
+    "limitations": "Event background contains sponsor marks. Source states own work by 9EkieraM1 with photo-specific CC BY-SA 3.0; no independent model/brand permission evidence."
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "basis": "Photo-specific Commons license, author, date/caption and downloaded image were reviewed; this records the source claims, not an independent legal warranty or game likeness clearance."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "candidateId": "kit_butler",
+  "displayName": "Kit Butler",
+  "observedAtUTC": "2026-10-29T02:51:39.206165+00:00",
+  "identityStatus": "Unverified",
+  "photoStatus": "Unavailable",
+  "copyrightStatus": "Unresolved",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [],
+  "downloadedFile": null,
+  "blocker": "HTTPError: HTTP Error 404: Not Found",
+  "manualSearches": [
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category:Kit_Butler",
+      "result": "HTTP 404 for exact category URL; no licensed photograph selected. This limited negative lookup does not establish that no source exists."
+    }
+  ],
+  "redistributionReview": {
+    "status": "Unavailable",
+    "limitations": "No reviewed openly licensed photo located. Provide an exact public identity/photo source or rights-holder-supplied photo with permission."
+  },
+  "broaderSearchLimitations": {
+    "findings": "Public Commons MediaSearch and Special:Search routes are prohibited by robots.txt for this research agent. No search page was fetched, no API or alternative route was used to bypass the restriction. Exact category and biography checks were limited and do not establish that no openly licensed photograph exists.",
+    "checks": [
+      {
+        "url": "https://commons.wikimedia.org/w/index.php?search=Kit+Butler&title=Special%3AMediaSearch&type=image",
+        "result": "robots.txt does not permit this path",
+        "pageRequested": false
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Search/Kit_Butler",
+        "result": "robots.txt does not permit this path",
+        "pageRequested": false
+      }
+    ]
+  }
+}

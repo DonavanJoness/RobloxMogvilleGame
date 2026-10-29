@@ -1,0 +1,70 @@
+{
+  "candidateId": "francisco_lachowski",
+  "displayName": "Francisco Lachowski",
+  "observedAtUTC": "2026-10-28T22:41:48.919703+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Francisco_Lachowski",
+    "https://commons.wikimedia.org/wiki/File:Francisco_Lachowski_2011.jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/francisco_lachowski.jpg",
+  "identityPageTitle": "Francisco Lachowski - Wikipedia",
+  "birthDate": "1991-05-13",
+  "identityExcerpt": "Francisco Lachowski Lachowski in 2011 Born ( 1991-05-13 ) 13 May 1991 (age 35) Curitiba , Paraná, Brazil Other name Chico Lachowski Occupations Model influencer Spouse Jessieann Gravel Beland ​ ​ ( m. 2013 ) ​ Children 3 Modeling information Height 6 ft 4 in (1.93 m) [ 1 ] Hair color Brown [ 2 ] Eye color Hazel [ 2 ] Agency Partners (São Paulo) ONE Management (New York) Special Management (Milan) Chapter Management (London) MINT Artist Management (Berlin) Run Model Management (Brussels) [ 3 ]",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Francisco_Lachowski_2011.jpg",
+  "filename": "Francisco_Lachowski_2011.jpg",
+  "description": "Francisco Lachowski @ Ermanno Scervino",
+  "photographer": "Sara Cimino from Milan, Italy ( Flickr account )",
+  "photoDate": "16 January 2011, 11:52",
+  "originalSource": "Flickr (set \"Backstage Scervino\")",
+  "licenses": [
+    {
+      "name": "CC BY 2.0",
+      "url": "https://creativecommons.org/licenses/by/2.0",
+      "terms": "This file is licensed under the Creative Commons Attribution 2.0 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/2.0 CC BY 2.0 Creative Commons Attribution 2.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY 2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0",
+    "terms": "This file is licensed under the Creative Commons Attribution 2.0 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/2.0 CC BY 2.0 Creative Commons Attribution 2.0 true true"
+  },
+  "attribution": "Francisco_Lachowski_2011.jpg — Sara Cimino from Milan, Italy ( Flickr account ); CC BY 2.0; https://commons.wikimedia.org/wiki/File:Francisco_Lachowski_2011.jpg; https://creativecommons.org/licenses/by/2.0. Original file retained; no changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/0/07/Francisco_Lachowski_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    1423,
+    2000
+  ],
+  "sha256": "644284134a0ee863173a21bf4a83e89cf2d808eee6f660cfb926db720a05c412",
+  "visualReview": {
+    "reviewed": true,
+    "reviewedAtUTC": "2026-10-29T02:53:11.182166+00:00",
+    "findings": "One-person close head-and-shoulders photographic portrait. Face is clear with detailed skin/hair; shoulders are bare. No other person visible in the retained file.",
+    "identityEvidence": "Commons description names Francisco Lachowski at Ermanno Scervino; the matching Wikipedia biography infobox uses this exact file with a 2011 caption. This is source attribution, not face recognition.",
+    "adultDateEvidence": "Biography DOB 1991-05-13; Commons photograph date 2011-01-16; age 19 on that date. Age based on source dates, not appearance.",
+    "limitations": "This review confirms visible framing/quality and written source context; it does not verify a model release, platform upload compatibility, or game-likeness permission.",
+    "upstreamChanges": "Source is the Commons photograph as supplied; no edits were made by MOGVILLE."
+  },
+  "sourceLicenseReview": {
+    "reviewed": true,
+    "evidence": "File-specific Commons licensing template states CC BY 2.0. Commons additionally reports FlickreviewR checked the Flickr original on 12 March 2012 and confirmed cc-by-2.0.",
+    "licenseSource": "https://commons.wikimedia.org/wiki/File:Francisco_Lachowski_2011.jpg",
+    "originalSourceURLs": [
+      "https://www.flickr.com/photos/saracimino/5364542183/"
+    ],
+    "copyrightApprovalForGame": false,
+    "requiredConditions": "Credit author and source, link the specified license, mark changes; ShareAlike applies to adaptations where the selected license is BY-SA. No endorsement implied."
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "basis": "File-specific Commons licensing template states CC BY 2.0. Commons additionally reports FlickreviewR checked the Flickr original on 12 March 2012 and confirmed cc-by-2.0.",
+    "scope": "Redistribution of this exact source file with required attribution/license notice. Does not clear game likeness, endorsement, or Roblox platform terms.",
+    "warningReview": "Checked visible file-specific Commons licensing, source/author/date information, external-source review where applicable, and upstream extraction source. No unresolved source-license warning found for retained file."
+  }
+}

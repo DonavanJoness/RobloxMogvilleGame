@@ -1,0 +1,60 @@
+{
+  "candidateId": "noah_mills",
+  "displayName": "Noah Mills",
+  "observedAtUTC": "2026-10-28T22:42:11.232593+00:00",
+  "identityStatus": "PublicBiographyAndFileCaptionReviewed",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Noah_Mills",
+    "https://commons.wikimedia.org/wiki/File:Noah_Mills_(cropped).jpg",
+    "https://commons.wikimedia.org/wiki/File:Noah_Mills.jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/noah_mills.jpg",
+  "identityPageTitle": "Noah Mills - Wikipedia",
+  "birthDate": "1983-04-26",
+  "identityExcerpt": "Noah Mills Mills after the Dolce & Gabbana Summer 2012 Man Show in Milan Born ( 1983-04-26 ) April 26, 1983 (age 43) [ 1 ] Toronto , Ontario , Canada Occupations Model actor Years active 2003–present Modelling information Height 6 ft 2 in (1.88 m) [ 2 ] [ 3 ] Hair colour Brown [ 2 ] [ 3 ] Eye colour Hazel [ 2 ] [ 3 ] Agency IMG Models (New York, Los Angeles, Sydney) New Madison (Paris) Elite Model Management (Milan) Select Model Management (London) Sight Management Studio (Barcelona) Louisa Models (Munich) [ 4 ] Chest 99 cm / 38 in [ 3 ] Waist 81 cm / 31 in [ 3 ]",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Noah_Mills_(cropped).jpg",
+  "filename": "Noah_Mills_(cropped).jpg",
+  "description": "English: Noah Mills after the Dolce & Gabbana Summer 2012 Man Show in Milan.",
+  "photographer": "Gabriella Sinisi",
+  "photoDate": "18 June 2011",
+  "originalSource": "Shoothebreeze ( http://shoothebreeze.blogspot.com/ ), a blog run by two photographers from Milan, Gabriella Sinisi and Jessica Frada",
+  "licenses": [
+    {
+      "name": "CC BY-SA 3.0",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/3.0 CC BY-SA 3.0 Creative Commons Attribution-Share Alike 3.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY-SA 3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/3.0 CC BY-SA 3.0 Creative Commons Attribution-Share Alike 3.0 true true"
+  },
+  "attribution": "Noah Mills (cropped).jpg — Gabriella Sinisi, upstream crop by FMSky; CC BY-SA 3.0; https://commons.wikimedia.org/wiki/File:Noah_Mills_(cropped).jpg; https://creativecommons.org/licenses/by-sa/3.0. Exact current Commons crop retained; no changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Noah_Mills_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    1528,
+    2136
+  ],
+  "sha256": "b030d43e004794fcb4719fb9ac2ed811af696ec66c2e167a1061ccf52c909ba3",
+  "visualReview": {
+    "reviewed": true,
+    "reviewedAtUTC": "2026-10-29T02:53:44.282360+00:00",
+    "findings": "Single main subject in a close head-and-torso portrait with a clear face; black shirt and backpack strap visible.",
+    "identityEvidence": "Biography infobox and Commons caption identify Noah Mills after the Dolce & Gabbana Summer 2012 Man Show in Milan. This is source label corroboration, not facial identification.",
+    "adultDateEvidence": "Commons gives photograph date 18 June 2011 despite the 2012 season name; biography DOB 1983-04-26 makes the subject 28 at capture.",
+    "limitations": "This is an upstream 2023 crop by FMSky from Noah Mills.jpg; exact current Commons crop retained unchanged. Attribution must credit photographer Gabriella Sinisi and preserve the CC BY-SA 3.0 license."
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "basis": "Photo-specific Commons license, author, date/caption and downloaded image were reviewed; this records the source claims, not an independent legal warranty or game likeness clearance.",
+    "permissionEvidence": "The uncropped original Commons file publicly states copyright-holder permission was received and reviewed by Wikimedia VRT; ticket 2011120210019022. Private correspondence was not accessed.",
+    "originalFileURL": "https://commons.wikimedia.org/wiki/File:Noah_Mills.jpg"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "candidateId": "baptiste_giabiconi",
+  "displayName": "Baptiste Giabiconi",
+  "observedAtUTC": "2026-10-29T02:51:49.762654+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Baptiste_Giabiconi",
+    "https://commons.wikimedia.org/wiki/File:Baptiste_Giabiconi.jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/baptiste_giabiconi.jpg",
+  "identityPageTitle": "Baptiste Giabiconi - Wikipedia",
+  "birthDate": "1989-11-09",
+  "identityExcerpt": "Baptiste Giabiconi Born ( 1989-11-09 ) 9 November 1989 (age 36) Marignane , France [ 1 ] Other name Baptiste Modeling information Height 1.85 m (6 ft 1 in) Hair color Black [ 1 ] Eye color Brown [ 1 ] Agency DNA Model Management",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Baptiste_Giabiconi.jpg",
+  "filename": "Baptiste_Giabiconi.jpg",
+  "description": "Français : Baptiste Giabiconi aux NRJ Music Awards",
+  "photographer": "Georges Biard",
+  "photoDate": "22 January 2011",
+  "originalSource": "Own work",
+  "licenses": [
+    {
+      "name": "CC BY-SA 3.0",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license. Attribution: Georges Biard You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/3.0 CC BY-SA 3.0 Creative Commons Attribution-Share Alike 3.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY-SA 3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license. Attribution: Georges Biard You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/3.0 CC BY-SA 3.0 Creative Commons Attribution-Share Alike 3.0 true true"
+  },
+  "attribution": "Baptiste_Giabiconi.jpg — Georges Biard; CC BY-SA 3.0; https://commons.wikimedia.org/wiki/File:Baptiste_Giabiconi.jpg; https://creativecommons.org/licenses/by-sa/3.0. Original file retained; no changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Baptiste_Giabiconi.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    478,
+    720
+  ],
+  "sha256": "e3738fd79fa09bee629c295ea0b164009e457f8d8316e61ddb6b41acadf965a5",
+  "visualReview": {
+    "reviewed": true,
+    "findings": "Event portrait in jacket, main subject clear and unobstructed; background attendees partly visible. Moderate resolution 478 x 720, so substantial enlargements will be soft. No edits by MOGVILLE.",
+    "identityEvidence": "Commons French description explicitly names Baptiste Giabiconi at the NRJ Music Awards; linked from his Commons category.",
+    "adultDateEvidence": "Commons photo date 22 January 2011; biography DOB 9 November 1989, age 21 at photograph.",
+    "limits": "Source labels support subject identification; visual review is not biometric identification or proof that no upstream photographic edits exist. No game-likeness grant or Roblox upload has been established."
+  },
+  "sourceReview": {
+    "reviewed": true,
+    "findings": "Commons credits Georges Biard, CC BY-SA 3.0, with confirmed VRT permission ticket #2010010910017329. Personality-rights warning remains applicable; no model-release/game-likeness approval established."
+  },
+  "blocker": null,
+  "rejectedAlternative": {
+    "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Baptiste_Giabiconi_2014.JPG",
+    "reason": "Initial 2014 infobox image contains visible rectangular background patches; selected a different source photograph instead."
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "evidence": "Commons credits Georges Biard, CC BY-SA 3.0, with confirmed VRT permission ticket #2010010910017329. Personality-rights warning remains applicable; no model-release/game-likeness approval established.",
+    "limitations": "Exact source image redistributed under the selected photo license with attribution; this does not clear game-likeness use or Roblox platform upload terms."
+  }
+}

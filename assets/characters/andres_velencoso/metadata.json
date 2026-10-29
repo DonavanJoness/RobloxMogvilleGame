@@ -2,18 +2,19 @@
   "schemaVersion": 1,
   "candidateId": "andres_velencoso",
   "displayName": "Andrés Velencoso",
-  "status": "NeedsApproval",
+  "status": "ReviewOnlyNotGameApproved",
   "portraitFile": null,
   "sourceURL": "https://en.wikipedia.org/wiki/Andr%C3%A9s_Velencoso",
-  "sourceURLStatus": "ProposedUnfetched",
-  "photographer": null,
-  "license": null,
-  "commercialRights": null,
+  "sourceURLStatus": "FetchedForSourceReview",
+  "photographer": "Ruben Ortega",
+  "license": "CC BY-SA 4.0",
+  "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
   "likenessStatus": "NeedsApproval",
   "researchCatalog": "assets/references/research-catalog.json",
   "notes": [
-    "Public model research candidate; no looksmaxxing affiliation asserted.",
-    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+    "Public model research candidate; no looksmaxxing affiliation asserted."
   ],
-  "enabled": false
+  "enabled": false,
+  "reviewPhotoFile": "assets/references/photo-review/andres_velencoso.jpg",
+  "reviewEvidence": "assets/references/live-research/andres_velencoso.json"
 }

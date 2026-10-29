@@ -1,0 +1,72 @@
+{
+  "candidateId": "david_gandy",
+  "displayName": "David Gandy",
+  "observedAtUTC": "2026-10-28T22:41:52.642787+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/David_Gandy",
+    "https://commons.wikimedia.org/wiki/File:David_Gandy_1.jpg",
+    "https://commons.wikimedia.org/wiki/File:David_Gandy_in_Singapore,_2015.jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/david_gandy.jpg",
+  "identityPageTitle": "David Gandy - Wikipedia",
+  "birthDate": "1980-02-19",
+  "identityExcerpt": "David Gandy Gandy in 2015 Born David James Gandy ( 1980-02-19 ) 19 February 1980 (age 46) Billericay , Essex, England Partner Stephanie Mendoros \n(2016–present) Children 2 Modelling information Height 6 ft 3 in (191 cm) [ 1 ] Hair colour Dark brown [ 2 ] Eye colour Blue [ 2 ] Agency Select Model Management [ 2 ] Ford Models [ 3 ] New Madison Models [ 4 ]",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:David_Gandy_in_Singapore,_2015.jpg",
+  "filename": "David_Gandy_in_Singapore,_2015.jpg",
+  "description": "English: David Gandy at the Ion Mall, Singapore 2015.",
+  "photographer": "David Seow",
+  "photoDate": "18 October 2015, 16:43:53",
+  "originalSource": "Own work",
+  "licenses": [
+    {
+      "name": "CC BY-SA 4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 4.0 International license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/4.0 CC BY-SA 4.0 Creative Commons Attribution-Share Alike 4.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 4.0 International license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/4.0 CC BY-SA 4.0 Creative Commons Attribution-Share Alike 4.0 true true"
+  },
+  "attribution": "David_Gandy_in_Singapore,_2015.jpg — David Seow; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:David_Gandy_in_Singapore,_2015.jpg; https://creativecommons.org/licenses/by-sa/4.0. Original source file retained; no changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/8/82/David_Gandy_in_Singapore%2C_2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    1824,
+    2101
+  ],
+  "sha256": "f1c449c997d56ca97b4c3643f62459cb5a7cf3358c517c96ba5765cb7179d294",
+  "visualReview": {
+    "reviewed": true,
+    "reviewedAtUTC": "2026-10-29T02:53:11.243678+00:00",
+    "findings": "One-person upper-body photograph, 1824×2101. Face/clothing are clear but visibly grainy; bright event backdrop and partial background heads are visible. This is the original, wider-framed photograph instead of the biography crop.",
+    "identityEvidence": "Commons original description explicitly names David Gandy at Ion Mall, Singapore in 2015. The biography uses a linked extracted crop of this original. This is source context, not face recognition.",
+    "adultDateEvidence": "Biography DOB 1980-02-19; Commons photograph date 2015-10-18; age 35 on that date. Age based on source dates, not appearance.",
+    "limitations": "This review confirms visible framing/quality and written source context; it does not verify a model release, platform upload compatibility, or game-likeness permission.",
+    "upstreamChanges": "Exact original Commons photograph retained without MOGVILLE changes; previously selected downstream crop was replaced because its CC BY4.0 claim conflicts with the original’s CC BY-SA4.0."
+  },
+  "sourceLicenseReview": {
+    "reviewed": true,
+    "evidence": "Original file has photographer/uploader David Seow’s own-work statement and explicit CC BY-SA4.0. Downstream crop David_Gandy_1.jpg advertises CC BY4.0, inconsistent with original ShareAlike; that crop is held out of the review bundle. Use this original and BY-SA4.0 attribution.",
+    "licenseSource": "https://commons.wikimedia.org/wiki/File:David_Gandy_in_Singapore,_2015.jpg",
+    "originalSourceURLs": [
+      "https://commons.wikimedia.org/wiki/File:David_Gandy_in_Singapore,_2015.jpg"
+    ],
+    "copyrightApprovalForGame": false,
+    "requiredConditions": "Credit author and source, link the specified license, mark changes; ShareAlike applies to adaptations where the selected license is BY-SA. No endorsement implied.",
+    "supersededSource": "https://commons.wikimedia.org/wiki/File:David_Gandy_1.jpg"
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "basis": "Original file has photographer/uploader David Seow’s own-work statement and explicit CC BY-SA4.0. Downstream crop David_Gandy_1.jpg advertises CC BY4.0, inconsistent with original ShareAlike; that crop is held out of the review bundle. Use this original and BY-SA4.0 attribution.",
+    "scope": "Redistribution of this exact source file with required attribution/license notice. Does not clear game likeness, endorsement, or Roblox platform terms.",
+    "warningReview": "Checked visible file-specific Commons licensing, source/author/date information, external-source review where applicable, and upstream extraction source. No unresolved source-license warning found for retained file."
+  }
+}

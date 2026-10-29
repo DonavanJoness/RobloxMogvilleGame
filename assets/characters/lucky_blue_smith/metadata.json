@@ -2,18 +2,19 @@
   "schemaVersion": 1,
   "candidateId": "lucky_blue_smith",
   "displayName": "Lucky Blue Smith",
-  "status": "NeedsApproval",
+  "status": "ReviewOnlyNotGameApproved",
   "portraitFile": null,
   "sourceURL": "https://en.wikipedia.org/wiki/Lucky_Blue_Smith",
-  "sourceURLStatus": "ProposedUnfetched",
-  "photographer": null,
-  "license": null,
-  "commercialRights": null,
+  "sourceURLStatus": "FetchedForSourceReview",
+  "photographer": "Yoann Lothaire / other viewnewsmedia",
+  "license": "CC BY 3.0",
+  "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
   "likenessStatus": "NeedsApproval",
   "researchCatalog": "assets/references/research-catalog.json",
   "notes": [
-    "Public model research candidate; select an adult-era portrait only after date and rights review.",
-    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+    "Public model research candidate; select an adult-era portrait only after date and rights review."
   ],
-  "enabled": false
+  "enabled": false,
+  "reviewPhotoFile": "assets/references/photo-review/lucky_blue_smith.jpg",
+  "reviewEvidence": "assets/references/live-research/lucky_blue_smith.json"
 }

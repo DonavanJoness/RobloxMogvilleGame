@@ -2,18 +2,19 @@
   "schemaVersion": 1,
   "candidateId": "henry_cavill",
   "displayName": "Henry Cavill",
-  "status": "NeedsApproval",
+  "status": "ReviewOnlyNotGameApproved",
   "portraitFile": null,
   "sourceURL": "https://en.wikipedia.org/wiki/Henry_Cavill",
-  "sourceURLStatus": "ProposedUnfetched",
-  "photographer": null,
-  "license": null,
-  "commercialRights": null,
+  "sourceURLStatus": "FetchedForSourceReview",
+  "photographer": "Gage Skidmore from Peoria, AZ, United States of America",
+  "license": "CC BY-SA 2.0",
+  "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
   "likenessStatus": "NeedsApproval",
   "researchCatalog": "assets/references/research-catalog.json",
   "notes": [
-    "Actor reference requested by the user; do not label him a looksmaxxing creator.",
-    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+    "Actor reference requested by the user; do not label him a looksmaxxing creator."
   ],
-  "enabled": false
+  "enabled": false,
+  "reviewPhotoFile": "assets/references/photo-review/henry_cavill.jpg",
+  "reviewEvidence": "assets/references/live-research/henry_cavill.json"
 }

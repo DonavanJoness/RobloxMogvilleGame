@@ -1,0 +1,70 @@
+{
+  "candidateId": "jon_kortajarena",
+  "displayName": "Jon Kortajarena",
+  "observedAtUTC": "2026-10-28T22:41:59.710692+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Jon_Kortajarena",
+    "https://commons.wikimedia.org/wiki/File:Premios_Goya_2020_-_Jon_Kortajarena_(Cropped)_(cropped).jpg",
+    "https://commons.wikimedia.org/wiki/File:Premios_Goya_2020_-_Jon_Kortajarena_(Cropped).jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/jon_kortajarena.jpg",
+  "identityPageTitle": "Jon Kortajarena - Wikipedia",
+  "birthDate": "1985-05-19",
+  "identityExcerpt": "Jon Kortajarena Kortajarena at the 34th Goya Awards in January 2020 Born Jon Kortajarena Redruello ( 1985-05-19 ) 19 May 1985 (age 41) Bilbao , Spain Modelling information Height 6 ft 2 in (188 cm) [ 1 ] Hair colour Brown [ 1 ] Eye colour Hazel [ 1 ] Agency The Lions (New York) Success Models (Paris) Why Not Model Management (Milan) Select Model Management (London) View Management (Barcelona) YC Models (Brussels) Scoop Models (Copenhagen) [ 2 ] Website www.jonkortajarena.com",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Premios_Goya_2020_-_Jon_Kortajarena_(Cropped)_(cropped).jpg",
+  "filename": "Premios_Goya_2020_-_Jon_Kortajarena_(Cropped)_(cropped).jpg",
+  "description": "Español: Jon Kortajarena en la alfombra roja de los premios Goya celebrados en Málaga en enero de 2020",
+  "photographer": "Pedro J Pacheco",
+  "photoDate": "25 January 2020, 20:54:14",
+  "originalSource": "Own work",
+  "licenses": [
+    {
+      "name": "CC BY-SA 4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 4.0 International license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/4.0 CC BY-SA 4.0 Creative Commons Attribution-Share Alike 4.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 4.0 International license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/4.0 CC BY-SA 4.0 Creative Commons Attribution-Share Alike 4.0 true true"
+  },
+  "attribution": "Premios_Goya_2020_-_Jon_Kortajarena_(Cropped)_(cropped).jpg — Pedro J Pacheco; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Premios_Goya_2020_-_Jon_Kortajarena_(Cropped)_(cropped).jpg; https://creativecommons.org/licenses/by-sa/4.0. Original file retained; no changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/6/60/Premios_Goya_2020_-_Jon_Kortajarena_%28Cropped%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    1059,
+    1203
+  ],
+  "sha256": "90f1db626a69c29cef44ffbc5f043c1844aa69cf02825005528eeb8e5a9f2a7c",
+  "visualReview": {
+    "reviewed": true,
+    "reviewedAtUTC": "2026-10-29T02:53:11.339075+00:00",
+    "findings": "One-person upper-body red-carpet photograph. Face and formal clothing are clear; branded event backdrop behind. Already cropped closely to the subject.",
+    "identityEvidence": "Commons Spanish description explicitly names Jon Kortajarena on the Goya Awards red carpet in Málaga, January 2020. Matching biography uses the exact crop with 34th Goya Awards caption. This is source attribution, not face recognition.",
+    "adultDateEvidence": "Biography DOB 1985-05-19; Commons photograph date 2020-01-25; age 34 on that date. Age based on source dates, not appearance.",
+    "limitations": "This review confirms visible framing/quality and written source context; it does not verify a model release, platform upload compatibility, or game-likeness permission.",
+    "upstreamChanges": "Commons filename and extraction notice identify upstream crops of the original Goya red-carpet photograph. Those supplied crops are retained unchanged by MOGVILLE."
+  },
+  "sourceLicenseReview": {
+    "reviewed": true,
+    "evidence": "File-specific Commons licensing template states CC BY-SA 4.0 and credits Pedro J Pacheco. The linked upstream crop repeats the same Pedro J Pacheco own-work CC BY-SA4.0 claim and photo date.",
+    "licenseSource": "https://commons.wikimedia.org/wiki/File:Premios_Goya_2020_-_Jon_Kortajarena_(Cropped)_(cropped).jpg",
+    "originalSourceURLs": [],
+    "copyrightApprovalForGame": false,
+    "requiredConditions": "Credit author and source, link the specified license, mark changes; ShareAlike applies to adaptations where the selected license is BY-SA. No endorsement implied.",
+    "upstreamSourceURL": "https://commons.wikimedia.org/wiki/File:Premios_Goya_2020_-_Jon_Kortajarena_(Cropped).jpg"
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "basis": "File-specific Commons licensing template states CC BY-SA 4.0 and credits Pedro J Pacheco. The linked upstream crop repeats the same Pedro J Pacheco own-work CC BY-SA4.0 claim and photo date.",
+    "scope": "Redistribution of this exact source file with required attribution/license notice. Does not clear game likeness, endorsement, or Roblox platform terms.",
+    "warningReview": "Checked visible file-specific Commons licensing, source/author/date information, external-source review where applicable, and upstream extraction source. No unresolved source-license warning found for retained file."
+  }
+}

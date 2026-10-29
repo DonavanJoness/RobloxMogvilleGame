@@ -2,18 +2,19 @@
   "schemaVersion": 1,
   "candidateId": "river_viiperi",
   "displayName": "River Viiperi",
-  "status": "NeedsApproval",
+  "status": "ReviewOnlyNotGameApproved",
   "portraitFile": null,
-  "sourceURL": "https://en.wikipedia.org/wiki/River_Viiperi",
-  "sourceURLStatus": "ProposedUnfetched",
-  "photographer": null,
-  "license": null,
-  "commercialRights": null,
+  "sourceURL": "https://commons.wikimedia.org/wiki/Category:River_Viiperi",
+  "sourceURLStatus": "FetchedForSourceReview",
+  "photographer": "Sara Cimino from Milan, Italy ( Flickr account )",
+  "license": "CC BY 2.0",
+  "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
   "likenessStatus": "NeedsApproval",
   "researchCatalog": "assets/references/research-catalog.json",
   "notes": [
-    "Public model research candidate; select an adult-era portrait only after date and rights review.",
-    "Source content was not retrieved. This entry is a research lead, not a verified biography, licensed image, adult-identity confirmation, or permission to use a likeness."
+    "Public model research candidate; select an adult-era portrait only after date and rights review."
   ],
-  "enabled": false
+  "enabled": false,
+  "reviewPhotoFile": "assets/references/photo-review/river_viiperi.jpg",
+  "reviewEvidence": "assets/references/live-research/river_viiperi.json"
 }

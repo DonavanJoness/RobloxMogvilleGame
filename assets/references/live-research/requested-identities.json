@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "observedAtUTC": "2026-10-28T22:41:25.553998+00:00",
+  "scope": "Requested ambiguous identities and photo permission leads only; no image downloads or game enablement",
+  "method": {
+    "userAgent": "MogvillePhotoResearch/1.0 (public source and license audit)",
+    "robotsRespected": true,
+    "rateLimit": "At least one second between requests",
+    "wikipediaCommonsAPI": "Not queried because robots.txt disallows /w/api.php for this bot",
+    "searchEngineLimit": "Bing robots.txt disallowed /search; no search request was made"
+  },
+  "records": [
+    {
+      "candidateId": "clavicular",
+      "requestedLabel": "Clavicular / Young Clav",
+      "referenceType": "PublicCreatorAlias",
+      "identityStatus": "SourceCorroboratedPublicAlias",
+      "verifiedReference": {
+        "publicName": "Clavicular",
+        "reportedRealName": "Braden Eric Peters",
+        "reportedDOB": "2005-12-17",
+        "ageAsOf2026_10_28": 20
+      },
+      "sources": [
+        {
+          "url": "https://knowyourmeme.com/memes/people/clavicular",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "evidence": "Clavicular, real name Braden Peters, is a Kick streamer, TikToker and influencer primarily known for his looksmaxxing content."
+        },
+        {
+          "url": "https://www.famousbirthdays.com/people/clavicular.html",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "evidence": "Birthday December 17, 2005; the Family life section names Braden Eric Peters."
+        }
+      ],
+      "photoStatus": "PermissionRequired",
+      "photoDownloaded": false,
+      "copyrightLicense": null,
+      "likenessPermission": "Unresolved",
+      "adultEraPortraitVerified": false,
+      "permissionRequestLeads": [
+        {
+          "url": "https://www.instagram.com/clavicular0/",
+          "status": "Public profile linked by Know Your Meme; not independently fetched or an actual permission grant"
+        },
+        {
+          "url": "https://kick.com/clavicular",
+          "status": "Public creator channel linked by Know Your Meme; not independently fetched or a permission grant"
+        }
+      ],
+      "notes": [
+        "No photo selected or downloaded because retrieved pages did not document commercial-photo reuse rights.",
+        "Young appearances must be dated and verified adult-era; his 2021 posts would have been made while under 18. Do not source those for this adult-only roster.",
+        "https://en.wikipedia.org/wiki/Clavicular returned HTTP200 anatomy text about the clavicle, not a streamer biography; it must not be treated as identity evidence."
+      ]
+    },
+    {
+      "candidateId": "ernest_khalimov",
+      "requestedLabel": "Ernest Khalimov / GigaChad",
+      "referenceType": "PublicMemeArtProject",
+      "identityStatus": "MemeProjectAttributionCorroboratedBySource",
+      "verifiedReference": {
+        "publicReference": "berlin.1969 / Ernest Khalimov",
+        "photographerAttributedBySource": "Krista Sudmalis",
+        "project": "Sleek'N'Tears"
+      },
+      "sources": [
+        {
+          "url": "https://knowyourmeme.com/memes/gigachad",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "evidence": "The article associates GigaChad with berlin.1969 / Ernest Khalimov and attributes the photographic art project to Krista Sudmalis."
+        }
+      ],
+      "photoStatus": "PermissionRequired",
+      "photoDownloaded": false,
+      "copyrightLicense": null,
+      "likenessPermission": "Unresolved",
+      "adultEraPortraitVerified": false,
+      "permissionRequestLeads": [
+        {
+          "url": "https://sleekntears.com/",
+          "status": "Creator project website linked by Know Your Meme; HTTPS robots request returned proxy tunnel403, so no site content or contact details verified"
+        },
+        {
+          "url": "https://www.instagram.com/berlin.1969/",
+          "status": "Project/model profile linked by Know Your Meme; not independently fetched or a permission grant"
+        }
+      ],
+      "notes": [
+        "Know Your Meme explicitly describes the iconic imagery as photoshopped photographs and a photographic art project involving several models. Do not label an edited meme image an unaltered authentic portrait.",
+        "No reusable image copyright license was documented in the retrieved source. No image was downloaded.",
+        "A subject enjoying memes or a meme template being publicly distributed is not a commercial-game photo or likeness license.",
+        "https://en.wikipedia.org/wiki/GigaChad returned404; the root candidate workflow should rely on actual verified sources rather than assumed encyclopedia pages."
+      ]
+    },
+    {
+      "candidateId": "kaysh_unresolved",
+      "requestedLabel": "Kaysh",
+      "referenceType": "UnresolvedAlias",
+      "identityStatus": "UnresolvedDoNotGuess",
+      "verifiedReference": null,
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Kaysh",
+          "httpStatus": 404,
+          "robotsAllowed": true,
+          "evidence": "No article retrieved."
+        },
+        {
+          "url": "https://knowyourmeme.com/memes/people/kaysh",
+          "httpStatus": 404,
+          "robotsAllowed": true,
+          "evidence": "No entry retrieved."
+        }
+      ],
+      "photoStatus": "Unavailable",
+      "photoDownloaded": false,
+      "copyrightLicense": null,
+      "likenessPermission": "Unresolved",
+      "adultEraPortraitVerified": false,
+      "permissionRequestLeads": [],
+      "notes": [
+        "These404 results do not prove the name is nonexistent. They establish only that the checked public URLs did not identify the requested person.",
+        "Need the owner's exact public profile or a reliable source identifying the intended adult public personality. Never attach a guessed real name or an unrelated portrait."
+      ]
+    },
+    {
+      "candidateId": "post_surgery_hexum_unresolved",
+      "requestedLabel": "Post-Surgery Hexum",
+      "referenceType": "UnresolvedRequestedVariant",
+      "identityStatus": "ExactRequestedReferenceUnresolved",
+      "verifiedReference": null,
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Jon-Erik_Hexum",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "evidence": "Jon-Erik Hexum (November 5,1957 – October18,1984) was an American actor and model."
+        }
+      ],
+      "photoStatus": "Unavailable",
+      "photoDownloaded": false,
+      "copyrightLicense": null,
+      "likenessPermission": "Unresolved",
+      "adultEraPortraitVerified": false,
+      "permissionRequestLeads": [],
+      "notes": [
+        "The public actor biography does not establish that the user's label refers to this actor, a particular image or a genuine photographic variant. Do not automatically bind the requested label to Jon-Erik Hexum.",
+        "No source retrieved ties a specific licensed photo to the exact requested variant. No cosmetic-surgery or altered-appearance claim is made.",
+        "If the owner means Jon-Erik Hexum, request a specific source/photo and record it under his verified name, with license and applicable estate/likeness review."
+      ]
+    },
+    {
+      "candidateId": "chad_jaw_unresolved",
+      "requestedLabel": "Chad Jaw",
+      "referenceType": "UnresolvedAlias",
+      "identityStatus": "UnresolvedDoNotGuess",
+      "verifiedReference": null,
+      "sources": [
+        {
+          "url": "https://knowyourmeme.com/memes/people/chad-jaw",
+          "httpStatus": 404,
+          "robotsAllowed": true,
+          "evidence": "No entry retrieved."
+        },
+        {
+          "url": "https://knowyourmeme.com/memes/people/chadjaw",
+          "httpStatus": 404,
+          "robotsAllowed": true,
+          "evidence": "No entry retrieved."
+        }
+      ],
+      "photoStatus": "Unavailable",
+      "photoDownloaded": false,
+      "copyrightLicense": null,
+      "likenessPermission": "Unresolved",
+      "adultEraPortraitVerified": false,
+      "permissionRequestLeads": [],
+      "notes": [
+        "Need the exact public profile or source identifying the intended adult public personality. Do not choose another creator just because of a similar name or face."
+      ]
+    }
+  ]
+}

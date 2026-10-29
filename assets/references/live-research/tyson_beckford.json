@@ -1,0 +1,60 @@
+{
+  "candidateId": "tyson_beckford",
+  "displayName": "Tyson Beckford",
+  "observedAtUTC": "2026-10-28T22:42:02.177572+00:00",
+  "identityStatus": "PublicBiographyAndFileCaptionReviewed",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseLocatedNeedsReview",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Tyson_Beckford",
+    "https://commons.wikimedia.org/wiki/File:Tyson_Beckford_(cropped).jpg",
+    "https://commons.wikimedia.org/wiki/File:Tyson_Beckford.jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/tyson_beckford.jpg",
+  "identityPageTitle": "Tyson Beckford - Wikipedia",
+  "birthDate": "1970-12-19",
+  "identityExcerpt": "Tyson Beckford Beckford in 2007 Born ( 1970-12-19 ) December 19, 1970 (age 55) New York City, U.S. Children 1 Modeling information Height 1.83 m (6 ft 0 in)",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Tyson_Beckford_(cropped).jpg",
+  "filename": "Tyson_Beckford_(cropped).jpg",
+  "description": "Tyson Beckford at FashionWeekLive in San Francisco, March 15, 2007. Photo by Jesse Gross.",
+  "photographer": "Jesse Gross (Jgro888, per caption and original upload/EXIF)",
+  "photoDate": "15 March 2007 (caption and EXIF; 20 March is upload date)",
+  "originalSource": "Transferred from en.wikipedia to Commons.",
+  "licenses": [
+    {
+      "name": "CC BY-SA 2.5",
+      "url": "https://creativecommons.org/licenses/by-sa/2.5",
+      "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 2.5 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/2.5 CC BY-SA 2.5 Creative Commons Attribution-Share Alike 2.5 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY-SA 2.5",
+    "url": "https://creativecommons.org/licenses/by-sa/2.5",
+    "terms": "This file is licensed under the Creative Commons Attribution-Share Alike 2.5 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original. https://creativecommons.org/licenses/by-sa/2.5 CC BY-SA 2.5 Creative Commons Attribution-Share Alike 2.5 true true"
+  },
+  "attribution": "Tyson Beckford (cropped).jpg — Jesse Gross (Jgro888), upstream crop by Heiko Gerber; CC BY-SA 2.5; https://commons.wikimedia.org/wiki/File:Tyson_Beckford_(cropped).jpg; https://creativecommons.org/licenses/by-sa/2.5. Exact current Commons crop retained; no changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Tyson_Beckford_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    1027,
+    1287
+  ],
+  "sha256": "d52fe25742d2d241ac147f61b1743cc1c7b83be77e6788779473acf271a9342c",
+  "visualReview": {
+    "reviewed": true,
+    "reviewedAtUTC": "2026-10-29T02:53:44.281685+00:00",
+    "findings": "Single clear main subject, head-and-torso event portrait in jacket and shirt; no competing face in the crop.",
+    "identityEvidence": "Wikipedia infobox identifies the subject; Commons caption names Tyson Beckford at FashionWeekLive, San Francisco, 15 March 2007. No identity determination from facial appearance.",
+    "adultDateEvidence": "Biography DOB 1970-12-19 and actual caption date 2007-03-15 establish an adult-era photograph (36). The summary Date field is an upload date, not the capture date.",
+    "limitations": "The Commons file is an upstream crop made by Heiko Gerber; exact current crop retained unchanged. Photographer is Jesse Gross per caption/EXIF, not merely uploader Jgro888."
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "basis": "Photo-specific Commons license, author, date/caption and downloaded image were reviewed; this records the source claims, not an independent legal warranty or game likeness clearance.",
+    "permissionEvidence": "The uncropped original Commons file publicly states copyright-holder permission was received and reviewed by Wikimedia VRT; ticket 2007032510015777. Private correspondence was not accessed.",
+    "originalFileURL": "https://commons.wikimedia.org/wiki/File:Tyson_Beckford.jpg"
+  }
+}
