@@ -6,12 +6,21 @@ Vector3={new=vec,zero=vec(0,0,0)}
 Vector2={new=function(x,y)return {X=x,Y=y}end}
 local function frame(x,y,z)
  local p=if type(x)=='table' then x else vec(x,y,z)
- return setmetatable({Position=p,__kind='CFrame'}, {__mul=function(a,b)return frame(a.Position+b.Position)end})
+ return setmetatable({Position=p,__kind='CFrame',VectorToWorldSpace=function(_,v)return v end}, {__mul=function(a,b)if b.__kind=='Vector3' then return a.Position+b end return frame(a.Position+b.Position)end,__add=function(a,b)return frame(a.Position+b)end})
 end
 CFrame={new=frame,Angles=function(...)return frame(0,0,0)end,lookAt=function(p,_)return frame(p)end}
 local realTypeof=typeof
 typeof=function(v)if type(v)=='table' and v.__kind then return v.__kind end return realTypeof(v)end
-Color3={fromRGB=function(...)return {...}end,fromHex=function(...)return {...}end,fromHSV=function(...)return {...}end}
+local function color(r,g,b)
+ return {R=r,G=g,B=b,__kind='Color3',Lerp=function(self,other,t)return color(self.R+(other.R-self.R)*t,self.G+(other.G-self.G)*t,self.B+(other.B-self.B)*t)end}
+end
+Color3={new=color,fromRGB=function(r,g,b)return color(r/255,g/255,b/255)end,
+ fromHex=function(hex)return color(tonumber(hex:sub(1,2),16)/255,tonumber(hex:sub(3,4),16)/255,tonumber(hex:sub(5,6),16)/255)end,
+ fromHSV=function(h,s,v)
+  local sector=h*6;local i=math.floor(sector);local f=sector-i;local p,q,t=v*(1-s),v*(1-s*f),v*(1-s*(1-f))
+  local channels={{v,t,p},{q,v,p},{p,v,t},{p,q,v},{t,p,v},{v,p,q}};local c=channels[i%6+1]
+  return color(c[1],c[2],c[3])
+ end}
 local constructor={new=function(...)return {...}end}
 ColorSequence=constructor; NumberSequence=constructor; NumberSequenceKeypoint=constructor;NumberRange=constructor;UDim=constructor
 UDim2={new=function(...)return {...}end,fromOffset=function(...)return {...}end,fromScale=function(...)return {...}end}
@@ -58,6 +67,6 @@ function collection:GetTagged(name)local result={}for _,obj in tags[name]or{}do 
 local replicated=Instance.new('ReplicatedStorage')
 local shared=Instance.new('Folder');shared.Name='Shared';shared.Parent=replicated
 local workspace=Instance.new('Workspace')
-local services={CollectionService=collection,Lighting=Instance.new('Lighting'),Workspace=workspace,ReplicatedStorage=replicated,ServerStorage=Instance.new('ServerStorage')}
+local services={CollectionService=collection,Lighting=Instance.new('Lighting'),Workspace=workspace,ReplicatedStorage=replicated,ServerStorage=Instance.new('ServerStorage'),RunService={IsStudio=function()return false end}}
 game={GetService=function(_,name)return assert(services[name],'Missing service '..name)end}
 task={spawn=function(fn,...)return fn(...)end}

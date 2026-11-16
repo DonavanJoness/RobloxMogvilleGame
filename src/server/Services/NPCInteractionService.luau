@@ -1,10 +1,13 @@
 --!strict
--- Approved, customized R15 templates only. An unavailable asset is represented
--- by an honest information kiosk, never a generic dummy passed off as final art.
+-- NPC presentation, in priority order: approved imported R15 template; otherwise an original
+-- procedural stand-in (native R15 rig + CharacterLooks recipe, labelled ProceduralStandIn);
+-- otherwise an honest information kiosk. A stand-in is never reported as approved art.
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local NPCConfiguration = require(ReplicatedStorage.Shared.NPCConfiguration)
 local DistrictConfiguration = require(ReplicatedStorage.Shared.DistrictConfiguration)
 local CharacterAppearanceService = require(script.Parent.CharacterAppearanceService)
+local CharacterLooks = require(ReplicatedStorage.Shared.CharacterLooks)
+local CollectionService = game:GetService("CollectionService")
 
 local NPCInteractionService = {}
 NPCInteractionService.__index = NPCInteractionService
@@ -16,6 +19,18 @@ local function positionFor(id: string, definition: any): Vector3
 	if type(value) == "table" and value.position then value = value.position end
 	if type(value) == "table" and value.x then return Vector3.new(value.x, value.y, value.z) end
 	return Vector3.new(value[1], value[2], value[3])
+end
+
+local function yawFor(id: string, definition: any): number
+	local configured = DistrictConfiguration.NPCPositions and DistrictConfiguration.NPCPositions[id]
+	if type(configured) == "table" and type(configured.yaw) == "number" then return configured.yaw end
+	return definition.yaw or 0
+end
+
+local function idlePhase(id: string): number
+	local hash = 0
+	for index = 1, #id do hash = (hash * 31 + string.byte(id, index)) % 9973 end
+	return hash / 9973 * 6.28
 end
 
 local function information(parent: Instance, anchor: BasePart, definition: any, available: boolean)
@@ -92,8 +107,8 @@ local function play(entry: any, slot: string)
 	entry.animationSlot = slot
 end
 
-function NPCInteractionService.new(loader: any?)
-	return setmetatable({ appearance = CharacterAppearanceService.new(loader), entries = {}, folder = nil,
+function NPCInteractionService.new(loader: any?, rigs: any?)
+	return setmetatable({ appearance = CharacterAppearanceService.new(loader, rigs), entries = {}, folder = nil,
 		elapsed = 0, clock = 0, built = false }, NPCInteractionService)
 end
 
@@ -107,13 +122,25 @@ function NPCInteractionService:build(parent: Instance)
 	local ids = {}
 	for id in NPCConfiguration.Characters do table.insert(ids, id) end
 	table.sort(ids)
-	local residentCount = 0
+	local residentCount, standInCount = 0, 0
 	for _, id in ids do
 		local definition = NPCConfiguration.Characters[id]
 		local point = positionFor(id, definition)
 		local moving = definition.resident and residentCount < NPCConfiguration.MaxActiveResidents
-		local model, problem = self.appearance:createRig(definition.modelKey, folder,
-			CFrame.new(point) * CFrame.Angles(0, math.rad(definition.yaw or 0), 0), moving)
+		local floor = CFrame.new(point) * CFrame.Angles(0, math.rad(yawFor(id, definition)), 0)
+		local model, problem = self.appearance:createRig(definition.modelKey, folder, floor, moving)
+		local standIn = false
+		if not model then
+			local look = CharacterLooks.forNPC(id)
+			if look then
+				local made, reason = self.appearance:createStandIn(look, folder, floor, false)
+				if made then
+					model, standIn, moving = made, true, false
+				else
+					problem = reason or problem
+				end
+			end
+		end
 		if model then
 			model.Name = definition.name
 			model:SetAttribute("NPCId", id)
@@ -122,6 +149,12 @@ function NPCInteractionService:build(parent: Instance)
 			model:SetAttribute("AnimationsReady", tracks.idle ~= nil and (not moving or tracks.walk ~= nil))
 			local root = model:FindFirstChild("HumanoidRootPart") :: BasePart
 			local humanoid = model:FindFirstChildOfClass("Humanoid") :: Humanoid
+			if standIn then
+				-- Client-side breathing/head-turn motion; the baked stance is the fallback.
+				model:SetAttribute("IdlePhase", idlePhase(id))
+				CollectionService:AddTag(model, "MogvilleIdle")
+				standInCount += 1
+			end
 			-- Do not make an imported resident glide through the city while its
 			-- required idle/walk uploads are missing or fail to load.
 			if moving and (not tracks.idle or not tracks.walk) then
@@ -162,7 +195,9 @@ function NPCInteractionService:build(parent: Instance)
 			information(kiosk, kiosk, definition, false)
 		end
 	end
-	folder:SetAttribute("ApprovedNPCCount", #self.entries)
+	folder:SetAttribute("ApprovedNPCCount", #self.entries - standInCount)
+	folder:SetAttribute("StandInNPCCount", standInCount)
+	folder:SetAttribute("KioskNPCCount", #ids - #self.entries)
 	folder:SetAttribute("ConfiguredNPCCount", #ids)
 	folder:SetAttribute("ResidentCount", residentCount)
 	return folder

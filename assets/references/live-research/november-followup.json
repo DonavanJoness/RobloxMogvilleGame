@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 1,
+  "observedAtUTC": "2026-11-16T23:17:33.586613+00:00",
+  "scope": "Fresh November source follow-up for13 unresolved references; source research only",
+  "method": {
+    "publicHTMLOnly": true,
+    "robotsChecked": true,
+    "tlsVerificationPreserved": true,
+    "inheritedProxyPreserved": true,
+    "rateLimit": "At least one second between sequential page requests",
+    "mediaWikiAPIUsed": false,
+    "photoBytesDownloaded": 3,
+    "productionApprovals": 0,
+    "messagesSentToRightsHolders": 0
+  },
+  "summary": {
+    "requestedReferencesRechecked": 13,
+    "newProfessionalProfilesLocated": 7,
+    "newLicensedActorPhotoLeadsWithIdentityMismatch": 2,
+    "newSelectedReviewPhotos": 3,
+    "newRobloxUploads": 0,
+    "newSourceReviewedPhotosLocated": 3,
+    "ownerAuthorizedClosestNameSelections": 2
+  },
+  "additionalLookupEvidence": [
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category:Male_models_from_Denmark",
+      "httpStatus": 404,
+      "robotsAllowed": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category:Models_from_Denmark",
+      "httpStatus": 200,
+      "robotsAllowed": true,
+      "result": "No links matching Mathias Lauridsen in fetched page."
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category:Male_models_from_Sweden",
+      "httpStatus": 200,
+      "robotsAllowed": true,
+      "result": "No link matching Alex Lundqvist in fetched page."
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category:Male_models_from_the_United_States",
+      "httpStatus": 200,
+      "robotsAllowed": true,
+      "result": "No links matching Garrett Neff, David Agbodji or Alton Mason in fetched page."
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category:Male_models_from_France",
+      "httpStatus": 200,
+      "robotsAllowed": true,
+      "result": "No link matching Clément Chabernaud in fetched page."
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category:Male_models_from_Italy",
+      "httpStatus": 200,
+      "robotsAllowed": true,
+      "result": "No link matching Pietro Boselli in fetched page."
+    },
+    {
+      "url": "https://www.flickr.com/search/?text=Mathias%20Lauridsen",
+      "robotsAllowed": false,
+      "pageRequested": false,
+      "result": "Search path prohibited by Flickr robots; no search page requested."
+    }
+  ],
+  "limitations": [
+    "Lookup failures and unpopulated categories are limited negative evidence, not proof no licensed photograph exists.",
+    "Professional profile photos are source/rights-holder leads, not reuse permission.",
+    "No biometric recognition, private identity inference, invented license, substitute face, upload ID or new game enablement."
+  ],
+  "records": [
+    {
+      "candidateId": "david_agbodji",
+      "displayName": "David Agbodji",
+      "result": "PublicProfessionalProfileLocatedPermissionStillRequired",
+      "sources": [
+        {
+          "url": "https://models.com/models/david-agbodji",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "title": "David Agbodji - Model Profile - Photos & latest news",
+          "evidence": "Public profile identifies this named model and lists professional modelling/agency information; source-captioned photographs are present."
+        }
+      ],
+      "photoLicenseEstablished": false,
+      "imageDownloaded": false,
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "blocker": "No image-specific CC BY/BY-SA/CC0 or rights-holder grant was established from the profile HTML. A publicly visible portfolio is not a commercial photo license.",
+      "nextUsefulAction": "Obtain an exact licensed image from the listed photographer/agency or another documented source; verify date, identity and required credits."
+    },
+    {
+      "candidateId": "pietro_boselli",
+      "displayName": "Pietro Boselli",
+      "result": "PublicProfessionalProfileLocatedPermissionStillRequired",
+      "sources": [
+        {
+          "url": "https://models.com/models/pietro-boselli",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "title": "Pietro Boselli - Model Profile - Photos & latest news",
+          "evidence": "Public profile identifies this named model and lists professional modelling/agency information; source-captioned photographs are present."
+        }
+      ],
+      "photoLicenseEstablished": false,
+      "imageDownloaded": false,
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "blocker": "No image-specific CC BY/BY-SA/CC0 or rights-holder grant was established from the profile HTML. A publicly visible portfolio is not a commercial photo license.",
+      "nextUsefulAction": "Obtain an exact licensed image from the listed photographer/agency or another documented source; verify date, identity and required credits."
+    },
+    {
+      "candidateId": "alex_lundqvist",
+      "displayName": "Alex Lundqvist",
+      "result": "PublicProfessionalProfileLocatedPermissionStillRequired",
+      "sources": [
+        {
+          "url": "https://models.com/models/alex-lundqvist",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "title": "Alex Lundqvist - Model Profile - Photos & latest news",
+          "evidence": "Public profile identifies this named model and lists professional modelling/agency information; source-captioned photographs are present."
+        }
+      ],
+      "photoLicenseEstablished": false,
+      "imageDownloaded": false,
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "blocker": "No image-specific CC BY/BY-SA/CC0 or rights-holder grant was established from the profile HTML. A publicly visible portfolio is not a commercial photo license.",
+      "nextUsefulAction": "Obtain an exact licensed image from the listed photographer/agency or another documented source; verify date, identity and required credits."
+    },
+    {
+      "candidateId": "mathias_lauridsen",
+      "displayName": "Mathias Lauridsen",
+      "result": "PublicProfessionalProfileLocatedPermissionStillRequired",
+      "sources": [
+        {
+          "url": "https://models.com/models/mathias-lauridsen",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "title": "Mathias Lauridsen - Model Profile - Photos & latest news",
+          "evidence": "Public profile identifies this named model and lists professional modelling/agency information; source-captioned photographs are present."
+        }
+      ],
+      "photoLicenseEstablished": false,
+      "imageDownloaded": false,
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "blocker": "No image-specific CC BY/BY-SA/CC0 or rights-holder grant was established from the profile HTML. A publicly visible portfolio is not a commercial photo license.",
+      "nextUsefulAction": "Obtain an exact licensed image from the listed photographer/agency or another documented source; verify date, identity and required credits."
+    },
+    {
+      "candidateId": "garrett_neff",
+      "displayName": "Garrett Neff",
+      "result": "PublicProfessionalProfileLocatedPermissionStillRequired",
+      "sources": [
+        {
+          "url": "https://models.com/models/garrett-neff",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "title": "Garrett Neff - Model Profile - Photos & latest news",
+          "evidence": "Public profile identifies this named model and lists professional modelling/agency information; source-captioned photographs are present."
+        }
+      ],
+      "photoLicenseEstablished": false,
+      "imageDownloaded": false,
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "blocker": "No image-specific CC BY/BY-SA/CC0 or rights-holder grant was established from the profile HTML. A publicly visible portfolio is not a commercial photo license.",
+      "nextUsefulAction": "Obtain an exact licensed image from the listed photographer/agency or another documented source; verify date, identity and required credits."
+    },
+    {
+      "candidateId": "kit_butler",
+      "displayName": "Kit Butler",
+      "result": "PublicProfessionalProfileLocatedPermissionStillRequired",
+      "sources": [
+        {
+          "url": "https://models.com/models/kit-butler",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "title": "Kit Butler - Model Profile - Photos & latest news",
+          "evidence": "Public profile identifies this named model and lists professional modelling/agency information; source-captioned photographs are present."
+        }
+      ],
+      "photoLicenseEstablished": false,
+      "imageDownloaded": false,
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "blocker": "No image-specific CC BY/BY-SA/CC0 or rights-holder grant was established from the profile HTML. A publicly visible portfolio is not a commercial photo license.",
+      "nextUsefulAction": "Obtain an exact licensed image from the listed photographer/agency or another documented source; verify date, identity and required credits."
+    },
+    {
+      "candidateId": "clement_chabernaud",
+      "displayName": "Clément Chabernaud",
+      "result": "PublicProfessionalProfileLocatedPermissionStillRequired",
+      "sources": [
+        {
+          "url": "https://models.com/models/clement-chabernaud",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "title": "Clement Chabernaud - Model Profile - Photos & latest news",
+          "evidence": "Public profile identifies this named model and lists professional modelling/agency information; source-captioned photographs are present."
+        }
+      ],
+      "photoLicenseEstablished": false,
+      "imageDownloaded": false,
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "blocker": "No image-specific CC BY/BY-SA/CC0 or rights-holder grant was established from the profile HTML. A publicly visible portfolio is not a commercial photo license.",
+      "nextUsefulAction": "Obtain an exact licensed image from the listed photographer/agency or another documented source; verify date, identity and required credits."
+    },
+    {
+      "candidateId": "alton_mason",
+      "displayName": "Alton Mason",
+      "result": "ExistingExternalLicenseHoldConfirmed",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Alton_Mason_for_Paco_Rabanne_Million_Manifesto.jpg",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "evidence": "The file still explicitly states the external-source license has not yet been reviewed by a Commons administrator or reviewer."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=0dLioKkZkVM",
+          "pageRequested": false,
+          "result": "Originating YouTube URL extracted from Commons; YouTube robots request failed with proxy tunnel403, so video page/license was not fetched."
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Alton_Mason",
+          "httpStatus": 404,
+          "robotsAllowed": true
+        }
+      ],
+      "photoLicenseEstablished": false,
+      "imageDownloaded": false,
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "blocker": "Image-specific CC BY3.0 claim remains unverified at its external video source. No replacement photo found in permitted checks."
+    },
+    {
+      "candidateId": "clavicular",
+      "displayName": "Clavicular",
+      "result": "AuthenticAdultPhotoWithCopyrightHolderPermissionLocated",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Clavicular_(streamer)",
+          "httpStatus": 404,
+          "robotsAllowed": true
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Braden_Peters",
+          "httpStatus": 404,
+          "robotsAllowed": true
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Clavicular_(streamer)",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "result": "Redirected to actual Clavicular (influencer) biography, Braden Eric Peters, bornDecember 2005; not the anatomy article."
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Peters,_Braden_Eric_(2_out_of_2).jpg",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "result": "Exact source has image-specific Free Art License1.3 and public VRT copyright-holder approval ticket2026101410009399."
+        },
+        {
+          "url": "https://www.tarynsegal.com/editorial",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "result": "Photographer editorial page lists Clavicular backstage forElena Velez xGQ."
+        }
+      ],
+      "priorEvidence": "assets/references/live-research/requested-identities.json",
+      "photoLicenseEstablished": true,
+      "imageDownloaded": true,
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "blocker": "No blocker to source-reviewed copyright redistribution under the selected FAL1.3 conditions. Production Roblox upload/likeness states remain unapproved.",
+      "downloadedWorktreeFile": "/workspace/MogvilleRealFaces/assets/references/photo-review/clavicular.jpg",
+      "metadataWorktreeFile": "/workspace/MogvilleRealFaces/assets/references/live-research/clavicular.json",
+      "photographer": "Taryn Segal",
+      "license": "Free Art License1.3",
+      "licenseURL": "http://artlibre.org/licence/lal/en",
+      "sha256": "3acfe273b56b83930e2ec95a5f9fe50354e43fbdec91c126910100f3607a4b54",
+      "nextUsefulAction": "Embed the reviewed source in owner-authorized preview, retaining attribution and FAL1.3 conditions; use face-centered framing rather than defaultcenter crop."
+    },
+    {
+      "candidateId": "ernest_khalimov",
+      "displayName": "Ernest Khalimov / GigaChad",
+      "result": "NoNewLicensedPhoto",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:GigaChad",
+          "httpStatus": 404,
+          "robotsAllowed": true
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Ernest_Khalimov",
+          "httpStatus": 404,
+          "robotsAllowed": true
+        }
+      ],
+      "priorEvidence": "assets/references/live-research/requested-identities.json",
+      "photoLicenseEstablished": false,
+      "imageDownloaded": false,
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "blocker": "No new image-specific permission from the original photographic-art project established. Iconic edited artwork must not be represented as an unaltered portrait."
+    },
+    {
+      "candidateId": "post_surgery_hexum_unresolved",
+      "displayName": "Post-Surgery Hexum",
+      "result": "OwnerAuthorizedClosestDocumentedNameSelected",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Jon-Erik_Hexum",
+          "httpStatus": 200,
+          "robotsAllowed": true
+        }
+      ],
+      "priorEvidence": "assets/references/live-research/requested-identities.json",
+      "potentialPhotoLeads": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Jon-Erik_arms.jpg",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "depictedSubjectPerSource": "Jon-Erik Hexum, actor",
+          "photographer": "Christie Jenkins",
+          "photoDate": "1984",
+          "license": "CC BY2.5",
+          "licenseURL": "https://creativecommons.org/licenses/by/2.5",
+          "publicCopyrightPermissionEvidence": "Commons public VRT banner reports copyright-holder permission reviewed under ticket2007011510029972; private ticket not accessed.",
+          "knownUpstreamChanges": "Current628×416 file was cropped to remove a black band and minor-retouched upstream in2010. No changes by MOGVILLE.",
+          "adultEraEvidence": "Actor biography dates1957–1984;1984 photograph is adult-era.",
+          "status": "NotSelectedExactRequestedIdentityNeedsConfirmation"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Furshot_-091_JEH_(cropped).png",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "depictedSubjectPerSource": "Jon-Erik Hexum, actor",
+          "photographer": "Harry Langdon",
+          "photoDate": "24 May 1983",
+          "license": "CC0",
+          "licenseURLAsDisplayed": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourceURL": "https://www.flickr.com/photos/201509297@N05/54979842030/",
+          "status": "NotSelectedExactRequestedIdentityAndOriginalSourceReviewNeeded",
+          "limitations": "Image-specific CC0 claim located; no public VRT/confirmed Flickr-review banner found in fetched cropped-file HTML. Originating Flickr source not independently fetched."
+        }
+      ],
+      "photoLicenseEstablishedForRequestedReference": false,
+      "imageDownloaded": true,
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "blocker": "Owner now authorizes closest documented name/reference. Actual actor Jon-Erik Hexum selected and labelled by his real name. No claim that he is the person in Instagram, and no surgery claim. Production rights/upload review remains.",
+      "userSuppliedExactReference": {
+        "url": "https://www.instagram.com/p/DfioIABvBhN/",
+        "description": "User identifies person in blue shirt as requested Post-SurgeryHexum reference.",
+        "robotsAllowed": false,
+        "pageRequested": false,
+        "result": "Post/captions not fetched because Instagram robots disallows this path.",
+        "photoLicenseEstablished": false
+      },
+      "selectedIdentity": "Jon-Erik Hexum",
+      "selectedCanonicalId": "jon_erik_hexum",
+      "selectedActualPersonPhotoLicenseEstablished": true,
+      "downloadedWorktreeFile": "/workspace/MogvilleRealFaces/assets/references/photo-review/jon_erik_hexum.jpg",
+      "metadataWorktreeFile": "/workspace/MogvilleRealFaces/assets/references/live-research/jon_erik_hexum.json"
+    },
+    {
+      "candidateId": "kaysh_unresolved",
+      "displayName": "Kaysh",
+      "result": "ExactPublicIdentityStillNeeded",
+      "priorEvidence": "assets/references/live-research/requested-identities.json",
+      "newSourceSelected": false,
+      "imageDownloaded": false,
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "blocker": "No exact public profile/name identifying the intended adult public figure was supplied or established. Do not select an unrelated person."
+    },
+    {
+      "candidateId": "chad_jaw_unresolved",
+      "displayName": "Chad Jaw",
+      "result": "OwnerAuthorizedClosestDocumentedNameSelected",
+      "priorEvidence": "assets/references/live-research/requested-identities.json",
+      "newSourceSelected": false,
+      "imageDownloaded": true,
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "blocker": "Owner now authorizes closest documented name/reference. Chad Michael Murray selected by name only and labelled by his actual public name. No claim that Chad Jaw is his alias or that he appears in the supplied BBC article. Production rights/upload review remains.",
+      "sources": [
+        {
+          "url": "https://www.bbc.com/news/articles/cx28z4zypkno",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "title": "Sculpting jaws, giving scores: Inside the world of looksmaxxing",
+          "publishedDate": "15 March 2026",
+          "namedPeople": [
+            "Marvin(@marv.maxed)",
+            "BradenPeters/Clavicular",
+            "Leander",
+            "Tom Thebe(@tom.thebe)"
+          ],
+          "imageCredits": [
+            "@marv.maxed",
+            "Victor VIRGILE/Gamma-Rapho via Getty Images",
+            "Leander",
+            "@tom.thebe"
+          ],
+          "copyrightEvidence": "BBCfooter statesAllrightsreserved. No image-specific open copyright license located."
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Chad_Michael_Murray_at_Nostalgia_Con_Anaheim_2026.jpg",
+          "httpStatus": 200,
+          "robotsAllowed": true,
+          "photographer": "Kevin Paul",
+          "license": "CC BY 4.0",
+          "licenseURL": "https://creativecommons.org/licenses/by/4.0",
+          "photoDate": "20 June 2026",
+          "adultDateEvidence": "Biography born 24 August 1981; photo is age 44.",
+          "evidence": "Own-work author credit and image-specific commercial open license; no pending source-review/deletion warning located."
+        }
+      ],
+      "selectedIdentity": "Chad Michael Murray",
+      "selectedCanonicalId": "chad_michael_murray",
+      "selectedActualPersonPhotoLicenseEstablished": true,
+      "downloadedWorktreeFile": "/workspace/MogvilleRealFaces/assets/references/photo-review/chad_michael_murray.jpg",
+      "metadataWorktreeFile": "/workspace/MogvilleRealFaces/assets/references/live-research/chad_michael_murray.json"
+    }
+  ]
+}

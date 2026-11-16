@@ -37,7 +37,10 @@ def eligible(record):
     if record.get("adultEraConservativeCheck") is not True:
         raise ValueError("Adult-era date not established: " + record["candidateId"])
     license_url = record.get("selectedLicense", {}).get("url", "")
-    if not re.fullmatch(r"https?://creativecommons\.org/(licenses/(by|by-sa)/[\d.]+/?|publicdomain/zero/1\.0/?)", license_url):
+    cc_license = re.fullmatch(r"https?://creativecommons\.org/(licenses/(by|by-sa)/[\d.]+/?|publicdomain/zero/1\.0/?)", license_url)
+    reviewed_fal = record.get("selectedLicense", {}).get("name") == "FAL-1.3" and license_url in (
+        "http://artlibre.org/licence/lal/en", "https://artlibre.org/licence/lal/en")
+    if not cc_license and not reviewed_fal:
         raise ValueError("Unsupported review license: " + record["candidateId"])
     source = (ROOT / record["downloadedFile"]).resolve()
     if not source.is_relative_to((REFERENCES / "photo-review").resolve()):
@@ -77,6 +80,8 @@ def build():
             "status": "SourceReviewedPhotoCollected" if ready else record.get("photoStatus", "Unavailable"),
             "blocker": None if ready else blocker, "evidence": evidence,
             "sources": sources, "gameEnabled": False, "robloxAssetId": 0,
+            "referenceMatchIdentityId": candidate.get("referenceMatchIdentityId"),
+            "referenceMatchNote": candidate.get("referenceMatchNote"),
         }
         records.append(row)
         candidate.update({
@@ -109,21 +114,24 @@ def build():
     catalog["countDefinitions"] = {"licensedPortraits": "Original review photos with an image-specific open copyright license and reviewed source; not game approval.",
                                    "verifiedCandidates": "Production-verified identities; remains zero until full production clearance."}
     dump(catalog_path, catalog)
-    manifest = {"schemaVersion": 1, "scope": "Source-reviewed photographs for owner review; no game upload or enablement.",
-                "requestedReferences": len(records), "includedPhotoFiles": len(photos),
-                "unresolvedReferences": len(records) - len(photos), "productionApproved": 0,
+    supplied_ids = {record["candidateId"] for record in photos}
+    matched = sum(row.get("referenceMatchIdentityId") in supplied_ids for row in records)
+    unresolved_count = sum(not row["reviewPhotoFile"] and row.get("referenceMatchIdentityId") not in supplied_ids for row in records)
+    manifest = {"schemaVersion": 1, "scope": "Source-reviewed original files; separate embedded Studio preview does not grant production upload approval.",
+                "requestedReferences": len(records) - matched, "catalogReferences": len(records), "includedPhotoFiles": len(photos),
+                "unresolvedReferences": unresolved_count, "closestNameMatches": matched, "productionApproved": 0,
                 "records": records}
     dump(REFERENCES / "photo-review-manifest.json", manifest)
 
     intro = f"""# MOGVILLE authentic-photo review pack
 
-This pack contains **{len(photos)} original photo files** for {len(records)} requested references. The other **{len(records) - len(photos)} references remain unresolved**; see the table below. Photographs are collected for review, with each file's source, author, exact copyright license and date evidence. No generated faces or substitute identities are included.
+This pack contains **{len(photos)} original photo files**, including {matched} owner-selected closest-name references labelled with the actual person's name. **{unresolved_count} requested references remain unresolved**; see the table below. Each photo has its source, author, exact copyright license and date evidence. Closest-name selections are disclosed; they are not asserted aliases or face identifications.
 
 The selected source files are unchanged by MOGVILLE. Some are upstream crops, retouches or video stills; each evidence record documents known changes and quality limits. Source captions identify the subject; visual review checks framing and quality, without biometric identity matching. These records document the sources' license claims, not an independent legal warranty.
 
-Keep `CREDITS.md` with the photos. Credit each photographer and source, link the specified license, and state any later changes. For BY-SA images, adaptations must follow the indicated ShareAlike license. These licenses do not imply endorsement or provide a blanket publicity/model release. Third-party images retain their individual licenses.
+Keep `CREDITS.md` with the photos. Credit each photographer and source, link the specified license, and state any later changes. For BY-SA images, adaptations must follow the indicated ShareAlike license; Clavicular's FAL-1.3 image and adaptations retain that Free Art License. These licenses do not imply endorsement or provide a blanket publicity/model release. Third-party images retain their individual licenses.
 
-**Game status:** zero Roblox uploads and zero newly enabled characters. Applicable likeness authorization, platform upload/moderation and in-game display checks remain. This archive is separate from `assets/characters/manifest.json`; collecting it does not clear or enable a game card.
+**Game status:** the separate real-faces place embeds {len(photos)} source-photo previews for local Studio play. This original-photo archive performs no Roblox upload and grants no production approval. See the project's `docs/REAL_FACES.md` for the playable preview and remaining limitations. Production photos remain separate in `assets/characters/manifest.json`.
 
 ## Results
 
@@ -132,7 +140,7 @@ Keep `CREDITS.md` with the photos. Credit each photographer and source, link the
 """
     table = []
     for row in records:
-        issue = "Game-likeness review and actual Roblox upload remain" if row["reviewPhotoFile"] else row["blocker"]
+        issue = "Included in the owner-authorized Studio preview; public-release review remains separate" if row["reviewPhotoFile"] else row.get("referenceMatchNote") or row["blocker"]
         table.append(f'| {row["displayName"]} | {Path(row["reviewPhotoFile"]).name if row["reviewPhotoFile"] else "—"} | {(issue or "Unresolved").replace(chr(10), " ").replace("|", ";")} |')
     readme = intro + "\n".join(table) + "\n\nIndividual evidence is in `live-research/`; machine-readable results are in `photo-review-manifest.json`.\n"
     (REFERENCES / "research-catalog.md").write_text(readme)
@@ -180,7 +188,7 @@ Keep `CREDITS.md` with the photos. Credit each photographer and source, link the
             if path == REFERENCES / "live-research/README.md":
                 content = path.read_text().replace('(../research-catalog.md)', '(../../README.md)').replace('(../photo-review/CREDITS.md)', '(../../CREDITS.md)')
             add(path, "evidence/" + path.relative_to(REFERENCES).as_posix(), content)
-    print(f"Packaged {len(photos)} unchanged source-reviewed photos; {len(records)-len(photos)} unresolved references; zero production enablements.")
+    print(f"Packaged {len(photos)} unchanged source-reviewed photos; {unresolved_count} unresolved requested references; {matched} disclosed closest-name selections.")
 
 
 if __name__ == "__main__":

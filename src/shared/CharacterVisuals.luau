@@ -17,7 +17,13 @@ export type Visual = {
 	imageStatus: string,
 	authenticPortraitReady: boolean,
 	displayLabel: string,
+	name: string,
 	modelKey: string,
+	embeddedIdentityId: string?,
+	previewOnly: boolean?,
+	photoAttribution: string?,
+	photoSourceURL: string?,
+	photoLicenseURL: string?,
 }
 
 function CharacterVisuals.validAssetId(value: any): boolean
@@ -30,11 +36,14 @@ function CharacterVisuals.get(characterId: any): Visual
 	if real then
 		return {
 			portraitAssetId = if Registry.isReady(real) then real.portraitAssetId else 0,
-			description = real.notes or "Authentic portrait and permissions are pending.",
+			description = if real.previewOnly then "Authentic source photograph in a private Studio preview. Production upload and applicable game-use review remain separate." else real.notes or "Authentic portrait and permissions are pending.",
 			identityId = real.identityId, form = real.variant, enabled = real.obtainable,
 			mutationEligible = true, referenceType = "RealPerson", imageStatus = real.imageStatus,
-			authenticPortraitReady = Registry.isReady(real), displayLabel = real.displayName,
+			authenticPortraitReady = Registry.isReady(real) or Registry.isPreviewReady(real), displayLabel = real.displayName, name = real.displayName,
 			modelKey = real.modelKey,
+			embeddedIdentityId = real.embeddedIdentityId, previewOnly = real.previewOnly,
+			photoAttribution = real.photoAttribution, photoSourceURL = real.photoSourceURL,
+			photoLicenseURL = real.photoLicenseURL,
 		}
 	end
 	local definition = if type(characterId) == "string" then Catalog.Existing[characterId] or Catalog.Added[characterId] else nil
@@ -44,7 +53,7 @@ function CharacterVisuals.get(characterId: any): Visual
 			description = "An original Mogville character. Portrait art is not configured for this entry.",
 			identityId = "unknown", form = "Classic", enabled = false, mutationEligible = false,
 			referenceType = "Unknown", imageStatus = "Unavailable", authenticPortraitReady = false,
-			displayLabel = "PHOTO NOT SUPPLIED", modelKey = "",
+			displayLabel = "PHOTO NOT SUPPLIED", name = "", modelKey = "",
 		}
 	end
 	return {
@@ -52,10 +61,10 @@ function CharacterVisuals.get(characterId: any): Visual
 		description = definition.description,
 		identityId = definition.identityId,
 		form = definition.form,
-		enabled = definition.enabled ~= false,
+		enabled = definition.enabled ~= false and not Registry.hasStudioPreviews(),
 		mutationEligible = definition.mutationEligible ~= false,
 		referenceType = "LegacyFictional", imageStatus = "Unavailable", authenticPortraitReady = false,
-		displayLabel = "LEGACY TEST CARD", modelKey = "mogger_" .. characterId,
+		displayLabel = "LEGACY TEST CARD", name = tostring(definition.name or ""), modelKey = "mogger_" .. characterId,
 	}
 end
 

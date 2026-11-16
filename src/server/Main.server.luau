@@ -12,13 +12,21 @@ local Progression = require(Services.ProgressionService).new(Data)
 local Battle = require(Services.BattleService).new(Data)
 local Social = require(Services.SocialBonusService).new()
 local Gacha = require(Services.GachaService).new(Data, Social)
-local World = require(Services.WorldService).new()
+-- Native R15 rig templates for original characters/NPCs. prepare() yields briefly at startup;
+-- on failure the game keeps working with the card / kiosk fallbacks.
+local CharacterLooks = require(ReplicatedStorage.Shared.CharacterLooks)
+local Rigs = require(Services.RigFactory).new()
+local readyRigs = Rigs:prepare(CharacterLooks.allBuilds(), 20)
+if readyRigs < #CharacterLooks.allBuilds() then
+	warn(("[Mogville] %d/%d R15 rig templates ready; failures: %s"):format(readyRigs, #CharacterLooks.allBuilds(), game:GetService("HttpService"):JSONEncode(Rigs.failures)))
+end
+local World = require(Services.WorldService).new(Rigs)
 local Shop = require(Services.ShopService).new()
 local Boards = require(Services.LeaderboardService)
 local GuardModule = require(Services.NetworkGuard)
 local Guard = GuardModule.new()
 local Assets = require(Services.AssetLoadingService).new()
-local NPCs = require(Services.NPCInteractionService).new(Assets)
+local NPCs = require(Services.NPCInteractionService).new(Assets, Rigs)
 
 World:build()
 NPCs:build(World.root)

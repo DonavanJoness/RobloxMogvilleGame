@@ -39,6 +39,47 @@ return function(test)
 			assert(not Registry.isReady(missing), key .. " was incorrectly optional")
 		end
 	end)
+
+	test("embedded photo preview requires an actual Studio context and the exact identity/form", function()
+		local entry = { referenceType = "RealPerson", identityId = "synthetic_test", variant = "Classic" }
+		local photo = {
+			identityId = "synthetic_test", variant = "Classic", width = 1, height = 1,
+			rgbaBase64 = "AQIDBA==", sourceVerified = true, adultEraVerified = true,
+			ownerAuthorized = true, displayName = "Synthetic Test", attribution = "Synthetic test fixture",
+			sourceURL = "https://example.org/fixture", licenseURL = "https://example.org/license",
+		}
+		assert(Registry.previewRecordReady(entry, photo, true))
+		for _, context in { false, 0, "true", {} } do
+			assert(not Registry.previewRecordReady(entry, photo, context))
+		end
+		for _, field in { "identityId", "variant", "sourceVerified", "adultEraVerified", "ownerAuthorized", "attribution", "sourceURL", "licenseURL" } do
+			local missing = table.clone(photo); missing[field] = nil
+			assert(not Registry.previewRecordReady(entry, missing, true), field .. " was optional")
+		end
+		local wrongPerson = table.clone(photo); wrongPerson.identityId = "different_person"
+		local wrongForm = table.clone(photo); wrongForm.variant = "Young"
+		assert(not Registry.previewRecordReady(entry, wrongPerson, true))
+		assert(not Registry.previewRecordReady(entry, wrongForm, true))
+		assert(not Registry.isReady(entry), "Source pixels must never fabricate production approval")
+	end)
+
+	test("embedded photo dimensions, encoded length and padding must be valid", function()
+		local entry = { referenceType = "RealPerson", identityId = "synthetic_test", variant = "Classic" }
+		local photo = {
+			identityId = "synthetic_test", variant = "Classic", width = 1, height = 1,
+			rgbaBase64 = "AQIDBA==", sourceVerified = true, adultEraVerified = true,
+			ownerAuthorized = true, displayName = "Synthetic Test", attribution = "Synthetic fixture",
+			sourceURL = "https://example.org/fixture", licenseURL = "https://example.org/license",
+		}
+		for _, width in { 0, -1, 1.5, 1025, math.huge, 0 / 0 } do
+			local invalid = table.clone(photo); invalid.width = width
+			assert(not Registry.previewRecordReady(entry, invalid, true))
+		end
+		for _, data in { "", "AQID", "AQIDBA!!", "AQIDBAAA", "=QIDBA==", "AQI=BA==" } do
+			local invalid = table.clone(photo); invalid.rgbaBase64 = data
+			assert(not Registry.previewRecordReady(entry, invalid, true))
+		end
+	end)
 	test("stored obtainable flags cannot bypass the centralized registry gate", function()
 		local row = Registry.all()[1]
 		local original, requested = Entries[row.id].obtainable, Entries[row.id].requestedEnabled

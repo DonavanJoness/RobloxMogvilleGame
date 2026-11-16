@@ -1,0 +1,79 @@
+{
+  "candidateId": "chad_michael_murray",
+  "displayName": "Chad Michael Murray",
+  "observedAtUTC": "2026-11-16T23:14:44.991059+00:00",
+  "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseSourceReviewed",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Chad_Michael_Murray",
+    "https://commons.wikimedia.org/wiki/File:Chad_Michael_Murray_at_Nostalgia_Con_Anaheim_2026.jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/chad_michael_murray.jpg",
+  "identityPageTitle": "Chad Michael Murray - Wikipedia",
+  "birthDate": "1981-08-24",
+  "identityExcerpt": "Chad Michael Murray Murray in 2026 Born ( 1981-08-24 ) August 24, 1981 (age 45) Buffalo, New York , U.S. Other name Chad Murray Occupations Actor writer model Years active 2000–present Spouses Sophia Bush ​ ​ ( m. 2005 ; div. 2006 ) ​ Sarah Roemer ​ ( m. 2015 ) ​ Children 3",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Chad_Michael_Murray_at_Nostalgia_Con_Anaheim_2026.jpg",
+  "filename": "Chad_Michael_Murray_at_Nostalgia_Con_Anaheim_2026.jpg",
+  "description": "English: Chad Michael Murray at Nostalgia Con Anaheim 2026",
+  "photographer": "Kevin Paul",
+  "photoDate": "20 June 2026, 16:12:25",
+  "originalSource": "Own work",
+  "licenses": [
+    {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0",
+      "terms": "This file is licensed under the Creative Commons Attribution 4.0 International license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/4.0 CC BY 4.0 Creative Commons Attribution 4.0 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0",
+    "terms": "This file is licensed under the Creative Commons Attribution 4.0 International license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/4.0 CC BY 4.0 Creative Commons Attribution 4.0 true true"
+  },
+  "attribution": "Chad_Michael_Murray_at_Nostalgia_Con_Anaheim_2026.jpg — Kevin Paul; CC BY 4.0; https://commons.wikimedia.org/wiki/File:Chad_Michael_Murray_at_Nostalgia_Con_Anaheim_2026.jpg; https://creativecommons.org/licenses/by/4.0. Original file retained; no changes by MOGVILLE.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/5/51/Chad_Michael_Murray_at_Nostalgia_Con_Anaheim_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    1600,
+    2000
+  ],
+  "sha256": "131eef64f4c6a47a5138911c25ae29cbd9ca01ecfceb37f4f8c2004fafdb47ac",
+  "referenceSelection": {
+    "status": "OwnerAuthorizedClosestNameMatch",
+    "requestedLabel": "Chad Jaw",
+    "selectedActualPublicName": "Chad Michael Murray",
+    "explanation": "Owner authorized the closest documented name/reference for an ambiguous label. This selects a public figure whose actual name is Chad; it does not assert ChadJaw is his alias, identify a person in the user BBC link, or compare faces."
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "evidence": "Photo-specific Commons CC BY4.0 license with own-work photographer KevinPaul; description explicitly names ChadMichaelMurray at NostalgiaConAnaheim2026. No unresolved license-review/deletion warning found in fetched file HTML.",
+    "licenseURL": "https://creativecommons.org/licenses/by/4.0",
+    "copyrightApprovalForGame": false,
+    "conditions": "Credit KevinPaul and source, linkCCBY4.0, disclose any later changes. No endorsement or blanket likeness release implied."
+  },
+  "visualReview": {
+    "reviewed": true,
+    "findings": "Clear single-person close portrait, head-and-shoulders, with hands/microphone lower in frame; no competing face. Hair, eyes and face are unobstructed. Defocused event background. Original retained unchanged.",
+    "identityEvidence": "Named source caption and matching exact file in current ChadMichaelMurray biographical infobox. Written-source attribution, not biometric recognition.",
+    "adultDateEvidence": "DOB1981-08-24; image date2026-06-20 establishes age44, an adult-era photograph.",
+    "limitations": "Closest-name selection only, not a verified alias association with ChadJaw or a specific BBCarticle subject. No Roblox upload or production clearance.",
+    "reviewedAtUTC": "2026-11-16T23:15:14.054212+00:00",
+    "recommendedFraming": {
+      "subjectFaceCenterNormalized": [
+        0.51,
+        0.36
+      ],
+      "suggestedSquareCropPixels": [
+        150,
+        40,
+        1450,
+        1340
+      ],
+      "description": "Framing suggestion only. No actual crop or alteration performed by this research step."
+    }
+  }
+}

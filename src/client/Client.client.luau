@@ -6,6 +6,9 @@ local CollectionService = game:GetService("CollectionService")
 local UIController = require(script.Parent.Controllers.UIController)
 local WorldEffectsController = require(script.Parent.Controllers.WorldEffectsController)
 local NPCController = require(script.Parent.Controllers.NPCController)
+local EmbeddedPhotoController = require(script.Parent.Controllers.EmbeddedPhotoController)
+
+EmbeddedPhotoController.start()
 
 local network = ReplicatedStorage:WaitForChild("Network")
 local request = network:WaitForChild("Request") :: RemoteFunction

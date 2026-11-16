@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "jon_erik_hexum",
+  "displayName": "Jon-Erik Hexum",
+  "status": "ReviewOnlyNotGameApproved",
+  "productionApproved": false,
+  "portraitFile": null,
+  "reviewPhotoFile": "assets/references/photo-review/jon_erik_hexum.jpg",
+  "sourceURL": "https://en.wikipedia.org/wiki/Jon-Erik_Hexum",
+  "photographer": "Christie Jenkins",
+  "license": "CC BY 2.5",
+  "likenessStatus": "NeedsApproval",
+  "enabled": false,
+  "notes": [
+    "Owner-authorized closest name reference for “Post-Surgery Hexum”: Jon-Erik Hexum. This is not a verified alias or a claim that this person appears in the supplied social-media/news reference."
+  ],
+  "sourceURLStatus": "FetchedForSourceReview",
+  "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
+  "reviewEvidence": "assets/references/live-research/jon_erik_hexum.json"
+}

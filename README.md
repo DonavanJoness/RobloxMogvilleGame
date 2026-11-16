@@ -1,12 +1,16 @@
 # MOGVILLE: Roll to Ascend
 
+**Current download — 18 embedded real-face previews:** [Mogville-real-faces.zip](https://github.com/DonavanJoness/RobloxMogvilleGame/raw/refs/heads/real-face-integration/downloads/Mogville-real-faces.zip). Extract, open the `.rbxl` in Studio and press Play. The photo pixels are inside the place. New Studio profiles start with a real-photo card and roll only the sourced photo collection. Your newer uploaded map/character improvements and existing saved IDs are preserved. [Included faces, closest-name choices and ten unresolved references](docs/REAL_FACES.md).
+
+This is a **Studio-only preview**, with no invented upload IDs or production approvals. If an image API error appears, enable **Allow Mesh / Image APIs** in the experience's Security settings and restart Play. Live-game photo deployment remains separate.
+
 An original Roblox collection simulator built with Luau and Rojo. The game provides an original layout preview, card UI and approved-template integration. Final 3D models and production-approved photographs remain required. It requires no Toolbox models, uploaded artwork, paid assets, runtime packages or credentials to play in Studio memory mode.
 
 **V3 card-layout preview:** prominent Spin controls, collection grids, sealed-card roulette, a clearance catalog, template-first R15 display/NPC loading, and eight district import slots. [V3 status and exact remaining work](docs/V3_STATUS.md).
 
-**Photo research:** public source access now works. [15 authentic source-labelled photographs](assets/references/photo-review/README.md) have been collected with image-specific copyright licenses, dates, credits and visual reviews. The [review ZIP](downloads/Mogville-photo-review.zip) contains the unchanged images, `index.html` gallery, credits and evidence. Thirteen requested references remain unresolved; all exact blockers are recorded. No photo was uploaded to Roblox or enabled in the game.
+**Photo research:** [18 authentic source-labelled photographs](assets/references/photo-review/README.md) now have image-specific licenses, dates, credits and visual reviews. The [review ZIP](downloads/Mogville-photo-review.zip) contains unchanged source images, `index.html`, credits and evidence. Ten requested references remain unresolved. Jon-Erik Hexum and Chad Michael Murray are disclosed closest-name selections authorized by the owner. No photo was uploaded to Roblox; source-backed cards are available in the local Studio preview.
 
-**Not acceptance-complete:** the supplied [Build a Soccer Team reference](https://www.roblox.com/games/94164742020505/Build-a-Soccer-Team) has not been visually inspected in live gameplay. No premade model or Roblox upload was verified. All 28 real-person reference records remain unobtainable pending production rights and upload review; missing art is explicitly labelled. The generated V2 face PNGs and face fallbacks have been removed. Existing original IDs remain a clearly labelled legacy test collection so gameplay and old saves still work. The remaining procedural architecture is a preview, not final high-quality imported art.
+**Not acceptance-complete:** the supplied [Build a Soccer Team reference](https://www.roblox.com/games/94164742020505/Build-a-Soccer-Team) has not been visually inspected in live gameplay. No premade model or Roblox image upload was verified. Production real-person cards remain gated; the 18 embedded source previews are available in Studio. Missing real references have names/source notes without portrait placeholders. Legacy saved IDs remain intact. The downloadable place preserves the newer owner-supplied world rather than rebuilding the old layout.
 
 **Status:** the core gameplay is implemented and the Rojo place builds. Automated logic and mocked service tests run on Linux. **Roblox Studio acceptance is pending**: this environment cannot run Studio, verify the appearance on devices, or demonstrate a real leave/rejoin DataStore session. Do not treat this as a production-tested release.
 
@@ -14,12 +18,12 @@ An original Roblox collection simulator built with Luau and Rojo. The game provi
 
 Download the ready-to-open game from GitHub:
 
-- **[Mogville-place.zip](https://github.com/DonavanJoness/RobloxMogvilleGame/raw/refs/heads/v3-card-layout-preview/downloads/Mogville-place.zip)** — extract it, then open `Mogville.rbxl` in Studio.
-- **[Mogville.rbxl](https://github.com/DonavanJoness/RobloxMogvilleGame/raw/refs/heads/v3-card-layout-preview/downloads/Mogville.rbxl)** — the same place without ZIP packaging.
+- **[Mogville-real-faces.zip](https://github.com/DonavanJoness/RobloxMogvilleGame/raw/refs/heads/real-face-integration/downloads/Mogville-real-faces.zip)** — extract it, then open `Mogville.rbxl` in Studio.
+- **[Mogville-real-faces.rbxl](https://github.com/DonavanJoness/RobloxMogvilleGame/raw/refs/heads/real-face-integration/downloads/Mogville-real-faces.rbxl)** — the same place without ZIP packaging.
 
 If your browser shows the GitHub file page, select **Download raw file**. Sign into the GitHub account with repository access if prompted. The editable project is also available through GitHub's **Code → Download ZIP** button.
 
-The prepared environment contains `build/Mogville.rbxlx` and a clean `build/Mogville-source.zip` export. Download the place file, open it in **Roblox Studio** on Windows or macOS, and press **Play**. The map and interface appear when the server starts; an empty edit-mode workspace is expected. The source archive contains the complete editable Rojo project without Git metadata, local tools or generated outputs.
+The prepared environment contains the preserved binary place and a clean `build/Mogville-source.zip` export. This branch patches the original uploaded binary; an XML conversion is not produced because the older Rojo reflection database cannot represent every property in the newer upload. Open the binary in **Roblox Studio** and press **Play**. The map and interface appear when the server starts. The source archive includes the uploaded build base, editable scripts, real-photo sources and credits.
 
 1. Open **Inventory** and select **Display on my plot** for your starter.
 2. Close the menu to see the character and overhead label on your assigned plot.

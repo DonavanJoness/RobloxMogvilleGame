@@ -7,23 +7,44 @@ local Lighting = game:GetService("Lighting")
 local TweenService = game:GetService("TweenService")
 local Debris = game:GetService("Debris")
 local Config = require(ReplicatedStorage:WaitForChild("Shared"):WaitForChild("Config"))
+local PoseLibrary = require(ReplicatedStorage:WaitForChild("Shared"):WaitForChild("PoseLibrary"))
 
 local WorldEffectsController = {}
 WorldEffectsController.__index = WorldEffectsController
-local TAGS = { "MogvilleSpin", "MogvilleBob", "MogvilleParticles", "MogvilleLight" }
+local TAGS = { "MogvilleSpin", "MogvilleBob", "MogvilleParticles", "MogvilleLight", "MogvilleIdle" }
 
 local function position(instance)
 	if instance:IsA("BasePart") then return instance.Position end
+	if instance:IsA("Model") then return instance:GetPivot().Position end
 	local host = instance.Parent
 	if host and host:IsA("Attachment") then return host.WorldPosition end
 	if host and host:IsA("BasePart") then return host.Position end
 	return nil
 end
 
+-- Resolve the few Motor6Ds idle motion drives. Returns nil until the whole rig has replicated.
+local function idleJoints(model)
+	local joints = {}
+	for _, name in ipairs(PoseLibrary.IdleJoints) do
+		local joint = model:FindFirstChild(name, true)
+		if not (joint and joint:IsA("Motor6D")) then return nil end
+		joints[name] = joint
+	end
+	return joints
+end
+
+local function resetJoints(entry)
+	if entry.joints then
+		for _, joint in entry.joints do
+			if joint.Parent then joint.Transform = CFrame.new() end
+		end
+	end
+end
+
 function WorldEffectsController.new()
 	local self = setmetatable({
 		settings = {}, tracked = {}, connections = {}, time = 0, cullClock = 0,
-		visible = {}, alive = true, world = Config.World or {},
+		visible = {}, idleVisible = {}, alive = true, world = Config.World or {},
 		originalShadows = Lighting.GlobalShadows,
 		postEffects = {},
 	}, WorldEffectsController)
@@ -131,6 +152,7 @@ function WorldEffectsController:_cull()
 	local maxAnimated = if low or reducedMotion then 0 else (self.world.MaxVisibleAnimations or 48)
 	local maxParticles = if low or reducedMotion then 0 else (self.world.MaxVisibleParticleEmitters or 12)
 	local maxLights = if low then 0 else (self.world.MaxVisibleLights or 12)
+	local maxIdle = if low or reducedMotion then 0 else (self.world.MaxVisibleIdleFigures or 16)
 	local candidates = {}
 	for instance, entry in self.tracked do
 		if not instance.Parent then
@@ -144,8 +166,9 @@ function WorldEffectsController:_cull()
 		end
 	end
 	table.sort(candidates, function(a, b) return a.range < b.range end)
-	local animations, particles, lights = 0, 0, 0
+	local animations, particles, lights, idle = 0, 0, 0, 0
 	self.visible = {}
+	self.idleVisible = {}
 	for _, entry in ipairs(candidates) do
 		local instance = entry.instance
 		if instance:IsA("BasePart") and entry.base then
@@ -156,6 +179,16 @@ function WorldEffectsController:_cull()
 				table.insert(self.visible, entry)
 			else
 				instance.CFrame = entry.base
+			end
+		elseif instance:IsA("Model") then
+			-- Figures: only the nearest few breathe; everyone else rests in the baked stance.
+			local animated = entry.inRange and idle < maxIdle
+			entry.visible = animated
+			if animated then
+				idle += 1
+				table.insert(self.idleVisible, entry)
+			else
+				resetJoints(entry)
 			end
 		elseif instance:IsA("ParticleEmitter") then
 			local enabled = entry.inRange and particles < maxParticles
@@ -187,6 +220,19 @@ function WorldEffectsController:_step(dt)
 		end
 		instance.CFrame = entry.base * CFrame.new(0, bob, 0) * CFrame.Angles(0, rotation, 0)
 	end
+	for _, entry in ipairs(self.idleVisible) do
+		local model = entry.instance
+		if model.Parent then
+			entry.joints = entry.joints or idleJoints(model)
+			if entry.joints then
+				local offsets = PoseLibrary.idle(self.time, model:GetAttribute("IdlePhase") or 0)
+				for name, offset in offsets do
+					local joint = entry.joints[name]
+					if joint and joint.Parent then joint.Transform = offset end
+				end
+			end
+		end
+	end
 end
 
 function WorldEffectsController:destroy()
@@ -200,8 +246,10 @@ function WorldEffectsController:destroy()
 			elseif instance:IsA("ParticleEmitter") or instance:IsA("Light") then instance.Enabled = false end
 		end
 	end
+	for _, entry in self.tracked do resetJoints(entry) end
 	table.clear(self.tracked)
 	table.clear(self.visible)
+	table.clear(self.idleVisible)
 end
 
 return WorldEffectsController

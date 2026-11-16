@@ -1,0 +1,242 @@
+{
+  "andres_velencoso": {
+    "box": [
+      0.08,
+      0.015,
+      0.91,
+      0.765
+    ],
+    "reason": "Full hairstyle, face and upper neck in close event portrait.",
+    "sourceWidth": 1259,
+    "sourceHeight": 1786,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition."
+  },
+  "baptiste_giabiconi": {
+    "box": [
+      0.205,
+      0.0,
+      0.745,
+      0.48
+    ],
+    "reason": "Main source-labelled subject head and neck; excludes other attendee at the left edge.",
+    "sourceWidth": 478,
+    "sourceHeight": 720,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition.",
+    "qualityLimitation": "Moderate source resolution; selected head box is approximately258x346 pixels."
+  },
+  "david_gandy": {
+    "box": [
+      0.26,
+      0.02,
+      0.75,
+      0.58
+    ],
+    "reason": "Main subject hairstyle, face and neck; removes most bright event backdrop and partial background heads.",
+    "sourceWidth": 1824,
+    "sourceHeight": 2101,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition."
+  },
+  "francisco_lachowski": {
+    "box": [
+      0.02,
+      0.0,
+      0.93,
+      0.83
+    ],
+    "reason": "Tall full-head framing retaining hairstyle and chin; pad rather than center-crop again.",
+    "sourceWidth": 1423,
+    "sourceHeight": 2000,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition."
+  },
+  "henry_cavill": {
+    "box": [
+      0.16,
+      0.055,
+      0.91,
+      0.84
+    ],
+    "reason": "Full hairstyle, unobstructed face and upper neck; retains upstream photographic crop.",
+    "sourceWidth": 1043,
+    "sourceHeight": 1362,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition."
+  },
+  "jon_kortajarena": {
+    "box": [
+      0.18,
+      0.015,
+      0.72,
+      0.71
+    ],
+    "reason": "Head-and-neck framing; keeps hairstyle and chin while excluding most jacket/backdrop.",
+    "sourceWidth": 1059,
+    "sourceHeight": 1203,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition."
+  },
+  "jordan_barrett": {
+    "box": [
+      0.12,
+      0.0,
+      0.83,
+      0.68
+    ],
+    "reason": "Head and neck from source-labelled runway portrait; keeps full hairstyle and profile outline.",
+    "sourceWidth": 1280,
+    "sourceHeight": 1600,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition."
+  },
+  "lucky_blue_smith": {
+    "box": [
+      0.0,
+      0.0,
+      1.0,
+      0.97
+    ],
+    "reason": "Existing source video still is already tight; retains full visible hairstyle and chin.",
+    "sourceWidth": 584,
+    "sourceHeight": 731,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition.",
+    "qualityLimitation": "Video still with soft detail and strong blue/purple lighting retained unchanged."
+  },
+  "marcus_schenkenberg": {
+    "box": [
+      0.13,
+      0.015,
+      0.82,
+      0.67
+    ],
+    "reason": "Head and upper neck from close event portrait; bright skin highlights are retained without retouching.",
+    "sourceWidth": 3840,
+    "sourceHeight": 5760,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition.",
+    "qualityLimitation": "Bright event exposure reduces skin contrast; no exposure or appearance retouching."
+  },
+  "marlon_teixeira": {
+    "box": [
+      0.34,
+      0.0,
+      0.83,
+      0.415
+    ],
+    "reason": "Head-and-neck framing from tall runway photograph; excludes background spectators and most torso.",
+    "sourceWidth": 1826,
+    "sourceHeight": 2750,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition."
+  },
+  "noah_mills": {
+    "box": [
+      0.08,
+      0.0,
+      0.86,
+      0.78
+    ],
+    "reason": "Face, curly hairstyle and upper neck from head-and-torso portrait; upstream top-edge hair crop retained.",
+    "sourceWidth": 1528,
+    "sourceHeight": 2136,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition."
+  },
+  "river_viiperi": {
+    "box": [
+      0.035,
+      0.0,
+      0.985,
+      0.88
+    ],
+    "reason": "Retains visible hairstyle, complete face and upper neck; source already crops hair at top edge.",
+    "sourceWidth": 667,
+    "sourceHeight": 1000,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition."
+  },
+  "sean_opry": {
+    "box": [
+      0.07,
+      0.03,
+      0.67,
+      0.73
+    ],
+    "reason": "Main source-labelled subject head-and-neck framing; excludes most neighboring arm and white shirt.",
+    "sourceWidth": 361,
+    "sourceHeight": 447,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition.",
+    "qualityLimitation": "Low-resolution, soft-focus source; selected box is approximately217x313 source pixels. Do not promise high-detail enlarged card art."
+  },
+  "simon_nessman": {
+    "box": [
+      0.045,
+      0.02,
+      0.81,
+      0.6
+    ],
+    "reason": "Complete profile head with nose outline and chin; mostly excludes hands and lower shirt.",
+    "sourceWidth": 667,
+    "sourceHeight": 1000,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition."
+  },
+  "tyson_beckford": {
+    "box": [
+      0.22,
+      0.02,
+      0.73,
+      0.6
+    ],
+    "reason": "Head and upper neck; keeps shaved head and chin, removes most jacket.",
+    "sourceWidth": 1027,
+    "sourceHeight": 1287,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; subject identity comes from the written source record, not face recognition."
+  },
+  "clavicular": {
+    "box": [
+      0.4,
+      0.035,
+      0.8,
+      0.32
+    ],
+    "reason": "Source-labelled main subject head, entire hairstyle, face, chin and upper neck near top of full-body backstage photo. Excludes most phone/torso and background people; makeup brush remains at left edge.",
+    "sourceWidth": 3756,
+    "sourceHeight": 5663,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection of actual original only; person identity comes from explicit written source caption, not facial recognition.",
+    "qualityLimitation": "Original flash red-eye and film grain retained; no generated face, eye or appearance retouching."
+  },
+  "jon_erik_hexum": {
+    "box": [
+      0.4,
+      0.0,
+      0.8,
+      0.62
+    ],
+    "reason": "Actual actor face and upper neck in source-labelled ChristieJenkins portrait; removes most raised arm/shoulder while retaining source-visible hairstyle. No invented surgery variant.",
+    "sourceWidth": 628,
+    "sourceHeight": 416,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; identity is from written source records, not face recognition.",
+    "qualityLimitation": "Source already crops the top edge of hair; selected region is approximately251×258pixels. Warm lighting/filmgrain retained."
+  },
+  "chad_michael_murray": {
+    "box": [
+      0.09375,
+      0.02,
+      0.90625,
+      0.67
+    ],
+    "reason": "Actual ChadMichaelMurray head and upper neck from convention portrait, retaining full hairstyle and chin. Actual public name used under owner-authorized closest-name selection; noChadJaw alias or BBCidentity claim.",
+    "sourceWidth": 1600,
+    "sourceHeight": 2000,
+    "visuallyReviewed": true,
+    "reviewMethod": "Framing inspection only; written photograph/source caption identifies actual named actor, not face recognition."
+  }
+}

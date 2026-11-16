@@ -23,22 +23,23 @@ DistrictConfiguration.Districts = {
 	{ id = "display_neighborhood", folder = "CollectorResidences", name = "Collector Neighborhood", assetKey = "district_display_neighborhood", x = 0, y = 0, z = 0, width = 480, depth = 354 },
 	{ id = "shopping", folder = "LuxuryShopStreet", name = "Shopping Street", assetKey = "district_shopping", x = 83, y = 0, z = -28, width = 47, depth = 126 },
 	{ id = "gym", folder = "GlowUpGym", name = "Training Club", assetKey = "district_gym", x = -83, y = 0, z = -70, width = 47, depth = 45 },
-	{ id = "arena", folder = "MogOffArena", name = "Mog-Off Stadium", assetKey = "district_arena", x = 0, y = 0, z = 111, width = 112, depth = 106 },
+	{ id = "arena", folder = "MogOffArena", name = "Mog-Off Stadium", assetKey = "district_arena", x = 0, y = 0, z = 118, width = 96, depth = 96 },
 	{ id = "ascension", folder = "AscensionHeights", name = "Ascension Heights", assetKey = "district_ascension", x = 0, y = 12, z = -244, width = 104, depth = 70 },
 	{ id = "park", folder = "ParkSocial", name = "Social Gardens", assetKey = "district_park", x = -83, y = 0, z = 60, width = 58, depth = 62 },
 }
 
--- Empty models are safe pivots for reviewed local templates, not asset IDs.
--- NPCInteractionService owns model creation and honest unavailable-art kiosks.
+-- NPC positions are FLOOR contact points (y = the surface the feet touch); yaw is degrees,
+-- where 0 faces -Z (north) and 180 faces +Z (south). NPCInteractionService snaps every rig
+-- onto this surface, so no model pivot or rig height assumption is baked in here.
 DistrictConfiguration.NPCPositions = {
-	gacha_master = { x = -23, y = 1, z = -111, yaw = 0 },
-	gym_trainer = { x = -67, y = 1, z = -56, yaw = 0 },
-	fashion_icon = { x = 83, y = 1, z = 28, yaw = 0 },
-	battle_champion = { x = 26, y = 1, z = 72, yaw = 0 },
-	ascension_guardian = { x = 0, y = 12, z = -229, yaw = 0 },
-	resident_gardener = { x = -94, y = 0.7, z = 63, yaw = 0 },
-	resident_courier = { x = 45, y = 0.7, z = -30, yaw = 0 },
-	resident_collector = { x = 69, y = 0.7, z = 35, yaw = 0 },
+	gacha_master = { x = -15, y = 0.6, z = -96, yaw = 170 },
+	gym_trainer = { x = -69, y = 0.6, z = -66, yaw = 270 },
+	fashion_icon = { x = 69, y = 0.6, z = 3, yaw = 90 },
+	battle_champion = { x = -22, y = 0.22, z = 68, yaw = 0 },
+	ascension_guardian = { x = 0, y = 12, z = -222, yaw = 180 },
+	resident_gardener = { x = -94, y = 0, z = 62, yaw = 90 },
+	resident_courier = { x = 36, y = 0.46, z = -28, yaw = 200 },
+	resident_collector = { x = 66, y = 0.22, z = -26, yaw = 270 },
 }
 
 function DistrictConfiguration.plot(index: number, world: any?): any

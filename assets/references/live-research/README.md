@@ -23,4 +23,4 @@ The collector overwrites the selected person's previous record and requires a ne
 python3 tools/package_photo_review.py
 ```
 
-Packaging validates the reviewed bytes and writes a deterministic ZIP with images, a local HTML gallery, individual credits and evidence. It updates research metadata only. There are zero approved production photo records, zero Roblox uploads, and zero new character enablements. Copyright-source evidence does not establish endorsement or a blanket likeness release.
+Packaging validates reviewed bytes and writes a deterministic ZIP with images, a local HTML gallery, credits and evidence. It updates research metadata only. There are zero approved production photo records and zero Roblox uploads. A separate owner-authorized Studio preview now embeds 18 photo-backed forms; see `docs/REAL_FACES.md` in the project. Source evidence does not establish endorsement or a blanket likeness release.

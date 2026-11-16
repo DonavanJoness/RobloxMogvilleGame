@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "candidateId": "clavicular",
   "displayName": "Clavicular",
-  "status": "PermissionRequired",
+  "status": "ReviewOnlyNotGameApproved",
+  "productionApproved": false,
   "portraitFile": null,
-  "sourceURL": "https://knowyourmeme.com/memes/people/clavicular",
-  "sourceURLStatus": "FetchedForSourceReview",
-  "photographer": null,
-  "license": null,
-  "commercialRights": null,
+  "reviewPhotoFile": "assets/references/photo-review/clavicular.jpg",
+  "sourceURL": "https://en.wikipedia.org/wiki/Clavicular_(streamer)",
+  "photographer": "Taryn Segal",
+  "license": "FAL-1.3",
   "likenessStatus": "NeedsApproval",
-  "researchCatalog": "assets/references/research-catalog.json",
+  "enabled": false,
   "notes": [
     "Requested creator alias; verify identity, age and official representative before any portrait selection."
   ],
-  "enabled": false,
-  "reviewPhotoFile": null,
-  "reviewEvidence": "assets/references/live-research/requested-identities.json"
+  "sourceURLStatus": "FetchedForSourceReview",
+  "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
+  "reviewEvidence": "assets/references/live-research/clavicular.json"
 }

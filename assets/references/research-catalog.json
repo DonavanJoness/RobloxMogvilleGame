@@ -5,7 +5,7 @@
   "namedCandidates": 25,
   "unresolvedRequestedAliases": 3,
   "verifiedCandidates": 0,
-  "licensedPortraits": 15,
+  "licensedPortraits": 18,
   "clearedGameLikenesses": 0,
   "productionUseAllowed": false,
   "sourceAccessEvidence": "assets/references/live-research/README.md",
@@ -24,24 +24,27 @@
         "Clavicular"
       ],
       "candidateType": "RequestedPublicFigure",
-      "sourceURL": "https://knowyourmeme.com/memes/people/clavicular",
+      "sourceURL": "https://en.wikipedia.org/wiki/Clavicular_(streamer)",
       "sourceURLStatus": "FetchedForSourceReview",
       "encyclopediaTitle": null,
       "verifiedSourceURLs": [
-        "https://knowyourmeme.com/memes/people/clavicular",
-        "https://www.famousbirthdays.com/people/clavicular.html"
+        "https://en.wikipedia.org/wiki/Clavicular_(streamer)",
+        "https://en.wikipedia.org/wiki/Braden_Peters",
+        "https://www.bbc.com/news/articles/cx28z4zypkno",
+        "https://commons.wikimedia.org/wiki/File:Peters,_Braden_Eric_(2_out_of_2).jpg",
+        "https://www.tarynsegal.com/editorial"
       ],
       "identityStatus": "SourceCorroboratedPublicAlias",
-      "adultStatus": "NoApprovedAdultPortrait",
-      "researchStatus": "PermissionRequired",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
       "sourceAccess": "PublicHTMLResearchPerformed",
-      "evidenceRef": "assets/references/live-research/requested-identities.json",
-      "photographer": null,
-      "license": null,
-      "licenseURL": null,
-      "commercialRights": null,
+      "evidenceRef": "assets/references/live-research/clavicular.json",
+      "photographer": "Taryn Segal",
+      "license": "FAL-1.3",
+      "licenseURL": "http://artlibre.org/licence/lal/en",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
       "likenessStatus": "NeedsApproval",
-      "portraitStatus": "PermissionRequired",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
       "portraitFile": null,
       "suggestedGameplay": {
         "rarity": "Mythic",
@@ -59,7 +62,7 @@
         "Requested creator alias; verify identity, age and official representative before any portrait selection."
       ],
       "enabled": false,
-      "reviewPhotoFile": null
+      "reviewPhotoFile": "assets/references/photo-review/clavicular.jpg"
     },
     {
       "candidateId": "francisco_lachowski",
@@ -1126,7 +1129,9 @@
         "Ambiguous requested label. Do not map it to Jon-Erik Hexum or imply a medical/surgery history without an explicit reliable source. Jon-Erik Hexum is deceased; no claimed surgery association is verified."
       ],
       "enabled": false,
-      "reviewPhotoFile": null
+      "reviewPhotoFile": null,
+      "referenceMatchIdentityId": "jon_erik_hexum",
+      "referenceMatchNote": "Owner-authorized closest name reference for “Post-Surgery Hexum”: Jon-Erik Hexum. This is not a verified alias or a claim that this person appears in the supplied social-media/news reference."
     },
     {
       "candidateId": "chad_jaw_unresolved",
@@ -1166,13 +1171,106 @@
       ],
       "evidenceRef": "assets/references/live-research/requested-identities.json",
       "licenseURL": null,
-      "reviewPhotoFile": null
+      "reviewPhotoFile": null,
+      "referenceMatchIdentityId": "chad_michael_murray",
+      "referenceMatchNote": "Owner-authorized closest name reference for “Chad Jaw”: Chad Michael Murray. This is not a verified alias or a claim that this person appears in the supplied social-media/news reference."
+    },
+    {
+      "candidateId": "jon_erik_hexum",
+      "displayName": "Jon-Erik Hexum",
+      "aliases": [],
+      "candidateType": "ClosestNameReference",
+      "sourceURL": "https://en.wikipedia.org/wiki/Jon-Erik_Hexum",
+      "sourceURLStatus": "FetchedForSourceReview",
+      "encyclopediaTitle": "Jon-Erik Hexum",
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Jon-Erik_Hexum",
+        "https://commons.wikimedia.org/wiki/File:Jon-Erik_arms.jpg"
+      ],
+      "identityStatus": "SourceCorroboratedPublicActor",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/jon_erik_hexum.json",
+      "photographer": "Christie Jenkins",
+      "license": "CC BY 2.5",
+      "licenseURL": "https://creativecommons.org/licenses/by/2.5",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Rare",
+        "income": 24,
+        "attack": 35,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Owner-authorized closest name reference for “Post-Surgery Hexum”: Jon-Erik Hexum. This is not a verified alias or a claim that this person appears in the supplied social-media/news reference."
+      ],
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/jon_erik_hexum.jpg",
+      "requestedLabel": "Post-Surgery Hexum",
+      "referenceMatchNote": "Owner-authorized closest name reference for “Post-Surgery Hexum”: Jon-Erik Hexum. This is not a verified alias or a claim that this person appears in the supplied social-media/news reference."
+    },
+    {
+      "candidateId": "chad_michael_murray",
+      "displayName": "Chad Michael Murray",
+      "aliases": [],
+      "candidateType": "ClosestNameReference",
+      "sourceURL": "https://en.wikipedia.org/wiki/Chad_Michael_Murray",
+      "sourceURLStatus": "FetchedForSourceReview",
+      "encyclopediaTitle": "Chad Michael Murray",
+      "verifiedSourceURLs": [
+        "https://en.wikipedia.org/wiki/Chad_Michael_Murray",
+        "https://commons.wikimedia.org/wiki/File:Chad_Michael_Murray_at_Nostalgia_Con_Anaheim_2026.jpg"
+      ],
+      "identityStatus": "PublicBiographyLocatedNeedsSourceReview",
+      "adultStatus": "AdultEraSourceDatesReviewed",
+      "researchStatus": "SourceReviewedPhotoCollected",
+      "sourceAccess": "PublicHTMLResearchPerformed",
+      "evidenceRef": "assets/references/live-research/chad_michael_murray.json",
+      "photographer": "Kevin Paul",
+      "license": "CC BY 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/4.0",
+      "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
+      "likenessStatus": "NeedsApproval",
+      "portraitStatus": "ReviewOnlyNotGameApproved",
+      "portraitFile": null,
+      "suggestedGameplay": {
+        "rarity": "Rare",
+        "income": 24,
+        "attack": 35,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      },
+      "notes": [
+        "Owner-authorized closest name reference for “Chad Jaw”: Chad Michael Murray. This is not a verified alias or a claim that this person appears in the supplied social-media/news reference."
+      ],
+      "enabled": false,
+      "reviewPhotoFile": "assets/references/photo-review/chad_michael_murray.jpg",
+      "requestedLabel": "Chad Jaw",
+      "referenceMatchNote": "Owner-authorized closest name reference for “Chad Jaw”: Chad Michael Murray. This is not a verified alias or a claim that this person appears in the supplied social-media/news reference."
     }
   ],
-  "reviewedPhotoFiles": 15,
+  "reviewedPhotoFiles": 18,
   "productionPortraits": 0,
   "countDefinitions": {
     "licensedPortraits": "Original review photos with an image-specific open copyright license and reviewed source; not game approval.",
     "verifiedCandidates": "Production-verified identities; remains zero until full production clearance."
-  }
+  },
+  "additionalClosestNameReferences": 2,
+  "studioPreviewPhotoCount": 18,
+  "unresolvedOriginalReferences": 10
 }

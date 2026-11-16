@@ -1,5 +1,7 @@
 # Open the MOGVILLE V3 layout preview in Roblox Studio
 
+**Current real-faces download:** `Mogville-real-faces.zip` (or `Mogville-real-faces.rbxl`). Eighteen actual photo previews are embedded inside the place and available for Studio gameplay. Extract, open the place, press Play; no separate photo import is needed. This preserves the newer uploaded world. See [REAL_FACES.md](../docs/REAL_FACES.md) for exact scope, closest-name choices and the ten unresolved references. The `Mogville.rbxl`/`Mogville-place.zip` copies are the same updated preview.
+
 1. Download `Mogville-place.zip` from this directory. On the GitHub file page, select **Download raw file**.
 2. Extract the ZIP to a folder on your computer.
 3. Open Roblox Studio on Windows or macOS, then choose **File → Open from File**.
@@ -11,8 +13,8 @@ In the game, open Inventory and display your starter to earn Coins. Studio start
 
 These are generated delivery copies. After source edits, rebuild and refresh them before uploading a new version.
 
-V3 is an asset-dependent layout/UI preview, not visual acceptance-complete. No real-person photos or high-quality premade models have been imported. Missing art is labelled explicitly. See [V3_STATUS.md](../docs/V3_STATUS.md) before testing or publishing.
+This remains a Studio preview, not a published production release. Real-photo pixels are embedded; no Roblox photo uploads or high-quality external model imports have been performed.
 
 ## Authentic photo review pack
 
-`Mogville-photo-review.zip` contains 15 unchanged source photo files with individual credits, license notices and evidence. Extract the entire ZIP, then open `index.html` in a browser to view the gallery. Read `README.md` for the 13 unresolved references and `CREDITS.md` before reusing any image. This separate pack does not change `Mogville.rbxl`; no Roblox photo uploads or new character enablements were performed.
+`Mogville-photo-review.zip` contains 18 unchanged source photos with credits, license notices and evidence. Extract the whole ZIP and open `index.html` to browse. The playable real-faces ZIP additionally includes the head-framed previews and required credits. This source archive performs no Roblox uploads.

@@ -4,6 +4,8 @@
 This check covers generated hierarchy, ownership, effect/part budgets, cache and
 cleanup. It does not emulate Roblox physics, rendering, replication or API
 property validation. Studio playtesting remains required.
+Native R15 template creation and client EditableImage rendering are not simulated;
+world display/NPC construction is checked with the explicit no-template fallback.
 """
 from pathlib import Path
 import re
@@ -43,11 +45,13 @@ def module_source(path):
 
 def main():
     paths = [ROOT / "src/shared" / f"{name}.luau" for name in (
-        "CharacterCatalog", "PortraitAssets", "RealMoggers", "MoggerPortraitRegistry", "CharacterVisuals",
+        "CharacterCatalog", "PortraitAssets", "RealMoggers", "EmbeddedPhotoCatalog",
+        "MoggerPortraitRegistry", "CharacterVisuals", "LookCatalog", "PoseLibrary", "CharacterLooks", "LookApplier",
         "DistrictConfiguration", "NPCConfiguration", "Config", "Rules", "AssetManifest",
     )]
     paths += [ROOT / "src/server/Services" / f"{name}.luau" for name in (
-        "AssetLoadingService", "CharacterAppearanceService", "EnvironmentBuilder", "WorldService", "NPCInteractionService",
+        "AssetLoadingService", "CharacterAppearanceService", "EnvironmentKit", "EnvironmentProps",
+        "EnvironmentDistricts", "EnvironmentLighting", "EnvironmentBuilder", "PlotBuilder", "WorldService", "NPCInteractionService",
     )]
     parts = [(ROOT / "tests/world-runtime.luau").read_text()]
     for path in paths:

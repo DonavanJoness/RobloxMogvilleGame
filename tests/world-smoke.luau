@@ -1,5 +1,7 @@
 -- Executed against the actual world builders and shared definitions by tools/world_smoke.py.
 -- This checks construction, budgets and basic layout math, not Studio rendering or collision.
+-- No native R15 template factory is injected: display/NPC fallback paths are exercised.
+-- The client EditableImage renderer and native rig creation require separate Studio tests.
 
 local world=WorldService.new()
 world:build()
@@ -40,7 +42,7 @@ local starterModel=plot.display:GetChildren()[1]
 assert(starterModel:GetAttribute('CharacterUID')==profile.characters[1].uid,'display retains acquired instance UID')
 assert(starterModel:GetAttribute('OwnerUserId')==player.UserId,'display identifies its owner')
 local portrait=starterModel:FindFirstChild('PortraitCard'):FindFirstChild('CharacterPortrait'):FindFirstChild('Frame')
-assert(portrait:FindFirstChild('PhotoStatus'),'missing authentic portrait status always present')
+assert(portrait:FindFirstChild('Crest') and portrait:FindFirstChild('CardName') and portrait:FindFirstChild('CardForm'),'legacy test card has its authored initials crest, name and original-character form')
 assert(not portrait:FindFirstChild('OriginalFallback'),'no drawn human portrait substitute')
 local starterVisual=CharacterVisuals.get(profile.characters[1].characterId)
 assert(not starterVisual.authenticPortraitReady and not portrait:FindFirstChild('ApprovedPortrait'),'no unresolved photo is presented as authentic')
@@ -63,8 +65,8 @@ world:render(player,profile)
 assert(#plot.display:GetChildren()==10,'ten high-rarity models')
 assert(#plot.upgrades:GetChildren()>0,'prestige upgrade geometry')
 assert(#plot.pets:GetChildren()==3,'equipped pet companions')
-assert(#collection:GetTagged('MogvilleLight')<=24,'global light count budget')
-assert(#collection:GetTagged('MogvilleParticles')<=24,'global emitter count budget')
+assert(#collection:GetTagged('MogvilleLight')<=Config.World.MaxLights,'configured global light count budget')
+assert(#collection:GetTagged('MogvilleParticles')<=Config.World.MaxParticleEmitters,'configured global emitter count budget')
 local placedCount=#plot.display:GetChildren()
 local cachedModel=plot.display:GetChildren()[1]
 world:render(player,profile)
@@ -89,7 +91,7 @@ local extra={UserId=9999,DisplayName='Extra',CharacterAdded=event(),CharacterRem
 assert(world:assign(extra)==false,'full plot server refuses extra')
 local peakParts=0
 for _,instance in world.root:GetDescendants()do if instance:IsA('BasePart')then peakParts+=1 end end
-assert(peakParts<=3300,'full twelve-player part budget')
+assert(peakParts<=Config.World.MaxServerParts,'full twelve-player card-only fallback stays within the configured server part budget')
 assert(#collection:GetTagged('MogvilleLight')<=Config.World.MaxLights,'full city light cap')
 assert(#collection:GetTagged('MogvilleParticles')<=Config.World.MaxParticleEmitters,'full city emitter cap')
 print('FULL CAPACITY PARTS '..peakParts..'; tagged lights '..#collection:GetTagged('MogvilleLight')..'; tagged emitters '..#collection:GetTagged('MogvilleParticles'))
@@ -105,5 +107,5 @@ assert(npcFolder:GetAttribute('ConfiguredNPCCount')==8 and npcFolder:GetAttribut
 local slots=0
 for _,slot in world.cityInfo.assetSlots do slots+=1;assert(slot:GetAttribute('AssetStatus')=='ApprovedTemplateRequired','asset slots remain explicitly pending')end
 assert(slots==8,'eight architecture import slots')
-print('WORLD GENERATION MOCK PASS: 12 unique plots,120 stands,neutral unresolved portraits,120 card displays,36 pets,effect caps,cache,release/reuse,8 missing architecture and NPC art records')
+print('WORLD GENERATION MOCK PASS: actual uploaded district builders,12 unique plots,120 stands,120 card-only fallback displays,36 pets,effect caps,cache,release/reuse,8 missing architecture and NPC art records; no native rigs or EditableImage rendering simulated')
 print('STATIC PARTS '..world.cityInfo.metrics.parts..'; active tagged lights '..#collection:GetTagged('MogvilleLight')..'; active tagged emitters '..#collection:GetTagged('MogvilleParticles'))

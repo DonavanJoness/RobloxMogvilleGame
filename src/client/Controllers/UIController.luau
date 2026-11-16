@@ -7,6 +7,7 @@ local Rules = require(ReplicatedStorage.Shared.Rules)
 local CharacterVisuals = require(ReplicatedStorage.Shared.CharacterVisuals)
 local Theme = require(script.Parent.Theme)
 local GachaController = require(script.Parent.GachaController)
+local EmbeddedPhotos = require(script.Parent.EmbeddedPhotoController)
 
 local UIController = {}
 UIController.__index = UIController
@@ -363,7 +364,8 @@ function UIController:renderHome()
 	Theme.badge(card, "MOGVILLE • COLLECTOR PLAZA", Theme.colors.cyan)
 	Theme.label(card, "BUILD YOUR COLLECTION", 20, Theme.colors.gold)
 	local heroes = Theme.make("Frame", { Size = UDim2.new(1, 0, 0, 94), BackgroundTransparency = 1 }, card)
-	for index, id in { "young_rookie", "golden_chad", "apex_mogger" } do
+	local heroIds = if Config.StudioPhotoPreview then { "real_clavicular_classic", "real_henry_cavill_classic", "real_francisco_lachowski_classic" } else { "young_rookie", "golden_chad", "apex_mogger" }
+	for index, id in heroIds do
 		local definition = Config.Characters[id]
 		if definition then
 			local portrait = Theme.portrait(heroes, Theme.hex(definition.color), 82, id)
@@ -372,7 +374,7 @@ function UIController:renderHome()
 			Theme.make("UIAspectRatioConstraint", { AspectRatio = 1, DominantAxis = Enum.DominantAxis.Width }, portrait)
 		end
 	end
-	Theme.paragraph(card, "Your existing starter is waiting in the Legacy Test Collection. Display it to earn Coins and test the gameplay loop. Real-person cards are separate and stay locked until their authentic photos and permissions are verified.")
+	Theme.paragraph(card, if Config.StudioPhotoPreview then "Your real-photo starter is ready. Display it on your plot to earn Coins, then spin for more real-photo cards in this Studio collection." else "Your starter Mogger is ready. Display it on your plot to earn Coins, then roll for more.")
 	Theme.button(card, "1 · Place your starter", function() self:show("Inventory") end, Theme.colors.cyan)
 	Theme.button(card, "2 · Roll a new Mogger", function() self:show("Roll") end, Theme.colors.gold)
 	Theme.button(card, "3 · Build a battle team", function() self:show("Team") end)
@@ -380,7 +382,7 @@ function UIController:renderHome()
 	Theme.label(guide, "A LITTLE LUCK. A LOT OF STYLE.", 17)
 	Theme.paragraph(guide, "Displayed characters earn coins while you play. Battle teams are separate: your favorite Mogger can earn income and fight. Pets, upgrades, quests and ascension grow your collection without Robux.")
 	Theme.paragraph(guide, "Close this panel to explore Starter Square. Walk up to the glowing stations or use the navigation bar. Swipe the bar sideways on a phone.")
-	Theme.paragraph(guide, "Legacy cards keep your saved progress playable. They are not photographs or real-person replacements. Open Real Moggers to see the unresolved authentic-photo catalog.")
+	Theme.paragraph(guide, if Config.StudioPhotoPreview then "Open Real Moggers to browse the included faces, photo credits and references that are still unavailable." else "Open Real Moggers to browse the photo references and their availability.")
 	if self.state.persistenceMode and string.find(string.lower(self.state.persistenceMode), "memory", 1, true) then
 		Theme.paragraph(guide, "Save mode: " .. tostring(self.state.persistenceMode) .. ". Studio memory sessions are temporary; use the documented isolated DataStore test mode to verify rejoining.", Theme.colors.gold)
 	end
@@ -395,8 +397,8 @@ function UIController:renderRoll()
 		local definition = Config.Characters[outcome.characterId]
 		if definition and definition.referenceType == "RealPerson" then containsReal = true; break end
 	end
-	Theme.label(banner, if containsReal then "ACTIVE CARD PACK" else "LEGACY TEST PACK", 20, Theme.colors.gold)
-	Theme.paragraph(banner, "Existing saved collectibles keep the gameplay loop testable. Authentic real-person cards are not obtainable until approved photos are uploaded.")
+	Theme.label(banner, if containsReal then "ACTIVE CARD PACK" else "ORIGINAL COLLECTION", 20, Theme.colors.gold)
+	Theme.paragraph(banner, if containsReal then "Spin for authentic photo cards in this Studio collection. Each result is awarded by the server and can be displayed on your plot." else "Collect original characters across every available rarity.")
 	rowButtons(banner, {
 		{ "Roll · " .. Theme.number(Config.Game.RollCost), function() self:act("Roll", { count = 1 }) end, Theme.colors.gold },
 		{ "10× · " .. Theme.number(Config.Game.RollCost * 10), function() self:act("Roll", { count = 10 }) end, Theme.colors.cyan },
@@ -440,7 +442,7 @@ function UIController:inventoryCards(teamMode)
 	local profile = self.state.profile
 	local header = Theme.card(self.body, Theme.colors.cyan)
 	Theme.label(header, if teamMode then "MOG-OFF LINEUP · " .. tostring(#profile.team) .. "/3" else "OWNED COLLECTION · " .. tostring(#profile.characters), 18, Theme.colors.cyan)
-	Theme.paragraph(header, if teamMode then "Select up to three owned cards. Display assignments stay separate." else "Legacy test cards are labelled explicitly. Real-person cards require approved authentic photos and successful image uploads; missing photos are never replaced by invented faces.")
+	Theme.paragraph(header, if teamMode then "Select up to three owned cards. Display assignments stay separate." else "Original characters and any real-person cards are labelled explicitly. Real-person cards require approved authentic photos and successful image uploads; missing photos are never replaced by invented faces.")
 	local characters = table.clone(profile.characters)
 	table.sort(characters, function(a, b)
 		local sa, sb = Rules.characterStats(a), Rules.characterStats(b)
@@ -481,25 +483,60 @@ function UIController:renderTeam() self:inventoryCards(true) end
 
 function UIController:renderRealRoster()
 	local info = Theme.card(self.body, Theme.colors.gold)
-	Theme.label(info, "AUTHENTIC PEOPLE. VERIFIED PHOTOS ONLY.", 18, Theme.colors.gold)
-	Theme.paragraph(info, "No generated or unrelated face substitutes are used. A named candidate stays unobtainable until identity, photo copyright, applicable likeness rights and a successful Roblox upload are recorded. Source verification is still blocked; these are research leads.")
+	Theme.label(info, "REAL FACES • PHOTO COLLECTION", 18, Theme.colors.gold)
 	local entries = {}
-	for id, entry in Config.RealMoggers or {} do table.insert(entries, { id = id, entry = entry }) end
+	for id, entry in Config.RealMoggers or {} do
+		-- The original ambiguous ID remains saved, while its explicitly selected
+		-- closest-name reference is listed once under the actual person's name.
+		if not entry.referenceMatchIdentityId then table.insert(entries, { id = id, entry = entry }) end
+	end
 	table.sort(entries, function(a, b) return tostring(a.entry.displayName or a.id) < tostring(b.entry.displayName or b.id) end)
-	if #entries == 0 then empty(self.body, "The real-person clearance catalog is not available yet. No authentic-photo cards have been enabled.") end
+	local supplied, missing = 0, 0
+	for _, item in entries do
+		if EmbeddedPhotos.record(item.entry.identityId) then supplied += 1 else missing += 1 end
+	end
+	Theme.paragraph(info, tostring(supplied) .. " authentic source photos are embedded in this place for Studio preview. " .. tostring(missing) .. " references still need a confirmed photo and appear as names only. Every photograph keeps its source and credit below; no generated or unrelated face is substituted.")
+	Theme.paragraph(info, "This photo collection is a Studio preview. Published-game photo support is configured separately.")
+	if #entries == 0 then empty(self.body, "The real-person photo collection is not available yet.") end
+	local unresolved = {
+		clavicular = "A dated adult-era photo with reusable source rights is still needed.",
+		ernest_khalimov = "Permission for the GigaChad photographic art is unresolved; edited meme art is not an unaltered portrait.",
+		david_agbodji = "The public model profile identifies the person, but no reusable photo license was found.",
+		alton_mason = "The candidate screenshot has an unresolved external-source license warning.",
+		pietro_boselli = "The public model profile identifies the person, but no reusable photo license was found.",
+		alex_lundqvist = "The public model profile identifies the person, but no reusable photo license was found.",
+		mathias_lauridsen = "The public model profile identifies the person, but no reusable photo license was found.",
+		garrett_neff = "The public model profile identifies the person, but no reusable photo license was found.",
+		kit_butler = "The public model profile identifies the person, but no reusable photo license was found.",
+		clement_chabernaud = "The public model profile identifies the person, but no reusable photo license was found.",
+		kaysh_unresolved = "The exact public profile is needed to identify the intended person.",
+		post_surgery_hexum_unresolved = "The exact person and requested photographic variant need confirmation.",
+		chad_jaw_unresolved = "The exact public profile is needed to identify the intended person.",
+	}
 	for _, item in entries do
 		local entry = item.entry
+		local visual = CharacterVisuals.get(item.id)
+		local identity = EmbeddedPhotos.identity(item.id, visual)
+		local source = EmbeddedPhotos.record(entry.identityId)
+		local showPhoto = identity ~= nil or (visual.authenticPortraitReady and CharacterVisuals.validAssetId(visual.portraitAssetId))
 		local card = Theme.card(self.body, Theme.colors.muted)
-		local row = Theme.make("Frame", { Size = UDim2.new(1, 0, 0, 112), BackgroundTransparency = 1 }, card)
-		Theme.portrait(row, Theme.colors.muted, 104, item.id)
+		local row = Theme.make("Frame", { Size = UDim2.new(1, 0, 0, if showPhoto then 112 else 86), BackgroundTransparency = 1 }, card)
+		if showPhoto then Theme.portrait(row, Theme.colors.muted, 104, item.id) end
+		local inset = if showPhoto then 116 else 0
 		local name = Theme.label(row, entry.displayName or entry.name or item.id, 19)
-		name.Position = UDim2.fromOffset(116, 2); name.Size = UDim2.new(1, -116, 0, 52)
+		name.Position = UDim2.fromOffset(inset, 2); name.Size = UDim2.new(1, -inset, 0, 42)
 		name.TextScaled = true
 		Theme.make("UITextSizeConstraint", { MinTextSize = 11, MaxTextSize = 19 }, name)
-		local status = Theme.label(row, tostring(entry.imageStatus or "PermissionRequired") .. "\n" .. (if entry.obtainable == true then "Cleared and obtainable" else "LOCKED • NOT OBTAINABLE"), 12, Theme.colors.gold)
-		status.Position = UDim2.fromOffset(116, 56); status.Size = UDim2.new(1, -116, 0, 54)
-		Theme.paragraph(card, "Reference: Real person · Variant: " .. tostring(entry.variant or "Classic") .. ". No photograph has been substituted.")
-		if entry.blocker then Theme.paragraph(card, tostring(entry.blocker)) end
+		local statusText = if entry.previewOnly then "STUDIO PHOTO PREVIEW" elseif entry.obtainable then "REAL PHOTO • COLLECTIBLE" elseif source then "SOURCE PHOTO INCLUDED • OPEN IN STUDIO" else "REFERENCE UNRESOLVED"
+		local status = Theme.label(row, statusText, 12, Theme.colors.gold)
+		status.Position = UDim2.fromOffset(inset, 47); status.Size = UDim2.new(1, -inset, 0, if showPhoto then 58 else 36)
+		if source then
+			if entry.referenceMatchNote then Theme.paragraph(card, tostring(entry.referenceMatchNote), Theme.colors.gold) end
+			Theme.paragraph(card, tostring(source.attribution or source.displayName))
+			Theme.paragraph(card, "Photo source: " .. tostring(source.sourceURL) .. "\nLicense: " .. tostring(source.licenseURL))
+		else
+			Theme.paragraph(card, tostring(entry.blocker or unresolved[entry.identityId] or "A confirmed authentic photo and its reuse evidence are still needed."))
+		end
 	end
 end
 
@@ -543,7 +580,7 @@ function UIController:renderInspect()
 	name.TextSize = 24
 	name.TextXAlignment = Enum.TextXAlignment.Center
 	Theme.paragraph(card, visual.description or "No authentic portrait has been supplied for this collectible.")
-	Theme.paragraph(card, "Reference: " .. tostring(visual.referenceType or "LegacyFictional") .. " · Photo status: " .. tostring(visual.imageStatus or "Unavailable"), Theme.colors.gold)
+	Theme.paragraph(card, if visual.referenceType == "RealPerson" then "Reference: RealPerson · Photo status: " .. tostring(visual.imageStatus or "Unavailable") else "Original character · " .. tostring(visual.form), Theme.colors.gold)
 	Theme.badge(card, "IDENTITY  " .. tostring(visual.identityId or instance.characterId), Theme.colors.cyan)
 	Theme.paragraph(card, "Form: " .. tostring(visual.form or "Standard") .. "\nMutation: " .. tostring(stats.mutation) .. "\nLevel: " .. tostring(instance.level or 1))
 	Theme.paragraph(card, "Collection status: " .. (if self.inspectOwned then "Owned" else "Displayed by another collector") .. "\nObtainable: " .. (if visual.enabled == false then "Unavailable in current rolls" else "Available in the active roster"))

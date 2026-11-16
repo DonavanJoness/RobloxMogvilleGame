@@ -1,11 +1,13 @@
 # V3 authentic-photo pipeline
 
-V3 no longer generates or ships fictional human portrait substitutes. The original V2 face PNGs have been retired. `assets/characters/manifest.json` currently has **zero approved photographs**, and the game displays neutral unresolved panels. A separate [review pack](../assets/references/photo-review/README.md) contains **15 source-reviewed original photos**, with **13 references unresolved**; those files do not enter the production manifest automatically. Legacy fictional IDs remain a labelled test collection only; no legacy image override can be presented as a real-person photo.
+**Current Studio preview:** [REAL_FACES.md](REAL_FACES.md) documents 18 embedded source photos, the owner-authorized private preview, two closest-name selections and ten unresolved requests. Embedded pixel data is prepared by `tools/embed_real_faces.py` and rendered on clients through `EditableImage`. The production photo manifest and upload gates below remain separate and unchanged; they currently have zero approved uploaded records.
+
+V3 no longer generates or ships fictional human portrait substitutes. The original V2 face PNGs have been retired. `assets/characters/manifest.json` currently has **zero production-approved photographs**. The [source pack](../assets/references/photo-review/README.md) contains **18 reviewed original photos**, with **ten original requested references unresolved** and two disclosed closest-name selections. Those source records do not enter the production manifest automatically. Embedded Studio previews use a separate catalog; unresolved real references have names and source notes without portrait frames. Legacy IDs remain intact for existing saves.
 
 ## Runtime data
 
 - `MoggerPortraitRegistry` enforces identity, authentic adult-era photography, copyright/commercial-use/likeness records and actual upload status before making a real-person card obtainable.
-- `RealMoggers` is generated from the provisional research catalog and approved manifest records. Its 28 current entries are pending; the three ambiguous aliases remain unresolved. All current asset IDs are zero.
+- `RealMoggers` is generated from the research catalog and approved manifest records. Its 30 internal entries retain the 28 original IDs plus two canonical closest-name references. All actual asset IDs remain zero. Eighteen source-backed forms are obtainable only in the owner-authorized Studio preview.
 - `CharacterVisuals` provides the same metadata to card UI, reveals, inspection, battle and plot displays. Positive IDs without the required approval fields cannot display as real photographs.
 - Stable character form IDs, base identities and mutations remain separate. Multiple photographed Young/Classic/Prime/Ascended variants can be registered independently. An Ascended frame is a UI effect around an authentic image, not an invented photograph.
 

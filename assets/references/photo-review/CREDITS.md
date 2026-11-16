@@ -2,6 +2,16 @@
 
 Retain this file with redistributed photographs. No endorsement by the depicted people or photographers is claimed. The archive retains each source file unchanged by MOGVILLE. Known upstream changes are described below.
 
+## Clavicular — clavicular.jpg
+
+Peters, Braden Eric (2 out of 2).jpg — Taryn Segal (https://www.tarynsegal.com), Free Art License1.3, https://commons.wikimedia.org/wiki/File:Peters,_Braden_Eric_(2_out_of_2).jpg; http://artlibre.org/licence/lal/en. Original Commons file retained unchanged by MOGVILLE.
+
+Photo date: 11 February 2026 (file summary);12 February2026 in caption. Source dimensions: [3756, 5663]. SHA-256: `3acfe273b56b83930e2ec95a5f9fe50354e43fbdec91c126910100f3607a4b54`.
+
+Copyleft: This work of art is free; you can redistribute it and/or modify it according to terms of the Free Art License version 1.3 or any later version. You will find a specimen of this license on the Copyleft Attitude site in French , English , German , Polish , and Portuguese as well as on other sites . http://artlibre.org/licence/lal/en FAL-1.3 Free Art License 1.3 false true
+
+Review: Main subject is in a white shirt getting makeup applied backstage; face is clear and near upper center-right, with flash red-eye visible. Other people are partly cropped at the left/background edges. Original is a vertical full-body photograph; a face-focused crop should preserve the head near normalized center(0.62,0.18), rather than default image center. This selected original Commons file is retained unchanged. A separate unused3x4 derivative has red-eye/colour edits; that derivative was not downloaded.
+
 ## Francisco Lachowski — francisco_lachowski.jpg
 
 Francisco_Lachowski_2011.jpg — Sara Cimino from Milan, Italy ( Flickr account ); CC BY 2.0; https://commons.wikimedia.org/wiki/File:Francisco_Lachowski_2011.jpg; https://creativecommons.org/licenses/by/2.0. Original file retained; no changes by MOGVILLE.
@@ -151,3 +161,23 @@ Photo date: 15 January 2011, 16:04. Source dimensions: [667, 1000]. SHA-256: `5c
 This file is licensed under the Creative Commons Attribution 2.0 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/2.0 CC BY 2.0 Creative Commons Attribution 2.0 true true
 
 Review: Single-person close head-and-shoulders portrait; front face unobstructed and in focus. Some background attendees are blurred. No edits by MOGVILLE.
+
+## Jon-Erik Hexum — jon_erik_hexum.jpg
+
+Jon-Erik arms.jpg — Christie Jenkins, CC BY 2.5; https://commons.wikimedia.org/wiki/File:Jon-Erik_arms.jpg; https://creativecommons.org/licenses/by/2.5. Current Commons file retained unchanged by MOGVILLE; upstream2010 crop/minor retouch credited through file history.
+
+Photo date: 1984. Source dimensions: [628, 416]. SHA-256: `27d11506d762672cac5c91e263fbbc14cb6d245f3307c9f17c3ee529c5031bed`.
+
+This file is licensed under the Creative Commons Attribution 2.5 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/2.5 CC BY 2.5 Creative Commons Attribution 2.5 true true
+
+Review: One main subject in a blue sleeveless top, upper body and face in a side-on flexed-arm pose. Face is clear; source framing already clips the upper hairstyle at top edge. Warm lighting/film grain; exact source retained. Commons current628×416 file history records a2010 crop to remove black band and minor retouching. Source version retained unchanged by MOGVILLE.
+
+## Chad Michael Murray — chad_michael_murray.jpg
+
+Chad_Michael_Murray_at_Nostalgia_Con_Anaheim_2026.jpg — Kevin Paul; CC BY 4.0; https://commons.wikimedia.org/wiki/File:Chad_Michael_Murray_at_Nostalgia_Con_Anaheim_2026.jpg; https://creativecommons.org/licenses/by/4.0. Original file retained; no changes by MOGVILLE.
+
+Photo date: 20 June 2026, 16:12:25. Source dimensions: [1600, 2000]. SHA-256: `131eef64f4c6a47a5138911c25ae29cbd9ca01ecfceb37f4f8c2004fafdb47ac`.
+
+This file is licensed under the Creative Commons Attribution 4.0 International license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/4.0 CC BY 4.0 Creative Commons Attribution 4.0 true true
+
+Review: Clear single-person close portrait, head-and-shoulders, with hands/microphone lower in frame; no competing face. Hair, eyes and face are unobstructed. Defocused event background. Original retained unchanged.

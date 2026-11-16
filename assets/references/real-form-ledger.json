@@ -491,6 +491,42 @@
           "Apex"
         ]
       }
+    },
+    {
+      "id": "real_jon_erik_hexum_classic",
+      "identityId": "jon_erik_hexum",
+      "displayName": "Jon-Erik Hexum",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Rare",
+        "income": 24,
+        "attack": 35,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
+    },
+    {
+      "id": "real_chad_michael_murray_classic",
+      "identityId": "chad_michael_murray",
+      "displayName": "Chad Michael Murray",
+      "variant": "Classic",
+      "tuning": {
+        "rarity": "Rare",
+        "income": 24,
+        "attack": 35,
+        "mutations": [
+          "Normal",
+          "Golden",
+          "Diamond",
+          "Legendary",
+          "Apex"
+        ]
+      }
     }
   ]
 }

@@ -1,5 +1,7 @@
 # MOGVILLE V3 — card-layout preview and asset acceptance
 
+**Historical V3 status below.** The current [real-faces follow-up](REAL_FACES.md) preserves the owner's newer uploaded place and embeds 18 photo previews for Studio-only gameplay, including two disclosed closest-name selections. Ten requested references remain unresolved. No production photo upload or public release is implied. The older 15-photo figures below describe the previous delivery.
+
 **V3 is not visually acceptance-complete.** This delivery implements the card UI, layout changes and reviewed-asset integration. Fifteen real photo files now have reviewed source/license/date evidence in a separate [photo review pack](../assets/references/photo-review/README.md); thirteen requested references remain unresolved. No production photo approvals, Roblox uploads, detailed custom rigs or imported architectural models have been completed. The world explicitly labels its remaining architecture as a layout preview.
 
 The owner supplied [Build a Soccer Team](https://www.roblox.com/games/94164742020505/Build-a-Soccer-Team) as the layout reference. Its public page was initially blocked and became accessible after the owner applied updated environment settings. No game screenshots or live game were inspected. The current arrangement is MOGVILLE's original interpretation of a card-collector promenade; it is not a verified match of that game's layout, and none of its proprietary art or models was copied.

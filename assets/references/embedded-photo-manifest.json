@@ -1,0 +1,631 @@
+{
+  "schemaVersion": 1,
+  "scope": "Owner-authorized local Studio face preview; no production rights/upload approval inferred.",
+  "ownerAuthorization": "Project owner explicitly requested actual face-photo integration and granted project permission in this chat on 2026-11-16. This is not represented as a release from the depicted people.",
+  "portraits": [
+    {
+      "identityId": "andres_velencoso",
+      "displayName": "Andrés Velencoso",
+      "sourceFile": "assets/references/photo-review/andres_velencoso.jpg",
+      "sourceSHA256": "55e560f389e456d7d81c5646463d7d88dd335855d9ace1af01f93e204ca94515",
+      "cropBoxNormalized": [
+        0.08,
+        0.015,
+        0.91,
+        0.765
+      ],
+      "cropBoundsPixels": [
+        101,
+        27,
+        1146,
+        1366
+      ],
+      "outputFile": "assets/characters/studio-preview/andres_velencoso.png",
+      "outputSHA256": "a47ec258ef36d631898c276637661111135343555749d706006c60209e1d87c3",
+      "rgbaSHA256": "e4105b3c2a6c3007cf0a76b37e329132e175f2f2c062bd40970e463dd0f5aa05",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Andrés_Velencoso_at_Premios_Goya_2017_(cropped).jpg — Ruben Ortega; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Andr%C3%A9s_Velencoso_at_Premios_Goya_2017_(cropped).jpg; https://creativecommons.org/licenses/by-sa/4.0. Original file retained; no changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Andr%C3%A9s_Velencoso_at_Premios_Goya_2017_(cropped).jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceEvidence": "assets/references/live-research/andres_velencoso.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "baptiste_giabiconi",
+      "displayName": "Baptiste Giabiconi",
+      "sourceFile": "assets/references/photo-review/baptiste_giabiconi.jpg",
+      "sourceSHA256": "e3738fd79fa09bee629c295ea0b164009e457f8d8316e61ddb6b41acadf965a5",
+      "cropBoxNormalized": [
+        0.205,
+        0.0,
+        0.745,
+        0.48
+      ],
+      "cropBoundsPixels": [
+        98,
+        0,
+        356,
+        346
+      ],
+      "outputFile": "assets/characters/studio-preview/baptiste_giabiconi.png",
+      "outputSHA256": "9a737138dee109d50175afceb473fe76105813675148108d9665fdff23e15be0",
+      "rgbaSHA256": "1d5a2c06b84fd58616dc016426d45f1a3865d2b1f444a81953ba11ba0c799ae2",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Baptiste_Giabiconi.jpg — Georges Biard; CC BY-SA 3.0; https://commons.wikimedia.org/wiki/File:Baptiste_Giabiconi.jpg; https://creativecommons.org/licenses/by-sa/3.0. Original file retained; no changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Baptiste_Giabiconi.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceEvidence": "assets/references/live-research/baptiste_giabiconi.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "chad_michael_murray",
+      "displayName": "Chad Michael Murray",
+      "sourceFile": "assets/references/photo-review/chad_michael_murray.jpg",
+      "sourceSHA256": "131eef64f4c6a47a5138911c25ae29cbd9ca01ecfceb37f4f8c2004fafdb47ac",
+      "cropBoxNormalized": [
+        0.09375,
+        0.02,
+        0.90625,
+        0.67
+      ],
+      "cropBoundsPixels": [
+        150,
+        40,
+        1450,
+        1340
+      ],
+      "outputFile": "assets/characters/studio-preview/chad_michael_murray.png",
+      "outputSHA256": "c4145814494af00625e40dc1f9261635ccf8238d29cd71e54cbd7dd0efa740d9",
+      "rgbaSHA256": "a9db0eb6d0cfb6f8463e0c1783c65bb7edc06e378051250898be9533c38be6d2",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Chad_Michael_Murray_at_Nostalgia_Con_Anaheim_2026.jpg — Kevin Paul; CC BY 4.0; https://commons.wikimedia.org/wiki/File:Chad_Michael_Murray_at_Nostalgia_Con_Anaheim_2026.jpg; https://creativecommons.org/licenses/by/4.0. Original file retained; no changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Chad_Michael_Murray_at_Nostalgia_Con_Anaheim_2026.jpg",
+      "license": "CC BY 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/4.0",
+      "sourceEvidence": "assets/references/live-research/chad_michael_murray.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": {
+        "status": "OwnerAuthorizedClosestNameMatch",
+        "requestedLabel": "Chad Jaw",
+        "selectedActualPublicName": "Chad Michael Murray",
+        "explanation": "Owner authorized the closest documented name/reference for an ambiguous label. This selects a public figure whose actual name is Chad; it does not assert ChadJaw is his alias, identify a person in the user BBC link, or compare faces."
+      }
+    },
+    {
+      "identityId": "clavicular",
+      "displayName": "Clavicular",
+      "sourceFile": "assets/references/photo-review/clavicular.jpg",
+      "sourceSHA256": "3acfe273b56b83930e2ec95a5f9fe50354e43fbdec91c126910100f3607a4b54",
+      "cropBoxNormalized": [
+        0.4,
+        0.035,
+        0.8,
+        0.32
+      ],
+      "cropBoundsPixels": [
+        1502,
+        198,
+        3005,
+        1812
+      ],
+      "outputFile": "assets/characters/studio-preview/clavicular.png",
+      "outputSHA256": "7d83272d50ecfccd3827c335a6cbb179919c2c86969ad0a5825676815ed2bf4c",
+      "rgbaSHA256": "1e1ffa4a474ac1ad5e07eff9ffe9067131c3f22f0845b00d340096e59d78bb6d",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Peters, Braden Eric (2 out of 2).jpg — Taryn Segal (https://www.tarynsegal.com), Free Art License1.3, https://commons.wikimedia.org/wiki/File:Peters,_Braden_Eric_(2_out_of_2).jpg; http://artlibre.org/licence/lal/en. Original Commons file retained unchanged by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Peters,_Braden_Eric_(2_out_of_2).jpg",
+      "license": "FAL-1.3",
+      "licenseURL": "http://artlibre.org/licence/lal/en",
+      "sourceEvidence": "assets/references/live-research/clavicular.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "david_gandy",
+      "displayName": "David Gandy",
+      "sourceFile": "assets/references/photo-review/david_gandy.jpg",
+      "sourceSHA256": "f1c449c997d56ca97b4c3643f62459cb5a7cf3358c517c96ba5765cb7179d294",
+      "cropBoxNormalized": [
+        0.26,
+        0.02,
+        0.75,
+        0.58
+      ],
+      "cropBoundsPixels": [
+        474,
+        42,
+        1368,
+        1219
+      ],
+      "outputFile": "assets/characters/studio-preview/david_gandy.png",
+      "outputSHA256": "21318d8f8c82266f99fa6d12f4f0825c26231c07b426e223b8380b415c00d10d",
+      "rgbaSHA256": "7024779844810e47d78327561c763fc9773339ff4e601152e1259199fcad198f",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "David_Gandy_in_Singapore,_2015.jpg — David Seow; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:David_Gandy_in_Singapore,_2015.jpg; https://creativecommons.org/licenses/by-sa/4.0. Original source file retained; no changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:David_Gandy_in_Singapore,_2015.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceEvidence": "assets/references/live-research/david_gandy.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "francisco_lachowski",
+      "displayName": "Francisco Lachowski",
+      "sourceFile": "assets/references/photo-review/francisco_lachowski.jpg",
+      "sourceSHA256": "644284134a0ee863173a21bf4a83e89cf2d808eee6f660cfb926db720a05c412",
+      "cropBoxNormalized": [
+        0.02,
+        0.0,
+        0.93,
+        0.83
+      ],
+      "cropBoundsPixels": [
+        28,
+        0,
+        1323,
+        1660
+      ],
+      "outputFile": "assets/characters/studio-preview/francisco_lachowski.png",
+      "outputSHA256": "0e83427bdfb914b44dcb8a9e0dc2abba84f5b73aa45a4e4c2a7f3d3fab43bba7",
+      "rgbaSHA256": "54b7c5cbf0e112c4e7a76ba4be2a9443cf1be049a306a69867683d80ee65b1c4",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Francisco_Lachowski_2011.jpg — Sara Cimino from Milan, Italy ( Flickr account ); CC BY 2.0; https://commons.wikimedia.org/wiki/File:Francisco_Lachowski_2011.jpg; https://creativecommons.org/licenses/by/2.0. Original file retained; no changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Francisco_Lachowski_2011.jpg",
+      "license": "CC BY 2.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/2.0",
+      "sourceEvidence": "assets/references/live-research/francisco_lachowski.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "henry_cavill",
+      "displayName": "Henry Cavill",
+      "sourceFile": "assets/references/photo-review/henry_cavill.jpg",
+      "sourceSHA256": "07f8d5f9583ef1cf6647cf1e076cf55af0968d8571734482efb8c724f6d33cfd",
+      "cropBoxNormalized": [
+        0.16,
+        0.055,
+        0.91,
+        0.84
+      ],
+      "cropBoundsPixels": [
+        167,
+        75,
+        949,
+        1144
+      ],
+      "outputFile": "assets/characters/studio-preview/henry_cavill.png",
+      "outputSHA256": "c50748579b5dfad53265a9173a19cf1b203edaa79df2269d03280694419ca2cb",
+      "rgbaSHA256": "646d3b01e0c05cbcea747c2d0014dfdf75706e720c856b2a34af887617a5f347",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Henry_Cavill_(48417913146)_(cropped).jpg — Gage Skidmore from Peoria, AZ, United States of America; CC BY-SA 2.0; https://commons.wikimedia.org/wiki/File:Henry_Cavill_(48417913146)_(cropped).jpg; https://creativecommons.org/licenses/by-sa/2.0. Existing Commons cropped version retained unchanged by MOGVILLE; upstream crop credited through source file history. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Henry_Cavill_(48417913146)_(cropped).jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourceEvidence": "assets/references/live-research/henry_cavill.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "jon_erik_hexum",
+      "displayName": "Jon-Erik Hexum",
+      "sourceFile": "assets/references/photo-review/jon_erik_hexum.jpg",
+      "sourceSHA256": "27d11506d762672cac5c91e263fbbc14cb6d245f3307c9f17c3ee529c5031bed",
+      "cropBoxNormalized": [
+        0.4,
+        0.0,
+        0.8,
+        0.62
+      ],
+      "cropBoundsPixels": [
+        251,
+        0,
+        502,
+        258
+      ],
+      "outputFile": "assets/characters/studio-preview/jon_erik_hexum.png",
+      "outputSHA256": "a14d3424c15c8f6168a5292ebde25395a0fcdfcc97bfca66e95be757cf0a8d24",
+      "rgbaSHA256": "31977ece0e47bc447aa9f121fd3ad2ae9ce66c175f4ca36a4fa093ecd2facd5c",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Jon-Erik arms.jpg — Christie Jenkins, CC BY 2.5; https://commons.wikimedia.org/wiki/File:Jon-Erik_arms.jpg; https://creativecommons.org/licenses/by/2.5. Current Commons file retained unchanged by MOGVILLE; upstream2010 crop/minor retouch credited through file history. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Jon-Erik_arms.jpg",
+      "license": "CC BY 2.5",
+      "licenseURL": "https://creativecommons.org/licenses/by/2.5",
+      "sourceEvidence": "assets/references/live-research/jon_erik_hexum.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": {
+        "requestedLabel": "Post-Surgery Hexum",
+        "matchType": "OwnerAuthorizedClosestDocumentedName",
+        "actualIdentity": "Jon-Erik Hexum, actor",
+        "aliasClaim": false,
+        "medicalOrSurgeryClaim": false,
+        "note": "Owner explicitly allowed closest documented name/reference on2026-11-16. This actual actor is labelled by his real public name; not claimed to be person in inaccessible Instagram post, and no surgery variant is asserted."
+      }
+    },
+    {
+      "identityId": "jon_kortajarena",
+      "displayName": "Jon Kortajarena",
+      "sourceFile": "assets/references/photo-review/jon_kortajarena.jpg",
+      "sourceSHA256": "90f1db626a69c29cef44ffbc5f043c1844aa69cf02825005528eeb8e5a9f2a7c",
+      "cropBoxNormalized": [
+        0.18,
+        0.015,
+        0.72,
+        0.71
+      ],
+      "cropBoundsPixels": [
+        191,
+        18,
+        762,
+        854
+      ],
+      "outputFile": "assets/characters/studio-preview/jon_kortajarena.png",
+      "outputSHA256": "6b129b11141e65d5083ca44e64edd48ac04d5a5cf27cb3ccf3b645684be13199",
+      "rgbaSHA256": "5c2f16d81226c8b978f18d435a83b6c689f396d842d1240963e3215a0a7b66ad",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Premios_Goya_2020_-_Jon_Kortajarena_(Cropped)_(cropped).jpg — Pedro J Pacheco; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Premios_Goya_2020_-_Jon_Kortajarena_(Cropped)_(cropped).jpg; https://creativecommons.org/licenses/by-sa/4.0. Original file retained; no changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Premios_Goya_2020_-_Jon_Kortajarena_(Cropped)_(cropped).jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceEvidence": "assets/references/live-research/jon_kortajarena.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "jordan_barrett",
+      "displayName": "Jordan Barrett",
+      "sourceFile": "assets/references/photo-review/jordan_barrett.jpg",
+      "sourceSHA256": "1954bbf981196f2c43d61d9ef8c2f72e6f17da4e3bb09cfb683cb88725688f8c",
+      "cropBoxNormalized": [
+        0.12,
+        0.0,
+        0.83,
+        0.68
+      ],
+      "cropBoundsPixels": [
+        154,
+        0,
+        1062,
+        1088
+      ],
+      "outputFile": "assets/characters/studio-preview/jordan_barrett.png",
+      "outputSHA256": "1f12d8890d38d6823771321ac18797677c5655c1dd17ec0929e8207c627f1d96",
+      "rgbaSHA256": "3910ddd24d5433a51821ed82fe5db0f6d37490a85dfac72f0ba7c4749597aa53",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Jordan-barrett-mbfw-march-2022-fashion-week-berlin.jpg — Stefan Heesch, Nordfriisk Photography, Zürich, Switzerland (Commons user Nordfriisk); CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Jordan-barrett-mbfw-march-2022-fashion-week-berlin.jpg; https://creativecommons.org/licenses/by-sa/4.0. Existing Commons version retained; no further changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Jordan-barrett-mbfw-march-2022-fashion-week-berlin.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceEvidence": "assets/references/live-research/jordan_barrett.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "lucky_blue_smith",
+      "displayName": "Lucky Blue Smith",
+      "sourceFile": "assets/references/photo-review/lucky_blue_smith.jpg",
+      "sourceSHA256": "b6fa9b47a9ef6384b1918f0b32c28c150c90eec9db07b43f0903998e4f8364c2",
+      "cropBoxNormalized": [
+        0.0,
+        0.0,
+        1.0,
+        0.97
+      ],
+      "cropBoundsPixels": [
+        0,
+        0,
+        584,
+        709
+      ],
+      "outputFile": "assets/characters/studio-preview/lucky_blue_smith.png",
+      "outputSHA256": "fe07f5db8bbacda60de9484b33c3359c6a2a4bdc5b05e4fa384ec3a19cc7d422",
+      "rgbaSHA256": "1de35120eed93a2a2bfc95a8a42e4858e9d51ee961ce64ddef547625511ee9c2",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Lucky_blue_smith_2019_2.jpg — Yoann Lothaire / other viewnewsmedia; CC BY 3.0; https://commons.wikimedia.org/wiki/File:Lucky_blue_smith_2019_2.jpg; https://creativecommons.org/licenses/by/3.0. Original file retained; no changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Lucky_blue_smith_2019_2.jpg",
+      "license": "CC BY 3.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/3.0",
+      "sourceEvidence": "assets/references/live-research/lucky_blue_smith.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "marcus_schenkenberg",
+      "displayName": "Marcus Schenkenberg",
+      "sourceFile": "assets/references/photo-review/marcus_schenkenberg.jpg",
+      "sourceSHA256": "6f23f43c42544af653a7cf9796f8dd485fa6d5145ebc8c75fa77eeb49b2a61ba",
+      "cropBoxNormalized": [
+        0.13,
+        0.015,
+        0.82,
+        0.67
+      ],
+      "cropBoundsPixels": [
+        499,
+        86,
+        3149,
+        3859
+      ],
+      "outputFile": "assets/characters/studio-preview/marcus_schenkenberg.png",
+      "outputSHA256": "0e1a55f83fc72be17c8adefc1996b982406276a66672bffdfef3ad12d5c1e852",
+      "rgbaSHA256": "df12219d87a56cee63feef8e919d216e947a8840c6d876d9442b6e2a50a2c0a6",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "AV0A1717_Marcus_Schenkenberg.jpg — 9EkieraM1; CC BY-SA 3.0; https://commons.wikimedia.org/wiki/File:AV0A1717_Marcus_Schenkenberg.jpg; https://creativecommons.org/licenses/by-sa/3.0. Original file retained; no changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:AV0A1717_Marcus_Schenkenberg.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceEvidence": "assets/references/live-research/marcus_schenkenberg.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "marlon_teixeira",
+      "displayName": "Marlon Teixeira",
+      "sourceFile": "assets/references/photo-review/marlon_teixeira.jpg",
+      "sourceSHA256": "53c06b19aa31fba3eada66f057bcd07f7d78699950acefb7b00a149b314a914b",
+      "cropBoxNormalized": [
+        0.34,
+        0.0,
+        0.83,
+        0.415
+      ],
+      "cropBoundsPixels": [
+        621,
+        0,
+        1516,
+        1141
+      ],
+      "outputFile": "assets/characters/studio-preview/marlon_teixeira.png",
+      "outputSHA256": "389ea4a923233ad737c0390f2b0fdfe6a7c229d3c805bba9ca96768c88f5d214",
+      "rgbaSHA256": "cac8f61cbac80aa5ce1dbea10b827ff639b300168f785fa30aad96a9a4d9dee5",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Marlon_Teixeira.jpg — Sara Cimino from Milan, Italy ( Flickr account ); CC BY 2.0; https://commons.wikimedia.org/wiki/File:Marlon_Teixeira.jpg; https://creativecommons.org/licenses/by/2.0. Original file retained; no changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Marlon_Teixeira.jpg",
+      "license": "CC BY 2.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/2.0",
+      "sourceEvidence": "assets/references/live-research/marlon_teixeira.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "noah_mills",
+      "displayName": "Noah Mills",
+      "sourceFile": "assets/references/photo-review/noah_mills.jpg",
+      "sourceSHA256": "b030d43e004794fcb4719fb9ac2ed811af696ec66c2e167a1061ccf52c909ba3",
+      "cropBoxNormalized": [
+        0.08,
+        0.0,
+        0.86,
+        0.78
+      ],
+      "cropBoundsPixels": [
+        122,
+        0,
+        1314,
+        1666
+      ],
+      "outputFile": "assets/characters/studio-preview/noah_mills.png",
+      "outputSHA256": "dbfe5ff080f2adcfa1c5c1cd502e305e4ec9d01a34ba5f7ed78fcc50f6900dbc",
+      "rgbaSHA256": "257178e77a1d8f380ee31943708a469a1c3f675c6d03abb1d8a48727245affb1",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Noah Mills (cropped).jpg — Gabriella Sinisi, upstream crop by FMSky; CC BY-SA 3.0; https://commons.wikimedia.org/wiki/File:Noah_Mills_(cropped).jpg; https://creativecommons.org/licenses/by-sa/3.0. Exact current Commons crop retained; no changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Noah_Mills_(cropped).jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceEvidence": "assets/references/live-research/noah_mills.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "river_viiperi",
+      "displayName": "River Viiperi",
+      "sourceFile": "assets/references/photo-review/river_viiperi.jpg",
+      "sourceSHA256": "5cbe4826d1e2e9eaba6d9d7e1627b425ae802f6cc2c671a8b999d1ad8e3f0153",
+      "cropBoxNormalized": [
+        0.035,
+        0.0,
+        0.985,
+        0.88
+      ],
+      "cropBoundsPixels": [
+        23,
+        0,
+        657,
+        880
+      ],
+      "outputFile": "assets/characters/studio-preview/river_viiperi.png",
+      "outputSHA256": "57fb8ba6f8974beba4df99dfd435169463843772a506af747169b72dd058a5d0",
+      "rgbaSHA256": "78979b378bbfe5f5c0f022314435f4c421b132bb66d038e2412242b295dc21f6",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "River_Viiperi_2011.jpg — Sara Cimino from Milan, Italy ( Flickr account ); CC BY 2.0; https://commons.wikimedia.org/wiki/File:River_Viiperi_2011.jpg; https://creativecommons.org/licenses/by/2.0. Original file retained; no changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:River_Viiperi_2011.jpg",
+      "license": "CC BY 2.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/2.0",
+      "sourceEvidence": "assets/references/live-research/river_viiperi.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "sean_opry",
+      "displayName": "Sean O’Pry",
+      "sourceFile": "assets/references/photo-review/sean_opry.jpg",
+      "sourceSHA256": "71921a6067572d852885f8daad3ae32ded79dab0617e2e54f94f4a52a2928e99",
+      "cropBoxNormalized": [
+        0.07,
+        0.03,
+        0.67,
+        0.73
+      ],
+      "cropBoundsPixels": [
+        25,
+        13,
+        242,
+        326
+      ],
+      "outputFile": "assets/characters/studio-preview/sean_opry.png",
+      "outputSHA256": "440c1b3150780ab57133828bc9518f27b9b953dee759fad1fac15de674df620a",
+      "rgbaSHA256": "6e4197d4d420f0d2dea8ff7923a47883faf2d00ec091d51fc73b32ba1a758e11",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Sean_O'Pry_2015.jpg — Denielle; CC BY-SA 2.0; https://commons.wikimedia.org/wiki/File:Sean_O'Pry_2015.jpg; https://creativecommons.org/licenses/by-sa/2.0. Original file retained; no changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Sean_O'Pry_2015.jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourceEvidence": "assets/references/live-research/sean_opry.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "simon_nessman",
+      "displayName": "Simon Nessman",
+      "sourceFile": "assets/references/photo-review/simon_nessman.jpg",
+      "sourceSHA256": "0b61a5f0380bf72f737714f55ed1edaa3c8c7eedf2fd37e0b2dc936c3e8577a9",
+      "cropBoxNormalized": [
+        0.045,
+        0.02,
+        0.81,
+        0.6
+      ],
+      "cropBoundsPixels": [
+        30,
+        20,
+        540,
+        600
+      ],
+      "outputFile": "assets/characters/studio-preview/simon_nessman.png",
+      "outputSHA256": "279500f6b163611ebe7e6018306e42f81e23c6f49255e8dd7957494e281a6b4d",
+      "rgbaSHA256": "f07f89b8775034c95cb5a804690e1b391cf95f38ce8f2c9d48eaeab8d8740472",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Simon_Nessman.jpg — Sara Cimino from Milan, Italy ( Flickr account ); CC BY 2.0; https://commons.wikimedia.org/wiki/File:Simon_Nessman.jpg; https://creativecommons.org/licenses/by/2.0. Original file retained; no changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Simon_Nessman.jpg",
+      "license": "CC BY 2.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/2.0",
+      "sourceEvidence": "assets/references/live-research/simon_nessman.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    },
+    {
+      "identityId": "tyson_beckford",
+      "displayName": "Tyson Beckford",
+      "sourceFile": "assets/references/photo-review/tyson_beckford.jpg",
+      "sourceSHA256": "d52fe25742d2d241ac147f61b1743cc1c7b83be77e6788779473acf271a9342c",
+      "cropBoxNormalized": [
+        0.22,
+        0.02,
+        0.73,
+        0.6
+      ],
+      "cropBoundsPixels": [
+        226,
+        26,
+        750,
+        772
+      ],
+      "outputFile": "assets/characters/studio-preview/tyson_beckford.png",
+      "outputSHA256": "560136e89e17432bdbf1417482f283185886e38a522f5ad6dd6fe68dd3162371",
+      "rgbaSHA256": "ad20fbce51e908da6821ee47404cf70f56801a5c7fcacac8833eb4c50d224d4d",
+      "dimensions": [
+        256,
+        256
+      ],
+      "attribution": "Tyson Beckford (cropped).jpg — Jesse Gross (Jgro888), upstream crop by Heiko Gerber; CC BY-SA 2.5; https://commons.wikimedia.org/wiki/File:Tyson_Beckford_(cropped).jpg; https://creativecommons.org/licenses/by-sa/2.5. Exact current Commons crop retained; no changes by MOGVILLE. MOGVILLE preview change: cropped to documented head framing, proportionally resized with dark margins to 256×256, and encoded as RGBA; original source retained.",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Tyson_Beckford_(cropped).jpg",
+      "license": "CC BY-SA 2.5",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/2.5",
+      "sourceEvidence": "assets/references/live-research/tyson_beckford.json",
+      "studioPreviewOnly": true,
+      "robloxAssetId": 0,
+      "thirdPartyLikenessRelease": "NotEstablished",
+      "requestedReferenceMatch": null
+    }
+  ]
+}

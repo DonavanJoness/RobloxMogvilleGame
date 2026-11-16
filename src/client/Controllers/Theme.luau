@@ -1,6 +1,7 @@
 --!strict
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local CharacterVisuals = require(ReplicatedStorage:WaitForChild("Shared"):WaitForChild("CharacterVisuals"))
+local EmbeddedPhotos = require(script.Parent.EmbeddedPhotoController)
 local RunService = game:GetService("RunService")
 local Theme = {}
 local motionSettings = {}
@@ -203,41 +204,68 @@ function Theme.portrait(parent: Instance, color: Color3, size: number?, characte
 	Theme.corner(portrait, 10)
 	Theme.stroke(portrait, color, 0.25).Thickness = 2
 	Theme.make("UIGradient", { Color = ColorSequence.new(Color3.new(1, 1, 1), Color3.fromRGB(112, 118, 152)), Rotation = 35 }, portrait)
-	local fallback = Theme.make("Frame", { Name = "UnresolvedPhoto", Size = UDim2.fromScale(1, 1), BackgroundTransparency = 1 }, portrait)
-	local icon = Theme.label(fallback, "▧", math.clamp(edge * 0.25, 20, 55), color)
+	local identity = EmbeddedPhotos.identity(characterId, visual)
+	local assetId = visual.portraitAssetId
+	local uploaded = visual.referenceType == "RealPerson" and visual.authenticPortraitReady == true and CharacterVisuals.validAssetId(assetId)
+	-- An unresolved real person has no portrait panel at all. Never use a different face.
+	if visual.referenceType ~= "LegacyFictional" and not identity and not uploaded then
+		portrait.Visible = false
+		portrait.Size = UDim2.fromOffset(0, 0)
+		return portrait
+	end
+	local fallback = Theme.make("Frame", { Name = "PhotoDisplayStatus", Size = UDim2.fromScale(1, 1), BackgroundTransparency = 1 }, portrait)
+	-- Preserve the uploaded game's fictional rarity crests without calling them photographs.
+	local original = visual.referenceType == "LegacyFictional"
+	if not original then
+		local message = Theme.label(fallback, "Loading real photograph…", math.clamp(edge * 0.065, 10, 15), Theme.colors.muted)
+		message.Position = UDim2.fromScale(0.06, 0.12)
+		message.Size = UDim2.fromScale(0.88, 0.76)
+		message.TextXAlignment = Enum.TextXAlignment.Center
+		message.TextScaled = true
+		Theme.make("UITextSizeConstraint", { MinTextSize = 9, MaxTextSize = 15 }, message)
+		local image = Theme.make("ImageLabel", { Name = "AuthenticPhoto", Size = UDim2.fromScale(1, 1), BackgroundTransparency = 1, ScaleType = Enum.ScaleType.Crop, Visible = false, ZIndex = 3 }, portrait)
+		if identity and not uploaded then
+			local ok, problem = EmbeddedPhotos.apply(image, identity)
+			if ok then fallback.Visible = false else message.Text = problem or "Photo display unavailable"; image:Destroy() end
+		elseif uploaded then
+			image.Image = "rbxassetid://" .. string.format("%.0f", assetId)
+			local connection: RBXScriptConnection?
+			local function loaded()
+				if image.Parent and image.IsLoaded then
+					image.Visible = true
+					fallback.Visible = false
+					if connection then connection:Disconnect() end
+				end
+			end
+			connection = image:GetPropertyChangedSignal("IsLoaded"):Connect(loaded)
+			loaded()
+			task.delay(12, function()
+				if connection then connection:Disconnect() end
+				if image.Parent and not image.IsLoaded then message.Text = "The Roblox photo could not load. Check its upload permissions."; image:Destroy() end
+			end)
+		end
+		return portrait
+	end
+	local initials = {}
+	for word in string.gmatch(visual.name or "", "%a+") do
+		if #initials < 2 then table.insert(initials, string.upper(string.sub(word, 1, 1))) end
+	end
+	local icon = Theme.label(fallback, if #initials > 0 then table.concat(initials) else "", math.clamp(edge * 0.25, 20, 55), color)
 	icon.Size = UDim2.fromScale(1, 0.35)
 	icon.Position = UDim2.fromScale(0, 0.16)
 	icon.TextXAlignment = Enum.TextXAlignment.Center
-	local missing = Theme.label(fallback, "PHOTO NOT SUPPLIED", math.clamp(edge * 0.065, 9, 15), Theme.colors.text)
+	local missing = Theme.label(fallback, string.upper(visual.form), math.clamp(edge * 0.065, 9, 15), Theme.colors.text)
 	missing.Position = UDim2.fromScale(0.07, 0.52)
 	missing.Size = UDim2.fromScale(0.86, 0.2)
 	missing.TextXAlignment = Enum.TextXAlignment.Center
 	missing.TextScaled = true
 	Theme.make("UITextSizeConstraint", { MinTextSize = 8, MaxTextSize = 15 }, missing)
-	local status = Theme.label(fallback, if visual.referenceType == "RealPerson" then "PERMISSION / UPLOAD PENDING" else "LEGACY TEST CARD", math.clamp(edge * 0.045, 8, 11), Theme.colors.muted)
+	local status = Theme.label(fallback, "ORIGINAL CHARACTER", math.clamp(edge * 0.045, 8, 11), Theme.colors.muted)
 	status.Position = UDim2.fromScale(0.07, 0.73)
 	status.Size = UDim2.fromScale(0.86, 0.17)
 	status.TextXAlignment = Enum.TextXAlignment.Center
 	status.TextScaled = true
 	Theme.make("UITextSizeConstraint", { MinTextSize = 7, MaxTextSize = 11 }, status)
-	local assetId = visual.portraitAssetId
-	if visual.referenceType == "RealPerson" and visual.authenticPortraitReady == true and CharacterVisuals.validAssetId(assetId) then
-		local image = Theme.make("ImageLabel", { Name = "VerifiedAuthenticPhoto", Size = UDim2.fromScale(1, 1), BackgroundTransparency = 1, Image = "rbxassetid://" .. string.format("%.0f", assetId), ScaleType = Enum.ScaleType.Crop, Visible = false, ZIndex = 3 }, portrait)
-		local connection: RBXScriptConnection?
-		local function loaded()
-			if image.Parent and image.IsLoaded then
-				image.Visible = true
-				fallback.Visible = false
-				if connection then connection:Disconnect() end
-			end
-		end
-		connection = image:GetPropertyChangedSignal("IsLoaded"):Connect(loaded)
-		loaded()
-		task.delay(12, function()
-			if connection then connection:Disconnect() end
-			if image.Parent and not image.IsLoaded then image:Destroy() end
-		end)
-	end
 	return portrait
 end
 

@@ -1,24 +1,31 @@
 {
   "schemaVersion": 1,
-  "scope": "Source-reviewed photographs for owner review; no game upload or enablement.",
+  "scope": "Source-reviewed original files; separate embedded Studio preview does not grant production upload approval.",
   "requestedReferences": 28,
-  "includedPhotoFiles": 15,
-  "unresolvedReferences": 13,
+  "catalogReferences": 30,
+  "includedPhotoFiles": 18,
+  "unresolvedReferences": 10,
+  "closestNameMatches": 2,
   "productionApproved": 0,
   "records": [
     {
       "candidateId": "clavicular",
       "displayName": "Clavicular",
-      "reviewPhotoFile": null,
-      "status": "PermissionRequired",
-      "blocker": "Public alias corroborated; no adult-era photo with documented reuse rights selected.",
-      "evidence": "assets/references/live-research/requested-identities.json",
+      "reviewPhotoFile": "assets/references/photo-review/clavicular.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/clavicular.json",
       "sources": [
-        "https://knowyourmeme.com/memes/people/clavicular",
-        "https://www.famousbirthdays.com/people/clavicular.html"
+        "https://en.wikipedia.org/wiki/Clavicular_(streamer)",
+        "https://en.wikipedia.org/wiki/Braden_Peters",
+        "https://www.bbc.com/news/articles/cx28z4zypkno",
+        "https://commons.wikimedia.org/wiki/File:Peters,_Braden_Eric_(2_out_of_2).jpg",
+        "https://www.tarynsegal.com/editorial"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "francisco_lachowski",
@@ -32,7 +39,9 @@
         "https://commons.wikimedia.org/wiki/File:Francisco_Lachowski_2011.jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "henry_cavill",
@@ -46,7 +55,9 @@
         "https://commons.wikimedia.org/wiki/File:Henry_Cavill_(48417913146)_(cropped).jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "ernest_khalimov",
@@ -59,7 +70,9 @@
         "https://knowyourmeme.com/memes/gigachad"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "jordan_barrett",
@@ -73,7 +86,9 @@
         "https://commons.wikimedia.org/wiki/File:Jordan-barrett-mbfw-march-2022-fashion-week-berlin.jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "david_gandy",
@@ -88,7 +103,9 @@
         "https://commons.wikimedia.org/wiki/File:David_Gandy_in_Singapore,_2015.jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "sean_opry",
@@ -103,7 +120,9 @@
         "https://commons.wikimedia.org/wiki/File:Taylor_Swift_Special_Guest_STAPLES_Center_Los_Angeles.jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "lucky_blue_smith",
@@ -117,7 +136,9 @@
         "https://commons.wikimedia.org/wiki/File:Lucky_blue_smith_2019_2.jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "jon_kortajarena",
@@ -132,7 +153,9 @@
         "https://commons.wikimedia.org/wiki/File:Premios_Goya_2020_-_Jon_Kortajarena_(Cropped).jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "marlon_teixeira",
@@ -146,7 +169,9 @@
         "https://commons.wikimedia.org/wiki/File:Marlon_Teixeira.jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "tyson_beckford",
@@ -161,7 +186,9 @@
         "https://commons.wikimedia.org/wiki/File:Tyson_Beckford.jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "marcus_schenkenberg",
@@ -175,7 +202,9 @@
         "https://commons.wikimedia.org/wiki/File:AV0A1717_Marcus_Schenkenberg.jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "david_agbodji",
@@ -186,7 +215,9 @@
       "evidence": "assets/references/live-research/david_agbodji.json",
       "sources": [],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "alton_mason",
@@ -200,7 +231,9 @@
         "https://commons.wikimedia.org/wiki/File:Alton_Mason_for_Paco_Rabanne_Million_Manifesto.jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "pietro_boselli",
@@ -213,7 +246,9 @@
         "https://en.wikipedia.org/wiki/Pietro_Boselli"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "alex_lundqvist",
@@ -226,7 +261,9 @@
         "https://en.wikipedia.org/wiki/Alex_Lundqvist"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "noah_mills",
@@ -241,7 +278,9 @@
         "https://commons.wikimedia.org/wiki/File:Noah_Mills.jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "mathias_lauridsen",
@@ -254,7 +293,9 @@
         "https://en.wikipedia.org/wiki/Mathias_Lauridsen"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "garrett_neff",
@@ -267,7 +308,9 @@
         "https://en.wikipedia.org/wiki/Garrett_Neff"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "kit_butler",
@@ -278,7 +321,9 @@
       "evidence": "assets/references/live-research/kit_butler.json",
       "sources": [],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "simon_nessman",
@@ -292,7 +337,9 @@
         "https://commons.wikimedia.org/wiki/File:Simon_Nessman.jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "andres_velencoso",
@@ -306,7 +353,9 @@
         "https://commons.wikimedia.org/wiki/File:Andr%C3%A9s_Velencoso_at_Premios_Goya_2017_(cropped).jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "baptiste_giabiconi",
@@ -320,7 +369,9 @@
         "https://commons.wikimedia.org/wiki/File:Baptiste_Giabiconi.jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "clement_chabernaud",
@@ -333,7 +384,9 @@
         "https://en.wikipedia.org/wiki/Cl%C3%A9ment_Chabernaud"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "river_viiperi",
@@ -347,7 +400,9 @@
         "https://commons.wikimedia.org/wiki/File:River_Viiperi_2011.jpg"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "kaysh_unresolved",
@@ -358,7 +413,9 @@
       "evidence": "assets/references/live-research/requested-identities.json",
       "sources": [],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": null
     },
     {
       "candidateId": "post_surgery_hexum_unresolved",
@@ -371,7 +428,9 @@
         "https://en.wikipedia.org/wiki/Jon-Erik_Hexum"
       ],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": "jon_erik_hexum",
+      "referenceMatchNote": "Owner-authorized closest name reference for “Post-Surgery Hexum”: Jon-Erik Hexum. This is not a verified alias or a claim that this person appears in the supplied social-media/news reference."
     },
     {
       "candidateId": "chad_jaw_unresolved",
@@ -382,7 +441,41 @@
       "evidence": "assets/references/live-research/requested-identities.json",
       "sources": [],
       "gameEnabled": false,
-      "robloxAssetId": 0
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": "chad_michael_murray",
+      "referenceMatchNote": "Owner-authorized closest name reference for “Chad Jaw”: Chad Michael Murray. This is not a verified alias or a claim that this person appears in the supplied social-media/news reference."
+    },
+    {
+      "candidateId": "jon_erik_hexum",
+      "displayName": "Jon-Erik Hexum",
+      "reviewPhotoFile": "assets/references/photo-review/jon_erik_hexum.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/jon_erik_hexum.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jon-Erik_Hexum",
+        "https://commons.wikimedia.org/wiki/File:Jon-Erik_arms.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": "Owner-authorized closest name reference for “Post-Surgery Hexum”: Jon-Erik Hexum. This is not a verified alias or a claim that this person appears in the supplied social-media/news reference."
+    },
+    {
+      "candidateId": "chad_michael_murray",
+      "displayName": "Chad Michael Murray",
+      "reviewPhotoFile": "assets/references/photo-review/chad_michael_murray.jpg",
+      "status": "SourceReviewedPhotoCollected",
+      "blocker": null,
+      "evidence": "assets/references/live-research/chad_michael_murray.json",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chad_Michael_Murray",
+        "https://commons.wikimedia.org/wiki/File:Chad_Michael_Murray_at_Nostalgia_Con_Anaheim_2026.jpg"
+      ],
+      "gameEnabled": false,
+      "robloxAssetId": 0,
+      "referenceMatchIdentityId": null,
+      "referenceMatchNote": "Owner-authorized closest name reference for “Chad Jaw”: Chad Michael Murray. This is not a verified alias or a claim that this person appears in the supplied social-media/news reference."
     }
   ]
 }

@@ -7,8 +7,10 @@ local Config = require(ReplicatedStorage:WaitForChild("Shared"):WaitForChild("Co
 local Rules = require(ReplicatedStorage.Shared:WaitForChild("Rules"))
 
 local EnvironmentBuilder = require(script.Parent.EnvironmentBuilder)
+local Kit = require(script.Parent.EnvironmentKit)
+local PlotBuilder = require(script.Parent.PlotBuilder)
 local CharacterVisuals = require(ReplicatedStorage.Shared:WaitForChild("CharacterVisuals"))
-local Appearance = require(script.Parent.CharacterAppearanceService).new()
+local CharacterAppearanceService = require(script.Parent.CharacterAppearanceService)
 local DistrictConfiguration = require(ReplicatedStorage.Shared:WaitForChild("DistrictConfiguration"))
 
 local WorldService = {}
@@ -120,8 +122,27 @@ local function rarityColor(rarity)
 	return PALETTE.white, 1
 end
 
-local function portraitBoard(model, characterId, position, tint)
+local function plotCenterZ(displayFolder)
+	local plotModel = displayFolder and displayFolder.Parent
+	local floorPart = plotModel and plotModel:FindFirstChild("MarbleFloor")
+	return if floorPart then floorPart.Position.Z else 0
+end
+
+local function initials(name)
+	local letters = {}
+	for word in string.gmatch(name, "%a+") do
+		table.insert(letters, string.upper(string.sub(word, 1, 1)))
+		if #letters == 2 then break end
+	end
+	return table.concat(letters)
+end
+
+-- Card shown beside (or in place of) a character. `facing` is a unit vector the card faces.
+-- Real people show a verified uploaded photo or an explicitly scoped Studio source-photo preview; a
+-- fictional character shows a rarity-tinted crest with its initials, never a made-up face.
+local function portraitBoard(model, characterId, position, tint, stats, facing)
 	local board = part(model, "PortraitCard", Vector3.new(4, 5.3, 0.15), position, PALETTE.ground, nil, false)
+	board.CFrame = CFrame.lookAt(position, position + facing)
 	local gui = Instance.new("SurfaceGui")
 	gui.Name = "CharacterPortrait"
 	gui.Face = Enum.NormalId.Front
@@ -135,19 +156,48 @@ local function portraitBoard(model, characterId, position, tint)
 	background.Size = UDim2.fromScale(1, 1)
 	background.BorderSizePixel = 0
 	background.Parent = gui
-	local status = Instance.new("TextLabel")
-	status.Name = "PhotoStatus"
-	status.Size = UDim2.fromScale(0.9, 0.9)
-	status.Position = UDim2.fromScale(0.05, 0.05)
-	status.BackgroundTransparency = 1
-	status.TextColor3 = PALETTE.white
-	status.TextScaled = true
-	status.TextWrapped = true
-	status.Font = Enum.Font.GothamBold
+	local shade = Instance.new("UIGradient")
+	shade.Rotation = 90
+	shade.Color = ColorSequence.new(tint:Lerp(PALETTE.white, 0.25), tint:Lerp(Color3.new(0, 0, 0), 0.45))
+	shade.Parent = background
+	local frame = Instance.new("UIStroke")
+	frame.Color = PALETTE.gold
+	frame.Thickness = 4
+	frame.Parent = background
 	local visual = CharacterVisuals.get(characterId)
-	status.Text = if visual.referenceType == "RealPerson" then "AUTHENTIC PHOTO REQUIRED" else "LEGACY TEST CARD\nPHOTO NOT SUPPLIED"
-	status.Parent = background
-	if visual.authenticPortraitReady and visual.portraitAssetId > 0 then
+	local function text(name, content, y, h, font)
+		local item = Instance.new("TextLabel")
+		item.Name = name
+		item.Size = UDim2.fromScale(0.9, h)
+		item.Position = UDim2.fromScale(0.05, y)
+		item.BackgroundTransparency = 1
+		item.TextColor3 = PALETTE.white
+		item.TextScaled = true
+		item.TextWrapped = true
+		item.Font = font or Enum.Font.GothamBold
+		item.Text = content
+		item.Parent = background
+		return item
+	end
+	if visual.referenceType == "RealPerson" then
+		text("CardName", stats.name, 0.08, 0.75)
+	else
+		text("Rarity", string.upper(stats.rarity), 0.04, 0.09, Enum.Font.GothamMedium)
+		text("Crest", initials(stats.name), 0.2, 0.42, Enum.Font.GothamBlack)
+		text("CardName", string.upper(stats.name), 0.68, 0.14)
+		text("CardForm", visual.form .. " · Original character", 0.84, 0.08, Enum.Font.GothamMedium)
+	end
+	if type(visual.embeddedIdentityId) == "string" then
+		local image = Instance.new("ImageLabel")
+		image.Name = "EmbeddedSourcePortrait"
+		image.BackgroundTransparency = 1
+		image.Size = UDim2.fromScale(1, 1)
+		image.ScaleType = Enum.ScaleType.Crop
+		image.Visible = false
+		image.ZIndex = 3
+		image:SetAttribute("MogvillePortraitIdentity", visual.embeddedIdentityId)
+		image.Parent = background
+	elseif visual.authenticPortraitReady and visual.portraitAssetId > 0 then
 		local image = Instance.new("ImageLabel")
 		image.Name = "ApprovedPortrait"
 		image.BackgroundTransparency = 1
@@ -189,7 +239,9 @@ local function displayEffects(model, host, tint, tier)
 	end
 end
 
-local function mogger(parent, instance, standPosition, ownerUserId)
+-- standPosition is the pedestal CENTER (top face = +0.4). `yaw` is the facing in degrees
+-- (0 = north/-Z); figures face the plot's entrance walkway.
+local function mogger(appearance, parent, instance, standPosition, ownerUserId, yaw)
 	local stats = Rules.characterStats(instance)
 	local tint, tier = rarityColor(stats.rarity)
 	local visual = CharacterVisuals.get(instance.characterId)
@@ -202,12 +254,18 @@ local function mogger(parent, instance, standPosition, ownerUserId)
 	local anchor = part(model, "DisplayAnchor", Vector3.new(0.2, 0.2, 0.2), standPosition + Vector3.new(0, 2.7, 0), tint, nil, false)
 	anchor.Transparency = 1
 	model.PrimaryPart = anchor
-	local imported, reason = Appearance:createDisplay(instance.characterId, model, CFrame.new(standPosition + Vector3.new(0, 4.4, 0)))
-	model:SetAttribute("ModelStatus", if imported then "ApprovedTemplate" else "ModelRequired")
+	local facingYaw = math.rad(yaw or 0)
+	local floor = CFrame.new(standPosition + Vector3.new(0, 0.4, 0)) * CFrame.Angles(0, facingYaw, 0)
+	local figure, reason = appearance:createDisplay(instance.characterId, model, floor)
+	-- ModelStatus keeps the three honest states distinct: imported art, procedural stand-in, missing.
+	local status = if figure then figure:GetAttribute("AppearanceStatus") else "ModelRequired"
+	model:SetAttribute("ModelStatus", status)
 	if reason then model:SetAttribute("AssetBlocker", reason) end
-	-- Missing art is explicit. No block mannequin or invented human face is substituted.
-	local cardX = if imported then 3.5 else 0
-	local card = portraitBoard(model, instance.characterId, standPosition + Vector3.new(cardX, 3.6, 0.2), tint)
+	local facing = CFrame.Angles(0, facingYaw, 0):VectorToWorldSpace(Vector3.new(0, 0, -1))
+	-- With a figure the card stands beside the pedestal; without one it is the whole display.
+	local side = if standPosition.Z < plotCenterZ(parent) then -6.4 else 6.4
+	local cardPosition = if figure then standPosition + Vector3.new(0, 3.3, side) else standPosition + Vector3.new(0, 3.6, 0.2)
+	local card = portraitBoard(model, instance.characterId, cardPosition, tint, stats, if figure then facing else Vector3.new(0, 0, -1))
 	local inspect = prompt(card, "Inspect", stats.name, ownerUserId)
 	inspect.ActionText = "Inspect card"
 	inspect.MaxActivationDistance = 10
@@ -216,7 +274,11 @@ local function mogger(parent, instance, standPosition, ownerUserId)
 	click.MaxActivationDistance = 18
 	click.Parent = card
 	CollectionService:AddTag(click, "MogvilleInspect")
-	label(model, anchor, string.upper(stats.name) .. " · " .. visual.form .. "\n" .. stats.rarity .. " · " .. number(stats.income) .. " Coins/sec\n" .. instance.mutation .. (if imported then "" else " · MODEL REQUIRED"), Vector3.new(0, 3.8, 0), 240, 82, tint, 65)
+	if figure and status == "ProceduralStandIn" then
+		figure:SetAttribute("IdlePhase", (#instance.uid * 0.37) % 6.28)
+		CollectionService:AddTag(figure, "MogvilleIdle")
+	end
+	label(model, anchor, string.upper(stats.name) .. " · " .. visual.form .. "\n" .. stats.rarity .. " · " .. number(stats.income) .. " Coins/sec\n" .. instance.mutation, Vector3.new(0, if figure then 5.6 else 3.8, 0), 240, 82, tint, 65)
 	displayEffects(model, anchor, tint, tier)
 	return model
 end
@@ -248,8 +310,13 @@ local function petModel(parent, definition, index, rootPart)
 	return model
 end
 
-function WorldService.new()
-	return setmetatable({ root = nil, plots = {}, assignments = {}, connections = {} }, WorldService)
+-- `rigs` is an optional RigFactory. Without it (or if its templates failed to build) characters
+-- without an approved imported model fall back to the card-only presentation.
+function WorldService.new(rigs)
+	return setmetatable({
+		root = nil, plots = {}, assignments = {}, connections = {},
+		appearance = CharacterAppearanceService.new(nil, rigs),
+	}, WorldService)
 end
 
 function WorldService:build()
@@ -264,53 +331,13 @@ function WorldService:build()
 	local plotsFolder = Instance.new("Folder")
 	plotsFolder.Name = "CollectorResidences"
 	plotsFolder.Parent = folder
+	local plotKit = Kit.new(folder, { parts = world.MaxPlotParts or 1100, lights = 0, emitters = 0 })
 	for index = 1, Config.Game.MaxPlayers do
 		local topology = DistrictConfiguration.plot(index, world)
-		local side = topology.side
-		local origin = Vector3.new(topology.x, topology.y, topology.z)
 		local accent = Color3.fromHSV((index - 1) / Config.Game.MaxPlayers, 0.36, 0.95)
-		local plot = Instance.new("Model")
-		plot.Name = string.format("Residence_%02d", index)
-		plot:SetAttribute("PlotIndex", index)
-		plot:SetAttribute("AssetSlotKey", "plot_residence")
-		plot:SetAttribute("PresentationStatus", "PlotLayoutPreview")
-		plot.Parent = plotsFolder
-		part(plot, "MarbleFloor", Vector3.new(88, 0.6, 54), origin, Color3.fromRGB(221, 225, 240), Enum.Material.Marble)
-		local borders = {}
-		for _, z in ipairs({ -26, 26 }) do
-			table.insert(borders, part(plot, "GoldInlay", Vector3.new(88, 0.15, 0.35), origin + Vector3.new(0, 0.4, z), PALETTE.gold, Enum.Material.Metal, false))
-		end
-		for _, x in ipairs({ -43.5, 43.5 }) do
-			table.insert(borders, part(plot, "ResidenceEdge", Vector3.new(0.4, 0.15, 52), origin + Vector3.new(x, 0.4, 0), accent, Enum.Material.Neon, false))
-		end
-		part(plot, "EntryCarpet", Vector3.new(88, 0.08, 7), origin + Vector3.new(0, 0.36, 0), PALETTE.floor, Enum.Material.Fabric, false)
-		part(plot, "ConnectionPath", Vector3.new(37, 0.4, 9), Vector3.new(side * 126, -0.1, origin.Z), Color3.fromRGB(220, 221, 234), Enum.Material.Concrete)
-		local sign = part(plot, "OwnerSign", Vector3.new(13, 4, 0.8), origin + Vector3.new(0, 3, -28), PALETTE.panel, nil, false)
-		local signText = label(sign, sign, string.format("RESIDENCE %02d · AVAILABLE", index), Vector3.new(0, 1, 0), 300, 78, PALETTE.white, 100)
-		part(plot, "SignCap", Vector3.new(13.8, 0.3, 1.1), origin + Vector3.new(0, 5.2, -28), PALETTE.gold, Enum.Material.Metal, false)
-		local upgrades = Instance.new("Folder")
-		upgrades.Name = "PrestigeDetails"
-		upgrades.Parent = plot
-		local display, pets = Instance.new("Folder"), Instance.new("Folder")
-		display.Name, pets.Name = "Moggers", "Pets"
-		display.Parent, pets.Parent = plot, plot
-		local stands = {}
-		for slot = 1, Config.Game.MaxSlots do
-			local slotPosition = origin + Vector3.new(-34 + ((slot - 1) % 5) * 17, 0.8, math.floor((slot - 1) / 5) * 26 - 13)
-			local stand = part(plot, "Stand" .. slot, Vector3.new(10, 0.8, 10), slotPosition, PALETTE.panel, Enum.Material.Marble)
-			local rim = part(plot, "StandRim" .. slot, Vector3.new(10.5, 0.15, 10.5), slotPosition + Vector3.new(0, 0.5, 0), accent, Enum.Material.Neon, false)
-			local open = prompt(stand, "Inventory", "Display stand " .. slot, 0)
-			open.Enabled = false
-			local caption = label(stand, stand, "LOCKED", Vector3.new(0, 1.2, 0), 125, 28, PALETTE.muted, 38)
-			table.insert(stands, { part = stand, rim = rim, prompt = open, position = slotPosition, caption = caption })
-		end
-		local entrance = origin + Vector3.new(-side * 38, 4, 0)
-		self.plots[index] = {
-			model = plot, index = index, origin = origin, accent = accent, stands = stands, signText = signText,
-			display = display, pets = pets, upgrades = upgrades, borders = borders, owner = nil,
-			spawnCFrame = CFrame.new(entrance, origin + Vector3.new(0, 4, 0)),
-		}
+		self.plots[index] = PlotBuilder.build(plotKit, plotsFolder, index, topology, accent)
 	end
+	folder:SetAttribute("PlotPartCount", plotKit.metrics.parts)
 	folder:SetAttribute("PlotCount", #self.plots)
 	folder:SetAttribute("StandCount", #self.plots * Config.Game.MaxSlots)
 	return folder
@@ -419,7 +446,7 @@ function WorldService:render(player, profile)
 		for _, x in ipairs({ -42, 42 }) do
 			for _, z in ipairs({ -24, 24 }) do
 				local height = 2 + prestige * 0.5
-				part(plot.upgrades, "PrestigeColumn", Vector3.new(1.2, height, 1.2), plot.origin + Vector3.new(x, 0.3 + height / 2, z), PALETTE.gold, Enum.Material.Metal, false)
+				part(plot.upgrades, "PrestigeColumn", Vector3.new(1.2, height, 1.2), plot.origin + Vector3.new(x, plot.floorTop + height / 2, z), PALETTE.gold, Enum.Material.Metal, false)
 				part(plot.upgrades, "ColumnGem", Vector3.new(1.5, 1.5, 1.5), plot.origin + Vector3.new(x, height + 1, z), plot.accent, Enum.Material.Neon, false)
 			end
 		end
@@ -438,7 +465,7 @@ function WorldService:render(player, profile)
 		stand.prompt.ObjectText = unlocked and ("Your display stand " .. slot) or "Locked stand"
 		local character = byUid[profile.placed[slot]]
 		if character and unlocked then
-			mogger(plot.display, character, stand.position, player.UserId)
+			mogger(self.appearance, plot.display, character, stand.position, player.UserId, if plot.origin.X < 0 then -90 else 90)
 		end
 	end
 	self:_renderPets(player, plot)

@@ -48,7 +48,10 @@ def generate():
                 "copyrightEvidence": None, "likenessEvidence": None, "uploadEvidence": None, "uploadStatus": "not-uploaded",
                 "rarity": tuning["rarity"], "income": tuning["income"], "attack": tuning["attack"],
                 "defense": 15, "health": 150, "speed": 20, "ability": "Spotlight", "weight": 1,
-                "modelKey": "mogger_" + candidate["candidateId"], "notes": "Identity/photo/rights require verification; no real portrait supplied.",
+                "modelKey": "mogger_" + candidate["candidateId"], "notes": "Production rights/upload review remains separate from any Studio source-photo preview.",
+                "requestedLabel": candidate.get("requestedLabel"),
+                "referenceMatchIdentityId": candidate.get("referenceMatchIdentityId"),
+                "referenceMatchNote": candidate.get("referenceMatchNote"),
             }
             photo = selected_photo
             if photo:

@@ -1,5 +1,6 @@
 build/
 .tools/
+.tools
 *.rbxl.lock
 *.rbxlx.lock
 *.log

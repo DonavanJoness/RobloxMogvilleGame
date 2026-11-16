@@ -77,8 +77,8 @@ for id, definition in Config.Characters do
 end
 
 Config.World = {
-	MaxStaticParts = 1800, MaxLights = 24, MaxParticleEmitters = 24,
-	MaxVisibleAnimations = 48, EffectDistance = 140, ReducedEffectDistance = 70,
+	MaxStaticParts = 2600, MaxPlotParts = 1100, MaxServerParts = 9000, MaxLights = 32, MaxParticleEmitters = 28,
+	MaxVisibleAnimations = 48, MaxVisibleIdleFigures = 16, EffectDistance = 140, ReducedEffectDistance = 70,
 	MaxParticlesPerEmitter = 5, PlotColumnsX = 190, PlotRowSpacing = 60,
 }
 
@@ -94,7 +94,26 @@ for _, entry in PortraitRegistry.all() do
 			identityId = entry.identityId, form = entry.variant, description = entry.notes,
 			portraitAssetId = entry.portraitAssetId, enabled = entry.obtainable, mutationEligible = true,
 			referenceType = "RealPerson", modelKey = entry.modelKey,
+			embeddedIdentityId = entry.embeddedIdentityId, previewOnly = entry.previewOnly,
 	}
+end
+
+-- Private Studio preview rolls only source-backed real photos. Stable legacy IDs
+-- and their exact balance remain available to existing saves and assignments.
+Config.StudioPhotoPreview = PortraitRegistry.hasStudioPreviews()
+if Config.StudioPhotoPreview then
+	local starter = "real_jon_kortajarena_classic"
+	if characters[starter] and characters[starter].enabled then
+		Config.Game.StarterCharacter = starter
+	else
+		-- Fail safely if a future photo withdrawal removes the preferred starter.
+		local alternatives = {}
+		for id, entry in characters do
+			if entry.previewOnly == true and entry.enabled ~= false then table.insert(alternatives, id) end
+		end
+		table.sort(alternatives)
+		if #alternatives > 0 then Config.Game.StarterCharacter = alternatives[1] end
+	end
 end
 
 -- Mutation weights total 100. Mutation rolls are independent of rarity and luck.

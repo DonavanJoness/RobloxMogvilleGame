@@ -1,0 +1,76 @@
+{
+  "candidateId": "jon_erik_hexum",
+  "displayName": "Jon-Erik Hexum",
+  "observedAtUTC": "2026-11-16T23:15:17.519671+00:00",
+  "identityStatus": "SourceCorroboratedPublicActor",
+  "photoStatus": "DownloadedForCopyrightAndVisualReviewOnly",
+  "copyrightStatus": "OpenLicenseSourceReviewed",
+  "likenessStatus": "NotClearedForGame",
+  "robloxAssetId": 0,
+  "gameEnabled": false,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Jon-Erik_Hexum",
+    "https://commons.wikimedia.org/wiki/File:Jon-Erik_arms.jpg"
+  ],
+  "downloadedFile": "assets/references/photo-review/jon_erik_hexum.jpg",
+  "birthDate": "1957-11-05",
+  "fileDescriptionURL": "https://commons.wikimedia.org/wiki/File:Jon-Erik_arms.jpg",
+  "filename": "Jon-Erik_arms.jpg",
+  "description": "Jon-Erik Hexum",
+  "photographer": "Christie Jenkins",
+  "photoDate": "1984",
+  "originalSource": "Christie Jenkins Photography",
+  "licenses": [
+    {
+      "name": "CC BY 2.5",
+      "url": "https://creativecommons.org/licenses/by/2.5",
+      "terms": "This file is licensed under the Creative Commons Attribution 2.5 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/2.5 CC BY 2.5 Creative Commons Attribution 2.5 true true"
+    }
+  ],
+  "selectedLicense": {
+    "name": "CC BY 2.5",
+    "url": "https://creativecommons.org/licenses/by/2.5",
+    "terms": "This file is licensed under the Creative Commons Attribution 2.5 Generic license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. https://creativecommons.org/licenses/by/2.5 CC BY 2.5 Creative Commons Attribution 2.5 true true"
+  },
+  "attribution": "Jon-Erik arms.jpg — Christie Jenkins, CC BY 2.5; https://commons.wikimedia.org/wiki/File:Jon-Erik_arms.jpg; https://creativecommons.org/licenses/by/2.5. Current Commons file retained unchanged by MOGVILLE; upstream2010 crop/minor retouch credited through file history.",
+  "adultEraConservativeCheck": true,
+  "imageURL": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Jon-Erik_arms.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+  "dimensions": [
+    628,
+    416
+  ],
+  "sha256": "27d11506d762672cac5c91e263fbbc14cb6d245f3307c9f17c3ee529c5031bed",
+  "visualReview": {
+    "reviewed": true,
+    "findings": "One main subject in a blue sleeveless top, upper body and face in a side-on flexed-arm pose. Face is clear; source framing already clips the upper hairstyle at top edge. Warm lighting/film grain; exact source retained.",
+    "identityEvidence": "Biography names Jon-Erik Hexum; exact Commons file description names same actor. This is written-source attribution, not biometric identification.",
+    "adultDateEvidence": "Biography explicitly gives November5,1957; source photograph date1984 establishes age26or27. Actor died before27thbirthday, so source year corresponds to age26.",
+    "upstreamChanges": "Commons current628×416 file history records a2010 crop to remove black band and minor retouching. Source version retained unchanged by MOGVILLE.",
+    "reviewedAtUTC": "2026-11-16T23:16:25.655705+00:00",
+    "limitations": "Source labels identify the actor; visual review checks composition only, not biometric identity. This does not identify the inaccessibleInstagram reference or assert any surgery.",
+    "recommendedFraming": {
+      "boxNormalized": [
+        0.4,
+        0.0,
+        0.8,
+        0.62
+      ],
+      "description": "Face, source-visible hairstyle and upper neck; retains source top-edge clipping rather than inventing hair."
+    }
+  },
+  "redistributionReview": {
+    "status": "OpenLicenseSourceReviewed",
+    "evidence": "Commons public VRT banner confirms copyright-holder approval under displayed license, ticket2007011510029972. Private correspondence not accessed.",
+    "licenseURL": "https://creativecommons.org/licenses/by/2.5",
+    "productionApproval": false
+  },
+  "requestedReferenceMapping": {
+    "requestedLabel": "Post-Surgery Hexum",
+    "matchType": "OwnerAuthorizedClosestDocumentedName",
+    "actualIdentity": "Jon-Erik Hexum, actor",
+    "aliasClaim": false,
+    "medicalOrSurgeryClaim": false,
+    "note": "Owner explicitly allowed closest documented name/reference on2026-11-16. This actual actor is labelled by his real public name; not claimed to be person in inaccessible Instagram post, and no surgery variant is asserted."
+  },
+  "birthDateEvidence": "Biography infobox explicitly states Born November5,1957; lifespan paragraph independently displays November5,1957–October18,1984."
+}

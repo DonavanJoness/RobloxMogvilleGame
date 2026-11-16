@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "chad_michael_murray",
+  "displayName": "Chad Michael Murray",
+  "status": "ReviewOnlyNotGameApproved",
+  "productionApproved": false,
+  "portraitFile": null,
+  "reviewPhotoFile": "assets/references/photo-review/chad_michael_murray.jpg",
+  "sourceURL": "https://en.wikipedia.org/wiki/Chad_Michael_Murray",
+  "photographer": "Kevin Paul",
+  "license": "CC BY 4.0",
+  "likenessStatus": "NeedsApproval",
+  "enabled": false,
+  "notes": [
+    "Owner-authorized closest name reference for “Chad Jaw”: Chad Michael Murray. This is not a verified alias or a claim that this person appears in the supplied social-media/news reference."
+  ],
+  "sourceURLStatus": "FetchedForSourceReview",
+  "commercialRights": "Source license permits commercial copyright reuse subject to its conditions; game-likeness rights remain unresolved.",
+  "reviewEvidence": "assets/references/live-research/chad_michael_murray.json"
+}
